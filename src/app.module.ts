@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { ServeStaticModule } from '@nestjs/serve-static/dist/serve-static.module';
 import { join } from 'path';
 import { NegocioController } from './negocio/negocio.controller';
+import { NegocioService } from './negocio/negocio.service';
 
 @Module({
   imports: [
@@ -12,6 +13,6 @@ import { NegocioController } from './negocio/negocio.controller';
     }),
   ],
   controllers: [AppController, NegocioController],
-  providers: [AppService],
+  providers: [AppService, NegocioService],
 })
 export class AppModule {}
