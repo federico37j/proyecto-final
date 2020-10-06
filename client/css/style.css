@@ -337,6 +337,96 @@ main article {
 
 /* FIN SECTION NAV */
 
+/* Inicio Footer */
+footer {
+    margin-top: 15px;
+    width: 100%;
+    background-color: #f6f6f6;
+    color: #333;
+}
+
+.contenedor-footer-all {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+
+}
+
+.container-footer-superior .input-email{
+    padding: 5px;
+    font-size: 15px;
+    width: 385px;
+
+}   
+
+.container-footer-superior .btn-suscribir{
+    font-size: 17px;
+    font-weight: bold;
+    color: rgb(216, 213, 213);
+    padding: 5px;
+    margin-right: 12px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    background: #393e46;
+}
+
+.container-footer-all .container-footer-superior {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.container-footer-inferior {
+    display: flex;
+   padding:20px 0;
+   justify-content: space-evenly;
+}
+
+.container-footer-inferior h2{
+    font-size: 22px;
+}
+
+.container-footer-inferior div {
+    max-width: 400px; 
+}
+
+.container-footer-inferior .row {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+   
+}
+
+.container-footer-inferior .columna-redes {
+    width: 400px;
+}
+
+
+.columna-nosotros p {
+    margin-top: 20px;
+}
+
+.container-copyright {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.row img {
+    width: 36px;
+    height: 36px;
+    margin: 0 20px;
+}
+
+.container-copyright p{
+    font-weight: bold;
+}
+
+.container-copyright .columna-redes img {
+    width: 25px;
+    height: 25px;
+}
 
 @media screen and (max-width: 1000px) {
     .menu .contenedor-enlaces-nav {
@@ -347,6 +437,23 @@ main article {
         width: 100%;
     }
 
+     /* footer */
+    .container-footer-all .container-footer-superior, 
+    .container-footer-all .container-footer-inferior,
+    .container-footer-all .container-copyright { 
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+ 
+    .container-footer-all .container-footer-inferior .columna-nosotros {
+        /* max-width: 100%; */
+        padding: 10px;
+    }
+    .container-footer-all .container-footer-superior .venta-telefonica, 
+    .container-footer-all .container-footer-inferior .columna-info,
+    .container-footer-all .container-copyright .columna-redes{ 
+        margin-top: 40px        ;
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -437,4 +544,19 @@ main article {
         display: none;
     }
 
+    /* footer */
+    .container-footer-all {
+        font-size: 12px;
+    } 
+
+    .container-footer-superior .input-email{
+        padding: 5px;
+        font-size: 15px;
+        width: 250px;
+    
+    }   
+    
+    .container-footer-superior .btn-suscribir{
+        font-size: 15px;
+    }
 }
