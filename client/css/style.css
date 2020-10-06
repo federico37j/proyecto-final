@@ -1,0 +1,440 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0; 
+    /* Estilo de caja */
+    box-sizing: border-box;
+ } 
+
+body {
+    /* Fondo de la pag */
+    background: rgb(179, 165, 165);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+
+}
+
+a {
+    /* le saco el subrayado */
+    text-decoration: none;
+}
+
+.contenedor {
+    /* Centrar el contenido */
+    margin: auto;
+    /* Ancho */
+    width: 85%;
+    /* Ancho maximo*/
+    /* max-width: 1200px; */
+}
+
+main article {
+    background: rgb(119, 46, 46);
+    /* 20px arriba-abajo y 0px izq-der */
+    /* margin: 20px 0; */
+    padding: 20px;
+    height: 1000px;
+    /* position: relative; */
+    margin-top: 120px;
+}
+
+
+/* 
+   BOTÓN MENU 
+*/
+
+.menu {
+    background: rgb(0, 0, 0);
+    /* padding: 0px 5px; */
+    /* margin: 0; */
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+.menu .contenedor-btn-menu {
+    display: none;
+    /* los elementos aparecen distribuidos uniformemente: al principio, en el centro y al final del contenedor flex con space-between. */
+    justify-content: space-between;
+}
+
+.menu .contenedor-btn-menu button {
+    /* Le saco las lineas al boton */
+    outline:none;
+    font-size: 30px;
+    color: white;
+    padding: 10px 15px;
+    border: 1px solid transparent;
+    display: inline-block;
+    /* aparece la manito */
+    cursor: pointer;
+    /* Le saco el fondo sino queda blanco */
+    background: none;
+}
+
+.menu .contenedor-btn-menu button:hover {
+    opacity: 0.8;
+    color: #7a7878;
+}
+
+.menu .contenedor-btn-menu .btn-menu-cerrar {
+    display: none;
+}
+
+.menu .contenedor-btn-menu .btn-menu-cerrar.activo {
+    display: inline-block;
+}
+
+/*
+    MENÚ NAV
+*/
+
+
+.menu .contenedor-imagen #img-logo{
+    max-width: 70px;
+    margin-left: 8px;
+}
+
+.menu .contenedor-enlaces-nav-arriba {
+    display: flex;
+    padding: 5px 10px;
+    justify-content: space-between;
+    align-items: center;
+    width: 87%;
+}
+
+.contenedor .inputBuscar{
+    padding: 5px;
+    font-size: 16px;
+    width: 385px;
+}
+
+.menu .contenedor .enlaces .btn-buscar{
+    font-size: 17px;
+    color: rgb(216, 213, 213);
+    padding: 5px;
+    margin-right: 12px;
+    border: 1px solid transparent;
+    /* aparece la manito */
+    cursor: pointer;
+    background: #393e46;
+}
+
+.menu .contenedor-enlaces-nav {
+    padding: 0 5px;
+    display: flex;
+    /* Queda un botón a la izquierda y otro a la derecha */
+    /* justify-content: space-between; */
+    /* lo centro en el medio del nav verticalmente*/
+    background-color: rgb(51,51,51);
+    align-items: baseline;
+    width: 100%;
+}
+
+.menu .btn-categorias {
+    color: #fff;
+    padding: 7px;
+    border-radius: 3px;
+    display: flex;
+    align-items: flex-end;
+    border: 1px solid transparent;
+    cursor: default;
+}
+
+.menu .btn-categorias ion-icon {
+    margin-left: 10px;    
+}
+
+.menu .btn-categorias:hover {
+    border: 1px solid rgb(245, 232, 232);
+}
+
+.menu .btn-categorias span {
+    font-weight: bold;
+}
+
+.menu .contenedor-enlaces-nav .enlace-menu a{
+    color: #fff;
+    border: 1px solid transparent;
+    padding: 7px;
+    border-radius: 3px;
+    align-items: center;    
+}
+
+.menu .contenedor .enlaces a{
+    color: #fff;
+    border: 1px solid transparent;
+    padding: 7px;
+    /* border-radius: 3px; */
+    align-items: center;
+    background: none;
+    font-size: 25px;
+}
+
+.menu .contenedor .enlaces a:hover{
+    color: rgb(85, 85, 85);
+}
+.menu .contenedor .enlaces {
+    display: flex;
+    align-items: center;
+}
+
+.menu .contenedor-enlaces-nav .enlace-menu a:hover {
+    border: 1px solid rgb(245, 232, 232);
+}
+
+/*
+    GRID CATEGORIAS
+*/
+
+.contenedor-grid {
+   
+    position: relative;
+}
+
+.grid {
+    display: none;
+    width: 80%;
+    padding: 0 10px;
+    /* Lo muevo de arriba del nav */
+    position: absolute;
+    /* Lo bajo 10 pixeles  */
+    top: 10px;
+    z-index: 1000;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: "categorias subcategorias subcategorias";
+}
+
+.grid.activo {
+    display: grid;
+}
+
+/* con before solo se va a observar cuando el grid este activo */
+.grid::before {
+    content: "";
+    display: block;
+    background: transparent;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #fff;
+    position: absolute;
+    top: -5px;
+    left: 65px;
+}
+
+/* Afecta solo a los div directos (<div class="categorias"> y <div class="contenedor-subcategorias">) */
+.grid > div {
+    background: #fff;
+    box-shadow: 0px 3px 6px rgb(0, 0, 0,.10);
+}
+
+.grid .btn-regresar {
+    background: rgb(31, 29, 29);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+    margin: 20px;
+    font-size: 16px;
+    display: none;
+}
+
+.grid .btn-regresar ion-icon {
+    margin-right: 5px;
+}
+
+.grid .categorias {
+    grid-area: categorias;
+    padding-top: 10px;
+    min-height: 250px;
+    /* max-height: 350px; */
+    overflow: auto;
+}
+
+.grid .categorias a {
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.grid .categorias a:hover {
+    color: darkgoldenrod;
+    font-weight: bold;
+}
+
+.grid .categorias a ion-icon {
+    display: none;
+}
+
+/* Vuelve a aparecer el icono > */
+.grid .categorias a:hover ion-icon {
+    display: inline-flex;
+}
+
+
+/*
+    GRID SUBCATEGORIAS
+*/
+.grid .contenedor-subcategorias p {
+    padding: 10px 22px;
+}
+
+.grid .contenedor-subcategorias {
+    grid-area: subcategorias;
+     /* max-height: 250px; */
+}
+
+.grid .subcategoria {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    height: 100%;
+}
+
+.grid .subcategoria.activo {
+    display: grid;
+}
+
+.grid .subcategoria img {
+    width: 100%;
+    height: 100%;
+    max-height: 250px;
+    vertical-align: top;
+    /* No deforma la imagen */
+    object-fit: cover;
+    padding: 5px 5px;
+    border: 2px solid rgb(80, 71, 71);
+}
+
+.grid .enlaces-subcategoria {
+    height: 100%;
+    /* max-height: 250px; */
+    /* scroll dentro de subcategorias */
+    overflow: auto;
+    padding: 7px 0;
+}
+
+.grid .enlaces-subcategoria a {
+    /* Toma todo el ancho disponible */
+    display: block;
+    padding: 10px 20px; 
+ }  
+
+.grid .enlaces-subcategoria a:hover{
+    color: darkgoldenrod;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.grid .subtitulo {
+    font-size: 18px;
+    font-weight: normal;
+    color: darkgoldenrod;
+    padding: 10px 20px;
+}
+
+/* FIN SECTION NAV */
+
+
+@media screen and (max-width: 1000px) {
+    .menu .contenedor-enlaces-nav {
+        padding: 0 10px;
+    }
+
+    .menu .contenedor {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+    #menu-parte-arriba{
+         display: none;
+    }
+    .menu .contenedor {
+        width: 90%;
+    }
+
+    .menu .contenedor-btn-menu {
+        display: flex;
+        
+    }
+
+    .menu .contenedor-enlaces-nav {
+        padding: 20px;
+        flex-direction: column;
+        /* Todos los elementos en el inicio */
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        left: 0;
+        background:rgb(0, 0, 0);
+        /* Altura maxima */
+        height: 100vh;
+        width: 80%;
+        z-index: 2000;
+        /* Lo saco de pantalla */
+        transform: translate(-100%);
+      
+    }
+
+    .menu .contenedor-enlaces-nav.activo {
+        transform: translate(0%);
+         /* Traigo el menu desde el costado */
+         transition: .3s ease all;
+    }
+
+    .menu .btn-categorias {
+        padding: 9px;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .menu .btn-categorias ion-icon {
+        /* Roto el icono */
+        transform: rotate(-90deg);
+    }
+
+    .menu .enlace-menu a{
+        display: block;
+        margin: 10px 0;
+        padding: 10px;
+    }
+
+    .grid {
+        display: grid;
+        position: fixed;
+        transition: .1s ease all;
+        transform: translateX(-100%);
+        z-index: 3000;
+        width: 80%;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        grid-template-areas: "categorias categorias categorias";
+    }
+
+    .grid.activo {
+        transform: translateX(0%);
+    }
+
+    .grid::before {
+        display: none;
+    }
+
+    .grid .btn-regresar {
+        display: inline-block;
+    }
+
+    .grid .categorias .subtitulo {
+        display: block;
+    } 
+    
+    .grid .contenedor-subcategorias {
+        display: none;
+    }
+
+}
