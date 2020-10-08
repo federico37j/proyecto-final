@@ -1,0 +1,288 @@
+/* 
+   BOTÓN MENU 
+*/
+.menu {
+    background: rgb(0, 0, 0);
+    width: 100%;
+    top: 0;
+}
+
+.menu .contenedor-btn-menu {
+    display: none;
+    /* los elementos aparecen distribuidos uniformemente: al principio, en el centro y al final del contenedor flex con space-between. */
+    justify-content: space-between;
+}
+
+.menu .contenedor-btn-menu button {
+    /* Le saco las lineas al boton */
+    outline:none;
+    font-size: 30px;
+    color: white;
+    padding: 10px 15px;
+    border: 1px solid transparent;
+    display: inline-block;
+    /* aparece la manito */
+    cursor: pointer;
+    /* Le saco el fondo sino queda blanco */
+    background: none;
+}
+
+.menu .contenedor-btn-menu button:hover {
+    opacity: 0.8;
+    color: #7a7878;
+}
+
+.menu .contenedor-btn-menu .btn-menu-cerrar {
+    display: none;
+}
+
+.menu .contenedor-btn-menu .btn-menu-cerrar.activo {
+    display: inline-block;
+}
+
+/*
+    MENÚ NAV
+*/
+
+.menu .contenedor-imagen #img-logo{
+    max-width: 70px;
+    margin-left: 8px;
+}
+
+.menu .contenedor-enlaces-nav-arriba {
+    display: flex;
+    padding: 5px 10px;
+    justify-content: space-between;
+    align-items: center;
+    width: 87%;
+}
+
+.contenedor .inputBuscar {
+    padding: 5px;
+    font-size: 16px;
+    width: 385px;
+}
+
+.menu .contenedor .enlaces .btn-buscar {
+    font-size: 12px;
+    color: rgb(216, 213, 213);
+    padding: 5px;
+    margin-right: 12px;
+    border: 1px solid transparent;
+    /* aparece la manito */
+    cursor: pointer;
+    background: #393e46;
+}
+
+.menu .contenedor-enlaces-nav {
+    padding: 0 5px;
+    display: flex;
+    /* Queda un botón a la izquierda y otro a la derecha */
+    /* justify-content: space-between; */
+    /* lo centro en el medio del nav verticalmente*/
+    background-color: rgb(51,51,51);
+    align-items: baseline;
+    width: 100%;
+}
+
+.menu .btn-categorias {
+    color: #fff;
+    padding: 7px;
+    border-radius: 3px;
+    display: flex;
+    align-items: flex-end;
+    border: 1px solid transparent;
+    cursor: default;
+}
+
+.menu .btn-categorias ion-icon {
+    margin-left: 10px;    
+}
+
+.menu .btn-categorias:hover {
+    border: 1px solid rgb(245, 232, 232);
+}
+
+.menu .btn-categorias span {
+    font-weight: bold;
+}
+
+.menu .contenedor-enlaces-nav .enlace-menu a{
+    color: #fff;
+    border: 1px solid transparent;
+    padding: 7px;
+    border-radius: 3px;
+    align-items: center;    
+}
+
+.menu .contenedor .enlaces a{
+    color: #fff;
+    border: 1px solid transparent;
+    padding: 7px;
+    /* border-radius: 3px; */
+    align-items: center;
+    background: none;
+    font-size: 25px;
+}
+
+.menu .contenedor .enlaces a:hover{
+    color: rgb(85, 85, 85);
+}
+.menu .contenedor .enlaces {
+    display: flex;
+    align-items: center;
+}
+
+.menu .contenedor-enlaces-nav .enlace-menu a:hover {
+    border: 1px solid rgb(245, 232, 232);
+}
+
+/*
+    GRID CATEGORIAS
+*/
+
+.contenedor-grid {
+   
+    position: relative;
+}
+
+.grid {
+    display: none;
+    width: 80%;
+    padding: 0 10px;
+    /* Lo muevo de arriba del nav */
+    position: absolute;
+    /* Lo bajo 10 pixeles  */
+    top: 10px;
+    z-index: 1000;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: "categorias subcategorias subcategorias";
+}
+
+.grid.activo {
+    display: grid;
+}
+
+/* con before solo se va a observar cuando el grid este activo */
+.grid::before {
+    content: "";
+    display: block;
+    background: transparent;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #fff;
+    position: absolute;
+    top: -5px;
+    left: 65px;
+}
+
+/* Afecta solo a los div directos (<div class="categorias"> y <div class="contenedor-subcategorias">) */
+.grid > div {
+    background: #fff;
+    box-shadow: 0px 3px 6px rgb(0, 0, 0,.10);
+}
+
+.grid .btn-regresar {
+    background: rgb(31, 29, 29);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+    margin: 20px;
+    font-size: 16px;
+    display: none;
+}
+
+.grid .btn-regresar ion-icon {
+    margin-right: 5px;
+}
+
+.grid .categorias {
+    grid-area: categorias;
+
+    min-height: 250px;
+ 
+    overflow: auto;
+}
+
+.grid .categorias a {
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.grid .categorias a:hover {
+    color: darkgoldenrod;
+    font-weight: bold;
+}
+
+.grid .categorias a ion-icon {
+    display: none;
+}
+
+/* Vuelve a aparecer el icono > */
+.grid .categorias a:hover ion-icon {
+    display: inline-flex;
+}
+/*
+    GRID SUBCATEGORIAS
+*/
+.grid .contenedor-subcategorias p {
+    padding: 10px 22px;
+}
+
+.grid .contenedor-subcategorias {
+    grid-area: subcategorias;
+     /* max-height: 250px; */
+}
+
+.grid .subcategoria {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    height: 100%;
+}
+
+.grid .subcategoria.activo {
+    display: grid;
+}
+
+.grid .subcategoria img {
+    width: 100%;
+    height: 100%;
+    max-height: 250px;
+    vertical-align: top;
+    /* No deforma la imagen */
+    object-fit: cover;
+    padding: 5px 5px;
+    border: 2px solid rgb(80, 71, 71);
+}
+
+.grid .enlaces-subcategoria {
+    height: 100%;
+    /* scroll dentro de subcategorias */
+    overflow: auto;
+}
+
+.grid .enlaces-subcategoria a {
+    /* Toma todo el ancho disponible */
+    display: block;
+    padding: 10px 20px; 
+ }  
+
+.grid .enlaces-subcategoria a:hover{
+    color: darkgoldenrod;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.grid .subtitulo {
+    font-size: 18px;
+    font-weight: normal;
+    color: darkgoldenrod;
+    padding: 10px 20px;
+}
+
+/* FIN SECTION NAV */
