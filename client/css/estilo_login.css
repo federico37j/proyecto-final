@@ -50,12 +50,19 @@ pagina se aplica el tamaño de fuente
 	font-size: 14px;
 }
 
-
+/**
+* aplicando modificaciones al original
+*/
 .IngresoLog{
     text-align: center;
     border: 0px 80px;
     border-radius: 15px;
 }
+
+.input-group{
+    border-radius: 10px;
+}
+
 /**
  * En las siguientes lineas
  * se define el diseño adaptable, para que
