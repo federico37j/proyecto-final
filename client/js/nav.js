@@ -13,7 +13,6 @@ let btnRegresar = document.querySelector('.btn-regresar');
 let body = document.querySelector('body');
 
 function esPantallaMovil() {
-    //width - ancho
     return window.innerWidth <= 800 ? true : false;
 }
 
@@ -44,10 +43,6 @@ listaCategorias.forEach(categoria => {
                 if (e.target.classList == subcategoria.id) {
                     subcategoria.classList.add('activo');
                 }
-                //console.log(evento);
-                //console.log(evento.target.id);
-                // console.log(subcategoria.id);
-
             });
        }
     });
