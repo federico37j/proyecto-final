@@ -163,7 +163,7 @@ a observar cuando el grid este activo*/
 /* Afecta solo a los div directos (<div class="categorias"> y <div class="contenedor-subcategorias">) */
 .grid > div {
     background: #fff;
-    box-shadow: 0px 3px 6px rgb(0, 0, 0,.10);
+    box-shadow: 0px 3px 6px 4px rgb(0, 0, 0,.10);
 }
 
 .grid .btn-regresar {

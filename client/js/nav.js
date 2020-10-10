@@ -18,7 +18,7 @@ function esPantallaMovil() {
 
 //Con mouseover se activa cuando paso el cursor por arriba
 btnCategorias.addEventListener('mouseover', function () {
-    if (!esPantallaMovil()) {
+    if (false == esPantallaMovil()) {
         //Agrego la clase activo a la lista de clases del div
         divGrid.classList.add('activo');
     }
@@ -26,7 +26,7 @@ btnCategorias.addEventListener('mouseover', function () {
 
 //Con mouseleave se ejecuta cuando saco el cursor por arriba
 divGrid.addEventListener('mouseleave', function () {
-    if (!esPantallaMovil()) {
+    if (false == esPantallaMovil()) {
         divGrid.classList.remove('activo');
     }
 });
