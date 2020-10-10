@@ -15,6 +15,15 @@ async function ingresar() {
     let cuit = document.querySelector('#Cuit').value;
     let password = document.querySelector('#Pwd').value;
 
+    /*  VERSION PRUEBA FRONT
+        if (correo === usuario.email && cuit === usuario.cuit && password === usuario.password){
+            console.log("ingreso al sistema");
+        }
+        else{
+            alert("Datos ingresados incorrectos");
+        }
+    */
+
     if(correo === "" && cuit === "" && password === ""){
         correo = "micorreo@yo.com";
         cuit = "12345",
@@ -44,25 +53,3 @@ async function ingresar() {
 }
 
 ingresar();
-/*
-async function load() {
-    let container = document.querySelector("#tblCompras");
-    container.innerHTML = "<h2>Loading...</h2>";
-    try {
-        // let response = await fetch("http://localhost:3000/mock.json");
-        let response = await fetch("productos");
-        if (response.ok) {
-            let t = await response.json()
-
-            mostrarProductos(t);
-        }
-        else
-            container.innerHTML = "<h3>Error - Failed URL!</h3>";
-    }
-    catch (response) {
-        container.innerHTML = `<h2>${response}</h2>`;
-    };
-}
-
-load();
-*/
