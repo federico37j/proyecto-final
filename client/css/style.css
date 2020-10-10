@@ -24,8 +24,6 @@ a {
     margin: auto;
     /* Ancho */
     width: 90%;
-    /* Ancho maximo*/
-    /* max-width: 1200px; */
 }
 
 .div-envios {
@@ -225,7 +223,7 @@ section .contenedor-cards-articulos{
         transition: .1s ease all;
         transform: translateX(-100%);
         z-index: 3000;
-        width: 83%;
+        width: 85%;
         top: 0;
         left: 0;
         height: 100vh;
