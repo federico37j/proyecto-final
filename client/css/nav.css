@@ -2,7 +2,6 @@
    BOTÓN MENU 
 */
 .menu {
-    background: rgb(0, 0, 0);
     width: 100%;
 }
 
@@ -15,7 +14,6 @@
     /* Le saco las lineas al boton */
     outline:none;
     font-size: 30px;
-    color: white;
     padding: 10px 15px;
     border: 1px solid transparent;
     /* aparece la manito */
@@ -25,7 +23,8 @@
 }
 
 .menu .contenedor-btn-menu button:hover,
-.div-envios .div-btn-eliminar .btn-eliminar:hover {
+.div-envios .div-btn-eliminar .btn-eliminar:hover,
+.menu .contenedor .enlaces a:hover {
     opacity: 0.8;
     color: #7a7878;
 }
@@ -56,25 +55,23 @@
 
 .menu .contenedor .enlaces .btn-buscar {
     font-size: 12px;
-    color: rgb(216, 213, 213);
     padding: 5px;
+    background-color: rgb(51,51,51);
+    margin-left: 2px;
     margin-right: 12px;
     border: 1px solid transparent;
     /* aparece la manito */
     cursor: pointer;
-    background: #393e46;
 }
 
 .menu .contenedor-enlaces-nav {
-    padding: 0 4px;
+    padding: 2px 4px;
     display: flex;
-    background-color: rgb(51,51,51);
     align-items: baseline;
     width: 100%;
 }
 
 .menu .btn-categorias {
-    color: #fff;
     padding: 7px;
     display: flex;
     align-items: flex-end;
@@ -96,7 +93,6 @@
 }
 
 .menu .contenedor-enlaces-nav .enlace-menu a{
-    color: #fff;
     border: 1px solid transparent;
     padding: 7px;
     border-radius: 3px;
@@ -104,16 +100,11 @@
 }
 
 .menu .contenedor .enlaces a{
-    color: #fff;
     border: 1px solid transparent;
     padding: 7px;
     align-items: center;
     background: none;
     font-size: 25px;
-}
-
-.menu .contenedor .enlaces a:hover{
-    color: rgb(85, 85, 85);
 }
 
 .menu .contenedor .enlaces {
@@ -167,8 +158,7 @@ a observar cuando el grid este activo*/
 }
 
 .grid .btn-regresar {
-    background: rgb(31, 29, 29);
-    color: white;
+    cursor: pointer;
     border: none;
     padding: 10px;
     border-radius: 3px;
@@ -184,19 +174,17 @@ a observar cuando el grid este activo*/
 .grid .categorias {
     grid-area: categorias;
     min-height: 250px;
-    /* aparece un scroll si los contenidos sobresalen */
+    /* Aparece un scroll si los contenidos sobresalen */
     overflow: auto;
 }
 
 .grid .categorias a {
-    color: black;
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
 }
 
 .grid .categorias a:hover {
-    color: darkgoldenrod;
     font-weight: bold;
 }
 
@@ -217,7 +205,6 @@ a observar cuando el grid este activo*/
 
 .grid .contenedor-subcategorias {
     grid-area: subcategorias;
-     /* max-height: 250px; */
 }
 
 .grid .subcategoria {
@@ -254,8 +241,13 @@ a observar cuando el grid este activo*/
     padding: 10px 20px; 
  }  
 
-.grid .enlaces-subcategoria a:hover{
-    color: darkgoldenrod;
+ .grid .categorias a:hover, 
+ .grid .enlaces-subcategoria a:hover,
+ .grid .subtitulo {
+    color: rgb(158, 119, 20);
+ }
+
+.grid .enlaces-subcategoria a:hover {
     font-weight: bold;
     cursor: pointer;
 }
@@ -263,7 +255,6 @@ a observar cuando el grid este activo*/
 .grid .subtitulo {
     font-size: 18px;
     font-weight: normal;
-    color: darkgoldenrod;
     padding: 10px 20px;
 }
 

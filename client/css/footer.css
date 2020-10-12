@@ -2,7 +2,6 @@
 footer {
     margin-top: 15px;
     width: 100%;
-    background-color:rgb(243, 243, 243);
     color: #333;
 }
 
@@ -21,14 +20,16 @@ footer {
 }   
 
 .container-footer-superior .btn-suscribir{
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
-    color: rgb(216, 213, 213);
-    padding: 5px;
+    padding: 4px;
     margin-right: 12px;
     border: 1px solid transparent;
     cursor: pointer;
-    background: #393e46;
+}
+
+.container-footer-superior .btn-suscribir:hover {
+    color: #7a7878;
 }
 
 .container-footer-all .container-footer-superior {
@@ -38,7 +39,7 @@ footer {
 }
 
 .container-footer-inferior {
-    display: flex;
+   display: flex;
    padding:20px 0;
    justify-content: space-evenly;
 }
