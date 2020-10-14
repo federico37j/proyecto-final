@@ -1,0 +1,216 @@
+* {
+    margin: 0;
+    padding: 0; 
+    /* Estilo de caja */
+    box-sizing: border-box;
+ } 
+
+body {
+    /* Fondo de la pag */
+    background-color: rgb(233, 233, 233);
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 14px;
+
+}
+
+a {
+    /* le saco el subrayado */
+    text-decoration: none;
+}
+
+.contenedor {
+    /* Centrar el contenido */
+    margin: auto;
+    /* Ancho */
+    width: 85%;
+    /* Ancho maximo*/
+    /* max-width: 1200px; */
+}
+
+.contenedor .contenedor-detalle {
+    background-color: rgb(255, 255, 255);
+    margin-top: 15px;
+    display: flex;
+    box-shadow: 0px 1px 10px rgb(0, 0, 0, 0.2);
+}
+
+.img-detalle-articulo,
+.info-detalle-articulo {
+    width: 50%;
+    border: 1px solid rgb(0, 0, 0, 0.2);
+}
+
+.info-detalle-articulo {
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-detalle-articulo > div {
+    margin-top: 15px;
+}
+
+.reviews {
+    color: gold;
+}
+
+.botones-compra {
+    margin-top: 2%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.botones-compra button {
+    width: 45%;
+    font: inherit;
+    border-radius: 5px;
+}
+
+.botones-compra .btn-comprar {
+    background-color: rgb(51, 51, 51);
+    color: #fff;
+}
+
+.botones-compra .btn-agregar-carrito {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botones-compra .btn-agregar-carrito ion-icon{
+    margin-left: 5px;
+    font-size: 15px;
+}
+
+.botones-compra .btn-comprar:hover,
+.botones-compra .btn-agregar-carrito:hover {
+    color: #7a7878;
+    opacity: 0.8;
+}
+
+.principal {
+    height: 80%;
+    display: flex;
+    align-items: center;
+}
+
+.principal img {
+    width: 55%;
+    margin: auto;
+}
+
+.img-detalle-articulo {
+    padding: 10px;
+}
+
+.img-secundarias {
+    display: flex;
+    height: 40px;
+    justify-content: space-between;
+    margin: auto;
+    width: 60%;
+    margin-top: 15px;
+}
+
+.img-secundarias div {
+    width: 20%;
+    height: 100%;
+}
+
+.img-secundarias img {
+    height: 100%;
+    border: 1px solid rgb(0, 0, 0, 0.2);
+    padding: 2px;
+    cursor: pointer;
+}
+
+/* Tarjetas */
+.categoria-articulo {
+    display: flex;
+    text-align: center;
+    padding: 10px;
+}
+
+.categoria-articulo a {
+    margin-top: 8px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.categoria-articulo a:hover {
+    color: #7a7878;
+}
+
+.contenedor-cards-articulos .articulo .precio {
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.articulos-principales {
+    margin-top: 10px;
+    padding: 10px;
+}
+
+section .contenedor-cards-articulos{
+    margin-top: 10px;
+    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+}
+
+.contenedor-cards-articulos .articulo {
+    padding: 10px;
+    cursor: pointer;
+    transition: all 400ms ease;
+    /* min-height: 150px; */
+    display: grid;
+    grid-row: span 3; 
+  
+}
+
+.contenedor-cards-articulos .articulo:hover {
+    box-shadow: 5px 5px 20px rgb(0, 0, 0,0.4);
+    transform: translateY(-3%);
+}
+
+.contenedor-cards-articulos .articulo .imagenes {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.contenedor-cards-articulos .articulo img {
+    max-width: 200px;
+    max-height: 200px; 
+ 
+}
+
+.atributos-pago {
+    display: flex;
+    align-items: center;
+    margin: 15px 0px;
+}
+
+.atributos-pago p{
+    margin-left: 10px;
+}
+
+.contenedor-info-producto {
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    border: 1px solid rgb(0, 0, 0, 0.2);
+}
+
+.contenedor-info-producto .info-producto {
+    width: 100%;
+    padding: 10px;
+}
+
+.contenedor-info-producto .info-producto h2 {
+    text-align: center;
+    padding: 10px;
+}
