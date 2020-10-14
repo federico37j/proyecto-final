@@ -1,0 +1,261 @@
+/* 
+   BOTÓN MENU 
+*/
+.menu {
+    width: 100%;
+}
+
+.menu .contenedor-btn-menu {
+    display: none;
+}
+
+.menu .contenedor-btn-menu button, 
+.div-envios .div-btn-eliminar .btn-eliminar{
+    /* Le saco las lineas al boton */
+    outline:none;
+    font-size: 30px;
+    padding: 10px 15px;
+    border: 1px solid transparent;
+    /* aparece la manito */
+    cursor: pointer;
+    /* Le saco el fondo sino queda blanco */
+    background: none;
+}
+
+.menu .contenedor-btn-menu button:hover,
+.div-envios .div-btn-eliminar .btn-eliminar:hover,
+.menu .contenedor .enlaces a:hover {
+    opacity: 0.8;
+    color: #7a7878;
+}
+
+.menu .contenedor-btn-menu{
+    display: none;
+}
+
+/*
+    MENÚ NAV
+*/
+.menu .contenedor-imagen #img-logo{
+    max-width: 70px;
+    margin-left: 8px;
+}
+
+.menu .contenedor-enlaces-nav-arriba {
+    display: flex;
+    padding: 5px 10px;
+    justify-content: space-between;     
+}
+
+.contenedor .inputBuscar {
+    padding: 5px;
+    font-size: 16px;
+    width: 385px;
+}
+
+.menu .contenedor .enlaces .btn-buscar {
+    font-size: 12px;
+    padding: 5px;
+    background-color: rgb(51,51,51);
+    margin-left: 2px;
+    margin-right: 12px;
+    border: 1px solid transparent;
+    /* aparece la manito */
+    cursor: pointer;
+}
+
+.menu .contenedor-enlaces-nav {
+    padding: 2px 4px;
+    display: flex;
+    align-items: baseline;
+    width: 100%;
+}
+
+.menu .btn-categorias {
+    padding: 7px;
+    display: flex;
+    align-items: flex-end;
+    border: 1px solid transparent;
+    cursor: default;
+}
+
+.menu .btn-categorias ion-icon {
+    margin-left: 10px;    
+}
+
+.menu .btn-categorias:hover,
+.menu .contenedor-enlaces-nav .enlace-menu a:hover {
+    border: 1px solid rgb(245, 232, 232);
+}
+
+.menu .btn-categorias span {
+    font-weight: bold;
+}
+
+.menu .contenedor-enlaces-nav .enlace-menu a{
+    border: 1px solid transparent;
+    padding: 7px;
+    border-radius: 3px;
+    align-items: center;    
+}
+
+.menu .contenedor .enlaces a{
+    border: 1px solid transparent;
+    padding: 7px;
+    align-items: center;
+    background: none;
+    font-size: 25px;
+}
+
+.menu .contenedor .enlaces {
+    display: flex;
+    align-items: center;
+}
+
+/*
+    GRID CATEGORIAS
+*/
+
+.contenedor-grid {
+    position: relative;
+}
+
+.grid {
+    display: none;
+    width: 80%;
+    padding: 0 10px;
+    /* Lo muevo de arriba del nav */
+    position: absolute;
+    /* Lo bajo 10 pixeles  */
+    top: 10px;
+    z-index: 1000;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas: "categorias subcategorias subcategorias";
+}
+
+.grid.activo {
+    display: grid;
+}
+
+/* Forma de triángulo arriba de la grid, con before solo se va 
+a observar cuando el grid este activo*/
+.grid::before {
+    content: "";
+    display: block;
+    background: transparent;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #fff;
+    position: absolute;
+    top: -5px;
+    left: 65px;
+}
+
+/* Afecta solo a los div directos (<div class="categorias"> y <div class="contenedor-subcategorias">) */
+.grid > div {
+    background: #fff;
+    box-shadow: 0px 3px 6px 4px rgb(0, 0, 0,.10);
+}
+
+.grid .btn-regresar {
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+    margin: 20px;
+    font-size: 16px;
+    display: none;
+}
+
+.grid .btn-regresar ion-icon {
+    margin-right: 5px;
+}
+
+.grid .categorias {
+    grid-area: categorias;
+    min-height: 250px;
+    /* Aparece un scroll si los contenidos sobresalen */
+    overflow: auto;
+}
+
+.grid .categorias a {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.grid .categorias a:hover {
+    font-weight: bold;
+}
+
+.grid .categorias a ion-icon {
+    display: none;
+}
+
+/* Vuelve a aparecer el icono > */
+.grid .categorias a:hover ion-icon {
+    display: inline-flex;
+}
+/*
+    GRID SUBCATEGORIAS
+*/
+.grid .contenedor-subcategorias p {
+    padding: 9px 22px;
+}
+
+.grid .contenedor-subcategorias {
+    grid-area: subcategorias;
+}
+
+.grid .subcategoria {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    height: 100%;
+}
+
+.grid .subcategoria.activo {
+    display: grid;
+}
+
+.grid .subcategoria img {
+    width: 100%;
+    height: 100%;
+    max-height: 252px;
+    vertical-align: top;
+    /* No deforma la imagen */
+    object-fit: cover;
+    padding: 5px 5px;
+    border: 2px solid rgb(80, 71, 71);
+}
+
+.grid .enlaces-subcategoria {
+    height: 100%;
+    /* scroll dentro de subcategorias */
+    overflow: auto;
+}
+
+.grid .enlaces-subcategoria a {
+    /* Toma todo el ancho disponible */
+    display: block;
+    padding: 10px 20px; 
+ }  
+
+ .grid .categorias a:hover, 
+ .grid .enlaces-subcategoria a:hover,
+ .grid .subtitulo {
+    color: rgb(158, 119, 20);
+ }
+
+.grid .enlaces-subcategoria a:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.grid .subtitulo {
+    font-size: 18px;
+    font-weight: normal;
+    padding: 10px 20px;
+}
+
+/* FIN SECTION NAV */
