@@ -1,0 +1,91 @@
+/* Inicio Footer */
+footer {
+    margin-top: 15px;
+    width: 100%;
+    color: #333;
+}
+
+.contenedor-footer-all {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+
+}
+
+.container-footer-superior .input-email{
+    padding: 5px;
+    font-size: 15px;
+    width: 385px;
+
+}   
+
+.container-footer-superior .btn-suscribir{
+    font-size: 14px;
+    font-weight: bold;
+    padding: 4px;
+    margin-right: 12px;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.container-footer-superior .btn-suscribir:hover {
+    color: #7a7878;
+}
+
+.container-footer-all .container-footer-superior {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.container-footer-inferior {
+   display: flex;
+   padding:20px 0;
+   justify-content: space-evenly;
+}
+
+.container-footer-inferior h2{
+    font-size: 22px;
+}
+
+.container-footer-inferior div {
+    max-width: 400px; 
+}
+
+.container-footer-inferior .row {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+   
+}
+
+.container-footer-inferior .columna-redes {
+    width: 400px;
+}
+
+
+.columna-nosotros p {
+    margin-top: 20px;
+}
+
+.container-copyright {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.row img {
+    width: 36px;
+    height: 36px;
+    margin: 0 20px;
+}
+
+.container-copyright p{
+    font-weight: bold;
+}
+
+.container-copyright .columna-redes img {
+    width: 25px;
+    height: 25px;
+}
