@@ -4,26 +4,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/detalle_producto.css">
     <!-- Fuente     -->
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/detalle_producto.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Articulos del hogar</title>
 </head>
 
 <body>
+    <!-- menu de navegación -->
+    <nav class="menu fondo-negro" id="menu">
+        <div class="contenedor contenedor-enlaces-nav-arriba" id="menu-parte-arriba">
+            <div class="contenedor-imagen">
+                <!-- <img src="img/logo.png" id="img-logo" alt="Logo"> -->
+            </div>
+            <div class="enlaces">
+                <input type="text" class="inputBuscar" placeholder="Buscar productos">
+                <a class="fondo-oscuro btn-buscar letra-clara">
+                    <ion-icon name="search-outline"></ion-icon>
+                </a>
+                <a href="" class="btn-iniciar-sesion letra-clara">
+                    <ion-icon name="people-outline">
+                </a>
+                <a href="" class="letra-clara">
+                    <ion-icon name="cart-outline">
+                </a>
+            </div>
+        </div>
+        <!-- Contiene botón menu -->
+        <div class="contenedor contenedor-btn-menu">
+            <button class="btn-menu-barras letra-clara" id="btn-menu-barras">
+                <ion-icon name="reorder-four-outline"></ion-icon>
+            </button>
+        </div>
+        <!-- Contiene enlaces -->
+        <div class="contenedor contenedor-enlaces-nav fondo-oscuro">
+            <div class="btn-categorias letra-clara" id="btn-categorias">
+                <p>Todas las <span>Categorias</span></p>
+                <ion-icon name="caret-down-outline"></ion-icon>
+            </div>
+            <div class="enlace-menu">
+                <a href="" class="letra-clara">Venta telefónica</a>
+                <a href="" class="letra-clara">Quiénes somos</a>
+                <a href="" class="letra-clara">Centro de Ayuda</a>
+            </div>
+        </div>
+        <!-- Contiene categorias -->
+        <div class="contenedor-grid">
+            <div class="grid" id="grid">
+                <div class="categorias">
+                    <button class="btn-regresar fondo-negro letra-clara">
+                        <ion-icon name="arrow-back-outline"></ion-icon>Regresar
+                    </button>
+                    <h3 class="subtitulo">Categorias</h3>
+                    <a href="" id="tecnologia" class="tecnologia">Tecnología<ion-icon name="chevron-forward-outline">
+                        </ion-icon></a>
+                    <a href="" id="electrodomesticos" class="electrodomesticos">Electrodomesticos<ion-icon
+                            name="chevron-forward-outline">
+                        </ion-icon></a>
+                    <a href="" id="pequeños-electrodomesticos" class="pequeños-electrodomesticos">Pequeños
+                        Electrodomesticos<ion-icon name="chevron-forward-outline">
+                        </ion-icon></a>
+                    <a href="" id="hogar-y-jardin" class="hogar-y-jardin">Hogar y Jardín<ion-icon
+                            name="chevron-forward-outline">
+                        </ion-icon></a>
+                    <a href="" id="deportes" class="deportes">Deportes<ion-icon name="chevron-forward-outline">
+                        </ion-icon>
+                    </a>
+                </div>
+                <div class="contenedor-subcategorias">
+                    <div class="subcategoria" id="tecnologia">
+                        <div class="enlaces-subcategoria">
+                            <a class="subtitulo">Tecnología</a>
+                            <p href="">Televisores</p>
+                            <p href="">Celulares</p>
+                            <p href="">Informática</p>
+                            <p href="">Tablets y camaras digitales</p>
+                        </div>
+                        <div class="galeria-subcategoria">
+                            <a href="">
+                                <img src="../img/tecnologia-banner.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="subcategoria" id="electrodomesticos">
+                        <div class="enlaces-subcategoria">
+                            <button class="btn-regresar">
+                                <ion-icon name="arrow-back-outline"></ion-icon>Regresar
+                            </button>
+                            <a class="subtitulo">Electrodomesticos</a>
+                            <p href="">Climatización</p>
+                            <p href="">Heladeras</p>
+                            <p href="">Cocina</p>
+                            <p href="">Lavado</p>
+                        </div>
+                        <div class="galeria-subcategoria">
+                            <a href="">
+                                <img src="../img/electrodomesticos-banner.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="subcategoria" id="pequeños-electrodomesticos">
+                        <div class="enlaces-subcategoria">
+                            <button class="btn-regresar">
+                                <ion-icon name="arrow-back-outline"></ion-icon>Regresar
+                            </button>
+                            <a class="subtitulo">Pequeños Electrodomesticos</a>
+                            <p href="">Salud y Bienestar</p>
+                            <p href="">Cuidado Personal</p>
+                            <p href="">Hogar Limpieza</p>
+                            <p href="">Cocina</p>
+                        </div>
+                        <div class="galeria-subcategoria">
+                            <a href="">
+                                <img src="../img/pequeños-electrodomesticos-banner.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="subcategoria" id="hogar-y-jardin">
+                        <div class="enlaces-subcategoria">
+                            <button class="btn-regresar">
+                                <ion-icon name="arrow-back-outline"></ion-icon>Regresar
+                            </button>
+                            <a class="subtitulo">Hogar y Jardín</a>
+                            <p href="">Muebles</p>
+                            <p href="">Jardín</p>
+                            <p href="">Bazar</p>
+                            <p href="">Herramientas</p>
+                        </div>
+                        <div class="galeria-subcategoria">
+                            <a href="">
+                                <img src="../img/hogar-y-jardin-banner.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="subcategoria" id="deportes">
+                        <div class="enlaces-subcategoria">
+                            <button class="btn-regresar">
+                                <ion-icon name="arrow-back-outline"></ion-icon>Regresar
+                            </button>
+                            <a class="subtitulo">Deportes</a>
+                            <p href="">Bicicletas</p>
+                            <p href="">Relojes</p>
+                            <p href="">Mochilas</p>
+                            <p href="">Accesorios</p>
+                        </div>
+                        <div class="galeria-subcategoria">
+                            <a href="">
+                                <img src="../img/deportes-banner.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
     <div class="contenedor">
         <div class="contenedor-detalle">
             <div class="img-detalle-articulo">
-                <div class="principal"><img src="../auricular/Auticular1.jpg" alt=""></div>
+                <div class="principal"><img id="img-principal"></div>
                 <div class="img-secundarias">
-                    <div class="img"><img src="../auricular/Auticular1.jpg" alt=""></div>
-                    <div class="img"><img src="../auricular/Auticular2.jpg" alt=""></div>
-                    <div class="img"><img src="../auricular/Auticular3.jpg" alt=""></div>
+                    <div class="imagenes-formato"><img class="img"></div>
+                    <div class="imagenes-formato"><img class="img"></div>
+                    <div class="imagenes-formato"><img class="img"></div>
+                    <div class="imagenes-formato"><img class="img"></div>
                 </div>
             </div>
             <div class="info-detalle-articulo">
-                <h1>Auricular Bluetooth In Ear DW-308IE-BK Negro DAEWOO</h1>
-                <h3>$2699</h3>
+                <h1 id="nombre-articulo"></h1>
+                <div class="precio-financiacion">
+                    <h2 id="precio-articulo"></h2>
+                    <h3 id="financiacion-articulo"></h3>
+                </div>
                 <div class="reviews">
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star"></ion-icon>
@@ -31,17 +188,20 @@
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star-half-outline"></ion-icon>
                 </div>
+                <div class="descripcion">
+                    <p id="descripcion-articulo"></p>
+                </div>
                 <div>
                     <div class="atributos-pago">
-                        <img src="../auricular/candado.png" alt="">
+                        <img src="../icon/candado.png" alt="">
                         <p>Pago Seguro</p>
                     </div>
                     <div class="atributos-pago">
-                        <img src="../auricular/camion.png" alt="">
+                        <img src="../icon/camion.png" alt="">
                         <p>Envio a domicilio a todo el País</p>
                     </div>
                     <div class="atributos-pago">
-                        <img src="../auricular/caja.png" alt="">
+                        <img src="../icon/caja.png" alt="">
                         <p>Retiro en Sucursal Gratis</p>
                     </div>
                 </div>
@@ -54,36 +214,31 @@
             </div>
         </div>
     </div>
-    <div class="contenedor contenedor-info-producto">
-        <div class="info-producto">
-            <h2>INFORMACIÓN DEL PRODUCTO</h2>
-            <div class="descripcion">
-                <p>AURICULAR INALAMBRICO LIVE PLUS DW-308IE-BK DAEWOO</p>
-                <p> - Auricular con tecnología TWS</p>
-                <p> - Bluetooth 5.0</p>
-                <p> - Display LED</p>
-                <p> - Rango de frecuencia 2.4Hz</p>
-                <p> - 2.4GHz
-                <p> - Autonomía 4hs de reproducción</p>
-                <p> - Tiempo de recarga 2hs</p>
-                <p> - Batería de Lithio Polimer 40mA</p>
-                <p> - Color Negro</p>
-                <p> - Modelo DW-308IE-BK</p>
-                <p> - Garantia Fabricante 6 meses</p>
-                <p> - Pais de Origen China</p>
+
+    <!-- Banner publicidad -->
+    <section class="publicidad contenedor">
+        <div class="banner">
+            <div class="detalle-producto-banner">
+                <div class="imagenes">
+                    <img src="../img/banner/bannerDetalleProducto1.png" alt="Motorola edge">
+                </div>
+                <div class="imagenes">
+                    <img src="../img/banner/bannerDetalleProducto2.png" alt="Motorola edge">
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- contenido pag principal -->
-    <section class="contenedor articulos-principales">
+
+    <!-- contenido "recomendados" -->
+    <section class="contenedor">
         <div class="categoria-articulo">
             <h2>Recomendados</h2>
         </div>
         <div class="contenedor-cards-articulos">
 
-            <div class="articulo">
-                <a href="">
+            <div class="articulo fondo-cards">
+                <a class="button-articulo-tecnologia">
                     <div class="imagenes">
                         <img class="img-articulo-tecnologia">
                     </div>
@@ -92,8 +247,8 @@
                     <h2 class="financiacion-articulo-tecnologia"></h2>
                 </a>
             </div>
-            <div class="articulo">
-                <a href="">
+            <div class="articulo fondo-cards">
+                <a class="button-articulo-tecnologia">
                     <div class="imagenes">
                         <img class="img-articulo-tecnologia">
                     </div>
@@ -102,8 +257,8 @@
                     <h2 class="financiacion-articulo-tecnologia"></h2>
                 </a>
             </div>
-            <div class="articulo">
-                <a href="">
+            <div class="articulo fondo-cards">
+                <a class="button-articulo-tecnologia">
                     <div class="imagenes">
                         <img class="img-articulo-tecnologia">
                     </div>
@@ -112,8 +267,8 @@
                     <h2 class="financiacion-articulo-tecnologia"></h2>
                 </a>
             </div>
-            <div class="articulo">
-                <a href="">
+            <div class="articulo fondo-cards">
+                <a class="button-articulo-tecnologia">
                     <div class="imagenes">
                         <img class="img-articulo-tecnologia">
                     </div>
@@ -122,8 +277,8 @@
                     <h2 class="financiacion-articulo-tecnologia"></h2>
                 </a>
             </div>
-            <div class="articulo">
-                <a href="">
+            <div class="articulo fondo-cards">
+                <a class="button-articulo-tecnologia">
                     <div class="imagenes">
                         <img class="img-articulo-tecnologia">
                     </div>
@@ -135,66 +290,126 @@
         </div>
     </section>
 
-    <section class="contenedor articulos-principales">
+    <!-- contenido "Quienes vieron este producto también compraron" -->
+    <section class="contenedor">
         <div class="categoria-articulo">
-            <h2>Quienes vieron este producto tambien compraron</h2>
+            <h2>Quienes vieron este producto también compraron</h2>
         </div>
         <div class="contenedor-cards-articulos">
-
-            <div class="articulo">
-                <a href="">
+            <div class="articulo fondo-cards">
+                <a class="button-articulo-electrodomesticos">
                     <div class="imagenes">
-                        <img class="img-articulo-tecnologia">
+                        <img class="img-articulo-electrodomesticos">
                     </div>
-                    <p class="nombre-articulo-tecnologia"></p>
-                    <p class="precio-articulo-tecnologia precio"></p>
-                    <h2 class="financiacion-articulo-tecnologia"></h2>
+                    <p class="nombre-articulo-electrodomesticos"></p>
+                    <p class="precio-articulo-electrodomesticos precio"></p>
+                    <h2 class="financiacion-articulo-electrodomesticos"></h2>
                 </a>
             </div>
-            <div class="articulo">
-                <a href="">
+            <div class="articulo fondo-cards">
+                <a class="button-articulo-electrodomesticos">
                     <div class="imagenes">
-                        <img class="img-articulo-tecnologia">
+                        <img class="img-articulo-electrodomesticos">
                     </div>
-                    <p class="nombre-articulo-tecnologia"></p>
-                    <p class="precio-articulo-tecnologia precio"></p>
-                    <h2 class="financiacion-articulo-tecnologia"></h2>
+                    <p class="nombre-articulo-electrodomesticos"></p>
+                    <p class="precio-articulo-electrodomesticos precio"></p>
+                    <h2 class="financiacion-articulo-electrodomesticos"></h2>
                 </a>
             </div>
-            <div class="articulo">
-                <a href="">
+            <div class="articulo fondo-cards">
+                <a class="button-articulo-electrodomesticos">
                     <div class="imagenes">
-                        <img class="img-articulo-tecnologia">
+                        <img class="img-articulo-electrodomesticos">
                     </div>
-                    <p class="nombre-articulo-tecnologia"></p>
-                    <p class="precio-articulo-tecnologia precio"></p>
-                    <h2 class="financiacion-articulo-tecnologia"></h2>
+                    <p class="nombre-articulo-electrodomesticos"></p>
+                    <p class="precio-articulo-electrodomesticos precio"></p>
+                    <h2 class="financiacion-articulo-electrodomesticos"></h2>
                 </a>
             </div>
-            <div class="articulo">
-                <a href="">
+            <div class="articulo fondo-cards">
+                <a class="button-articulo-electrodomesticos">
                     <div class="imagenes">
-                        <img class="img-articulo-tecnologia">
+                        <img class="img-articulo-electrodomesticos">
                     </div>
-                    <p class="nombre-articulo-tecnologia"></p>
-                    <p class="precio-articulo-tecnologia precio"></p>
-                    <h2 class="financiacion-articulo-tecnologia"></h2>
+                    <p class="nombre-articulo-electrodomesticos"></p>
+                    <p class="precio-articulo-electrodomesticos precio"></p>
+                    <h2 class="financiacion-articulo-electrodomesticos"></h2>
                 </a>
             </div>
-            <div class="articulo">
-                <a href="">
+            <div class="articulo fondo-cards">
+                <a class="button-articulo-electrodomesticos">
                     <div class="imagenes">
-                        <img class="img-articulo-tecnologia">
+                        <img class="img-articulo-electrodomesticos">
                     </div>
-                    <p class="nombre-articulo-tecnologia"></p>
-                    <p class="precio-articulo-tecnologia precio"></p>
-                    <h2 class="financiacion-articulo-tecnologia"></h2>
+                    <p class="nombre-articulo-electrodomesticos"></p>
+                    <p class="precio-articulo-electrodomesticos precio"></p>
+                    <h2 class="financiacion-articulo-electrodomesticos"></h2>
                 </a>
             </div>
         </div>
     </section>
 
+    <footer class="fondo-claro">
+        <div class="container-footer-all">
+            <div class="container-footer-superior">
+                <div class="suscribir">
+                    <input type="text" placeholder="Tu e-mail" class="input-email">
+                    <a class="btn-suscribir letra-clara fondo-oscuro">Suscribite</a>
+                </div>
+                <div class="venta-telefonica">
+                    <h2>VENTA TELEFÓNICA
+                        0810-444-6342</h2>
+                </div>
+            </div>
+            <hr>
+            <div class="container-footer-inferior">
+                <div class="columna-nosotros">
+                    <h2>Sobre nosotros</h2>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus optio at assumenda nobis
+                        itaque
+                        est nihil soluta saepe, repellendus et consequuntur ea maiores cupiditate consequatur?
+                    </p>
+                </div>
+                <div class="columna-info">
+                    <h2>Información de contacto</h2>
+                    <div class="row">
+                        <img src="../icon/posicion.png">
+                        <label>Av. Independencia 1832</label>
+                    </div>
+                    <div class="row">
+                        <img src="../icon/telefono.png">
+                        <label>4961915/4961916</label>
+                    </div>
+                    <div class="row">
+                        <img src="../icon/contact.png">
+                        <label>atencionalcliente@megatone.net</label>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="container-copyright">
+                <p>© 2020 Todos los derechos reservados | Trabajo final</p>
+                <div class="columna-redes">
+                    <div class="row">
+                        <a href=""><img src="../icon/facebook.png"></a>
 
+                        <a href=""><img src="../icon/instagram.png"></a>
+
+                        <a href=""><img src="../icon/youtube.png"></a>
+
+                        <a href=""><img src="../icon/twitter.png"></a>
+
+                        <a href=""><img src="../icon/github.png"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/nav.js"></script>
+    <script src="../js/articulo.js"></script>
+    <script src="../js/articulo_detalle_producto.js"></script>
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
 </body>
 
