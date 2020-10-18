@@ -25,13 +25,14 @@ function pasarArreglo(listadoArticulos) {
     cargarCategoria(listadoArticulos.deportes, "deportes");
 }
 
-
+// Le paso los valores a la función "mostrarDatosHtml" para que los inserte en los elementos html.
 function cargarCategoria(jsonConArticulos, categoria) {
     for (let i = 0; i < jsonConArticulos.length; i++) {
         mostrarDatosHtml(i, jsonConArticulos[i].nombre, "nombre", categoria);
-        mostrarDatosHtml(i, jsonConArticulos[i].imagen, "img", categoria, true);
+        mostrarDatosHtml(i, jsonConArticulos[i].imagenes[0], "img", categoria, true);
         mostrarDatosHtml(i, jsonConArticulos[i].precio, "precio", categoria);
         mostrarDatosHtml(i, jsonConArticulos[i].financiacion, "financiacion", categoria);
+        cargarHref(categoria,i);
     }
 }
 
@@ -46,5 +47,12 @@ function mostrarDatosHtml(indice, valor, tipo, categoria, esImagen = undefined) 
         articulo[indice].alt = valor;
     }
 }
+
+// Le agrego el href a cada botón
+function cargarHref(categoria, index) {
+    let btn = document.querySelectorAll(`.articulo .button-articulo-${categoria}`);
+    btn[index].href = `http://localhost:3000/html/detalle_producto.html?categoria=${categoria}&index=${index}`;
+}
+
 
 cargarArticulos();
