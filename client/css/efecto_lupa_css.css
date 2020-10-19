@@ -1,14 +1,14 @@
 /* Se pone el body en color gris */
 body.active img {
     -webkit-filter: grayscale(1);
-  }
+}
 
 #img-principal {
     display: block;
     margin: 20px auto;
     border: 1px solid rgba(255,255,255,0.2);
     -webkit-transition: -webkit-filter 500ms;
-  }
+}
   
 #zoom {
     position: absolute;
@@ -25,9 +25,9 @@ body.active img {
     -webkit-transform: scale(0);
     -webkit-transition: opacity 500ms, -webkit-transform 500ms;
     pointer-events: none;
-  }
+}
   
 .active #zoom {
     opacity: 1;
     -webkit-transform: scale(1);
-  }
+}
