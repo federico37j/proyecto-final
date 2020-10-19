@@ -1,30 +1,6 @@
-* {
-    margin: 0;
-    padding: 0; 
-    /* Estilo de caja */
-    box-sizing: border-box;
- } 
 
-body {
-    /* Fondo de la pag */
-    background-color: rgb(233, 233, 233);
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 14px;
-
-}
-
-a {
-    /* le saco el subrayado */
-    text-decoration: none;
-}
-
-.contenedor {
-    /* Centrar el contenido */
-    margin: auto;
-    /* Ancho */
-    width: 85%;
-    /* Ancho maximo*/
-    /* max-width: 1200px; */
+.contenedor-cards-articulos .articulo {
+background-color: rgb(255, 255, 255);
 }
 
 .contenedor .contenedor-detalle {
@@ -46,12 +22,33 @@ a {
     align-items: center;
 }
 
+.info-detalle-articulo h1{
+    font-weight: 400;
+}
+
+.precio-financiacion {
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+}
+
+.precio-financiacion h2 {
+    margin-right: 15px;
+}
+
+.precio-financiacion h3 {
+    line-height: 22px;
+    color: #e63409;
+}
+
+
 .info-detalle-articulo > div {
     margin-top: 15px;
 }
 
 .reviews {
     color: gold;
+    font-size: 20px;
 }
 
 .botones-compra {
@@ -68,11 +65,12 @@ a {
 }
 
 .botones-compra .btn-comprar {
-    background-color: rgb(51, 51, 51);
+    background-color: #f04603;
     color: #fff;
 }
 
 .botones-compra .btn-agregar-carrito {
+    color: #f04603;
     background: transparent;
     display: flex;
     align-items: center;
@@ -97,8 +95,9 @@ a {
 }
 
 .principal img {
-    width: 55%;
     margin: auto;
+    max-width: 300px;
+    max-height: 300px;
 }
 
 .img-detalle-articulo {
@@ -107,25 +106,36 @@ a {
 
 .img-secundarias {
     display: flex;
-    height: 40px;
+    height: 60px;
     justify-content: space-between;
     margin: auto;
-    width: 60%;
-    margin-top: 15px;
+    width: 83%;
 }
 
 .img-secundarias div {
-    width: 20%;
+    width: 80px;
     height: 100%;
+    border: 1px solid rgb(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .img-secundarias img {
-    height: 100%;
-    border: 1px solid rgb(0, 0, 0, 0.2);
+    max-width: 60px;
+    max-height: 58px;
     padding: 2px;
     cursor: pointer;
 }
 
+.carrusel .banner, .publicidad .banner .detalle-producto-banner{
+    display: flex;
+    justify-content: space-between;
+}
+
+.carrusel .banner, .publicidad .banner .detalle-producto-banner > div{
+    width: 49%;
+}
 /* Tarjetas */
 .categoria-articulo {
     display: flex;
