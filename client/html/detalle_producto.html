@@ -7,10 +7,11 @@
     <!-- Fuente     -->
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- Estilos -->
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/whatsapp.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/detalle_producto.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/efecto_lupa_css.css">
     <title>Articulos del hogar</title>
 </head>
 
@@ -86,7 +87,7 @@
                         </div>
                         <div class="galeria-subcategoria">
                             <a href="">
-                                <img src="img/tecnologia-banner.jpg" alt="">
+                                <img src="../img/tecnologia-banner.jpg" alt="">
                             </a>
                         </div>
                     </div>
@@ -103,7 +104,7 @@
                         </div>
                         <div class="galeria-subcategoria">
                             <a href="">
-                                <img src="img/electrodomesticos-banner.jpg" alt="">
+                                <img src="../img/electrodomesticos-banner.jpg" alt="">
                             </a>
                         </div>
                     </div>
@@ -120,7 +121,7 @@
                         </div>
                         <div class="galeria-subcategoria">
                             <a href="">
-                                <img src="img/pequeños-electrodomesticos-banner.jpg" alt="">
+                                <img src="../img/pequeños-electrodomesticos-banner.jpg" alt="">
                             </a>
                         </div>
                     </div>
@@ -137,7 +138,7 @@
                         </div>
                         <div class="galeria-subcategoria">
                             <a href="">
-                                <img src="img/hogar-y-jardin-banner.jpg" alt="">
+                                <img src="../img/hogar-y-jardin-banner.jpg" alt="">
                             </a>
                         </div>
                     </div>
@@ -154,7 +155,7 @@
                         </div>
                         <div class="galeria-subcategoria">
                             <a href="">
-                                <img src="img/deportes-banner.jpg" alt="">
+                                <img src="../img/deportes-banner.jpg" alt="">
                             </a>
                         </div>
                     </div>
@@ -164,220 +165,190 @@
         </div>
     </nav>
 
-    <div class="div-envios sombreado fondo-claro" id="div-envios">
-        <div class="div-envio-domicilio">
-            <h2> Estamos haciendo envíos a domicilio y abrimos algunas sucursales.</h2>
-            <p>#QuedateEnCasa #TeCuidamosNosCuidamos</p>
-        </div>
-        <div class="div-btn-eliminar">
-            <button class="btn-eliminar" id="btn-eliminar">
-                <ion-icon name="close-circle-outline"></ion-icon>
-            </button>
+    <div class="contenedor">
+        <div class="contenedor-detalle">
+            <div class="img-detalle-articulo">
+                <div class="principal"><img id="img-principal"><div id="zoom"></div></div>
+               
+
+                <div class="img-secundarias">
+                    <div class="imagenes-formato"><img class="img"></div>
+                    <div class="imagenes-formato"><img class="img"></div>
+                    <div class="imagenes-formato"><img class="img"></div>
+                    <div class="imagenes-formato"><img class="img"></div>
+                </div>
+            </div>
+            <div class="info-detalle-articulo">
+                <h1 id="nombre-articulo"></h1>
+                <div class="precio-financiacion">
+                    <h2 id="precio-articulo"></h2>
+                    <h3 id="financiacion-articulo"></h3>
+                </div>
+                <div class="reviews">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-half-outline"></ion-icon>
+                </div>
+                <div class="descripcion">
+                    <p id="descripcion-articulo"></p>
+                </div>
+                <div>
+                    <div class="atributos-pago">
+                        <img src="../icon/candado.png" alt="">
+                        <p>Pago Seguro</p>
+                    </div>
+                    <div class="atributos-pago">
+                        <img src="../icon/camion.png" alt="">
+                        <p>Envio a domicilio a todo el País</p>
+                    </div>
+                    <div class="atributos-pago">
+                        <img src="../icon/caja.png" alt="">
+                        <p>Retiro en Sucursal Gratis</p>
+                    </div>
+                </div>
+                <div class="botones-compra">
+                    <button class="btn-comprar">Compra ahora</button>
+                    <button class="btn-agregar-carrito">Añadir al carrito
+                        <ion-icon name="cart-outline"></ion-icon>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 
-    <section class="carrusel contenedor">
-        <div class="banner">
-            <img id="img-banner">
-        </div>
-    </section>
-
-    <!-- contenido pag principal -->
-    <section class="contenedor articulos-principales">
-        <div class="categoria-articulo">
-            <h2>Tecnología</h2>
-            <a href="">Ver mas</a>
-        </div>
-        <div class="contenedor-cards-articulos">
-
-            <div class="articulo">
-                <a class="button-articulo-tecnologia">
-                    <div class="imagenes">
-                        <img class="img-articulo-tecnologia">
-                    </div>
-                    <p class="nombre-articulo-tecnologia"></p>
-                    <p class="precio-articulo-tecnologia precio"></p>
-                    <h2 class="financiacion-articulo-tecnologia"></h2>
-                </a>
-            </div>
-            <div class="articulo">
-                <a class="button-articulo-tecnologia">
-                    <div class="imagenes">
-                        <img class="img-articulo-tecnologia">
-                    </div>
-                    <p class="nombre-articulo-tecnologia"></p>
-                    <p class="precio-articulo-tecnologia precio"></p>
-                    <h2 class="financiacion-articulo-tecnologia"></h2>
-                </a>
-            </div>
-            <div class="articulo">
-                <a class="button-articulo-tecnologia">
-                    <div class="imagenes">
-                        <img class="img-articulo-tecnologia">
-                    </div>
-                    <p class="nombre-articulo-tecnologia"></p>
-                    <p class="precio-articulo-tecnologia precio"></p>
-                    <h2 class="financiacion-articulo-tecnologia"></h2>
-                </a>
-            </div>
-            <div class="articulo">
-                <a class="button-articulo-tecnologia">
-                    <div class="imagenes">
-                        <img class="img-articulo-tecnologia">
-                    </div>
-                    <p class="nombre-articulo-tecnologia"></p>
-                    <p class="precio-articulo-tecnologia precio"></p>
-                    <h2 class="financiacion-articulo-tecnologia"></h2>
-                </a>
-            </div>
-            <div class="articulo">
-                <a class="button-articulo-tecnologia">
-                    <div class="imagenes">
-                        <img class="img-articulo-tecnologia">
-                    </div>
-                    <p class="nombre-articulo-tecnologia"></p>
-                    <p class="precio-articulo-tecnologia precio"></p>
-                    <h2 class="financiacion-articulo-tecnologia"></h2>
-                </a>
-            </div>
-        </div>
-    </section>
-
     <!-- Banner publicidad -->
     <section class="publicidad contenedor">
         <div class="banner">
-            <img src="img/publicidad1.jpg" alt="Ahora 12 y ahora 18">
+            <div class="detalle-producto-banner">
+                <div class="imagenes">
+                    <img src="../img/banner/bannerDetalleProducto1.png" alt="Motorola edge">
+                </div>
+                <div class="imagenes">
+                    <img src="../img/banner/bannerDetalleProducto2.png" alt="Motorola edge">
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="contenedor articulos-principales">
+
+    <!-- Contenedor "recomendados" -->
+    <section class="contenedor">
         <div class="categoria-articulo">
-            <h2>Electrodomesticos</h2>
-            <a>Ver mas</a>
+            <h2>Recomendados</h2>
         </div>
         <div class="contenedor-cards-articulos">
-            <div class="articulo">
-                <a class="button-articulo-electrodomesticos">
+
+            <div class="articulo fondo-cards">
+                <a class="button-articulo-tecnologia">
                     <div class="imagenes">
-                        <img class="img-articulo-electrodomesticos">
+                        <img class="img-articulo-tecnologia">
                     </div>
-                    <p class="nombre-articulo-electrodomesticos"></p>
-                    <p class="precio-articulo-electrodomesticos precio"></p>
-                    <h2 class="financiacion-articulo-electrodomesticos"></h2>
+                    <p class="nombre-articulo-tecnologia"></p>
+                    <p class="precio-articulo-tecnologia precio"></p>
+                    <h2 class="financiacion-articulo-tecnologia"></h2>
                 </a>
             </div>
-            <div class="articulo">
-                <a class="button-articulo-electrodomesticos">
+            <div class="articulo fondo-cards">
+                <a class="button-articulo-tecnologia">
                     <div class="imagenes">
-                        <img class="img-articulo-electrodomesticos">
+                        <img class="img-articulo-tecnologia">
                     </div>
-                    <p class="nombre-articulo-electrodomesticos"></p>
-                    <p class="precio-articulo-electrodomesticos precio"></p>
-                    <h2 class="financiacion-articulo-electrodomesticos"></h2>
+                    <p class="nombre-articulo-tecnologia"></p>
+                    <p class="precio-articulo-tecnologia precio"></p>
+                    <h2 class="financiacion-articulo-tecnologia"></h2>
                 </a>
             </div>
-            <div class="articulo">
-                <a class="button-articulo-electrodomesticos">
+            <div class="articulo fondo-cards">
+                <a class="button-articulo-tecnologia">
                     <div class="imagenes">
-                        <img class="img-articulo-electrodomesticos">
+                        <img class="img-articulo-tecnologia">
                     </div>
-                    <p class="nombre-articulo-electrodomesticos"></p>
-                    <p class="precio-articulo-electrodomesticos precio"></p>
-                    <h2 class="financiacion-articulo-electrodomesticos"></h2>
+                    <p class="nombre-articulo-tecnologia"></p>
+                    <p class="precio-articulo-tecnologia precio"></p>
+                    <h2 class="financiacion-articulo-tecnologia"></h2>
                 </a>
             </div>
-            <div class="articulo">
-                <a class="button-articulo-electrodomesticos">
+            <div class="articulo fondo-cards">
+                <a class="button-articulo-tecnologia">
                     <div class="imagenes">
-                        <img class="img-articulo-electrodomesticos">
+                        <img class="img-articulo-tecnologia">
                     </div>
-                    <p class="nombre-articulo-electrodomesticos"></p>
-                    <p class="precio-articulo-electrodomesticos precio"></p>
-                    <h2 class="financiacion-articulo-electrodomesticos"></h2>
+                    <p class="nombre-articulo-tecnologia"></p>
+                    <p class="precio-articulo-tecnologia precio"></p>
+                    <h2 class="financiacion-articulo-tecnologia"></h2>
                 </a>
             </div>
-            <div class="articulo">
-                <a class="button-articulo-electrodomesticos">
+            <div class="articulo fondo-cards">
+                <a class="button-articulo-tecnologia">
                     <div class="imagenes">
-                        <img class="img-articulo-electrodomesticos">
+                        <img class="img-articulo-tecnologia">
                     </div>
-                    <p class="nombre-articulo-electrodomesticos"></p>
-                    <p class="precio-articulo-electrodomesticos precio"></p>
-                    <h2 class="financiacion-articulo-electrodomesticos"></h2>
+                    <p class="nombre-articulo-tecnologia"></p>
+                    <p class="precio-articulo-tecnologia precio"></p>
+                    <h2 class="financiacion-articulo-tecnologia"></h2>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Banner publicidad -->
-    <section class="publicidad contenedor">
-        <div class="banner">
-            <img src="img/publicidad2.jpg" alt="Motorola edge">
-        </div>
-    </section>
-
-    <section class="contenedor articulos-principales">
+    <!-- Contenedor "Quienes vieron este producto también compraron" -->
+    <section class="contenedor">
         <div class="categoria-articulo">
-            <h2>Deportes</h2>
-            <a href="">Ver mas</a>
+            <h2>Quienes vieron este producto también compraron</h2>
         </div>
         <div class="contenedor-cards-articulos">
-            <div class="articulo">
-                <a class="button-articulo-deportes">
+            <div class="articulo fondo-cards">
+                <a class="button-articulo-electrodomesticos">
                     <div class="imagenes">
-                        <img class="img-articulo-deportes">
+                        <img class="img-articulo-electrodomesticos">
                     </div>
-                    <p class="nombre-articulo-deportes"></p>
-                    <p class="precio-articulo-deportes precio"></p>
-                    <h2 class="financiacion-articulo-deportes"></h2>
+                    <p class="nombre-articulo-electrodomesticos"></p>
+                    <p class="precio-articulo-electrodomesticos precio"></p>
+                    <h2 class="financiacion-articulo-electrodomesticos"></h2>
                 </a>
             </div>
-            <div class="articulo">
-                <a class="button-articulo-deportes">
+            <div class="articulo fondo-cards">
+                <a class="button-articulo-electrodomesticos">
                     <div class="imagenes">
-                        <img class="img-articulo-deportes">
+                        <img class="img-articulo-electrodomesticos">
                     </div>
-                    <p class="nombre-articulo-deportes"></p>
-                    <p class="precio-articulo-deportes precio"></p>
-                    <h2 class="financiacion-articulo-deportes"></h2>
+                    <p class="nombre-articulo-electrodomesticos"></p>
+                    <p class="precio-articulo-electrodomesticos precio"></p>
+                    <h2 class="financiacion-articulo-electrodomesticos"></h2>
                 </a>
             </div>
-            <div class="articulo">
-                <a class="button-articulo-deportes">
+            <div class="articulo fondo-cards">
+                <a class="button-articulo-electrodomesticos">
                     <div class="imagenes">
-                        <img class="img-articulo-deportes">
+                        <img class="img-articulo-electrodomesticos">
                     </div>
-                    <p class="nombre-articulo-deportes"></p>
-                    <p class="precio-articulo-deportes precio"></p>
-                    <h2 class="financiacion-articulo-deportes"></h2>
+                    <p class="nombre-articulo-electrodomesticos"></p>
+                    <p class="precio-articulo-electrodomesticos precio"></p>
+                    <h2 class="financiacion-articulo-electrodomesticos"></h2>
                 </a>
             </div>
-            <div class="articulo">
-                <a class="button-articulo-deportes">
+            <div class="articulo fondo-cards">
+                <a class="button-articulo-electrodomesticos">
                     <div class="imagenes">
-                        <img class="img-articulo-deportes">
+                        <img class="img-articulo-electrodomesticos">
                     </div>
-                    <p class="nombre-articulo-deportes"></p>
-                    <p class="precio-articulo-deportes precio"></p>
-                    <h2 class="financiacion-articulo-deportes"></h2>
+                    <p class="nombre-articulo-electrodomesticos"></p>
+                    <p class="precio-articulo-electrodomesticos precio"></p>
+                    <h2 class="financiacion-articulo-electrodomesticos"></h2>
                 </a>
             </div>
-            <div class="articulo">
-                <a class="button-articulo-deportes">
+            <div class="articulo fondo-cards">
+                <a class="button-articulo-electrodomesticos">
                     <div class="imagenes">
-                        <img class="img-articulo-deportes">
+                        <img class="img-articulo-electrodomesticos">
                     </div>
-                    <p class="nombre-articulo-deportes"></p>
-                    <p class="precio-articulo-deportes precio"></p>
-                    <h2 class="financiacion-articulo-deportes"></h2>
+                    <p class="nombre-articulo-electrodomesticos"></p>
+                    <p class="precio-articulo-electrodomesticos precio"></p>
+                    <h2 class="financiacion-articulo-electrodomesticos"></h2>
                 </a>
             </div>
-        </div>
-    </section>
-
-    <section class="publicidad contenedor">
-        <div class="banner">
-            <img src="img/publicidad3.jpg" alt="Linea de muebles">
         </div>
     </section>
 
@@ -406,15 +377,15 @@
                 <div class="columna-info">
                     <h2>Información de contacto</h2>
                     <div class="row">
-                        <img src="icon/posicion.png">
+                        <img src="../icon/posicion.png">
                         <label>Av. Independencia 1832</label>
                     </div>
                     <div class="row">
-                        <img src="icon/telefono.png">
+                        <img src="../icon/telefono.png">
                         <label>4961915/4961916</label>
                     </div>
                     <div class="row">
-                        <img src="icon/contact.png">
+                        <img src="../icon/contact.png">
                         <label>atencionalcliente@megatone.net</label>
                     </div>
                 </div>
@@ -424,33 +395,26 @@
                 <p>© 2020 Todos los derechos reservados | Trabajo final</p>
                 <div class="columna-redes">
                     <div class="row">
-                        <a href=""><img src="icon/facebook.png"></a>
+                        <a href=""><img src="../icon/facebook.png"></a>
 
-                        <a href=""><img src="icon/instagram.png"></a>
+                        <a href=""><img src="../icon/instagram.png"></a>
 
-                        <a href=""><img src="icon/youtube.png"></a>
+                        <a href=""><img src="../icon/youtube.png"></a>
 
-                        <a href=""><img src="icon/twitter.png"></a>
+                        <a href=""><img src="../icon/twitter.png"></a>
 
-                        <a href=""><img src="icon/github.png"></a>
+                        <a href=""><img src="../icon/github.png"></a>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- boton flotante WhatsApp -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <a href="https://api.whatsapp.com/send?phone=542983555167" class="float" target="_blank">
-        <i class="fa fa-whatsapp my-float"></i>
-    </a>
-
-    <script src="js/carrusel.js"></script>
-    <script src="js/nav.js"></script>
-    <script src="js/articulo.js"></script>
-    <script src="js/cargar_producto.js"></script>
-    <script src="js/bannerEnvios.js"></script>
-    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../js/articulo_detalle_producto.js"></script>
+    <script src="../js/cargar_producto.js"></script>
+    <script src="../js/efecto_lupa.js"></script>
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
 </body>
 
 </html>
