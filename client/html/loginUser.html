@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilo_logUser.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Login a la cuenta</title>
+    <!-- necesarias para usar el login de googole-->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="237413284598-91uq2vvtbmr45o4kf8bls0m0i5si4ebb.apps.googleusercontent.com">
+    <!-- necesario para usar el login de facebook-->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v8.0&appId=680663829249628&autoLogAppEvents=1" nonce="p0GW9dmB"></script> 
+    
+    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+</head>
+
+<body>
+    <nav class="menu fondo-negro" id="menu">
+        <div class="contenedor contenedor-enlaces-nav-arriba" id="menu-parte-arriba">
+            <div class="contenedor-imagen">
+                <!-- <img src="img/logo.png" id="img-logo" alt="Logo"> -->
+            </div>
+            <div class="enlaces">
+                <input type="text" class="inputBuscar" placeholder="Buscar productos">
+                <a class="fondo-oscuro btn-buscar letra-clara">
+                    <ion-icon name="search-outline"></ion-icon>
+                </a>
+                <a href="" class="btn-iniciar-sesion letra-clara">
+                    <ion-icon name="people-outline">
+                </a>
+                <a href="" class="letra-clara">
+                    <ion-icon name="cart-outline">
+                </a>
+            </div>
+        </div>
+        <!-- Contiene botón menu -->
+        <div class="contenedor contenedor-btn-menu">
+            <button class="btn-menu-barras letra-clara" id="btn-menu-barras">
+                <ion-icon name="reorder-four-outline"></ion-icon>
+            </button>
+        </div>
+        <!-- Contiene enlaces -->
+        <div class="contenedor contenedor-enlaces-nav fondo-oscuro">
+            <div class="btn-categorias letra-clara" id="btn-categorias">
+                <p class="mb-0">Todas las <span>Categorias</span></p>
+                <ion-icon name="caret-down-outline"></ion-icon>
+            </div>
+            <div class="enlace-menu">
+                <a href="" class="letra-clara">Venta telefónica</a>
+                <a href="" class="letra-clara">Quiénes somos</a>
+                <a href="" class="letra-clara">Centro de Ayuda</a>
+            </div>
+        </div>
+        <!-- Contiene categorias -->
+        <div class="contenedor-grid">
+            <div class="grid" id="grid">
+                <div class="categorias">
+                    <button class="btn-regresar fondo-negro letra-clara">
+                        <ion-icon name="arrow-back-outline"></ion-icon>Regresar
+                    </button>
+                    <h3 class="subtitulo">Categorias</h3>
+                    <a href="" id="tecnologia" class="tecnologia">Tecnología<ion-icon name="chevron-forward-outline">
+                        </ion-icon></a>
+                    <a href="" id="electrodomesticos" class="electrodomesticos">Electrodomesticos<ion-icon
+                            name="chevron-forward-outline">
+                        </ion-icon></a>
+                    <a href="" id="pequeños-electrodomesticos" class="pequeños-electrodomesticos">Pequeños
+                        Electrodomesticos<ion-icon name="chevron-forward-outline">
+                        </ion-icon></a>
+                    <a href="" id="hogar-y-jardin" class="hogar-y-jardin">Hogar y Jardín<ion-icon
+                            name="chevron-forward-outline">
+                        </ion-icon></a>
+                    <a href="" id="deportes" class="deportes">Deportes<ion-icon name="chevron-forward-outline">
+                        </ion-icon>
+                    </a>
+                </div>
+                <div class="contenedor-subcategorias">
+                    <div class="subcategoria" id="tecnologia">
+                        <div class="enlaces-subcategoria">
+                            <a class="subtitulo">Tecnología</a>
+                            <p href="">Televisores</p>
+                            <p href="">Celulares</p>
+                            <p href="">Informática</p>
+                            <p href="">Tablets y camaras digitales</p>
+                        </div>
+                        <div class="galeria-subcategoria">
+                            <a href="">
+                                <img src="img/tecnologia-banner.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="subcategoria" id="electrodomesticos">
+                        <div class="enlaces-subcategoria">
+                            <button class="btn-regresar">
+                                <ion-icon name="arrow-back-outline"></ion-icon>Regresar
+                            </button>
+                            <a class="subtitulo">Electrodomesticos</a>
+                            <p href="">Climatización</p>
+                            <p href="">Heladeras</p>
+                            <p href="">Cocina</p>
+                            <p href="">Lavado</p>
+                        </div>
+                        <div class="galeria-subcategoria">
+                            <a href="">
+                                <img src="img/electrodomesticos-banner.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="subcategoria" id="pequeños-electrodomesticos">
+                        <div class="enlaces-subcategoria">
+                            <button class="btn-regresar">
+                                <ion-icon name="arrow-back-outline"></ion-icon>Regresar
+                            </button>
+                            <a class="subtitulo">Pequeños Electrodomesticos</a>
+                            <p href="">Salud y Bienestar</p>
+                            <p href="">Cuidado Personal</p>
+                            <p href="">Hogar Limpieza</p>
+                            <p href="">Cocina</p>
+                        </div>
+                        <div class="galeria-subcategoria">
+                            <a href="">
+                                <img src="img/pequeños-electrodomesticos-banner.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="subcategoria" id="hogar-y-jardin">
+                        <div class="enlaces-subcategoria">
+                            <button class="btn-regresar">
+                                <ion-icon name="arrow-back-outline"></ion-icon>Regresar
+                            </button>
+                            <a class="subtitulo">Hogar y Jardín</a>
+                            <p href="">Muebles</p>
+                            <p href="">Jardín</p>
+                            <p href="">Bazar</p>
+                            <p href="">Herramientas</p>
+                        </div>
+                        <div class="galeria-subcategoria">
+                            <a href="">
+                                <img src="img/hogar-y-jardin-banner.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="subcategoria" id="deportes">
+                        <div class="enlaces-subcategoria">
+                            <button class="btn-regresar">
+                                <ion-icon name="arrow-back-outline"></ion-icon>Regresar
+                            </button>
+                            <a class="subtitulo">Deportes</a>
+                            <p href="">Bicicletas</p>
+                            <p href="">Relojes</p>
+                            <p href="">Mochilas</p>
+                            <p href="">Accesorios</p>
+                        </div>
+                        <div class="galeria-subcategoria">
+                            <a href="">
+                                <img src="img/deportes-banner.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <section class="register-account">
+        <div class="signform">
+            <div class="left">
+                <div>
+                    <!-- aca es donde va el logo-->
+                </div>
+                <div class="headit">
+                    <h1>Bienvenido/a</h1>
+                </div>
+                <div class="form">
+                    <form class="login-form">
+                        <div>
+                            <h4 class="titH4">Email:</h4>
+                            <input class="mail" type="email" placeholder="E-mail" required/>
+                        </div>
+                        <div>
+                            <h4 class="titH4">Contraseña:</h4>
+                            <input class="pwd" type="password" placeholder="Contraseña" required/>
+                        </div>
+                    </form>
+                    <div>
+                        <a href="./recover.html">Has olvidado la contraseña?</a>
+                        <button class="subbt" type="submit">Ingresar</button>
+                        <!-- <input class="subbt" type="submit" value="Ingresar" style="border:none;" /> -->
+                    </div>       
+                    <!-- <input type="checkbox" id="remember" name="remember"><span class="spnRecordar">Recordar</span> -->
+                </div>
+            </div>
+            <div class="left">
+                <a href="./register.html" target="_blank" style="float:right;margin-right:35px;font-size: 0.9em;"
+                    class="bts-a">¿No tenés cuenta? Registrate ahora!</a>
+                <br>
+                <p class="optRedes">O inicia sesión con...</p>
+                <div class="bts">
+                    
+                    <!-- Display login status -->
+                    <div id="status"></div>                
+
+                    <!-- variante de boton <div class="fb-login-button fblogin social" data-size="small" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false" data-width="" scope="public_profile,email"></div> -->
+
+                    <fb:login-button class="fblogin social" scope="public_profile,email" onlogin="checkLoginState();">Inicia sesión</fb:login-button>
+
+                    <!-- <a href="#" class="twlogin social"><i class="fa fa-twitter"></i><span>Ingresa desde Twitter</span></a> -->
+                    <div class="g-signin2 gplogin social" data-onsuccess="onSignIn"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="fondo-claro">
+        <div class="container-footer-all">
+            <div class="container-footer-superior">
+                <div class="suscribir">
+                    <input type="text" placeholder="Tu e-mail" class="input-email">
+                    <a class="btn-suscribir letra-clara fondo-oscuro">Suscribite</a>
+                </div>
+                <div class="venta-telefonica">
+                    <h2>VENTA TELEFÓNICA
+                        0810-444-6342</h2>
+                </div>
+            </div>
+            <hr>
+            <div class="container-footer-inferior">
+                <div class="columna-nosotros">
+                    <h2>Sobre nosotros</h2>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus optio at assumenda nobis
+                        itaque
+                        est nihil soluta saepe, repellendus et consequuntur ea maiores cupiditate consequatur?
+                    </p>
+                </div>
+                <div class="columna-info">
+                    <h2>Información de contacto</h2>
+                    <div class="row">
+                        <img src="icon/posicion.png">
+                        <label>Av. Independencia 1832</label>
+                    </div>
+                    <div class="row">
+                        <img src="icon/telefono.png">
+                        <label>4961915/4961916</label>
+                    </div>
+                    <div class="row">
+                        <img src="icon/contact.png">
+                        <label>atencionalcliente@megatone.net</label>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="container-copyright">
+                <p>© 2020 Todos los derechos reservados | Trabajo final</p>
+                <div class="columna-redes">
+                    <div class="row">
+                        <a href=""><img src="icon/facebook.png"></a>
+
+                        <a href=""><img src="icon/instagram.png"></a>
+
+                        <a href=""><img src="icon/youtube.png"></a>
+
+                        <a href=""><img src="icon/twitter.png"></a>
+
+                        <a href=""><img src="icon/github.png"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<!-- script de mi pagina -->
+<script src="js/loginUsr.js"></script>
+<!-- script de facebook -->
+ <script>
+    window.fbAsyncInit = function () {
+        // FB JavaScript SDK configuration and setup
+        FB.init({
+            appId: '680663829249628', // FB App ID
+            cookie: true,  // enable cookies to allow the server to access the session
+            xfbml: true,  // parse social plugins on this page
+            version: 'v8.0' // use graph api version 2.8
+        });
+
+        // Check whether the user already logged in
+        FB.getLoginStatus(function (response) {
+            if (response.status === 'connected') {
+                //display user data
+                getFbUserData();
+            }
+        });
+    };
+
+    // Load the JavaScript SDK asynchronously
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    // Facebook login with JavaScript SDK
+    function fbLogin() {
+        FB.login(function (response) {
+            if (response.authResponse) {
+                // Get and display the user profile data
+                getFbUserData();
+            } else {
+                document.getElementById('status').innerHTML = 'User cancelled login or did not fully authorize.';
+            }
+        }, { scope: 'public_profile, email' });
+    }
+
+    // Fetch the user profile data from facebook
+    function getFbUserData() {
+        FB.api('/me', { locale: 'en_US', fields: 'id,first_name,last_name,email,link,gender,locale,picture' },
+            function (response) {
+                document.getElementById('fbLink').setAttribute("onclick", "fbLogout()");
+                document.getElementById('fbLink').innerHTML = 'Logout from Facebook';
+                document.getElementById('status').innerHTML = '<p>Thanks for logging in, ' + response.first_name + '!</p>';
+                document.getElementById('userData').innerHTML = '<h2>Facebook Profile Details</h2><p><img src="' + response.picture.data.url + '"/></p><p><b>FB ID:</b> ' + response.id + '</p><p><b>Name:</b> ' + response.first_name + ' ' + response.last_name + '</p><p><b>Email:</b> ' + response.email + '</p><p><b>Gender:</b> ' + response.gender + '</p><p><b>FB Profile:</b> <a target="_blank" href="' + response.link + '">click to view profile</a></p>';
+            });
+    }
+
+    // Logout from facebook
+    function fbLogout() {
+        FB.logout(function () {
+            document.getElementById('fbLink').setAttribute("onclick", "fbLogin()");
+            document.getElementById('fbLink').innerHTML = '<img src="images/fb-login-btn.png"/>';
+            document.getElementById('userData').innerHTML = '';
+            document.getElementById('status').innerHTML = '<p>You have successfully logout from Facebook.</p>';
+        });
+    }
+
+    function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+    });
+}
+</script>
+<!-- vinculando a libreria Jquery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Libreria java scritp de bootstrap -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous">
+</script> 
+<script src="js/carrusel.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/articulo.js"></script>
+<script src="js/bannerEnvios.js"></script>
+<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+<script src="js/carrito.js"></script>
+</html>

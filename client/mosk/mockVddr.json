@@ -1,0 +1,10 @@
+{
+    "status": "OK",
+    "usuarios": [
+        {
+            "usuario": "grupo4",
+            "cuit": "12345",
+            "password": "mipassword"
+        }
+    ]
+}
