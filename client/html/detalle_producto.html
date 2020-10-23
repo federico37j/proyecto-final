@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Fuente     -->
+    <!-- Fuente -->
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- Estilos -->
     <link rel="stylesheet" href="../css/nav.css">
@@ -20,7 +20,7 @@
     <nav class="menu fondo-negro" id="menu">
         <div class="contenedor contenedor-enlaces-nav-arriba" id="menu-parte-arriba">
             <div class="contenedor-imagen">
-                <!-- <img src="img/logo.png" id="img-logo" alt="Logo"> -->
+                <a href="http://localhost:3000/"><img src="../img/logo.png" id="img-logo" alt="Logo"></a>
             </div>
             <div class="enlaces">
                 <input type="text" class="inputBuscar" placeholder="Buscar productos">
@@ -48,9 +48,9 @@
                 <ion-icon name="caret-down-outline"></ion-icon>
             </div>
             <div class="enlace-menu">
-                <a href="" class="letra-clara">Venta telefónica</a>
-                <a href="" class="letra-clara">Quiénes somos</a>
-                <a href="" class="letra-clara">Centro de Ayuda</a>
+                <a href="#" class="letra-clara">Venta telefónica</a>
+                <a href="#" class="letra-clara">Quiénes somos</a>
+                <a href="#" class="letra-clara">Centro de Ayuda</a>
             </div>
         </div>
         <!-- Contiene categorias -->
@@ -61,32 +61,33 @@
                         <ion-icon name="arrow-back-outline"></ion-icon>Regresar
                     </button>
                     <h3 class="subtitulo">Categorias</h3>
-                    <a href="" id="tecnologia" class="tecnologia">Tecnología<ion-icon name="chevron-forward-outline">
+                    <a href="#" id="tecnologia" class="tecnologia">Tecnología<ion-icon name="chevron-forward-outline">
                         </ion-icon></a>
-                    <a href="" id="electrodomesticos" class="electrodomesticos">Electrodomesticos<ion-icon
+                    <a href="#" id="electrodomesticos" class="electrodomesticos">Electrodomesticos<ion-icon
                             name="chevron-forward-outline">
                         </ion-icon></a>
-                    <a href="" id="pequeños-electrodomesticos" class="pequeños-electrodomesticos">Pequeños
+                    <a href="#" id="pequeños-electrodomesticos" class="pequeños-electrodomesticos">Pequeños
                         Electrodomesticos<ion-icon name="chevron-forward-outline">
                         </ion-icon></a>
-                    <a href="" id="hogar-y-jardin" class="hogar-y-jardin">Hogar y Jardín<ion-icon
+                    <a href="#" id="hogar-y-jardin" class="hogar-y-jardin">Hogar y Jardín<ion-icon
                             name="chevron-forward-outline">
                         </ion-icon></a>
-                    <a href="" id="deportes" class="deportes">Deportes<ion-icon name="chevron-forward-outline">
+                    <a href="#" id="deportes" class="deportes">Deportes<ion-icon name="chevron-forward-outline">
                         </ion-icon>
                     </a>
                 </div>
                 <div class="contenedor-subcategorias">
                     <div class="subcategoria" id="tecnologia">
                         <div class="enlaces-subcategoria">
-                            <a class="subtitulo">Tecnología</a>
-                            <p href="">Televisores</p>
-                            <p href="">Celulares</p>
-                            <p href="">Informática</p>
-                            <p href="">Tablets y camaras digitales</p>
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=tecnologia"
+                                class="subtitulo">Tecnología</a>
+                            <p>Televisores</p>
+                            <p>Celulares</p>
+                            <p>Informática</p>
+                            <p>Tablets y camaras digitales</p>
                         </div>
                         <div class="galeria-subcategoria">
-                            <a href="">
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=tecnologia">
                                 <img src="../img/tecnologia-banner.jpg" alt="">
                             </a>
                         </div>
@@ -96,14 +97,15 @@
                             <button class="btn-regresar">
                                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
                             </button>
-                            <a class="subtitulo">Electrodomesticos</a>
-                            <p href="">Climatización</p>
-                            <p href="">Heladeras</p>
-                            <p href="">Cocina</p>
-                            <p href="">Lavado</p>
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=electrodomesticos"
+                                class="subtitulo">Electrodomesticos</a>
+                            <p>Climatización</p>
+                            <p>Heladeras</p>
+                            <p>Cocina</p>
+                            <p>Lavado</p>
                         </div>
                         <div class="galeria-subcategoria">
-                            <a href="">
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=electrodomesticos">
                                 <img src="../img/electrodomesticos-banner.jpg" alt="">
                             </a>
                         </div>
@@ -113,14 +115,16 @@
                             <button class="btn-regresar">
                                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
                             </button>
-                            <a class="subtitulo">Pequeños Electrodomesticos</a>
-                            <p href="">Salud y Bienestar</p>
-                            <p href="">Cuidado Personal</p>
-                            <p href="">Hogar Limpieza</p>
-                            <p href="">Cocina</p>
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=pequeños-electrodomesticos"
+                                class="subtitulo">Pequeños Electrodomesticos</a>
+                            <p>Salud y Bienestar</p>
+                            <p>Cuidado Personal</p>
+                            <p>Hogar Limpieza</p>
+                            <p>Cocina</p>
                         </div>
                         <div class="galeria-subcategoria">
-                            <a href="">
+                            <a
+                                href="http://localhost:3000/html/filtro_categoria.html?categoria=pequeños-electrodomesticos">
                                 <img src="../img/pequeños-electrodomesticos-banner.jpg" alt="">
                             </a>
                         </div>
@@ -130,14 +134,15 @@
                             <button class="btn-regresar">
                                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
                             </button>
-                            <a class="subtitulo">Hogar y Jardín</a>
-                            <p href="">Muebles</p>
-                            <p href="">Jardín</p>
-                            <p href="">Bazar</p>
-                            <p href="">Herramientas</p>
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=hogar-y-jardin"
+                                class="subtitulo">Hogar y Jardín</a>
+                            <p>Muebles</p>
+                            <p>Jardín</p>
+                            <p>Bazar</p>
+                            <p>Herramientas</p>
                         </div>
                         <div class="galeria-subcategoria">
-                            <a href="">
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=hogar-y-jardin">
                                 <img src="../img/hogar-y-jardin-banner.jpg" alt="">
                             </a>
                         </div>
@@ -147,14 +152,15 @@
                             <button class="btn-regresar">
                                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
                             </button>
-                            <a class="subtitulo">Deportes</a>
-                            <p href="">Bicicletas</p>
-                            <p href="">Relojes</p>
-                            <p href="">Mochilas</p>
-                            <p href="">Accesorios</p>
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=deportes"
+                                class="subtitulo">Deportes</a>
+                            <p>Bicicletas</p>
+                            <p>Relojes</p>
+                            <p>Mochilas</p>
+                            <p>Accesorios</p>
                         </div>
                         <div class="galeria-subcategoria">
-                            <a href="">
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=deportes">
                                 <img src="../img/deportes-banner.jpg" alt="">
                             </a>
                         </div>
@@ -168,9 +174,9 @@
     <div class="contenedor">
         <div class="contenedor-detalle">
             <div class="img-detalle-articulo">
-                <div class="principal"><img id="img-principal"><div id="zoom"></div></div>
-               
-
+                <div class="principal"><img id="img-principal">
+                    <div id="zoom"></div>
+                </div>
                 <div class="img-secundarias">
                     <div class="imagenes-formato"><img class="img"></div>
                     <div class="imagenes-formato"><img class="img"></div>
@@ -352,6 +358,7 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="fondo-claro">
         <div class="container-footer-all">
             <div class="container-footer-superior">
@@ -411,6 +418,7 @@
     </footer>
 
     <script src="../js/nav.js"></script>
+    <script src="../js/process_params.js"></script>
     <script src="../js/articulo_detalle_producto.js"></script>
     <script src="../js/cargar_producto.js"></script>
     <script src="../js/efecto_lupa.js"></script>
