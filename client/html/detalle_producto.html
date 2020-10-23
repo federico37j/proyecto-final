@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/detalle_producto.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/efecto_lupa_css.css">
+    <link rel="stylesheet" href="../css/venta_telefonica.css">
     <title>Articulos del hogar</title>
 </head>
 
@@ -24,13 +25,13 @@
             </div>
             <div class="enlaces">
                 <input type="text" class="inputBuscar" placeholder="Buscar productos">
-                <a class="fondo-oscuro btn-buscar letra-clara">
+                <a id="btn-buscar" class="fondo-oscuro btn-buscar letra-clara">
                     <ion-icon name="search-outline"></ion-icon>
                 </a>
                 <a href="" class="btn-iniciar-sesion letra-clara">
                     <ion-icon name="people-outline">
                 </a>
-                <a href="" class="letra-clara">
+                <a href="http://localhost:3000/html/carrito.html" class="letra-clara">
                     <ion-icon name="cart-outline">
                 </a>
             </div>
@@ -48,9 +49,9 @@
                 <ion-icon name="caret-down-outline"></ion-icon>
             </div>
             <div class="enlace-menu">
-                <a href="#" class="letra-clara">Venta telefónica</a>
-                <a href="#" class="letra-clara">Quiénes somos</a>
-                <a href="#" class="letra-clara">Centro de Ayuda</a>
+                <a href="#" class="letra-clara" id="venta-tel">Venta telefónica</a>
+                <a href="http://localhost:3000/html/preguntas_frecuentes.html" class="letra-clara">Preguntas Frecuentes</a>
+                <a href="#footer" class="letra-clara">Quiénes somos</a>
             </div>
         </div>
         <!-- Contiene categorias -->
@@ -79,8 +80,7 @@
                 <div class="contenedor-subcategorias">
                     <div class="subcategoria" id="tecnologia">
                         <div class="enlaces-subcategoria">
-                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=tecnologia"
-                                class="subtitulo">Tecnología</a>
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=tecnologia" class="subtitulo">Tecnología</a>
                             <p>Televisores</p>
                             <p>Celulares</p>
                             <p>Informática</p>
@@ -97,8 +97,7 @@
                             <button class="btn-regresar">
                                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
                             </button>
-                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=electrodomesticos"
-                                class="subtitulo">Electrodomesticos</a>
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=electrodomesticos" class="subtitulo">Electrodomesticos</a>
                             <p>Climatización</p>
                             <p>Heladeras</p>
                             <p>Cocina</p>
@@ -115,16 +114,14 @@
                             <button class="btn-regresar">
                                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
                             </button>
-                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=pequeños-electrodomesticos"
-                                class="subtitulo">Pequeños Electrodomesticos</a>
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=pequeños-electrodomesticos" class="subtitulo">Pequeños Electrodomesticos</a>
                             <p>Salud y Bienestar</p>
                             <p>Cuidado Personal</p>
                             <p>Hogar Limpieza</p>
                             <p>Cocina</p>
                         </div>
                         <div class="galeria-subcategoria">
-                            <a
-                                href="http://localhost:3000/html/filtro_categoria.html?categoria=pequeños-electrodomesticos">
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=pequeños-electrodomesticos">
                                 <img src="../img/pequeños-electrodomesticos-banner.jpg" alt="">
                             </a>
                         </div>
@@ -134,8 +131,7 @@
                             <button class="btn-regresar">
                                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
                             </button>
-                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=hogar-y-jardin"
-                                class="subtitulo">Hogar y Jardín</a>
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=hogar-y-jardin" class="subtitulo">Hogar y Jardín</a>
                             <p>Muebles</p>
                             <p>Jardín</p>
                             <p>Bazar</p>
@@ -152,8 +148,7 @@
                             <button class="btn-regresar">
                                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
                             </button>
-                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=deportes"
-                                class="subtitulo">Deportes</a>
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=deportes" class="subtitulo">Deportes</a>
                             <p>Bicicletas</p>
                             <p>Relojes</p>
                             <p>Mochilas</p>
@@ -170,6 +165,32 @@
             </div>
         </div>
     </nav>
+
+    <div class="contenido-venta">
+        <div class="contenedor-venta-telefonica">
+            <div class="contenido-principal">
+                <h3>Venta telefónica</h3>
+                <button class="btn-salir" id="btn-salir">
+                    <ion-icon name="close-outline"></ion-icon>
+                </button>
+            </div>
+            <div class="contenido-secundario">
+                <h2>0810-444-6342</h2>
+                <p>Lunes a Viernes de 9 a 21 hs. - Sábados de 9 a 13 hs. - Domingos y Feriados sin atención.</p>
+            </div>
+            <div class="contenido-beneficios">
+                <h6>¡Aprovechá los beneficios de la venta telefónica!</h6>
+                <ul>
+                    <li>Entregas en todo el país (excepto Tierra del Fuego).</li>
+                    <li>Envío asegurado a tu domicilio.</li>
+                    <li>Mismos precios y ofertas que en internet.</li>
+                    <li>Asesoramiento de especialistas.</li>
+                    <li>Pago con tarjeta de crédito, cheque o depósito bancario.</li>
+                </ul>
+                    <h6>¡Comprá por teléfono y retiralo en tu sucursal más cercana!</h6>
+            </div>
+        </div>
+    </div>
 
     <div class="contenedor">
         <div class="contenedor-detalle">
@@ -359,12 +380,12 @@
     </section>
 
     <!-- Footer -->
-    <footer class="fondo-claro">
+    <footer class="fondo-claro" id="footer">
         <div class="container-footer-all">
             <div class="container-footer-superior">
                 <div class="suscribir">
                     <input type="text" placeholder="Tu e-mail" class="input-email">
-                    <a class="btn-suscribir letra-clara fondo-oscuro">Suscribite</a>
+                    <a id="btn-suscribir" class="btn-suscribir letra-clara fondo-oscuro">Suscribite</a>
                 </div>
                 <div class="venta-telefonica">
                     <h2>VENTA TELEFÓNICA
@@ -422,6 +443,7 @@
     <script src="../js/articulo_detalle_producto.js"></script>
     <script src="../js/cargar_producto.js"></script>
     <script src="../js/efecto_lupa.js"></script>
+    <script src="../js/venta_telefonica.js"></script>
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
 </body>
 
