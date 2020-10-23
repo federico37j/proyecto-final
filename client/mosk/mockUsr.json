@@ -1,0 +1,10 @@
+{
+    "status": "OK",
+    "usuarios": [
+        {
+            "email": "micorreo@yo.com",
+            "password": "mipassword",
+            "esAdmin" : true
+        }
+    ]
+}

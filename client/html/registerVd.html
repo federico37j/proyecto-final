@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="">
+  <title>Registrar nuevo vendedor</title>
+</head>
+
+<body>
+  <div>
+    <h1>Registrar sus datos</h1>
+  </div>
+  <form action="" method="post">
+    <div class="form-row">
+      <div class="input-group input-group-lg">
+        <label for="inputUser">Usuario:</label>
+        <input type="text" class="form-control" name="usuario" placeholder="soyUsuario1" id="User"
+          aria-describedby="sizing-addon1" required>
+      </div>
+      <div class="input-group input-group-lg">
+        <label for="inputCuit">Cuit:</label>
+        <input type="cuit" class="form-control" name="cuit" placeholder="ej: 20123456789" id="Cuit"
+          aria-describedby="sizing-addon1" required>
+      </div>
+      <div class="input-group input-group-lg">
+        <label for="inputUser">Contraseña:</label>
+        <input type="password" name="contra" class="form-control" placeholder="******" id="Pwd"
+          aria-describedby="sizing-addon1" required>
+      </div>
+      <div class="form-group">
+        <label for="inputAddress">Fecha ingreso:</label>
+        <input type="date" class="form-control" id="inputFechaIngr" placeholder="dd/mm/aaaa" required>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputCity">Direccion:</label>
+          <input type="text" class="form-control" id="inputCity" placeholder="Micalle 1234">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Registrarse</button>
+  </form>
+</body>
+<style>
+  .form-group {
+    margin: 10px 0px;
+  }
+</style>
+<!-- vinculando a libreria Jquery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Libreria java scritp de bootstrap -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+  integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+  </script>
+<script src="js/registerVd.js"></script>
+
+</html>
