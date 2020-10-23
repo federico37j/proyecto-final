@@ -5,31 +5,31 @@
             "nombre": "Smart Tv 32 HD L32S6500 Con Android TCL",
             "precio": "23999",
             "financiacion": "18 x $ 1592",
-            "imagen": "img/articulos/tv.png"
+            "imagen": "../img/articulos/tv.png"
         },
         {
             "nombre": "Celular Libre S20+ 6,7 128 GB Gris SAMSUNG",
             "precio": "114999",
             "financiacion": "18 x $ 11750",
-            "imagen": "img/articulos/celular.jpg"
+            "imagen": "../img/articulos/celular.jpg"
         },
         {
             "nombre": "IMPRESORA XP-2101 INALAMBRICA EPSON",
             "precio": "10999",
             "financiacion": "18 x $ 1124",
-            "imagen": "img/articulos/impresora.jpg"
+            "imagen": "../img/articulos/impresora.jpg"
         },
         {
             "nombre": "Notebook LENOVO Core i7 Con 16GB de RAM THINKPAD T490",
             "precio": "194999",
             "financiacion": "18 x $ 10.833,27",
-            "imagen": "img/articulos/computadora.jpg"
+            "imagen": "../img/articulos/computadora.jpg"
         },
         {
             "nombre": "Auricular Bluetooth In Ear DW-308IE-BK Negro DAEWOO",
             "precio": "2699",
             "financiacion": "18 x $ 179",
-            "imagen": "img/articulos/auricular.jpg"
+            "imagen": "../img/articulos/auricular.jpg"
         }
     ],
     "electrodomesticos": [
@@ -37,31 +37,31 @@
             "nombre": "Aire Acondicionado Split Frío Calor 7740 Frigorías",
             "precio": "$119.999",
             "financiacion": "18 x $ 6667",
-            "imagen": "img/articulos/Aire.jpg"
+            "imagen": "../img/articulos/Aire.jpg"
         },
         {
             "nombre": "Heladera Con Freezer PATRICK de 394 Litros",
             "precio": "$62.999",
             "financiacion": "18 x $ 3500",
-            "imagen": "img/articulos/heladera.jpg"
+            "imagen": "../img/articulos/heladera.jpg"
         },
         {
             "nombre": "Cocina Multigas 4 Hornallas 56 CM ESCORIAL",
             "precio": "$20.999",
             "financiacion": "18 x $ 1167",
-            "imagen": "img/articulos/cocina.jpg"
+            "imagen": "../img/articulos/cocina.jpg"
         },
         {
             "nombre": "Termotanque Multigas Carga Superior T3110F 110 Lts LONGVIE",
             "precio": "$30.999",
             "financiacion": "18 x $ 1722",
-            "imagen": "img/articulos/termotanque.jpg"
+            "imagen": "../img/articulos/termotanque.jpg"
         },
         {
             "nombre": "Microondas B228DB9 28L 900W DIGITAL",
             "precio": "$23.999",
             "financiacion": "18 x $ 1592",
-            "imagen": "img/articulos/microondas.jpg"
+            "imagen": "../img/articulos/microondas.jpg"
         }
       
     ],
@@ -70,31 +70,31 @@
             "nombre": "Bicicleta Mountain Bike MTB 25 PRO Rodado 29",
             "precio": "$49.999",
             "financiacion": "18 x $ 3317",
-            "imagen": "img/articulos/bicicleta.jpg"
+            "imagen": "../img/articulos/bicicleta.jpg"
         },
         {
             "nombre": "RELOJ T. HILFIGER TH1782124 TOMMY HILFIGER",
             "precio": "$23.299",
             "financiacion": "18 x $ 1294",
-            "imagen": "img/articulos/reloj.jpg"
+            "imagen": "../img/articulos/reloj.jpg"
         },
         {
             "nombre": "MOCHILA P/NOTEBOOK ESPACE 15,6 DELSEY",
             "precio": "$9599",
             "financiacion": "6 x $ 1600",
-            "imagen": "img/articulos/mochila.jpg"
+            "imagen": "../img/articulos/mochila.jpg"
         },
         {
             "nombre": "Kayak Inflable Challenger K2 20528/9 INTEX",
             "precio": "$38.599",
             "financiacion": "18 x $ 2144",
-            "imagen": "img/articulos/kayak.jpg"
+            "imagen": "../img/articulos/kayak.jpg"
         },
         {
             "nombre": "Cinta Caminadora Motorizada RAN-505 RANBAK",
             "precio": "$192.199",
             "financiacion": "18 x $ 10678",
-            "imagen": "img/articulos/cinta.jpg"
+            "imagen": "../img/articulos/cinta.jpg"
         }
     ]
 }

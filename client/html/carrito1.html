@@ -5,34 +5,34 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/cssCarrito.css">
+    <link rel="stylesheet" href="../css/cssCarrito.css">
     <title>Carrito1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Fuente     -->
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- Estilos -->
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/whatsapp.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/whatsapp.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
-    <!-- menu de navegación -->
+    <!-- Menú de navegación -->
     <nav class="menu fondo-negro" id="menu">
         <div class="contenedor contenedor-enlaces-nav-arriba" id="menu-parte-arriba">
             <div class="contenedor-imagen">
-                <!-- <img src="img/logo.png" id="img-logo" alt="Logo"> -->
+                <a href="http://localhost:3000/"><img src="../img/logo.png" id="img-logo" alt="Logo"></a>
             </div>
             <div class="enlaces">
                 <input type="text" class="inputBuscar" placeholder="Buscar productos">
-                <a class="fondo-oscuro btn-buscar letra-clara">
+                <a id="btn-buscar" class="fondo-oscuro btn-buscar letra-clara">
                     <ion-icon name="search-outline"></ion-icon>
                 </a>
                 <a href="" class="btn-iniciar-sesion letra-clara">
                     <ion-icon name="people-outline">
                 </a>
-                <a href="" class="letra-clara">
+                <a href="http://localhost:3000/html/carrito.html" class="letra-clara">
                     <ion-icon name="cart-outline">
                 </a>
             </div>
@@ -50,9 +50,9 @@
                 <ion-icon name="caret-down-outline"></ion-icon>
             </div>
             <div class="enlace-menu">
-                <a href="" class="letra-clara">Venta telefónica</a>
-                <a href="" class="letra-clara">Quiénes somos</a>
-                <a href="" class="letra-clara">Centro de Ayuda</a>
+                <a href="#" class="letra-clara" id="venta-tel">Venta telefónica</a>
+                <a href="http://localhost:3000/html/preguntas_frecuentes.html" class="letra-clara">Preguntas Frecuentes</a>
+                <a href="#footer" class="letra-clara">Quiénes somos</a>
             </div>
         </div>
         <!-- Contiene categorias -->
@@ -63,33 +63,34 @@
                         <ion-icon name="arrow-back-outline"></ion-icon>Regresar
                     </button>
                     <h3 class="subtitulo">Categorias</h3>
-                    <a href="" id="tecnologia" class="tecnologia">Tecnología<ion-icon name="chevron-forward-outline">
+                    <a href="#" id="tecnologia" class="tecnologia">Tecnología<ion-icon name="chevron-forward-outline">
                         </ion-icon></a>
-                    <a href="" id="electrodomesticos" class="electrodomesticos">Electrodomesticos<ion-icon
+                    <a href="#" id="electrodomesticos" class="electrodomesticos">Electrodomesticos<ion-icon
                             name="chevron-forward-outline">
                         </ion-icon></a>
-                    <a href="" id="pequeños-electrodomesticos" class="pequeños-electrodomesticos">Pequeños
+                    <a href="#" id="pequeños-electrodomesticos" class="pequeños-electrodomesticos">Pequeños
                         Electrodomesticos<ion-icon name="chevron-forward-outline">
                         </ion-icon></a>
-                    <a href="" id="hogar-y-jardin" class="hogar-y-jardin">Hogar y Jardín<ion-icon
+                    <a href="#" id="hogar-y-jardin" class="hogar-y-jardin">Hogar y Jardín<ion-icon
                             name="chevron-forward-outline">
                         </ion-icon></a>
-                    <a href="" id="deportes" class="deportes">Deportes<ion-icon name="chevron-forward-outline">
+                    <a href="#" id="deportes" class="deportes">Deportes<ion-icon name="chevron-forward-outline">
                         </ion-icon>
                     </a>
                 </div>
                 <div class="contenedor-subcategorias">
                     <div class="subcategoria" id="tecnologia">
                         <div class="enlaces-subcategoria">
-                            <a class="subtitulo">Tecnología</a>
-                            <p href="">Televisores</p>
-                            <p href="">Celulares</p>
-                            <p href="">Informática</p>
-                            <p href="">Tablets y camaras digitales</p>
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=tecnologia"
+                                class="subtitulo">Tecnología</a>
+                            <p>Televisores</p>
+                            <p>Celulares</p>
+                            <p>Informática</p>
+                            <p>Tablets y camaras digitales</p>
                         </div>
                         <div class="galeria-subcategoria">
-                            <a href="">
-                                <img src="img/tecnologia-banner.jpg" alt="">
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=tecnologia">
+                                <img src="../img/tecnologia-banner.jpg" alt="">
                             </a>
                         </div>
                     </div>
@@ -98,15 +99,16 @@
                             <button class="btn-regresar">
                                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
                             </button>
-                            <a class="subtitulo">Electrodomesticos</a>
-                            <p href="">Climatización</p>
-                            <p href="">Heladeras</p>
-                            <p href="">Cocina</p>
-                            <p href="">Lavado</p>
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=electrodomesticos"
+                                class="subtitulo">Electrodomesticos</a>
+                            <p>Climatización</p>
+                            <p>Heladeras</p>
+                            <p>Cocina</p>
+                            <p>Lavado</p>
                         </div>
                         <div class="galeria-subcategoria">
-                            <a href="">
-                                <img src="img/electrodomesticos-banner.jpg" alt="">
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=electrodomesticos">
+                                <img src="../img/electrodomesticos-banner.jpg" alt="">
                             </a>
                         </div>
                     </div>
@@ -115,15 +117,16 @@
                             <button class="btn-regresar">
                                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
                             </button>
-                            <a class="subtitulo">Pequeños Electrodomesticos</a>
-                            <p href="">Salud y Bienestar</p>
-                            <p href="">Cuidado Personal</p>
-                            <p href="">Hogar Limpieza</p>
-                            <p href="">Cocina</p>
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=pequeños-electrodomesticos" class="subtitulo">Pequeños Electrodomesticos</a>
+                            <p>Salud y Bienestar</p>
+                            <p>Cuidado Personal</p>
+                            <p>Hogar Limpieza</p>
+                            <p>Cocina</p>
                         </div>
                         <div class="galeria-subcategoria">
-                            <a href="">
-                                <img src="img/pequeños-electrodomesticos-banner.jpg" alt="">
+                            <a
+                                href="http://localhost:3000/html/filtro_categoria.html?categoria=pequeños-electrodomesticos">
+                                <img src="../img/pequeños-electrodomesticos-banner.jpg" alt="">
                             </a>
                         </div>
                     </div>
@@ -132,15 +135,16 @@
                             <button class="btn-regresar">
                                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
                             </button>
-                            <a class="subtitulo">Hogar y Jardín</a>
-                            <p href="">Muebles</p>
-                            <p href="">Jardín</p>
-                            <p href="">Bazar</p>
-                            <p href="">Herramientas</p>
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=hogar-y-jardin"
+                                class="subtitulo">Hogar y Jardín</a>
+                            <p>Muebles</p>
+                            <p>Jardín</p>
+                            <p>Bazar</p>
+                            <p>Herramientas</p>
                         </div>
                         <div class="galeria-subcategoria">
-                            <a href="">
-                                <img src="img/hogar-y-jardin-banner.jpg" alt="">
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=hogar-y-jardin">
+                                <img src="../img/hogar-y-jardin-banner.jpg" alt="">
                             </a>
                         </div>
                     </div>
@@ -149,15 +153,16 @@
                             <button class="btn-regresar">
                                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
                             </button>
-                            <a class="subtitulo">Deportes</a>
-                            <p href="">Bicicletas</p>
-                            <p href="">Relojes</p>
-                            <p href="">Mochilas</p>
-                            <p href="">Accesorios</p>
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=deportes"
+                                class="subtitulo">Deportes</a>
+                            <p>Bicicletas</p>
+                            <p>Relojes</p>
+                            <p>Mochilas</p>
+                            <p>Accesorios</p>
                         </div>
                         <div class="galeria-subcategoria">
-                            <a href="">
-                                <img src="img/deportes-banner.jpg" alt="">
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=deportes">
+                                <img src="../img/deportes-banner.jpg" alt="">
                             </a>
                         </div>
                     </div>
@@ -166,6 +171,7 @@
             </div>
         </div>
     </nav>
+
     <div class="container">
         <ul class="nav nav-tabs mt-5">
             <li class="nav-item-inactive-first">
@@ -187,12 +193,12 @@
                     <div class="border rounded border-info col-md-5 botonesEnv">
                         <input type="radio" id="envioDomicilio" name="radio-group" onclick="mostrarDiv(0)" checked="">
                         <label for="envioDomicilio">Envío a Domicilio</label>
-                        <img class="IconoCamionNuevo" src="img/Camion.png">
+                        <img class="IconoCamionNuevo" src="../img/Camion.png">
                     </div>
                     <div class="border rounded border-info col-md-5 botonesEnv">
                         <input type="radio" id="retiroSucursal" name="radio-group" onclick="mostrarDiv(1)">
                         <label id="lblRetiroSuc" for="retiroSucursal">Retiro en Sucursal</label>
-                        <img class="IconoSucursalNuevo" src="img/Sucursal.png">
+                        <img class="IconoSucursalNuevo" src="../img/Sucursal.png">
                     </div>
                 </div>
                 <div class="sucursales" id="divSuc">
@@ -201,24 +207,24 @@
                             <div class="border rounded border-info botonesCiud bg-white">
                                 <input type="radio" id="envioDomicilio" name="radio-group2" checked="">
                                 <label class="h5" for="tandil">TANDIL</label>
-                                <img class="IconoSuc" src="img/Sucursal.png">
+                                <img class="IconoSuc" src="../img/Sucursal.png">
                             </div>
                             <div class="border rounded border-info botonesCiud bg-white">
                                 <input type="radio" id="retiroSucursal" name="radio-group2">
                                 <strong><label class="h5" for="marDelPlata">MAR DEL PLATA</label></strong>
-                                <img class="IconoSuc" src="img/Sucursal.png">
+                                <img class="IconoSuc" src="../img/Sucursal.png">
                             </div>
                         </div>
                             <div class="col-md-6">
                             <div class="border rounded border-info botonesCiud bg-white">
                                 <input type="radio" id="envioDomicilio" name="radio-group2">
                                 <label class="h5" for="olavarria">OLAVARRÍA</label>
-                                <img class="IconoSuc" src="img/Sucursal.png">
+                                <img class="IconoSuc" src="../img/Sucursal.png">
                             </div>
                             <div class="border rounded border-info botonesCiud bg-white">
                                 <input type="radio" id="envioDomicilio" name="radio-group2">
                                 <label class="h5" for="azul">AZUL</label>
-                                <img class="IconoSuc" src="img/Sucursal.png">
+                                <img class="IconoSuc" src="../img/Sucursal.png">
                             </div>
                         </div>
                         <div class="col-md-4 btnsCarrito1">
@@ -269,7 +275,7 @@
                                 <a href="/" class=" btn btnSeguirComprando m-1">Seguir Comprando</a>
                             </div>
                             <div class="col-md-4">
-                                <button type="submit" class="btn btnSiguiente m-1">Siguiente Paso</a>
+                                <button type="submit" href="../html/carrito2.html" class="btn btnSiguiente m-1">Siguiente Paso</a>
                             </div>
                           
                     
@@ -283,13 +289,14 @@
                 </div>
                 <div id="btnsRetiroSuc">
                 <a href="/" class=" btn btnSeguirComprando m-1">Seguir Comprando</a>
-                <a onclick="" href="/Carrito2.html" class="btn btnSiguiente m-1">Siguiente Paso</a>
+                <a onclick="" href="../html/carrito2.html" class="btn btnSiguiente m-1">Siguiente Paso</a>
             </div>
             </div>
 
         </div>
     </div>
-    <footer class="fondo-claro">
+    <!-- Footer -->
+    <footer class="fondo-claro" id="footer">
         <div class="container-footer-all">
             <div class="container-footer-superior">
                 <div class="suscribir">
@@ -314,15 +321,15 @@
                 <div class="columna-info">
                     <h2>Información de contacto</h2>
                     <div class="row">
-                        <img src="icon/posicion.png">
+                        <img src="../icon/posicion.png">
                         <label>Av. Independencia 1832</label>
                     </div>
                     <div class="row">
-                        <img src="icon/telefono.png">
+                        <img src="../icon/telefono.png">
                         <label>4961915/4961916</label>
                     </div>
                     <div class="row">
-                        <img src="icon/contact.png">
+                        <img src="../icon/contact.png">
                         <label>atencionalcliente@megatone.net</label>
                     </div>
                 </div>
@@ -332,15 +339,15 @@
                 <p>© 2020 Todos los derechos reservados | Trabajo final</p>
                 <div class="columna-redes">
                     <div class="row">
-                        <a href=""><img src="icon/facebook.png"></a>
+                        <a href=""><img src="../icon/facebook.png"></a>
 
-                        <a href=""><img src="icon/instagram.png"></a>
+                        <a href=""><img src="../icon/instagram.png"></a>
 
-                        <a href=""><img src="icon/youtube.png"></a>
+                        <a href=""><img src="../icon/youtube.png"></a>
 
-                        <a href=""><img src="icon/twitter.png"></a>
+                        <a href=""><img src="../icon/twitter.png"></a>
 
-                        <a href=""><img src="icon/github.png"></a>
+                        <a href=""><img src="../icon/github.png"></a>
                     </div>
                 </div>
             </div>
@@ -354,12 +361,12 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
-<script src="js/carrusel.js"></script>
-<script src="js/nav.js"></script>
-<script src="js/articulo.js"></script>
-<script src="js/bannerEnvios.js"></script>
+<script src="../js/carrusel.js"></script>
+<script src="../js/nav.js"></script>
+<script src="../js/articulo.js"></script>
+<script src="../js/bannerEnvios.js"></script>
 <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
-<script src="js/carrito.js"></script>
+<script src="../js/carrito.js"></script>
 <script>let formatter2 = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
