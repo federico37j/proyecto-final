@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/cssCarrito.css">
+    <title>Carrito1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Fuente     -->
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/whatsapp.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- menu de navegación -->
+    <nav class="menu fondo-negro" id="menu">
+        <div class="contenedor contenedor-enlaces-nav-arriba" id="menu-parte-arriba">
+            <div class="contenedor-imagen">
+                <!-- <img src="img/logo.png" id="img-logo" alt="Logo"> -->
+            </div>
+            <div class="enlaces">
+                <input type="text" class="inputBuscar" placeholder="Buscar productos">
+                <a class="fondo-oscuro btn-buscar letra-clara">
+                    <ion-icon name="search-outline"></ion-icon>
+                </a>
+                <a href="" class="btn-iniciar-sesion letra-clara">
+                    <ion-icon name="people-outline">
+                </a>
+                <a href="" class="letra-clara">
+                    <ion-icon name="cart-outline">
+                </a>
+            </div>
+        </div>
+        <!-- Contiene botón menu -->
+        <div class="contenedor contenedor-btn-menu">
+            <button class="btn-menu-barras letra-clara" id="btn-menu-barras">
+                <ion-icon name="reorder-four-outline"></ion-icon>
+            </button>
+        </div>
+        <!-- Contiene enlaces -->
+        <div class="contenedor contenedor-enlaces-nav fondo-oscuro">
+            <div class="btn-categorias letra-clara" id="btn-categorias">
+                <p class="mb-0">Todas las <span>Categorias</span></p>
+                <ion-icon name="caret-down-outline"></ion-icon>
+            </div>
+            <div class="enlace-menu">
+                <a href="" class="letra-clara">Venta telefónica</a>
+                <a href="" class="letra-clara">Quiénes somos</a>
+                <a href="" class="letra-clara">Centro de Ayuda</a>
+            </div>
+        </div>
+        <!-- Contiene categorias -->
+        <div class="contenedor-grid">
+            <div class="grid" id="grid">
+                <div class="categorias">
+                    <button class="btn-regresar fondo-negro letra-clara">
+                        <ion-icon name="arrow-back-outline"></ion-icon>Regresar
+                    </button>
+                    <h3 class="subtitulo">Categorias</h3>
+                    <a href="" id="tecnologia" class="tecnologia">Tecnología<ion-icon name="chevron-forward-outline">
+                        </ion-icon></a>
+                    <a href="" id="electrodomesticos" class="electrodomesticos">Electrodomesticos<ion-icon
+                            name="chevron-forward-outline">
+                        </ion-icon></a>
+                    <a href="" id="pequeños-electrodomesticos" class="pequeños-electrodomesticos">Pequeños
+                        Electrodomesticos<ion-icon name="chevron-forward-outline">
+                        </ion-icon></a>
+                    <a href="" id="hogar-y-jardin" class="hogar-y-jardin">Hogar y Jardín<ion-icon
+                            name="chevron-forward-outline">
+                        </ion-icon></a>
+                    <a href="" id="deportes" class="deportes">Deportes<ion-icon name="chevron-forward-outline">
+                        </ion-icon>
+                    </a>
+                </div>
+                <div class="contenedor-subcategorias">
+                    <div class="subcategoria" id="tecnologia">
+                        <div class="enlaces-subcategoria">
+                            <a class="subtitulo">Tecnología</a>
+                            <p href="">Televisores</p>
+                            <p href="">Celulares</p>
+                            <p href="">Informática</p>
+                            <p href="">Tablets y camaras digitales</p>
+                        </div>
+                        <div class="galeria-subcategoria">
+                            <a href="">
+                                <img src="img/tecnologia-banner.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="subcategoria" id="electrodomesticos">
+                        <div class="enlaces-subcategoria">
+                            <button class="btn-regresar">
+                                <ion-icon name="arrow-back-outline"></ion-icon>Regresar
+                            </button>
+                            <a class="subtitulo">Electrodomesticos</a>
+                            <p href="">Climatización</p>
+                            <p href="">Heladeras</p>
+                            <p href="">Cocina</p>
+                            <p href="">Lavado</p>
+                        </div>
+                        <div class="galeria-subcategoria">
+                            <a href="">
+                                <img src="img/electrodomesticos-banner.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="subcategoria" id="pequeños-electrodomesticos">
+                        <div class="enlaces-subcategoria">
+                            <button class="btn-regresar">
+                                <ion-icon name="arrow-back-outline"></ion-icon>Regresar
+                            </button>
+                            <a class="subtitulo">Pequeños Electrodomesticos</a>
+                            <p href="">Salud y Bienestar</p>
+                            <p href="">Cuidado Personal</p>
+                            <p href="">Hogar Limpieza</p>
+                            <p href="">Cocina</p>
+                        </div>
+                        <div class="galeria-subcategoria">
+                            <a href="">
+                                <img src="img/pequeños-electrodomesticos-banner.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="subcategoria" id="hogar-y-jardin">
+                        <div class="enlaces-subcategoria">
+                            <button class="btn-regresar">
+                                <ion-icon name="arrow-back-outline"></ion-icon>Regresar
+                            </button>
+                            <a class="subtitulo">Hogar y Jardín</a>
+                            <p href="">Muebles</p>
+                            <p href="">Jardín</p>
+                            <p href="">Bazar</p>
+                            <p href="">Herramientas</p>
+                        </div>
+                        <div class="galeria-subcategoria">
+                            <a href="">
+                                <img src="img/hogar-y-jardin-banner.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="subcategoria" id="deportes">
+                        <div class="enlaces-subcategoria">
+                            <button class="btn-regresar">
+                                <ion-icon name="arrow-back-outline"></ion-icon>Regresar
+                            </button>
+                            <a class="subtitulo">Deportes</a>
+                            <p href="">Bicicletas</p>
+                            <p href="">Relojes</p>
+                            <p href="">Mochilas</p>
+                            <p href="">Accesorios</p>
+                        </div>
+                        <div class="galeria-subcategoria">
+                            <a href="">
+                                <img src="img/deportes-banner.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <ul class="nav nav-tabs mt-5">
+            <li class="nav-item-inactive-first">
+                <div class="nav-inactive-step1" href="#">Mis pedidos</div>
+            </li>
+            <li class="nav-item-second-active">
+                <div class="nav-active2" href="#">Mi entrega</div>
+            </li>
+            <li class="nav-item-third">
+                <div class="nav-inactive3" href="#">Mis pagos</div>
+            </li>
+            <li class="nav-item">
+                <div class="nav-inactive"></div>
+            </li>
+        </ul>
+        <div class="row">
+            <div class="col-md-9">
+                <div class="row justify-content-around mt-4">
+                    <div class="border rounded border-info col-md-5 botonesEnv">
+                        <input type="radio" id="envioDomicilio" name="radio-group" onclick="mostrarDiv(0)" checked="">
+                        <label for="envioDomicilio">Envío a Domicilio</label>
+                        <img class="IconoCamionNuevo" src="img/Camion.png">
+                    </div>
+                    <div class="border rounded border-info col-md-5 botonesEnv">
+                        <input type="radio" id="retiroSucursal" name="radio-group" onclick="mostrarDiv(1)">
+                        <label id="lblRetiroSuc" for="retiroSucursal">Retiro en Sucursal</label>
+                        <img class="IconoSucursalNuevo" src="img/Sucursal.png">
+                    </div>
+                </div>
+                <div class="sucursales" id="divSuc">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="border rounded border-info botonesCiud bg-white">
+                                <input type="radio" id="envioDomicilio" name="radio-group2" checked="">
+                                <label class="h5" for="tandil">TANDIL</label>
+                                <img class="IconoSuc" src="img/Sucursal.png">
+                            </div>
+                            <div class="border rounded border-info botonesCiud bg-white">
+                                <input type="radio" id="retiroSucursal" name="radio-group2">
+                                <strong><label class="h5" for="marDelPlata">MAR DEL PLATA</label></strong>
+                                <img class="IconoSuc" src="img/Sucursal.png">
+                            </div>
+                        </div>
+                            <div class="col-md-6">
+                            <div class="border rounded border-info botonesCiud bg-white">
+                                <input type="radio" id="envioDomicilio" name="radio-group2">
+                                <label class="h5" for="olavarria">OLAVARRÍA</label>
+                                <img class="IconoSuc" src="img/Sucursal.png">
+                            </div>
+                            <div class="border rounded border-info botonesCiud bg-white">
+                                <input type="radio" id="envioDomicilio" name="radio-group2">
+                                <label class="h5" for="azul">AZUL</label>
+                                <img class="IconoSuc" src="img/Sucursal.png">
+                            </div>
+                        </div>
+                        <div class="col-md-4 btnsCarrito1">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="formulario col-md-12 mt-4 mb-4" id="divForm">
+                    <form action="/carrito2.html" method="get">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">Email</label>
+                                <input type="email" class="form-control" id="inputEmail4" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputAddress2">Teléfono</label>
+                                <input type="number" class="form-control" id="inputAddress2" maxlength="10" placeholder="" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">Calle</label>
+                                <input type="text" maxlength="50" class="form-control" id="inputEmail4" required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputEmail4">Número</label>
+                                <input type="number" class="form-control" id="inputEmail4" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="inputCity">Provincia</label>
+                                <input type="text" class="form-control" id="inputCity" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputCity">Ciudad</label>
+                                <input type="text" class="form-control" id="inputCity" required>
+                            </div>
+
+                            <div class="form-group col-md-2">
+                                <label for="inputZip">Codigo Postal</label>
+                                <input type="text" class="form-control" id="inputZip" required>
+                            </div>
+                        </div>
+                        <div class="row btnsFormularios">
+                            <div class="col-md-4">
+                                <a href="/" class=" btn btnSeguirComprando m-1">Seguir Comprando</a>
+                            </div>
+                            <div class="col-md-4">
+                                <button type="submit" class="btn btnSiguiente m-1">Siguiente Paso</a>
+                            </div>
+                          
+                    
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-3 mt-4">
+                <div class="col border rounded border-info m-1 p-3 bg-white text-center">
+                    <div id="suma" class="h5 mb-0"></div>
+                </div>
+                <div id="btnsRetiroSuc">
+                <a href="/" class=" btn btnSeguirComprando m-1">Seguir Comprando</a>
+                <a onclick="" href="/Carrito2.html" class="btn btnSiguiente m-1">Siguiente Paso</a>
+            </div>
+            </div>
+
+        </div>
+    </div>
+    <footer class="fondo-claro">
+        <div class="container-footer-all">
+            <div class="container-footer-superior">
+                <div class="suscribir">
+                    <input type="text" placeholder="Tu e-mail" class="input-email">
+                    <a class="btn-suscribir letra-clara fondo-oscuro">Suscribite</a>
+                </div>
+                <div class="venta-telefonica">
+                    <h2>VENTA TELEFÓNICA
+                        0810-444-6342</h2>
+                </div>
+            </div>
+            <hr>
+            <div class="container-footer-inferior">
+                <div class="columna-nosotros">
+                    <h2>Sobre nosotros</h2>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus optio at assumenda nobis
+                        itaque
+                        est nihil soluta saepe, repellendus et consequuntur ea maiores cupiditate consequatur?
+                    </p>
+                </div>
+                <div class="columna-info">
+                    <h2>Información de contacto</h2>
+                    <div class="row">
+                        <img src="icon/posicion.png">
+                        <label>Av. Independencia 1832</label>
+                    </div>
+                    <div class="row">
+                        <img src="icon/telefono.png">
+                        <label>4961915/4961916</label>
+                    </div>
+                    <div class="row">
+                        <img src="icon/contact.png">
+                        <label>atencionalcliente@megatone.net</label>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="container-copyright">
+                <p>© 2020 Todos los derechos reservados | Trabajo final</p>
+                <div class="columna-redes">
+                    <div class="row">
+                        <a href=""><img src="icon/facebook.png"></a>
+
+                        <a href=""><img src="icon/instagram.png"></a>
+
+                        <a href=""><img src="icon/youtube.png"></a>
+
+                        <a href=""><img src="icon/twitter.png"></a>
+
+                        <a href=""><img src="icon/github.png"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+<!-- vinculando a libreria Jquery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Libreria java scritp de bootstrap -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+<script src="js/carrusel.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/articulo.js"></script>
+<script src="js/bannerEnvios.js"></script>
+<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+<script src="js/carrito.js"></script>
+<script>let formatter2 = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+});
+document.querySelector("#suma").innerHTML = "Total " + formatter2.format(localStorage.getItem("suma"));
+</script>
+
+</html>
