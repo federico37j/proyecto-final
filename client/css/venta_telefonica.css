@@ -1,0 +1,82 @@
+
+.contenido-venta{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100vh;
+    display: none;
+
+    justify-content: center;
+}
+
+.contenido-venta.activo {
+    display: flex;
+}
+
+.contenedor-venta-telefonica {
+    background: rgb(255,255,255);
+    width: auto;
+    max-height: 360px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.contenido-venta .btn-salir {
+    outline: none;
+    font-size: 20px;
+    padding: 10px 15px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    background: none;
+}
+
+
+
+.contenedor-venta-telefonica .contenido-principal {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contenido-principal h3 {
+    color: #666666;
+    font-weight: 600;
+    text-align: left;
+}
+
+.contenido-secundario {
+    text-align: center;
+}
+
+.contenido-secundario h2 {
+    border-top: 1px solid #E2E2E2;
+    border-bottom: 1px solid #E2E2E2;
+    color: #e63409;
+    font-size: 3em;
+    font-weight: 400;
+}
+
+.contenido-secundario p {
+    border-bottom: 1px solid #E2E2E2;
+}
+
+.contenido-beneficios h6 {
+    margin: 10px 0 12px;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: left;
+}
+
+.contenido-beneficios ul li {
+    margin-left: 15px;
+    color: #333;
+    font-size: 1em;
+    line-height: 180%;
+    padding: 0 0 0 5px;
+    text-align: left;
+}
