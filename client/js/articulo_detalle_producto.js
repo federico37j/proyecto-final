@@ -5,19 +5,6 @@ let listadoImagenes = document.querySelectorAll(".img-detalle-articulo .img-secu
 // Imagen principal de detalle producto
 let imagenPrincipal = document.querySelector("#img-principal");
 
-function processParams() {
-    let paramstr = window.location.search.substr(1);
-    let paramarr = paramstr.split("&");
-    // console.log("Paramstr", paramstr);
-    // console.log("Paramarr", paramarr);
-    let params = [];
-    for (let i = 0; i < paramarr.length; i++) {
-        let tmparr = paramarr[i].split("=");
-        params[tmparr[0]] = tmparr[1];//{"index": 1}
-    }
-    return params;
-}
-
 /**
  * 
  * Carga de detalle del producto.
@@ -36,7 +23,6 @@ async function load() {
             for (let i = 0; i < articulo.imagenes.length; i++) {
                 cargarImagenes(i, articulo.imagenes[i]);
             }
-
             document.querySelector("#nombre-articulo").textContent = articulo.nombre;
             document.querySelector("#precio-articulo").textContent = articulo.precio;
             document.querySelector("#financiacion-articulo").textContent = articulo.financiacion;

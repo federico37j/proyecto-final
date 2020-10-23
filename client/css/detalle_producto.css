@@ -41,7 +41,6 @@ background-color: rgb(255, 255, 255);
     color: #e63409;
 }
 
-
 .info-detalle-articulo > div {
     margin-top: 15px;
 }
@@ -135,68 +134,6 @@ background-color: rgb(255, 255, 255);
 
 .carrusel .banner, .publicidad .banner .detalle-producto-banner > div{
     width: 49%;
-}
-/* Tarjetas */
-.categoria-articulo {
-    display: flex;
-    text-align: center;
-    padding: 10px;
-}
-
-.categoria-articulo a {
-    margin-top: 8px;
-    margin-left: 10px;
-    cursor: pointer;
-}
-
-.categoria-articulo a:hover {
-    color: #7a7878;
-}
-
-.contenedor-cards-articulos .articulo .precio {
-    font-size: 19px;
-    font-weight: 500;
-}
-
-.articulos-principales {
-    margin-top: 10px;
-    padding: 10px;
-}
-
-section .contenedor-cards-articulos{
-    margin-top: 10px;
-    gap: 15px;
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
-}
-
-.contenedor-cards-articulos .articulo {
-    padding: 10px;
-    cursor: pointer;
-    transition: all 400ms ease;
-    /* min-height: 150px; */
-    display: grid;
-    grid-row: span 3; 
-  
-}
-
-.contenedor-cards-articulos .articulo:hover {
-    box-shadow: 5px 5px 20px rgb(0, 0, 0,0.4);
-    transform: translateY(-3%);
-}
-
-.contenedor-cards-articulos .articulo .imagenes {
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-}
-
-.contenedor-cards-articulos .articulo img {
-    max-width: 200px;
-    max-height: 200px; 
- 
 }
 
 .atributos-pago {
