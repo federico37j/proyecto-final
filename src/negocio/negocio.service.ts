@@ -18,8 +18,8 @@ export class NegocioService {
         }
         listadoArticulos = [];
         for (let i = 0; i < elementos.length; i++) {
-            let urlImagenes = [elementos[i][4], elementos[i][5], elementos[i][6], elementos[i][7]];
-            let articulo = new Articulo(elementos[i][0], elementos[i][1], elementos[i][2], elementos[i][3], urlImagenes);
+            let urlImagenes = [elementos[i][5], elementos[i][6], elementos[i][7], elementos[i][8]];
+            let articulo = new Articulo(elementos[i][0], elementos[i][1], elementos[i][2], elementos[i][3], elementos[i][4], urlImagenes);
             listadoArticulos.push(articulo);
         }
         return listadoArticulos;
