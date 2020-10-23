@@ -1,0 +1,14 @@
+
+.contenedor-preguntas-frecuentes {
+    margin: auto;
+}
+
+.pregunta {
+    font-size: 1.8rem;
+    padding: 20px;
+}
+
+.respuesta p {
+    font-size: 1.4rem;
+    padding: 0 22px;
+}
