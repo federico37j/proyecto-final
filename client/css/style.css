@@ -137,7 +137,7 @@ section .contenedor-cards-articulos{
 }
 
 .contenedor-cards-articulos .articulo img {
-    max-width: 200px;
+    max-width: 187px;
     max-height: 200px; 
  
 }
@@ -146,6 +146,11 @@ section .contenedor-cards-articulos{
 @media screen and (max-width: 1255px) {
     section .contenedor-cards-articulos{
         grid-template-columns: repeat(3,1fr);
+    }
+
+    /* filtro categoria */
+    .grid-contendedor-cards .item {
+        width: calc(50% - 20px);
     }
 }
 
@@ -291,6 +296,11 @@ section .contenedor-cards-articulos{
     }
 
     .carrusel .banner, .publicidad .banner .detalle-producto-banner > div {
+        width: 100%;
+    }
+
+    /* filtro categoria */
+    .grid-contendedor-cards .item {
         width: 100%;
     }
     
