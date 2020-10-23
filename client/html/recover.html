@@ -4,16 +4,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <title>Recuperar contraseña</title>
 </head>
 
 <body>
-    <!--
-   <h2>Ingresa tu email</h2>
-   <input type="email" name="mail" id="mail" required>
-   <button class="btn">Enviar</button> -->
+    <nav class="menu fondo-negro" id="menu">
+        <div class="contenedor contenedor-enlaces-nav-arriba" id="menu-parte-arriba">
+            <div class="contenedor-imagen">
+                <!-- <img src="img/logo.png" id="img-logo" alt="Logo"> -->
+            </div>
+            <div class="enlaces">
+                <input type="text" class="inputBuscar" placeholder="Buscar productos">
+                <a class="fondo-oscuro btn-buscar letra-clara">
+                    <ion-icon name="search-outline"></ion-icon>
+                </a>
+                <a href="" class="btn-iniciar-sesion letra-clara">
+                    <ion-icon name="people-outline">
+                </a>
+                <a href="" class="letra-clara">
+                    <ion-icon name="cart-outline">
+                </a>
+            </div>
+        </div>
+        <!-- Contiene botón menu -->
+        <div class="contenedor contenedor-btn-menu">
+            <button class="btn-menu-barras letra-clara" id="btn-menu-barras">
+                <ion-icon name="reorder-four-outline"></ion-icon>
+            </button>
+        </div>
+        <!-- Contiene enlaces -->
+        <div class="contenedor contenedor-enlaces-nav fondo-oscuro">
+            <div class="btn-categorias letra-clara" id="btn-categorias">
+                <p class="mb-0">Todas las <span>Categorias</span></p>
+                <ion-icon name="caret-down-outline"></ion-icon>
+            </div>
+            <div class="enlace-menu">
+                <a href="" class="letra-clara">Venta telefónica</a>
+                <a href="" class="letra-clara">Quiénes somos</a>
+                <a href="" class="letra-clara">Centro de Ayuda</a>
+            </div>
+        </div>
+        <!-- Contiene categorias -->
+        <div class="contenedor-grid">
+            <div class="grid" id="grid">
+                <div class="categorias">
+                    <button class="btn-regresar fondo-negro letra-clara">
+                        <ion-icon name="arrow-back-outline"></ion-icon>Regresar
+                    </button>
+                    <h3 class="subtitulo">Categorias</h3>
+                    <a href="" id="tecnologia" class="tecnologia">Tecnología<ion-icon name="chevron-forward-outline">
+                        </ion-icon></a>
+                    <a href="" id="electrodomesticos" class="electrodomesticos">Electrodomesticos<ion-icon
+                            name="chevron-forward-outline">
+                        </ion-icon></a>
+                    <a href="" id="pequeños-electrodomesticos" class="pequeños-electrodomesticos">Pequeños
+                        Electrodomesticos<ion-icon name="chevron-forward-outline">
+                        </ion-icon></a>
+                    <a href="" id="hogar-y-jardin" class="hogar-y-jardin">Hogar y Jardín<ion-icon
+                            name="chevron-forward-outline">
+                        </ion-icon></a>
+                    <a href="" id="deportes" class="deportes">Deportes<ion-icon name="chevron-forward-outline">
+                        </ion-icon>
+                    </a>
+                </div>
+                <div class="contenedor-subcategorias">
+                    <div class="subcategoria" id="tecnologia">
+                        <div class="enlaces-subcategoria">
+                            <a class="subtitulo">Tecnología</a>
+                            <p href="">Televisores</p>
+                            <p href="">Celulares</p>
+                            <p href="">Informática</p>
+                            <p href="">Tablets y camaras digitales</p>
+                        </div>
+                        <div class="galeria-subcategoria">
+                            <a href="">
+                                <img src="img/tecnologia-banner.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="subcategoria" id="electrodomesticos">
+                        <div class="enlaces-subcategoria">
+                            <button class="btn-regresar">
+                                <ion-icon name="arrow-back-outline"></ion-icon>Regresar
+                            </button>
+                            <a class="subtitulo">Electrodomesticos</a>
+                            <p href="">Climatización</p>
+                            <p href="">Heladeras</p>
+                            <p href="">Cocina</p>
+                            <p href="">Lavado</p>
+                        </div>
+                        <div class="galeria-subcategoria">
+                            <a href="">
+                                <img src="img/electrodomesticos-banner.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="subcategoria" id="pequeños-electrodomesticos">
+                        <div class="enlaces-subcategoria">
+                            <button class="btn-regresar">
+                                <ion-icon name="arrow-back-outline"></ion-icon>Regresar
+                            </button>
+                            <a class="subtitulo">Pequeños Electrodomesticos</a>
+                            <p href="">Salud y Bienestar</p>
+                            <p href="">Cuidado Personal</p>
+                            <p href="">Hogar Limpieza</p>
+                            <p href="">Cocina</p>
+                        </div>
+                        <div class="galeria-subcategoria">
+                            <a href="">
+                                <img src="img/pequeños-electrodomesticos-banner.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="subcategoria" id="hogar-y-jardin">
+                        <div class="enlaces-subcategoria">
+                            <button class="btn-regresar">
+                                <ion-icon name="arrow-back-outline"></ion-icon>Regresar
+                            </button>
+                            <a class="subtitulo">Hogar y Jardín</a>
+                            <p href="">Muebles</p>
+                            <p href="">Jardín</p>
+                            <p href="">Bazar</p>
+                            <p href="">Herramientas</p>
+                        </div>
+                        <div class="galeria-subcategoria">
+                            <a href="">
+                                <img src="img/hogar-y-jardin-banner.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="subcategoria" id="deportes">
+                        <div class="enlaces-subcategoria">
+                            <button class="btn-regresar">
+                                <ion-icon name="arrow-back-outline"></ion-icon>Regresar
+                            </button>
+                            <a class="subtitulo">Deportes</a>
+                            <p href="">Bicicletas</p>
+                            <p href="">Relojes</p>
+                            <p href="">Mochilas</p>
+                            <p href="">Accesorios</p>
+                        </div>
+                        <div class="galeria-subcategoria">
+                            <a href="">
+                                <img src="img/deportes-banner.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
+            </div>
+        </div>
+    </nav>
 
     <div id="content" class="interior-page">
         <div class="container-fluid">
@@ -45,7 +189,63 @@
             </div>
         </div>
     </div>
+    <footer class="fondo-claro">
+        <div class="container-footer-all">
+            <div class="container-footer-superior">
+                <div class="suscribir">
+                    <input type="text" placeholder="Tu e-mail" class="input-email">
+                    <a class="btn-suscribir letra-clara fondo-oscuro">Suscribite</a>
+                </div>
+                <div class="venta-telefonica">
+                    <h2>VENTA TELEFÓNICA
+                        0810-444-6342</h2>
+                </div>
+            </div>
+            <hr>
+            <div class="container-footer-inferior">
+                <div class="columna-nosotros">
+                    <h2>Sobre nosotros</h2>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus optio at assumenda nobis
+                        itaque
+                        est nihil soluta saepe, repellendus et consequuntur ea maiores cupiditate consequatur?
+                    </p>
+                </div>
+                <div class="columna-info">
+                    <h2>Información de contacto</h2>
+                    <div class="row">
+                        <img src="icon/posicion.png">
+                        <label>Av. Independencia 1832</label>
+                    </div>
+                    <div class="row">
+                        <img src="icon/telefono.png">
+                        <label>4961915/4961916</label>
+                    </div>
+                    <div class="row">
+                        <img src="icon/contact.png">
+                        <label>atencionalcliente@megatone.net</label>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="container-copyright">
+                <p>© 2020 Todos los derechos reservados | Trabajo final</p>
+                <div class="columna-redes">
+                    <div class="row">
+                        <a href=""><img src="icon/facebook.png"></a>
 
+                        <a href=""><img src="icon/instagram.png"></a>
+
+                        <a href=""><img src="icon/youtube.png"></a>
+
+                        <a href=""><img src="icon/twitter.png"></a>
+
+                        <a href=""><img src="icon/github.png"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 <style>
     body {
@@ -71,6 +271,11 @@
     </script>
 <!-- script que incluye la biblioteca para enviar mail -->
 <script src="https://smtpjs.com/v3/smtp.js"> </script>
-<script src="./js/recover.js"></script>
+<script src="js/carrusel.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/articulo.js"></script>
+<script src="js/bannerEnvios.js"></script>
+<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+<script src="js/carrito.js"></script>
 
 </html>

@@ -1,9 +1,31 @@
 import { Injectable } from '@nestjs/common';
 import { Articulo } from './articulo';
+import { Usuario } from './usuario';
 import * as fs from 'fs';
 
 @Injectable()
 export class NegocioService {
+    private listaUsuarios = [];
+
+
+    //creo el usuario que se registra en el sistema
+    create(user: Usuario): string {
+        const priUser = new Usuario(user['mail'], user['contraseña'], user['direccion'], user['ciudad']);
+        console.log(priUser);
+        if (priUser.getMail() && priUser.getContraseña()) {
+            this.listaUsuarios.push(priUser);
+            console.log(priUser);
+            fs.appendFileSync('resources/usuarios.csv',
+                "\n" +
+                priUser.getMail() + ","
+                + priUser.getContraseña() + ","
+                + priUser.getDireccion() + ","
+                + priUser.getCiudad());
+            return "ok";
+        }
+        else
+            throw new Error('Parametros incorrectos.');
+    }
 
     // Traigo los datos que contiene el archivo .csv y lo convierto en objeto Articulo.
     public loadArticulo(url: string): Articulo[] {
