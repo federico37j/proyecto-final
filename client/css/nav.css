@@ -37,8 +37,8 @@
     MENÚ NAV
 */
 .menu .contenedor-imagen #img-logo{
-    max-width: 70px;
-    margin-left: 8px;
+    max-width: 50px;
+    margin: 2px 8px;
 }
 
 .menu .contenedor-enlaces-nav-arriba {
