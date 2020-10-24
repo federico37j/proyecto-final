@@ -32,7 +32,7 @@ async function ingresar() {
     // console.log(user);
     // console.log(cuit);
     try {
-        let response = await fetch("http://localhost:3000/mosk/mockVddr.json");
+        let response = await fetch("http://localhost:3000/mock/mockVddr.json");
         if (response.ok) {
             let t = await response.json();
             let users = t.usuarios;
