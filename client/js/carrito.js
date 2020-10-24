@@ -1,7 +1,7 @@
 async function mostrarCarrito() {
     console.log("HIOLAS")
     try {
-        let response = await fetch("http://localhost:3000/mosk/mockcarrito.json");
+        let response = await fetch("http://localhost:3000/mock/mockcarrito.json");
         if (response.ok) {
             let t = await response.json();
             let productos = t.tecnologia;

@@ -15,7 +15,7 @@ async function evaluarMail() {
     }
     console.log(mailDest);
     try {
-        let response = await fetch("http://localhost:3000/mosk/mockUsr.json");
+        let response = await fetch("http://localhost:3000/mock/mockUsr.json");
         if (response.ok) {
             let t = await response.json();
             let users = t.usuarios;

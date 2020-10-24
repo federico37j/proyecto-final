@@ -4,7 +4,7 @@ let listadoArticulos = [];
 
 //Traigo los datos del mosk y los inserto en un arreglo global.
 async function cargarArticulos() {
-    const URL = "http://localhost:3000/mosk/moskArticulos.json"
+    const URL = "http://localhost:3000/mock/mockArticulos.json"
     try {
         let response = await fetch(URL);
         if (response.ok) {
