@@ -7,7 +7,6 @@ import * as fs from 'fs';
 export class NegocioService {
     private listaUsuarios = [];
 
-
     //creo el usuario que se registra en el sistema
     create(user: Usuario): string {
         const priUser = new Usuario(user['mail'], user['contraseña'], user['direccion'], user['ciudad']);
@@ -40,8 +39,9 @@ export class NegocioService {
         }
         listadoArticulos = [];
         for (let i = 0; i < elementos.length; i++) {
-            let urlImagenes = [elementos[i][5], elementos[i][6], elementos[i][7], elementos[i][8]];
-            let articulo = new Articulo(elementos[i][0], elementos[i][1], elementos[i][2], elementos[i][3], elementos[i][4], urlImagenes);
+            let urlImagenes = [elementos[i][6], elementos[i][7], elementos[i][8], elementos[i][9]];
+            let articulo = new Articulo(elementos[i][0], elementos[i][1], elementos[i][2], elementos[i][3],
+                elementos[i][4], Number(elementos[i][5]), urlImagenes);
             listadoArticulos.push(articulo);
         }
         return listadoArticulos;
