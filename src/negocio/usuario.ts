@@ -1,12 +1,12 @@
 export class Usuario{
     private mail: string;
-    private contraseña: string;
+    private contrasena: string;
     private direccion: string;
     private ciudad: string;
 
-    public constructor(mail,contraseña,direccion,ciudad){
+    public constructor(mail,contrasena,direccion,ciudad){
         this.mail = mail;
-        this.contraseña = contraseña;
+        this.contrasena = contrasena;
         this.direccion = direccion;
         this.ciudad = ciudad;
     }
@@ -16,7 +16,7 @@ export class Usuario{
     }
 
     public getContraseña():string{
-        return this.contraseña;
+        return this.contrasena;
     }
 
     public getDireccion():string{

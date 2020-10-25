@@ -1,6 +1,8 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { Articulo } from './articulo';
 import { NegocioService } from './negocio.service';
+import { Usuario } from './usuario';
+import { Vendedor } from './vendedor';
 
 @Controller('articulo')
 export class NegocioController {
@@ -17,8 +19,13 @@ export class NegocioController {
     }
 
     @Post()
-    create(@Body() user: any): string {
+    create(@Body() user: Usuario): string {
         return   this.negocioService.create(user);
+    }
+
+    @Post()
+    addVendor(@Body() vddr: Vendedor): string {
+        return   this.negocioService.addVendedor(vddr);
     }
 
 }

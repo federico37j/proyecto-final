@@ -39,7 +39,8 @@ async function ingresar() {
             console.log();
             if (correo === users[0].email && password === users[0].password) {
                 console.log("ingreso al sistema");
-                console.log("link a pantalla del vendedor")
+                console.log("Bienvenido/a ",users[0].email);
+                setTimeout ("redireccionar()", 5000); //tiempo expresado en milisegundos
             }
             else {
                 console.log("DATOS INCORRECTOS");
@@ -52,5 +53,10 @@ async function ingresar() {
         container.innerHTML = `<h2>${response}</h2>`;
     };
 }
+
+function redireccionar(){
+    window.locationf="http://localhost:3000";
+  } 
+  
 
 ingresar();
