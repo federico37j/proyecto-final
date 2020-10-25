@@ -15,15 +15,15 @@ async function registrarUsuario() {
         let u_city = document.querySelector("#inputCity").value;
 
         let datosUsuario = {
-            "email": u_mail,
-            "password": u_pass,
+            "mail": u_mail,
+            "contrasena": u_pass,
             "direccion": u_dire,
             "ciudad": u_city,
         }
         console.log(datosUsuario);
         usuarios.push(datosUsuario);
         try{
-            let response = await fetch("/html/registerUsr.html",{
+            let response = await fetch("http://localhost:3000/articulo",{
                 method: 'POST',
                 headers: {
                 'Content-Type': 'application/json'
