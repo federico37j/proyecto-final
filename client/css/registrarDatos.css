@@ -1,0 +1,17 @@
+.form-row input, .form-row label {
+    width: 190px;
+    height: 30px;
+    border-radius: 3px;
+}
+
+.form-group, .input-group {
+    margin: 10px 0px;
+    padding: 10px;
+}
+
+.btn {
+    background-color: forestgreen;
+    margin-left: 30px;
+    padding: 0.5em;
+    border-radius: 5px;
+}
