@@ -1,0 +1,51 @@
+/* .contenedor-stock{
+    margin-top: 2%;
+} */
+
+#tabla {
+    max-width: 400px;
+    
+}
+
+.content-table {
+    border-collapse: collapse;
+    font-size: 0.9em;
+    padding: 10px;
+}
+
+.content-table thead tr {
+    background:rgb(61,68,73);
+    color: #fff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+  padding: 5px;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+  
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.content-table tbody tr input{
+    outline: none;
+    border: 1px solid transparent;
+    background-color: transparent;
+}
+
+.btn-delete-articulo, .btn-update-articulo {
+    outline: none;
+    font-size: 30px;
+    padding: 10px 15px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    background: none;
+
+}
+
