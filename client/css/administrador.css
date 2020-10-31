@@ -1,11 +1,28 @@
-/* .contenedor-stock{
-    margin-top: 2%;
-} */
-
-#tabla {
-    max-width: 400px;
-    
+:root {
+    --primaryColourPage: #9A9A9A;
+    --darkColor: #030000;
+    --whiteColor: #ffffff;
+    --primaryColourBtn: FFB800;
+    --secondaryColourBtn: 815D00;
 }
+
+/* //////////////
+   Nav
+//////////////*/
+.navbar {
+    background-color: var(--darkColor);
+}
+
+.nav-link {
+    font-size: 1.2rem;
+    line-height: 37px;
+    display: block;
+    padding: .5rem 1rem;
+}
+
+/* //////////////
+   Tabla
+//////////////*/
 
 .content-table {
     border-collapse: collapse;
@@ -14,15 +31,16 @@
 }
 
 .content-table thead tr {
-    background:rgb(61,68,73);
-    color: #fff;
-    text-align: left;
+    background:var(--darkColor);
+    color: var(--whiteColor);
     font-weight: bold;
 }
 
 .content-table th,
 .content-table td {
-  padding: 5px;
+  /* padding: 10px; */
+  max-width: 15px;
+  vertical-align: inherit;
 }
 
 .content-table tbody tr {
@@ -40,12 +58,18 @@
 }
 
 .btn-delete-articulo, .btn-update-articulo {
-    outline: none;
-    font-size: 30px;
-    padding: 10px 15px;
+    font-size: 25px;
     border: 1px solid transparent;
     cursor: pointer;
     background: none;
-
 }
 
+
+.btn-delete-articulo:hover, .btn-update-articulo:hover {
+    color: var(--primaryColourPage);
+}
+
+.btn-delete-articulo:focus, .btn-update-articulo:focus {
+    outline: none;
+  
+}

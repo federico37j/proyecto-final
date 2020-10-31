@@ -1,17 +1,5 @@
 'use strict';
 
-
-let botonesBorrar = document.querySelectorAll(".btn-delete-articulo");
-botonesBorrar.forEach(e => {
-    e.addEventListener("click", btnBorrarClick);
-});
-
-
-let botonesActualizar = document.querySelectorAll(".btn-update-articulo");
-botonesActualizar.forEach(e => {
-    e.addEventListener("click", btnActualizarClick);
-});
-
 // Arreglo global de articulos.
 let listaArticulos = [];
 
@@ -33,49 +21,43 @@ function cargarArregloConArticulos(articulos) {
     for (let i = 0; i < articulos.length; i++) {
         listaArticulos.push(articulos[i]);
     }
-    if(listaArticulos.length > 10) {
-        cargarHTML();
-    }
+    cargarHTML();
 }
 
 function cargarHTML() {
-    let divTabla = document.querySelector('#tabla');
-    let table = document.createElement('Table')
-    table.className = 'content-table';
-    let thead = document.createElement('thead')
-    let titulos = document.createElement('tr');
-    thead.id = 'encabezado';
-    let cuerpoTabla = document.createElement('tbody');
-    cuerpoTabla.id = 'datos-tabla';
-    divTabla.appendChild(table);
-    table.appendChild(thead);
-    titulos.innerHTML = "<th>STOCK</th>" + "<th>NOMBRE</th>" + "<th>PRECIO</th>" + "<th>FINANCIACIÓN</th>" +
-        "<th>DETALLE</th>" + "<th>TIPO</th>" + "<th>IMAGENES</th>" + "<th>ELIMINAR</th>" + "<th>ACTUALIZAR</th>";
-    thead.appendChild(titulos);
-
-    table.appendChild(cuerpoTabla);
     let html = "";
     for (let i = 0; i < listaArticulos.length; i++) {
         html += `
         <tr>
-        <th><input type="text" value=${listaArticulos[i].stock} id="stock${i}"></th>
-        <td><input type="text" value=${listaArticulos[i].nombre} id="nombre${i}"></td>
-        <td><input type="text" value=${listaArticulos[i].precio} id="precio${i}"></td>
-        <td><input type="text" value=${listaArticulos[i].financiacion} id="financiacion${i}"></td>
-        <td><input type="text" value=${listaArticulos[i].detalle} id="detalle${i}"></td>
-        <td><input type="text" value=${listaArticulos[i].tipo} id="tipo${i}"></td>
-        <td><input type="text" value="${listaArticulos[i].imagenes}" id="imagenes${i}"></td>
-        <td><button class="btn-delete-articulo" pos=${i}><ion-icon name="close-circle-outline"></ion-icon></button></td>
-        <td><button class="btn-update-articulo" pos=${i}><ion-icon name="sync-circle-outline"></ion-icon></button></td>
+        <th><input type="text" value="${listaArticulos[i].stock}" id="stock${i}"></th>
+        <td><input type="text" value="${listaArticulos[i].nombre}" id="nombre${i}"></td>
+        <td><input type="text" value="${listaArticulos[i].precio}" id="precio${i}"></td>
+        <td><input type="text" value="${listaArticulos[i].financiacion}" id="financiacion${i}"></td>
+        <td><input type="text" value="${listaArticulos[i].detalle}" id="detalle${i}"></input></td>
+        <td><input type="text" value="${listaArticulos[i].tipo}" id="tipo${i}"></td>
+        <td><input type="text" value="${listaArticulos[i].imagenes[0]}" id="imagenes${i}"></td>
+        <td><button class="btn-delete-articulo" pos="${i}"><ion-icon name="close-circle-outline"></ion-icon></button></td>
+        <td><button class="btn-update-articulo" pos="${i}"><ion-icon name="sync-circle-outline"></ion-icon></button></td>
         </tr>
         `
     }
-    document.querySelector("#datos-tabla").innerHTML = html;
+
+    document.querySelector("#tabla").innerHTML = html;
+    comportamientoBtn(".btn-delete-articulo", btnBorrarClick);
+    comportamientoBtn(".btn-update-articulo", btnActualizarClick);
+}
+
+function comportamientoBtn(btnClass, fn) {
+    let botones = document.querySelectorAll(btnClass);
+    botones.forEach(boton => {
+        boton.addEventListener("click", fn);
+    });
 }
 
 async function btnBorrarClick() {
+    console.log("borrar")
     let pos = this.getAttribute("pos");
-    let response = await fetch(`/articulo/${pos}`, {
+    let response = await fetch(`/stock/${pos}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json"
@@ -84,20 +66,26 @@ async function btnBorrarClick() {
 
     if (response.ok) {
         console.log(`Elemento borrado ${pos}`);
-        load();
+        cargarDatos();
     } else {
         console.log("No se pudo borrar");
     }
 }
 
 async function btnActualizarClick() {
+    console.log("Actualizar")
     let pos = this.getAttribute("pos");
     let renglon = {
-        "nombreProducto": document.getElementById(`prod${pos}`).value,
-        "precio": document.getElementById(`prec${pos}`).value
-    };
+        "stock": document.getElementById(`stock${pos}`).value,
+        "nombre": document.getElementById(`nombre${pos}`).value,
+        "precio": document.getElementById(`precio${pos}`).value,
+        "financiacion": document.getElementById(`financiacion${pos}`).value,
+        "detalle": document.getElementById(`detalle${pos}`).value,
+        "tipo": document.getElementById(`tipo${pos}`).value,
+        "imagenes": document.getElementById(`imagenes${pos}`).value
+    }
     
-    let response = await fetch(`/articulo/${pos}`, {
+    let response = await fetch(`/stock/${pos}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
