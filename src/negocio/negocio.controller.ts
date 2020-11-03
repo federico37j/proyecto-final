@@ -1,4 +1,5 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Delete, Put } from '@nestjs/common/decorators/http/request-mapping.decorator';
 import { Articulo } from './articulo';
 import { NegocioService } from './negocio.service';
 import { Usuario } from './usuario';
@@ -16,6 +17,16 @@ export class NegocioController {
     @Get(':categoria')
     public getArticulosCategoria(@Param('categoria') categoria): Articulo[] {
         return this.negocioService.getArticulosCategoria(categoria);
+    }
+
+    @Put(':categoria/:index')
+    public updateArticulo(@Body() art: any, @Param('categoria') categoria, @Param('index') index): boolean {
+        return this.negocioService.updateArticulo(art, categoria, Number(index));
+    }
+    
+    @Delete(':categoria/:index')
+    public deleteProducto(@Param('categoria') categoria, @Param('index') index): boolean {
+        return this.negocioService.deleteArticulo(categoria, Number(index));
     }
 
     @Post()

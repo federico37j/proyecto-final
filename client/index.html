@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Fuente -->
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap" rel="stylesheet">
-     <!-- Whatsapp -->
+    <!-- Whatsapp -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Estilos -->
     <link rel="stylesheet" href="css/nav.css">
@@ -14,158 +14,167 @@
     <link rel="stylesheet" href="css/whatsapp.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/venta_telefonica.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
     <title>Articulos del hogar</title>
 </head>
 
 <body>
     <!-- Menú de navegación -->
-        <nav class="menu fondo-negro" id="menu">
-            <div class="contenedor contenedor-enlaces-nav-arriba" id="menu-parte-arriba">
-                <div class="contenedor-imagen">
-                    <a href="http://localhost:3000/"><img src="img/logo.png" id="img-logo" alt="Logo"></a>
-                </div>
-                <div class="enlaces">
-                    <input type="text" class="inputBuscar" placeholder="Buscar productos">
-                    <a id="btn-buscar" class="fondo-oscuro btn-buscar letra-clara">
-                        <ion-icon name="search-outline"></ion-icon>
-                    </a>
-                    <a href="http://localhost:3000/html/loginUser.html" class="btn-iniciar-sesion letra-clara">
-                        <ion-icon name="people-outline">
-                    </a>
-                    <a href="http://localhost:3000/html/carrito.html" class="letra-clara">
-                        <ion-icon name="cart-outline">
-                    </a>
-                </div>
+    <nav class="menu fondo-negro" id="menu">
+        <div class="contenedor contenedor-enlaces-nav-arriba" id="menu-parte-arriba">
+            <div class="contenedor-imagen">
+                <a href="http://localhost:3000/"><img src="img/logo.png" id="img-logo" alt="Logo"></a>
             </div>
-            <!-- Contiene botón menu -->
-            <div class="contenedor contenedor-btn-menu">
-                <button class="btn-menu-barras letra-clara" id="btn-menu-barras">
-                    <ion-icon name="reorder-four-outline"></ion-icon>
-                </button>
+            <div class="enlaces">
+                <input type="text" class="inputBuscar" placeholder="Buscar productos">
+                <a id="btn-buscar" class="fondo-oscuro btn-buscar letra-clara">
+                    <ion-icon name="search-outline"></ion-icon>
+                </a>
+                <a href="http://localhost:3000/html/loginUser.html" class="btn-iniciar-sesion letra-clara">
+                    <ion-icon name="people-outline">
+                </a>
+                <a href="http://localhost:3000/html/carrito.html" class="letra-clara">
+                    <ion-icon name="cart-outline">
+                </a>
             </div>
-            <!-- Contiene enlaces -->
-            <div class="contenedor contenedor-enlaces-nav fondo-oscuro">
-                <div class="btn-categorias letra-clara" id="btn-categorias">
-                    <p>Todas las <span>Categorias</span></p>
-                    <ion-icon name="caret-down-outline"></ion-icon>
-                </div>
-                <div class="enlace-menu">
-                    <a href="#" class="letra-clara" id="venta-tel">Venta telefónica</a>
-                    <a href="http://localhost:3000/html/preguntas_frecuentes.html" class="letra-clara">Preguntas Frecuentes</a>
-                    <a href="#footer" class="letra-clara">Quiénes somos</a>
-                </div>
+        </div>
+        <!-- Contiene botón menu -->
+        <div class="contenedor contenedor-btn-menu">
+            <button class="btn-menu-barras letra-clara" id="btn-menu-barras">
+                <ion-icon name="reorder-four-outline"></ion-icon>
+            </button>
+        </div>
+        <!-- Contiene enlaces -->
+        <div class="contenedor contenedor-enlaces-nav fondo-oscuro">
+            <div class="btn-categorias letra-clara" id="btn-categorias">
+                <p>Todas las <span>Categorias</span></p>
+                <ion-icon name="caret-down-outline"></ion-icon>
             </div>
-            <!-- Contiene categorias -->
-            <div class="contenedor-grid">
-                <div class="grid" id="grid">
-                    <div class="categorias">
-                        <button class="btn-regresar fondo-negro letra-clara">
-                            <ion-icon name="arrow-back-outline"></ion-icon>Regresar
-                        </button>
-                        <h3 class="subtitulo">Categorias</h3>
-                        <a href="#" id="tecnologia" class="tecnologia">Tecnología<ion-icon name="chevron-forward-outline">
-                            </ion-icon></a>
-                        <a href="#" id="electrodomesticos" class="electrodomesticos">Electrodomesticos<ion-icon
-                                name="chevron-forward-outline">
-                            </ion-icon></a>
-                        <a href="#" id="pequeños-electrodomesticos" class="pequeños-electrodomesticos">Pequeños
-                            Electrodomesticos<ion-icon name="chevron-forward-outline">
-                            </ion-icon></a>
-                        <a href="#" id="hogar-y-jardin" class="hogar-y-jardin">Hogar y Jardín<ion-icon
-                                name="chevron-forward-outline">
-                            </ion-icon></a>
-                        <a href="#" id="deportes" class="deportes">Deportes<ion-icon name="chevron-forward-outline">
-                            </ion-icon>
-                        </a>
-                    </div>
-                    <div class="contenedor-subcategorias">
-                        <div class="subcategoria" id="tecnologia">
-                            <div class="enlaces-subcategoria">
-                                <a href="http://localhost:3000/html/filtro_categoria.html?categoria=tecnologia" class="subtitulo">Tecnología</a>
-                                <p>Televisores</p>
-                                <p>Celulares</p>
-                                <p>Informática</p>
-                                <p>Tablets y camaras digitales</p>
-                            </div>
-                            <div class="galeria-subcategoria">
-                                <a href="http://localhost:3000/html/filtro_categoria.html?categoria=tecnologia">
-                                    <img src="img/tecnologia-banner.jpg" alt="">
-                                </a>
-                            </div>
+            <div class="enlace-menu">
+                <a href="#" class="letra-clara" id="venta-tel">Venta telefónica</a>
+                <a href="http://localhost:3000/html/preguntas_frecuentes.html" class="letra-clara">Preguntas
+                    Frecuentes</a>
+                <a href="#footer" class="letra-clara">Quiénes somos</a>
+            </div>
+        </div>
+        <!-- Contiene categorias -->
+        <div class="contenedor-grid">
+            <div class="grid" id="grid">
+                <div class="categorias">
+                    <button class="btn-regresar fondo-negro letra-clara">
+                        <ion-icon name="arrow-back-outline"></ion-icon>Regresar
+                    </button>
+                    <h3 class="subtitulo">Categorias</h3>
+                    <a href="#" id="tecnologia" class="tecnologia">Tecnología<ion-icon name="chevron-forward-outline">
+                        </ion-icon></a>
+                    <a href="#" id="electrodomesticos" class="electrodomesticos">Electrodomesticos<ion-icon
+                            name="chevron-forward-outline">
+                        </ion-icon></a>
+                    <a href="#" id="pequeños-electrodomesticos" class="pequeños-electrodomesticos">Pequeños
+                        Electrodomesticos<ion-icon name="chevron-forward-outline">
+                        </ion-icon></a>
+                    <a href="#" id="hogar-y-jardin" class="hogar-y-jardin">Hogar y Jardín<ion-icon
+                            name="chevron-forward-outline">
+                        </ion-icon></a>
+                    <a href="#" id="deportes" class="deportes">Deportes<ion-icon name="chevron-forward-outline">
+                        </ion-icon>
+                    </a>
+                </div>
+                <div class="contenedor-subcategorias">
+                    <div class="subcategoria" id="tecnologia">
+                        <div class="enlaces-subcategoria">
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=tecnologia"
+                                class="subtitulo">Tecnología</a>
+                            <p>Televisores</p>
+                            <p>Celulares</p>
+                            <p>Informática</p>
+                            <p>Tablets y camaras digitales</p>
                         </div>
-                        <div class="subcategoria" id="electrodomesticos">
-                            <div class="enlaces-subcategoria">
-                                <button class="btn-regresar">
-                                    <ion-icon name="arrow-back-outline"></ion-icon>Regresar
-                                </button>
-                                <a href="http://localhost:3000/html/filtro_categoria.html?categoria=electrodomesticos" class="subtitulo">Electrodomesticos</a>
-                                <p>Climatización</p>
-                                <p>Heladeras</p>
-                                <p>Cocina</p>
-                                <p>Lavado</p>
-                            </div>
-                            <div class="galeria-subcategoria">
-                                <a href="http://localhost:3000/html/filtro_categoria.html?categoria=electrodomesticos">
-                                    <img src="img/electrodomesticos-banner.jpg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="subcategoria" id="pequeños-electrodomesticos">
-                            <div class="enlaces-subcategoria">
-                                <button class="btn-regresar">
-                                    <ion-icon name="arrow-back-outline"></ion-icon>Regresar
-                                </button>
-                                <a href="http://localhost:3000/html/filtro_categoria.html?categoria=pequeños-electrodomesticos" class="subtitulo">Pequeños Electrodomesticos</a>
-                                <p>Salud y Bienestar</p>
-                                <p>Cuidado Personal</p>
-                                <p>Hogar Limpieza</p>
-                                <p>Cocina</p>
-                            </div>
-                            <div class="galeria-subcategoria">
-                                <a href="http://localhost:3000/html/filtro_categoria.html?categoria=pequeños-electrodomesticos">
-                                    <img src="img/pequeños-electrodomesticos-banner.jpg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="subcategoria" id="hogar-y-jardin">
-                            <div class="enlaces-subcategoria">
-                                <button class="btn-regresar">
-                                    <ion-icon name="arrow-back-outline"></ion-icon>Regresar
-                                </button>
-                                <a href="http://localhost:3000/html/filtro_categoria.html?categoria=hogar-y-jardin" class="subtitulo">Hogar y Jardín</a>
-                                <p>Muebles</p>
-                                <p>Jardín</p>
-                                <p>Bazar</p>
-                                <p>Herramientas</p>
-                            </div>
-                            <div class="galeria-subcategoria">
-                                <a href="http://localhost:3000/html/filtro_categoria.html?categoria=hogar-y-jardin">
-                                    <img src="img/hogar-y-jardin-banner.jpg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="subcategoria" id="deportes">
-                            <div class="enlaces-subcategoria">
-                                <button class="btn-regresar">
-                                    <ion-icon name="arrow-back-outline"></ion-icon>Regresar
-                                </button>
-                                <a href="http://localhost:3000/html/filtro_categoria.html?categoria=deportes" class="subtitulo">Deportes</a>
-                                <p>Bicicletas</p>
-                                <p>Relojes</p>
-                                <p>Mochilas</p>
-                                <p>Accesorios</p>
-                            </div>
-                            <div class="galeria-subcategoria">
-                                <a href="http://localhost:3000/html/filtro_categoria.html?categoria=deportes">
-                                    <img src="img/deportes-banner.jpg" alt="">
-                                </a>
-                            </div>
+                        <div class="galeria-subcategoria">
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=tecnologia">
+                                <img src="img/tecnologia-banner.jpg" alt="">
+                            </a>
                         </div>
                     </div>
+                    <div class="subcategoria" id="electrodomesticos">
+                        <div class="enlaces-subcategoria">
+                            <button class="btn-regresar">
+                                <ion-icon name="arrow-back-outline"></ion-icon>Regresar
+                            </button>
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=electrodomesticos"
+                                class="subtitulo">Electrodomesticos</a>
+                            <p>Climatización</p>
+                            <p>Heladeras</p>
+                            <p>Cocina</p>
+                            <p>Lavado</p>
+                        </div>
+                        <div class="galeria-subcategoria">
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=electrodomesticos">
+                                <img src="img/electrodomesticos-banner.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="subcategoria" id="pequeños-electrodomesticos">
+                        <div class="enlaces-subcategoria">
+                            <button class="btn-regresar">
+                                <ion-icon name="arrow-back-outline"></ion-icon>Regresar
+                            </button>
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=pequeños-electrodomesticos"
+                                class="subtitulo">Pequeños Electrodomesticos</a>
+                            <p>Salud y Bienestar</p>
+                            <p>Cuidado Personal</p>
+                            <p>Hogar Limpieza</p>
+                            <p>Cocina</p>
+                        </div>
+                        <div class="galeria-subcategoria">
+                            <a
+                                href="http://localhost:3000/html/filtro_categoria.html?categoria=pequeños-electrodomesticos">
+                                <img src="img/pequeños-electrodomesticos-banner.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="subcategoria" id="hogar-y-jardin">
+                        <div class="enlaces-subcategoria">
+                            <button class="btn-regresar">
+                                <ion-icon name="arrow-back-outline"></ion-icon>Regresar
+                            </button>
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=hogar-y-jardin"
+                                class="subtitulo">Hogar y Jardín</a>
+                            <p>Muebles</p>
+                            <p>Jardín</p>
+                            <p>Bazar</p>
+                            <p>Herramientas</p>
+                        </div>
+                        <div class="galeria-subcategoria">
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=hogar-y-jardin">
+                                <img src="img/hogar-y-jardin-banner.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="subcategoria" id="deportes">
+                        <div class="enlaces-subcategoria">
+                            <button class="btn-regresar">
+                                <ion-icon name="arrow-back-outline"></ion-icon>Regresar
+                            </button>
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=deportes"
+                                class="subtitulo">Deportes</a>
+                            <p>Bicicletas</p>
+                            <p>Relojes</p>
+                            <p>Mochilas</p>
+                            <p>Accesorios</p>
+                        </div>
+                        <div class="galeria-subcategoria">
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=deportes">
+                                <img src="img/deportes-banner.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-                </div>
             </div>
-        </nav>
+        </div>
+    </nav>
 
     <div class="div-envios sombreado fondo-claro" id="div-envios">
         <div class="div-envio-domicilio">
@@ -200,7 +209,7 @@
                     <li>Asesoramiento de especialistas.</li>
                     <li>Pago con tarjeta de crédito, cheque o depósito bancario.</li>
                 </ul>
-                    <h6>¡Comprá por teléfono y retiralo en tu sucursal más cercana!</h6>
+                <h6>¡Comprá por teléfono y retiralo en tu sucursal más cercana!</h6>
             </div>
         </div>
     </div>
@@ -409,7 +418,7 @@
             <img src="img/publicidad3.jpg" alt="Linea de muebles">
         </div>
     </section>
-    
+
     <!-- Footer -->
     <footer class="fondo-claro" id="footer">
         <div class="container-footer-all">
@@ -476,7 +485,6 @@
     <script src="js/cargar_producto.js"></script>
     <script src="js/bannerEnvios.js"></script>
     <script src="js/venta_telefonica.js"></script>
-    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
 </body>
 
 </html>
