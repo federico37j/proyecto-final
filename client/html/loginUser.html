@@ -23,12 +23,11 @@
 </head>
 
 <body>
-    <section class="register-account">
-        <div class="signform">
-            <div>
+    <section class="fondo-claro">
+        <div class="fondo-claro">
+            <div class="containLogo">
                 <!-- agrego el logo -->
-                <img src="../img/logo.png" alt="logo" width="300px" height="300px">
-                <br>
+                <img src="../img/logo.png" alt="logo"  id="imgLogo">
             </div>
             <div class="headit">
                 <h1>Bienvenido/a</h1>
@@ -37,19 +36,23 @@
                 <form action="" method="post" name="FormEntrar">
                     <div>
                         <h4 class="titH4">Email:</h4>
-                        <input class="mail" type="email" placeholder="E-mail" required />
+                        <input class="inp" type="email" placeholder="E-mail" required />
                     </div>
                     <div>
                         <h4 class="titH4">Contraseña:</h4>
-                        <input class="pwd" type="password" placeholder="Contraseña" required />
+                        <input class="inp" type="password" placeholder="Contraseña" required />
                     </div>
                 </form>
                 <div>
                     <a href="./recover.html" class="bts-a">Has olvidado la contraseña?</a>
-                    <button class="subbt" type="submit">Ingresar</button>
                 </div>
-                <a href="./register.html" target="_blank" style="float:right;margin-right:35px;font-size: 0.9em;"
+                <div>
+                    <button class="subbt btn" type="submit">Ingresar</button>
+                </div>
+                <a href="./register.html" target="_blank" 
                     class="bts-a">¿No tenés cuenta? Registrate ahora!</a>
+                <!-- style="float:right;margin-right:35px;font-size: 0.9em;" -->
+
                 <br>
                 <p class="optRedes">O inicia sesión con...</p>
                 <div class="bts">
