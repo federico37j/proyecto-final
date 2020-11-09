@@ -53,12 +53,101 @@
     </div>
   </nav>
 
+  <div class="contenedor-cargar-articulo">
+    <div class="pop-up-carga-articulo col-12 col-md-10">
+      <div class="contenedor-btn-salir">
+        <button class="btn-salir" id="btn-salir">
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+      </div>
+      <div class="row">
+        <div class="img-carga-articulo col-md-12 row">
+          <div class="col-md-3 add-photo-container">
+            <div class="add-new-photo" >
+              <label for="file-ip-1"><ion-icon name="camera-outline"></ion-icon></label>
+            </div>
+            <input type="file" class="new-photo" id="file-ip-1" accept="image/*" onchange="showPreview(event)">
+            <div class="preview">
+              <img id="file-ip-1-preview">
+            </div>
+            <progress id="file-ip-1-bar" value="0" max="100" style="width: 100%"></progress>
+          </div>
+          <div class="col-md-3 add-photo-container">
+            <div class="add-new-photo" >
+              <label for="file-ip-2"><ion-icon name="camera-outline"></ion-icon></label>
+            </div>
+            <input type="file" class="new-photo" id="file-ip-2" accept="image/*" onchange="showPreview(event)" >
+            <div class="preview">
+              <img id="file-ip-2-preview">
+            </div>
+            <progress id="file-ip-2-bar" value="0" max="100" style="width: 100%"></progress>
+          </div>
+          <div class="col-md-3 add-photo-container">
+            <div class="add-new-photo" >
+              <label for="file-ip-3"><ion-icon name="camera-outline"></ion-icon></label>
+            </div>
+            <input type="file" class="new-photo" id="file-ip-3" accept="image/*" onchange="showPreview(event)">
+            <div class="preview">
+              <img id="file-ip-3-preview">
+            </div>
+            <progress id="file-ip-3-bar" value="0" max="100" style="width: 100%"></progress>
+          </div>
+        </div>
+        <div class="form-carga-articulo col-md-12 mt-5">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <input type="number" class="form-control" id="stock" placeholder="Stock">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <input type="text" class="form-control" id="precio" placeholder="Precio">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <input type="text" class="form-control" id="financiacion" placeholder="Financiación">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <input type="text" class="form-control" id="tipo" placeholder="Tipo">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <input type="text" class="form-control" id="categoria" placeholder="Categoría">
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <textarea class="form-control" id="detalle" rows="2" placeholder="Detalle"></textarea>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <a href="" class="btn btn-dark btn-agregar-articulo">AGREGAR</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
   <section class="container-fluid mt-5 mb-5">
     <div id="stock" class="col-12 col-md-10 offset-md-1">
       <!-- <h1 class="mt-2">Control de stock</h1> -->
+      <a id="btn_cargar_articulo" class="btn btn-dark btn_cargar_articulo"> CARGAR</a>
       <table class="table content-table">
         <thead>
-          <tr>
+          <tr class="text-center">
             <th>STOCK</th>
             <th>NOMBRE</th>
             <th>PRECIO</th>
@@ -76,6 +165,7 @@
     </div>
   </section>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
