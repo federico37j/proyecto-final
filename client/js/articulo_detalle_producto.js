@@ -24,7 +24,7 @@ async function load() {
                 cargarImagenes(i, articulo.imagenes[i]);
             }
             document.querySelector("#nombre-articulo").textContent = articulo.nombre;
-            document.querySelector("#precio-articulo").textContent = articulo.precio;
+            document.querySelector("#precio-articulo").textContent = `$${articulo.precio}`;
             document.querySelector("#financiacion-articulo").textContent = articulo.financiacion;
             document.querySelector("#descripcion-articulo").textContent = articulo.detalle;
 
