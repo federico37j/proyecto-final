@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Fuente     -->
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Estilos -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/administrador.css">
+  <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule="" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.js"></script>
+  <title>Administrador</title>
+</head>
+
+<body>
+
+  <!-- Nav -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <!-- <a class="navbar-brand" href="http://localhost:3000/"><img src="../img/logo.png" id="img-logo" alt="Logo"></a> -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-5">
+        <li class="nav-item active">
+          <a class="nav-link" href="http://localhost:3000/">HOME <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            CATEGORÍAS
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" id="tecnologia" href="#">Tecnología</a>
+            <a class="dropdown-item" id="electrodomesticos" href="#">Electrodomésticos</a>
+            <a class="dropdown-item" id="pequenios_electrodomesticos" href="#">Pequeños Electrodomésticos</a>
+            <a class="dropdown-item" id="hogar_jardin" href="#">Hogar y Jardín</a>
+            <a class="dropdown-item" id="deportes" href="#">Deportes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">SALIR</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="contenedor-cargar-articulo">
+    <div class="pop-up-carga-articulo col-12 col-md-10">
+      <div class="contenedor-btn-salir">
+        <button class="btn-salir" id="btn-salir">
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+      </div>
+      <div class="row">
+        <div class="img-carga-articulo col-md-12 row">
+          <div class="col-md-3 add-photo-container">
+            <div class="add-new-photo" >
+              <label for="file-ip-1"><ion-icon name="camera-outline"></ion-icon></label>
+            </div>
+            <input type="file" class="new-photo" id="file-ip-1" accept="image/*" onchange="showPreview(event)">
+            <div class="preview">
+              <img id="file-ip-1-preview">
+            </div>
+            <progress id="file-ip-1-bar" value="0" max="100" style="width: 100%"></progress>
+          </div>
+          <div class="col-md-3 add-photo-container">
+            <div class="add-new-photo" >
+              <label for="file-ip-2"><ion-icon name="camera-outline"></ion-icon></label>
+            </div>
+            <input type="file" class="new-photo" id="file-ip-2" accept="image/*" onchange="showPreview(event)" >
+            <div class="preview">
+              <img id="file-ip-2-preview">
+            </div>
+            <progress id="file-ip-2-bar" value="0" max="100" style="width: 100%"></progress>
+          </div>
+          <div class="col-md-3 add-photo-container">
+            <div class="add-new-photo" >
+              <label for="file-ip-3"><ion-icon name="camera-outline"></ion-icon></label>
+            </div>
+            <input type="file" class="new-photo" id="file-ip-3" accept="image/*" onchange="showPreview(event)">
+            <div class="preview">
+              <img id="file-ip-3-preview">
+            </div>
+            <progress id="file-ip-3-bar" value="0" max="100" style="width: 100%"></progress>
+          </div>
+        </div>
+        <div class="form-carga-articulo col-md-12 mt-5">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <input type="number" class="form-control" id="stock" placeholder="Stock">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <input type="text" class="form-control" id="precio" placeholder="Precio">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <input type="text" class="form-control" id="financiacion" placeholder="Financiación">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <input type="text" class="form-control" id="tipo" placeholder="Tipo">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <input type="text" class="form-control" id="categoria" placeholder="Categoría">
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <textarea class="form-control" id="detalle" rows="2" placeholder="Detalle"></textarea>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <a href="" class="btn btn-dark btn-agregar-articulo">AGREGAR</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <section class="container-fluid mt-5 mb-5">
+    <div id="stock" class="col-12 col-md-10 offset-md-1">
+      <!-- <h1 class="mt-2">Control de stock</h1> -->
+      <a id="btn_cargar_articulo" class="btn btn-dark btn_cargar_articulo"> CARGAR</a>
+      <table class="table content-table">
+        <thead>
+          <tr class="text-center">
+            <th>STOCK</th>
+            <th>NOMBRE</th>
+            <th>PRECIO</th>
+            <th>FINANCIACIÓN</th>
+            <th>DETALLE</th>
+            <th>TIPO</th>
+            <th>IMAGENES</th>
+            <th>ELIMINAR</th>
+            <th>ACTUALIZAR</th>
+          </tr>
+        </thead>
+        <tbody id="detalle-tabla" class="text-center"></tbody>
+      </table>
+      <div id="mensaje" class="text-center"></div>
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+  <script src="../js/administrador.js"></script>
+
+</body>
+
+</html>

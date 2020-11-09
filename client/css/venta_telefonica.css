@@ -13,6 +13,7 @@
 }
 
 .contenido-venta.activo {
+    z-index: 200;
     display: flex;
 }
 
