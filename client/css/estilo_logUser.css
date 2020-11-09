@@ -41,7 +41,7 @@
     margin-top: 0.2em;
   }
   .bts-a:hover {
-    color: #79b42b;
+    color: #dd6617e7;
     text-decoration: none;
     background: white;
   }
@@ -151,9 +151,9 @@
     font-style: normal;
   }
 
-  .titH4{
-    margin: 1px;
-    padding: 1px;
+  .titH4, .inp{
+    margin: 5px 3px;
+    padding: 3px;
   }
 
   .right a {
@@ -169,7 +169,7 @@
   }
   .headit {
     position: relative;
-    top: -10px;
+    margin-top: 30px;
   }
   .headit h4 {
     color: #474646;
@@ -180,15 +180,15 @@
   }
   .bts a:hover {
     text-decoration: none;
-    color: white;
+    color: blue;
   }
   .bts a:active {
-    color: white;
+    color: blue;
     text-decoration: none;
   }
   .bts a:focus {
     text-decoration: none;
-    color: white;
+    color: blue;
   }
   .headit a {
     text-decoration: none;
@@ -201,38 +201,7 @@
   .optRedes{
       text-align: center;
   }
-  /* form#login-form:before {
-    content: "or";
-    color: #79b42b;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    margin: auto;
-    height: 0.5em;
-    width: 0.5em;
-    left: 1.5em;
   
-    z-index: 900;
-  } */
-  /* form#login-form:after {
-    content: "";
-    position: absolute;
-    background: rgba(128, 128, 128, 0.3);
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 15px;
-    margin: auto;
-    height: 3.25em;
-    width: 0.1em;
-    left: 2.15em;
-  
-    -moz-box-shadow: 0 8.8em 0 0 rgba(128, 128, 128, 0.3);
-    -webkit-box-shadow: 0 8.8em 0 0 rgba(128, 128, 128, 0.3);
-    box-shadow: 0 8.8em 0 0 rgba(128, 128, 128, 0.3);
-  } */
 
   .spnRecordar{
     color:#0f0e0e;
