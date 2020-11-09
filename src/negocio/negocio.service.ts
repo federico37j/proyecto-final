@@ -99,9 +99,25 @@ export class NegocioService {
         return this.listadoArticulos;
     }
 
+    public addArticulo(art: any, categoria: String): string {
+        const url: string = `resources/${categoria}.csv`;
+        const articulo = new Articulo(art.nombre,art.precio,
+        art.financiacion,art.detalle,art.tipo,art.stock,art.imagenes);
+        console.log(articulo)
+        if(articulo.getNombre() && articulo.getPrecio() && articulo.getFinanciacion() && articulo.getDetalle() && articulo.getTipo()
+        && articulo.getStock()){
+        fs.appendFileSync(url,
+            `\n${this.getArticuloLine(articulo)}`);
+            return "ok";
+        } else {
+            return "Parametros incorrectos";
+        }
+    }
+
     public updateArticulo(art: any, categoria: any, index: number): boolean {
-        const articulo = new Articulo(art.nombre, art.precio, art.financiacion, art.detalle, art.tipo, art.stock, art.imagenes[0]);
+        const articulo = new Articulo(art.nombre, art.precio, art.financiacion, art.detalle, art.tipo, art.stock, art.imagenes);
         this.listadoArticulos[index] = articulo;
+        console.log(this.listadoArticulos[index])
         this.actualizarArchivo(categoria);
         return true;
     }

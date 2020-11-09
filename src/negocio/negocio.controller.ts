@@ -23,20 +23,25 @@ export class NegocioController {
     public updateArticulo(@Body() art: any, @Param('categoria') categoria, @Param('index') index): boolean {
         return this.negocioService.updateArticulo(art, categoria, Number(index));
     }
-    
+
     @Delete(':categoria/:index')
     public deleteProducto(@Param('categoria') categoria, @Param('index') index): boolean {
         return this.negocioService.deleteArticulo(categoria, Number(index));
     }
 
+    @Post(':categoria')
+    addArticulo(@Body() articulo: Articulo, @Param('categoria') categoria): string {
+        return this.negocioService.addArticulo(articulo, categoria);
+    }
+
     @Post()
     create(@Body() user: Usuario): string {
-        return   this.negocioService.create(user);
+        return this.negocioService.create(user);
     }
 
     @Post()
     addVendor(@Body() vddr: Vendedor): string {
-        return   this.negocioService.addVendedor(vddr);
+        return this.negocioService.addVendedor(vddr);
     }
 
 }
