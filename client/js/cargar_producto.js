@@ -13,7 +13,6 @@ function cargarCategoria(jsonConArticulos, categoria) {
         mostrarDatosHtml(i, jsonConArticulos[i].nombre, "nombre", categoria);
         mostrarDatosHtml(i, jsonConArticulos[i].imagenes[0], "img", categoria, true);
         mostrarDatosHtml(i, `$${jsonConArticulos[i].precio}`, "precio", categoria);
-        console.log(jsonConArticulos[i].precio)
         mostrarDatosHtml(i, jsonConArticulos[i].financiacion, "financiacion", categoria);
         cargarHref(categoria,i);
     }

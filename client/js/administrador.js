@@ -19,7 +19,7 @@ document.querySelectorAll('.dropdown-item').forEach(categoria => {
 // Traigo los articulos del Back End y los inserto en arreglo global.
 async function cargarDatos(categoria) {
     let mensaje = document.querySelector('#mensaje');
-    const URL = `/articulo/${categoria}`;
+    const URL = `/stock/${categoria}`;
     try {
         let response = await fetch(URL);
         if (response.ok) {
@@ -99,7 +99,7 @@ async function btnBorrarClick() {
     console.log("borrar")
     let data_categoria = this.dataset.categoria;
     let pos = this.getAttribute("pos");
-    let response = await fetch(`/articulo/${data_categoria}/${pos}`, {
+    let response = await fetch(`/stock/${data_categoria}/${pos}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json"
@@ -125,7 +125,7 @@ async function btnActualizarClick() {
         "stock": document.getElementById(`stock${pos}`).value,
         "imagenes": pasarCadenaUrlArregloImg(pos)
     }
-    let response = await fetch(`/articulo/${data_categoria}/${pos}`, {
+    let response = await fetch(`/stock/${data_categoria}/${pos}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
@@ -180,7 +180,7 @@ async function showPreview(event) {
     }
 }
 
-async function agregarArticulo() {
+document.querySelector('.btn-agregar-articulo').addEventListener('click', async function () {
     let categoria = document.getElementById(`categoria`).value
     let articulo = {
         "nombre": document.getElementById(`nombre`).value,
@@ -192,7 +192,7 @@ async function agregarArticulo() {
         "imagenes": secureUrlImg
     }
 
-    let respuesta = await fetch(`http://localhost:3000/articulo${categoria}`, {
+    let respuesta = await fetch(`http://localhost:3000/stock/${categoria}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -204,4 +204,4 @@ async function agregarArticulo() {
     } else {
         console.log('Hubo un error');
     }
-}
+});
