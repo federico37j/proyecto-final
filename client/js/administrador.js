@@ -4,15 +4,24 @@ let tbody_detalle_tabla = document.querySelector("#detalle-tabla");
 
 // Arreglo global de articulos.
 let listaArticulos = [];
+
 let secureUrlImg = [];
 
 /* //////////////
    Cargar tabla
 //////////////*/
 
-document.querySelectorAll('.dropdown-item').forEach(categoria => {
+document.querySelectorAll('.nav-item .dropdown-item').forEach(categoria => {
     categoria.addEventListener('click', function () {
         cargarDatos(categoria.id);
+    });
+});
+
+document.querySelectorAll('.form-carga-articulo .categotias-cargar-articulo .dropdown-item').forEach(categoria => {
+    categoria.addEventListener('click', function () {
+        let btn_dropdown = document.querySelector("#dropdownMenuButton");
+        btn_dropdown.textContent = categoria.textContent;
+        btn_dropdown.dataset.categoria = categoria.dataset.categoria;
     });
 });
 
@@ -44,6 +53,7 @@ function cargarArregloConArticulos(articulos, categoria) {
     cargarHTML(categoria);
 }
 
+//Cargo la tabla con los articulos
 function cargarHTML(categoria) {
     let html = "";
     for (let i = 0; i < listaArticulos.length; i++) {
@@ -181,7 +191,9 @@ async function showPreview(event) {
 }
 
 document.querySelector('.btn-agregar-articulo').addEventListener('click', async function () {
-    let categoria = document.getElementById(`categoria`).value
+    let categoria = document.querySelector("#dropdownMenuButton").dataset.categoria;
+    //le saco los acentos
+    categoria.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
     let articulo = {
         "nombre": document.getElementById(`nombre`).value,
         "precio": document.getElementById(`precio`).value,

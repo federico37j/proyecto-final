@@ -121,9 +121,21 @@
               </div>
             </div>
             <div class="col-md-3">
-              <div class="form-group">
-                <input type="text" class="form-control" id="categoria" placeholder="Categoría">
-              </div>
+              <!-- <div class="form-group"> -->
+                <!-- <input type="text" class="form-control" id="categoria" placeholder="Categoría"> -->
+                <div class="dropdown">
+                  <button class="btn btn-block btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" data-categoria="" aria-haspopup="true" aria-expanded="false">
+                    Categoría
+                  </button>
+                  <div class="dropdown-menu categotias-cargar-articulo" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" data-categoria="tecnologia" href="#">Tecnología</a>
+                    <a class="dropdown-item" data-categoria="electrodomesticos" href="#">Electrodomésticos</a>
+                    <a class="dropdown-item" data-categoria="pequenios_electrodomesticos" href="#">Pequeños Electrodomésticos</a>
+                    <a class="dropdown-item" data-categoria="hogar_jardin" href="#">Hogar y Jardin</a>
+                    <a class="dropdown-item" data-categoria="deportes" href="#">Deportes</a>
+                  </div>
+                </div>
+              <!-- </div> -->
             </div>
             <div class="col-md-12">
               <div class="form-group">
@@ -131,7 +143,7 @@
               </div>
             </div>
             <div class="col-md-12">
-              <a href="#" class="btn btn-dark btn-agregar-articulo">AGREGAR</a>
+              <a href="" class="btn btn-dark btn-agregar-articulo">AGREGAR</a>
             </div>
           </div>
         </div>

@@ -59,8 +59,8 @@ export class StockService {
 
     public addArticulo(art: any, categoria: String): string {
         const url: string = `resources/${categoria}.csv`;
-        const articulo = new Articulo(art.nombre,art.precio,
-        art.financiacion,art.detalle,art.tipo,art.stock,art.imagenes);
+        const articulo = new Articulo(art.nombre,Number(art.precio),
+        art.financiacion,art.detalle,art.tipo,Number(art.stock),art.imagenes);
         console.log(articulo)
         if(articulo.getNombre() && articulo.getPrecio() && articulo.getFinanciacion() && articulo.getDetalle() && articulo.getTipo()
         && articulo.getStock()){
