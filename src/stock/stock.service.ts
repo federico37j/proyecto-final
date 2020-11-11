@@ -61,7 +61,6 @@ export class StockService {
         const url: string = `resources/${categoria}.csv`;
         const articulo = new Articulo(art.nombre,Number(art.precio),
         art.financiacion,art.detalle,art.tipo,Number(art.stock),art.imagenes);
-        console.log(articulo)
         if(articulo.getNombre() && articulo.getPrecio() && articulo.getFinanciacion() && articulo.getDetalle() && articulo.getTipo()
         && articulo.getStock()){
         fs.appendFileSync(url,
@@ -75,7 +74,6 @@ export class StockService {
     public updateArticulo(art: any, categoria: any, index: number): boolean {
         const articulo = new Articulo(art.nombre, art.precio, art.financiacion, art.detalle, art.tipo, art.stock, art.imagenes);
         this.listadoArticulos[index] = articulo;
-        console.log(this.listadoArticulos[index])
         this.actualizarArchivo(categoria);
         return true;
     }

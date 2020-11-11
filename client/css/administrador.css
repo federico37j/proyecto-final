@@ -43,6 +43,7 @@ textarea {
 .content-table td {
     padding: 8px;
     vertical-align: inherit;
+    border-top: none;
 }
 
 .content-table tbody tr {
@@ -61,7 +62,8 @@ textarea {
 
 .contenedor-btn-salir {
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: space-between;
     /* height: 5px; */
 }
 
@@ -122,7 +124,7 @@ td img {
 
 .pop-up-carga-articulo {
     background: var(--whiteColor);
-    max-height: 660px;
+    max-height: 618px;
     border-radius: 10px;
     margin-top: 10px;
 }
@@ -165,9 +167,21 @@ td img {
 .preview img{
     position: absolute;
     /* left: 19px; */
-    top: 3px;
+    bottom: 55px;
     /* max-width: 187px; */
     /* max-height: 200px; */
-    width: 89%;
-    height: 90%;
+    /* width: 89%;
+    height: 90%; */
+    max-width: 187px;
+    max-height: 200px;
+}
+
+.btn-agregar-modificar {
+    color: #f04603;
+    background: transparent;
+}
+
+.mensaje-error{
+    color: red;
+
 }
