@@ -1,18 +1,29 @@
 'use strict';
 
 let tbody_detalle_tabla = document.querySelector("#detalle-tabla");
+let btn_dropdown = document.querySelector("#dropdownMenuButton");
+let btn_agregar_modificar = document.querySelector('.btn-agregar-modificar');
+let posicion = document.querySelector('#posicion');
 
 // Arreglo global de articulos.
 let listaArticulos = [];
+
 let secureUrlImg = [];
 
 /* //////////////
    Cargar tabla
 //////////////*/
 
-document.querySelectorAll('.dropdown-item').forEach(categoria => {
+document.querySelectorAll('.nav-item .dropdown-item').forEach(categoria => {
     categoria.addEventListener('click', function () {
         cargarDatos(categoria.id);
+    });
+});
+
+document.querySelectorAll('.form-carga-articulo .categotias-cargar-articulo .dropdown-item').forEach(categoria => {
+    categoria.addEventListener('click', function () {
+        btn_dropdown.textContent = categoria.textContent;
+        btn_dropdown.dataset.categoria = categoria.dataset.categoria;
     });
 });
 
@@ -44,6 +55,7 @@ function cargarArregloConArticulos(articulos, categoria) {
     cargarHTML(categoria);
 }
 
+//Cargo la tabla con los articulos
 function cargarHTML(categoria) {
     let html = "";
     for (let i = 0; i < listaArticulos.length; i++) {
@@ -55,7 +67,7 @@ function cargarHTML(categoria) {
         <td><input class="text-center" type="text" value="${listaArticulos[i].financiacion}" id="financiacion${i}"></td>
         <td><input type="text" value="${listaArticulos[i].detalle}" id="detalle${i}"></input></td>
         <td><input type="text" value="${listaArticulos[i].tipo}" id="tipo${i}"></td>
-        <td style="display: flex;align-items: center;"><img src="${listaArticulos[i].imagenes[0]}" alt=""><img src="${listaArticulos[i].imagenes[1]}" alt=""><img src="${listaArticulos[i].imagenes[2]}" alt=""><img src="${listaArticulos[i].imagenes[3]}" alt=""></td>
+        <td class="img${i}" style="display: flex;align-items: center;"><img src="${listaArticulos[i].imagenes[0]}" alt=""><img src="${listaArticulos[i].imagenes[1]}" alt=""><img src="${listaArticulos[i].imagenes[2]}" alt=""><img src="${listaArticulos[i].imagenes[3]}" alt=""></td>
         <td><button class="btn-delete-articulo" pos="${i}" data-categoria="${categoria}"><ion-icon name="close-circle-outline"></ion-icon></button></td>
         <td><button class="btn-update-articulo" pos="${i}" data-categoria="${categoria}"><ion-icon name="sync-circle-outline"></ion-icon></button></td>
         </tr>
@@ -64,7 +76,7 @@ function cargarHTML(categoria) {
     mensaje.innerHTML = '';
     tbody_detalle_tabla.innerHTML = html;
     comportamientoBtn(".btn-delete-articulo", btnBorrarClick);
-    comportamientoBtn(".btn-update-articulo", btnActualizarClick);
+    comportamientoBtn(".btn-update-articulo", cargarPopUp);
 }
 
 // function pasarArrayImgCadena(arrImg) {
@@ -76,12 +88,14 @@ function cargarHTML(categoria) {
 //     return cadenaUrl;
 // }
 
-function pasarCadenaUrlArregloImg(pos) {
-    let cadenaUrl = document.getElementById(`imagenes${pos}`).value
-    let lineas = cadenaUrl.split('|');
-    //Le quito la ultima posición
-    lineas.pop();
-    return lineas;
+function arregloImg() {
+    let arrImagenes = [];
+    let listaNodosImg = document.querySelectorAll('.preview img');
+    for (let i = 0; i < listaNodosImg.length; i++) {
+        arrImagenes.push(listaNodosImg[i].src);
+    }
+
+    return arrImagenes;
 }
 
 /* //////////////
@@ -105,7 +119,6 @@ async function btnBorrarClick() {
             "Content-Type": "application/json"
         }
     });
-
     if (response.ok) {
         cargarDatos(data_categoria);
     } else {
@@ -113,19 +126,46 @@ async function btnBorrarClick() {
     }
 }
 
-async function btnActualizarClick() {
-    let pos = this.getAttribute("pos");
-    let data_categoria = this.dataset.categoria;
-    let renglon = {
-        "nombre": document.getElementById(`nombre${pos}`).value,
-        "precio": document.getElementById(`precio${pos}`).value,
-        "financiacion": document.getElementById(`financiacion${pos}`).value,
-        "detalle": document.getElementById(`detalle${pos}`).value,
-        "tipo": document.getElementById(`tipo${pos}`).value,
-        "stock": document.getElementById(`stock${pos}`).value,
-        "imagenes": pasarCadenaUrlArregloImg(pos)
+function pasarImgPopUp(pos) {
+    let arrImagenes = document.querySelectorAll(`.img${pos} img`);
+    let listaNodosImg = document.querySelectorAll('.preview img');
+    for (let i = 0; i < listaNodosImg.length; i++) {
+        if (arrImagenes[i].src != "http://localhost:3000/html/null") {
+            listaNodosImg[i].src = arrImagenes[i].src;
+        }
     }
-    let response = await fetch(`/stock/${data_categoria}/${pos}`, {
+}
+
+function cargarPopUp() {
+    posicion.value = this.getAttribute("pos");
+    let pos = Number(posicion.value);
+    pasarImgPopUp(pos);
+    btn_dropdown.textContent = this.dataset.categoria;
+    document.querySelector('.contenedor-cargar-articulo').classList.toggle('activo');
+    btn_agregar_modificar.classList.toggle('disabled');
+    btn_agregar_articulo.classList.add('disabled');
+
+    document.querySelector(`.form-group #nombre`).value = document.getElementById(`nombre${pos}`).value;
+    document.querySelector(`.form-group #precio`).value = document.getElementById(`precio${pos}`).value;
+    document.querySelector(`.form-group #financiacion`).value = document.getElementById(`financiacion${pos}`).value;
+    document.querySelector(`.form-group #detalle`).value = document.getElementById(`detalle${pos}`).value;
+    document.querySelector(`.form-group #tipo`).value = document.getElementById(`tipo${pos}`).value;
+    document.querySelector(`.form-group #stock`).value = document.getElementById(`stock${pos}`).value;
+}
+
+btn_agregar_modificar.addEventListener('click', async function btnActualizarClick() {
+    console.log(arregloImg());
+    let pos = Number(posicion.value);
+    let renglon = {
+        "nombre":  document.querySelector(`.form-group #nombre`).value,
+        "precio": document.querySelector(`.form-group #precio`).value,
+        "financiacion": document.querySelector(`.form-group #financiacion`).value,
+        "detalle": document.querySelector(`.form-group #detalle`).value,
+        "tipo": document.querySelector(`.form-group #tipo`).value,
+        "stock": document.querySelector(`.form-group #stock`).value,
+        "imagenes": arregloImg()
+    }
+    let response = await fetch(`/stock/${btn_dropdown.textContent}/${pos}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
@@ -138,14 +178,18 @@ async function btnActualizarClick() {
     } else {
         console.log("Error");
     }
-}
+});
+
+let btn_agregar_articulo = document.querySelector('#btn-agregar-articulo');
 
 document.querySelector('#btn-salir').addEventListener('click', function () {
     document.querySelector('.contenedor-cargar-articulo').classList.toggle('activo');
+    btn_agregar_articulo.classList.toggle('disabled');
 });
 
 document.querySelector('#btn_cargar_articulo').addEventListener('click', function () {
     document.querySelector('.contenedor-cargar-articulo').classList.toggle('activo');
+    btn_agregar_articulo.classList.toggle('disabled');
 });
 
 /* //////////////
@@ -168,7 +212,7 @@ async function showPreview(event) {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 },
-                onUploadProgress (e) {
+                onUploadProgress(e) {
                     let progress = Math.round((e.loaded * 100) / e.total);
                     document.getElementById(`${event.target.id}-bar`).setAttribute('value', progress);
                 }
@@ -181,27 +225,42 @@ async function showPreview(event) {
 }
 
 document.querySelector('.btn-agregar-articulo').addEventListener('click', async function () {
-    let categoria = document.getElementById(`categoria`).value
-    let articulo = {
-        "nombre": document.getElementById(`nombre`).value,
-        "precio": document.getElementById(`precio`).value,
-        "financiacion": document.getElementById(`financiacion`).value,
-        "detalle": document.getElementById(`detalle`).value,
-        "tipo": document.getElementById(`tipo`).value,
-        "stock": document.getElementById(`stock`).value,
-        "imagenes": secureUrlImg
-    }
+    let categoria = document.querySelector("#dropdownMenuButton").dataset.categoria;
+    let mensajeError = document.getElementById('mensaje-error');
+    let nombre = document.getElementById(`nombre`).value;
+    let precio = document.getElementById(`precio`).value;
+    let financiacion = document.getElementById(`financiacion`).value;
+    let detalle = document.getElementById(`detalle`).value;
+    let tipo = document.getElementById(`tipo`).value;
+    let stock = document.getElementById(`stock`).value;
 
-    let respuesta = await fetch(`http://localhost:3000/stock/${categoria}`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(articulo)
-    });
-    if (respuesta.ok) {
-        listaArticulos.push(articulo);
+    if (categoria.length > 0 && nombre.length > 0 && precio.length > 0 && financiacion.length > 0 && detalle.length > 0
+        && tipo.length > 0 && stock.length > 0) {
+        //le saco los acentos
+        categoria.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        let articulo = {
+            "nombre": nombre,
+            "precio": precio,
+            "financiacion": financiacion,
+            "detalle": detalle,
+            "tipo": tipo,
+            "stock": stock,
+            "imagenes": secureUrlImg
+        }
+
+        let respuesta = await fetch(`http://localhost:3000/stock/${categoria}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(articulo)
+        });
+        if (respuesta.ok) {
+            listaArticulos.push(articulo);
+        } else {
+            console.log('Hubo un error');
+        }
     } else {
-        console.log('Hubo un error');
+        mensajeError.innerHTML = "Todos los campos deben estar completos";
     }
 });
