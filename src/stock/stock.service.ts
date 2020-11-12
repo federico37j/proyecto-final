@@ -5,7 +5,7 @@ import * as fs from 'fs';
 @Injectable()
 export class StockService {
     private listadoArticulos = [];
-    
+
     // Traigo los datos que contiene el archivo .csv y lo convierto en objeto Articulo.
     private loadArticulo(url: string): Articulo[] {
 
@@ -59,12 +59,12 @@ export class StockService {
 
     public addArticulo(art: any, categoria: String): string {
         const url: string = `resources/${categoria}.csv`;
-        const articulo = new Articulo(art.nombre,Number(art.precio),
-        art.financiacion,art.detalle,art.tipo,Number(art.stock),art.imagenes);
-        if(articulo.getNombre() && articulo.getPrecio() && articulo.getFinanciacion() && articulo.getDetalle() && articulo.getTipo()
-        && articulo.getStock()){
-        fs.appendFileSync(url,
-            `\n${this.getArticuloLine(articulo)}`);
+        const articulo = new Articulo(art.nombre, Number(art.precio),
+            art.financiacion, art.detalle, art.tipo, Number(art.stock), art.imagenes);
+        if (articulo.getNombre() && articulo.getPrecio() && articulo.getFinanciacion() && articulo.getDetalle() && articulo.getTipo()
+            && articulo.getStock()) {
+            fs.appendFileSync(url,
+                `\n${this.getArticuloLine(articulo)}`);
             return "ok";
         } else {
             return "Parametros incorrectos";
