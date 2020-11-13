@@ -1,14 +1,14 @@
 export class Vendedor{
     private usuario: string;
     private cuit: number;
-    private contraseña: string;
+    private contrasena: string;
     private fechaIngreso: Date;
     private direccion: string;
 
-    public constructor(usuario, cuit, contraseña, fechaIngreso, direccion){
+    public constructor(usuario, cuit, contrasena, fechaIngreso, direccion){
         this.usuario = usuario;
         this.cuit = cuit;
-        this.contraseña = contraseña;
+        this.contrasena = contrasena;
         this.fechaIngreso = fechaIngreso;
         this.direccion = direccion
     }
@@ -22,7 +22,7 @@ export class Vendedor{
     }
 
     public getContraseña(): string{
-        return this.contraseña;
+        return this.contrasena;
     }
 
     public getFechaIngreso(): Date{
