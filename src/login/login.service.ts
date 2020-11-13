@@ -5,7 +5,8 @@ import * as fs from 'fs';
 @Injectable()
 export class LoginService {
     login(userInfo: any): boolean {
-        let userLogged = new Usuario(userInfo['mail'], userInfo['contrasena'], userInfo['direccion'], userInfo['ciudad']);
+        let userLogged = new Usuario(userInfo['mail'], userInfo['contrasena'], "", "");
+        // console.log("mail: ",userInfo.mail," contraseña: ",userInfo.contrasena)
         let users = this.getUsers();
         for (const user of users) {
             if(user.getMail() == userLogged.getMail()

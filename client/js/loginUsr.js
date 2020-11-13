@@ -1,18 +1,18 @@
 let btnLogin = document.querySelector(".subbt");
 btnLogin.addEventListener("click", ingresar);
 
-let usuario = {
-    "email": "olfa22@grupo4.com",
-    "password": "mipassword"
-};
-
 async function ingresar() {
     console.log("Funcion ingresar");
-    // let container = document.querySelector(".form");
-    // voy a buscar los valores cargados en los inputs
     let correo = document.querySelector('.mail').value;
     let password = document.querySelector('.pwd').value;
+    let user = {
+        "mail": correo,
+        "contrasena":password
+    }
+    // console.log(user);
 
+    // let container = document.querySelector(".form");
+    // voy a buscar los valores cargados en los inputs
     //observo los valores con los q intenta ingresar
     // console.log(correo);
     // console.log(password);
@@ -31,6 +31,7 @@ async function ingresar() {
     //     password = "mipassword";
     // }
     
+    
     let respuesta = await fetch('http://localhost:3000/login/validate', {
         method: 'POST',
         headers: {
@@ -40,8 +41,10 @@ async function ingresar() {
     });
 
     if (await respuesta.json()) {
-        console.log("Bienvenido/a ",users[0].email);
-        setTimeout ("redireccionar()", 5000); //tiempo expresado en milisegundos
+        console.log("Bienvenido/a ",user.mail);
+        window.sessionStorage.setItem("userLogged", true);
+        window.sessionStorage.setItem("user", user.mail);
+        window.locationf="http://localhost:3000";
     }
 
     ///////////////////////////// codigo mock //////////////////////////////
@@ -67,13 +70,5 @@ async function ingresar() {
     //     container.innerHTML = `<h2>${response}</h2>`;
     // };
 }
-
-function redireccionar(){
-    // guardo datos de la sesion de usuario
-    window.sessionStorage.setItem("userLogged", true);
-    window.sessionStorage.setItem("user", user);
-    window.locationf="http://localhost:3000";
-  } 
-  
 
 ingresar();
