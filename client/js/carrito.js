@@ -1,10 +1,11 @@
+/* console.log(articulo.nombre + "nombreArticulo"); */
 async function mostrarCarrito() {
     console.log("HIOLAS")
     try {
-        let response = await fetch("http://localhost:3000/mock/mockcarrito.json");
+        let response = await fetch("/carrito");
         if (response.ok) {
-            let t = await response.json();
-            let productos = t.tecnologia;
+            console.log(response)
+            let productos = await response.json();
             console.log(productos);
             mostrarProductos(productos);
         }
@@ -28,7 +29,7 @@ function mostrarProductos(prod) {
         suma = suma + parseInt(r.precio);
         html += `
     <div class= "row border rounded border-info m-1 p-3 justify-content-around">
-    <div class="col-md-2 rounded-circle bg-white img-container"><img class="imgCarrito" src=${r.imagen}></div>
+    <div class="col-md-2 rounded-circle bg-white img-container"><img class="imgCarrito" src=${r.imagenes}></div>
     <div class="col-md-5"><b>${r.nombre}</b></div>
     <div class="col-md-2">${formatter.format(r.precio)}</div>
 
@@ -84,4 +85,7 @@ function mostrarDiv(x) {
     }
     return;
 }
+
 option(0);
+
+

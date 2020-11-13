@@ -11,13 +11,14 @@ let imagenPrincipal = document.querySelector("#img-principal");
  * 
  **/
 // Traigo el artículo según la url.
+let articulo
 async function load() {
     try {
         let params = processParams();
         const URL = `/stock/${params["categoria"]}/${params["index"]}`;
         let response = await fetch(URL);
         if (response.ok) {
-            let articulo = await response.json();
+            articulo = await response.json();
             imagenPrincipal.src = articulo.imagenes[0];
 
             for (let i = 0; i < articulo.imagenes.length; i++) {
@@ -92,3 +93,36 @@ btnCompra.addEventListener("click",redireccionar);
 function redireccionar(){
     window.location="http://localhost:3000/html/registerUsr.html";
   }
+
+
+  function agregarProducto () {
+    console.log ("HolaAgregarProducto" + articulo.nombre)
+}
+let btnAgregar = document.getElementById("btnCarrito");
+btnAgregar.addEventListener("click", agregarProductoCarrito);
+
+async function agregarProductoCarrito() {
+    console.log("Funcion Agregar");
+    /* let producto = {
+        "producto_nombre": producto,
+        "precio": precio
+    } */
+
+    let respuesta = await fetch("http://localhost:3000/carrito", {
+
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(articulo)
+    });
+
+    if (respuesta.ok) {
+        /* compras.push(renglon);
+        mostrarTablaCompras(); */
+
+    } else {
+        console.log("error");
+    }
+
+}
