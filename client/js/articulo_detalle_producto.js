@@ -15,7 +15,7 @@ let articulo
 async function load() {
     try {
         let params = processParams();
-        const URL = `/articulo/${params["categoria"]}/${params["index"]}`;
+        const URL = `/stock/${params["categoria"]}/${params["index"]}`;
         let response = await fetch(URL);
         if (response.ok) {
             articulo = await response.json();
@@ -25,7 +25,7 @@ async function load() {
                 cargarImagenes(i, articulo.imagenes[i]);
             }
             document.querySelector("#nombre-articulo").textContent = articulo.nombre;
-            document.querySelector("#precio-articulo").textContent = articulo.precio;
+            document.querySelector("#precio-articulo").textContent = `$${articulo.precio}`;
             document.querySelector("#financiacion-articulo").textContent = articulo.financiacion;
             document.querySelector("#descripcion-articulo").textContent = articulo.detalle;
 
@@ -54,7 +54,7 @@ function cargarImagenes(i, imagen) {
  **/
 // Traigo los artículos según la categoría.
 async function cargarArticulos(categoria) {
-    const URL = `/articulo/${categoria}`;
+    const URL = `/stock/${categoria}`;
     try {
         let response = await fetch(URL);
         if (response.ok) {

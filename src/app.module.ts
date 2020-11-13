@@ -7,13 +7,16 @@ import { NegocioController } from './negocio/negocio.controller';
 import { NegocioService } from './negocio/negocio.service';
 import { CarritoController } from './carrito/carrito.controller';
 import { CarritoService } from './carrito/carrito.service';
+import { StockController } from './stock/stock.controller';
+import { StockService } from './stock/stock.service';
 
 @Module({
   imports: [ServeStaticModule.forRoot({
     rootPath: join(__dirname, '..',
     'client'),
     }),],
-  controllers: [AppController, NegocioController, CarritoController],
-  providers: [AppService, NegocioService, CarritoService],
+
+  controllers: [AppController, NegocioController, CarritoController, StockController],
+  providers: [AppService, NegocioService, CarritoService, StockService],
 })
 export class AppModule {}

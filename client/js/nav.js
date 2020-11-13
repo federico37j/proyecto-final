@@ -67,15 +67,3 @@ btnRegresar.addEventListener('click', function (e) {
     e.preventDefault();
     divGrid.classList.remove('activo');
 });
-
-let btnBuscar = document.querySelector('#btn-buscar');
-
-btnBuscar.addEventListener('click', function () {
-    document.querySelector('.enlaces .inputBuscar').placeholder = 'Momentáneamente fuera de servicio...';
-});
-
-let btnSuscribir = document.querySelector('#btn-suscribir');
-
-btnSuscribir.addEventListener('click', function () {
-    document.querySelector('.suscribir input').placeholder = 'Momentáneamente fuera de servicio...';
-});

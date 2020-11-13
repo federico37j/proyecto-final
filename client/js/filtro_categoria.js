@@ -50,7 +50,7 @@ function filtarSegunCategoria(categoria) {
 // Traigo los artículos según la categoría.
 async function cargarArticulos() {
     let params = processParams();
-    const URL = `/articulo/${params["categoria"]}`;
+    const URL = `/stock/${params["categoria"]}`;
     try {
         let response = await fetch(URL);
         if (response.ok) {

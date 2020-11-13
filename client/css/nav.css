@@ -46,12 +46,12 @@
     padding: 5px 10px;
     justify-content: space-between;     
 }
-
+/* 
 .contenedor .inputBuscar {
     padding: 5px;
     font-size: 16px;
     width: 385px;
-}
+} */
 
 .menu .contenedor .enlaces .btn-buscar {
     font-size: 12px;
@@ -99,7 +99,7 @@
     align-items: center;    
 }
 
-.menu .contenedor .enlaces a{
+.menu .contenedor .enlaces .btn_user{
     border: 1px solid transparent;
     padding: 7px;
     align-items: center;

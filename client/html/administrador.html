@@ -56,6 +56,7 @@
   <div class="contenedor-cargar-articulo">
     <div class="pop-up-carga-articulo col-12 col-md-10">
       <div class="contenedor-btn-salir">
+        <p id="mensaje-error" class="mensaje-error text-center"></p>
         <button class="btn-salir" id="btn-salir">
           <ion-icon name="close-outline"></ion-icon>
         </button>
@@ -63,8 +64,10 @@
       <div class="row">
         <div class="img-carga-articulo col-md-12 row">
           <div class="col-md-3 add-photo-container">
-            <div class="add-new-photo" >
-              <label for="file-ip-1"><ion-icon name="camera-outline"></ion-icon></label>
+            <div class="add-new-photo">
+              <label for="file-ip-1">
+                <ion-icon name="camera-outline"></ion-icon>
+              </label>
             </div>
             <input type="file" class="new-photo" id="file-ip-1" accept="image/*" onchange="showPreview(event)">
             <div class="preview">
@@ -73,18 +76,22 @@
             <progress id="file-ip-1-bar" value="0" max="100" style="width: 100%"></progress>
           </div>
           <div class="col-md-3 add-photo-container">
-            <div class="add-new-photo" >
-              <label for="file-ip-2"><ion-icon name="camera-outline"></ion-icon></label>
+            <div class="add-new-photo">
+              <label for="file-ip-2">
+                <ion-icon name="camera-outline"></ion-icon>
+              </label>
             </div>
-            <input type="file" class="new-photo" id="file-ip-2" accept="image/*" onchange="showPreview(event)" >
+            <input type="file" class="new-photo" id="file-ip-2" accept="image/*" onchange="showPreview(event)">
             <div class="preview">
               <img id="file-ip-2-preview">
             </div>
             <progress id="file-ip-2-bar" value="0" max="100" style="width: 100%"></progress>
           </div>
           <div class="col-md-3 add-photo-container">
-            <div class="add-new-photo" >
-              <label for="file-ip-3"><ion-icon name="camera-outline"></ion-icon></label>
+            <div class="add-new-photo">
+              <label for="file-ip-3">
+                <ion-icon name="camera-outline"></ion-icon>
+              </label>
             </div>
             <input type="file" class="new-photo" id="file-ip-3" accept="image/*" onchange="showPreview(event)">
             <div class="preview">
@@ -121,17 +128,34 @@
               </div>
             </div>
             <div class="col-md-3">
-              <div class="form-group">
-                <input type="text" class="form-control" id="categoria" placeholder="Categoría">
+              <div class="dropdown">
+                <button class="btn btn-block btn-outline-secondary dropdown-toggle" type="button"
+                  id="dropdownMenuButton" data-toggle="dropdown" data-categoria="" aria-haspopup="true"
+                  aria-expanded="false">
+                  Categoría
+                </button>
+                <div class="dropdown-menu categotias-cargar-articulo" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" data-categoria="tecnologia" href="#">Tecnología</a>
+                  <a class="dropdown-item" data-categoria="electrodomesticos" href="#">Electrodomésticos</a>
+                  <a class="dropdown-item" data-categoria="pequenios_electrodomesticos" href="#">Pequeños
+                    Electrodomésticos</a>
+                  <a class="dropdown-item" data-categoria="hogar_jardin" href="#">Hogar y Jardin</a>
+                  <a class="dropdown-item" data-categoria="deportes" href="#">Deportes</a>
+                </div>
               </div>
+              <!-- </div> -->
             </div>
             <div class="col-md-12">
               <div class="form-group">
                 <textarea class="form-control" id="detalle" rows="2" placeholder="Detalle"></textarea>
               </div>
             </div>
-            <div class="col-md-12">
-              <a href="" class="btn btn-dark btn-agregar-articulo">AGREGAR</a>
+            <div class="col-md-6">
+              <a href="#" class="btn btn-dark btn-agregar-articulo disabled" id="btn-agregar-articulo">AGREGAR</a>
+              <a href="#" class="btn btn-dark btn-agregar-modificar disabled">MODIFICAR</a>
+            </div>
+            <div class="col-md-6">
+              <p id="posicion"></p>
             </div>
           </div>
         </div>
@@ -139,12 +163,10 @@
     </div>
   </div>
 
-
-
   <section class="container-fluid mt-5 mb-5">
     <div id="stock" class="col-12 col-md-10 offset-md-1">
       <!-- <h1 class="mt-2">Control de stock</h1> -->
-      <a id="btn_cargar_articulo" class="btn btn-dark btn_cargar_articulo"> CARGAR</a>
+      <a id="btn_cargar_articulo" class="btn btn-dark btn_cargar_articulo mb-1"> CARGAR</a>
       <table class="table content-table">
         <thead>
           <tr class="text-center">
