@@ -9,19 +9,67 @@ footer {
     width: 100%;
     max-width: 1200px;
     margin: auto;
-
 }
 
 .container-footer-superior .input-email{
     padding: 5px;
     font-size: 15px;
-    width: 385px;
-
+    width: 350px;
+    margin-right: 2px;
 }   
+
+.suscribir {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.suscribir input.valid ~ .icons .check{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.suscribir input.invalid ~ .icons .x{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.suscribir .icons {
+    position: absolute;
+    right: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    width: 20px;
+    height: 20px;
+    transition: all .25s ease;
+}
+
+.suscribir .icons i {
+    position: absolute;
+    transition: all .25s ease;
+    font-size: 1.3rem;
+    opacity: 0;
+    /* right: 75px; */
+    visibility: hidden;
+    transform: scale(.5);
+}
+
+.suscribir .check {
+    color: #3aba6f;
+    text-shadow: 0px 5px 10px rgba(58, 186, 111, .3);
+}
+
+.suscribir .x {
+    color: rgb(240, 90, 92);
+    text-shadow: 0px 5px 10px rgba(240, 90, 92, .3);
+}
 
 .container-footer-superior .btn-suscribir{
     font-size: 14px;
-    font-weight: bold;
     padding: 4px;
     margin-right: 12px;
     border: 1px solid transparent;

@@ -44,11 +44,38 @@ background-color: rgb(255, 255, 255);
 .info-detalle-articulo > div {
     margin-top: 15px;
 }
-
 .reviews {
-    color: gold;
-    font-size: 20px;
+    direction: rtl;
+    display: flex;
+    justify-content: flex-end;
 }
+
+.reviews a {
+    color: #313131;
+    font-size: 20px;
+    transition: 0.3s all;
+}
+
+.reviews a:hover {
+    color: #f1c40f;
+}
+
+.reviews .b1:hover ~ a{
+    color: #f1c40f;
+}
+.reviews .b2:hover ~ a{
+    color: #f1c40f;
+}
+.reviews .b3:hover ~ a{
+    color: #f1c40f;
+}
+.reviews .b4:hover ~ a{
+    color: #f1c40f;
+}
+.reviews .b5:hover ~ a{
+    color: #f1c40f;
+}
+
 
 .botones-compra {
     margin-top: 2%;
@@ -88,7 +115,8 @@ background-color: rgb(255, 255, 255);
 }
 
 .principal {
-    height: 80%;
+    height: 85%;
+    min-height: 340px;
     display: flex;
     align-items: center;
 }
