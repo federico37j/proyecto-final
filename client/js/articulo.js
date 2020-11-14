@@ -18,6 +18,7 @@
 
 // }
 
+//Traigo los datos del csv y los cargo en los elementos del html.
 async function cargarArticulos(categoria) {
     const URL = `/stock/${categoria}`;
     try {

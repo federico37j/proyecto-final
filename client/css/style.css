@@ -143,6 +143,20 @@ section .contenedor-cards-articulos{
  
 }
 
+.contenedor-financiacion-fav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contenedor-financiacion-fav ion-icon {
+    color: rgb(51,51,51);
+    font-size: 20px;
+}
+
+.contenedor-financiacion-fav ion-icon:hover {
+    color: rgb(255, 0, 0);
+}
 
 @media screen and (max-width: 1255px) {
     section .contenedor-cards-articulos{

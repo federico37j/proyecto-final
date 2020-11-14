@@ -44,7 +44,7 @@ async function ingresar() {
         console.log("Bienvenido/a ",user.mail);
         window.sessionStorage.setItem("userLogged", true);
         window.sessionStorage.setItem("user", user.mail);
-        window.locationf="http://localhost:3000";
+        window.location="http://localhost:3000";
     }
 
     ///////////////////////////// codigo mock //////////////////////////////

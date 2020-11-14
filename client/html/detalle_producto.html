@@ -13,8 +13,11 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/efecto_lupa_css.css">
     <link rel="stylesheet" href="../css/venta_telefonica.css">
-    <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule="" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="../css/buscarInterno.css">
+    <!-- Iconos -->
+    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
     <title>Articulos del hogar</title>
 </head>
 
@@ -26,14 +29,22 @@
                 <a href="http://localhost:3000/"><img src="../img/logo.png" id="img-logo" alt="Logo"></a>
             </div>
             <div class="enlaces">
-                <input type="text" class="inputBuscar" placeholder="Buscar productos">
-                <a id="btn-buscar" class="fondo-oscuro btn-buscar letra-clara">
-                    <ion-icon name="search-outline"></ion-icon>
-                </a>
-                <a href="http://localhost:3000/html/loginUser.html" class="btn-iniciar-sesion letra-clara">
+                <div class="con-search notValue">
+                    <div class="con-input">
+                        <input onblur="handleBlur()" onfocus="handleFocus(event)" placeholder="Buscar productos"
+                            oninput="handleSearch(event)" type="text">
+                        <i class='bx bx-search'></i>
+                        <i class='bx bx-x'></i>
+                    </div>
+                    <div class="content-results">
+                        <div class="con-results"></div>
+                        <div class="not-results">No hay resultados que coincidan con tu búsqueda.</div>
+                    </div>
+                </div>
+                <a href="http://localhost:3000/html/loginUser.html" class="btn_user btn-iniciar-sesion letra-clara">
                     <ion-icon name="people-outline">
                 </a>
-                <a href="http://localhost:3000/html/carrito.html" class="letra-clara">
+                <a href="http://localhost:3000/html/carrito.html" class="btn_user letra-clara">
                     <ion-icon name="cart-outline">
                 </a>
             </div>
@@ -226,11 +237,11 @@
                     <h3 id="financiacion-articulo"></h3>
                 </div>
                 <div class="reviews">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star-half-outline"></ion-icon>
+                    <a href="#" class="b1"><ion-icon name="star-half-outline"></ion-icon></a>
+                    <a href="#" class="b2"><ion-icon name="star"></ion-icon></a>
+                    <a href="#" class="b3"><ion-icon name="star"></ion-icon></a>
+                    <a href="#" class="b4"><ion-icon name="star"></ion-icon></a>
+                    <a href="#" class="b5"><ion-icon name="star"></ion-icon></a>
                 </div>
                 <div class="descripcion">
                     <p id="descripcion-articulo"></p>
@@ -251,7 +262,7 @@
                 </div>
                 <div class="botones-compra">
                     <button class="btn-comprar">Compra ahora</button>
-                    <button class="btn-agregar-carrito">Añadir al carrito
+                    <button id = "btnCarrito" class="btn-agregar-carrito">Añadir al carrito
                         <ion-icon name="cart-outline"></ion-icon>
                     </button>
                 </div>
@@ -288,8 +299,11 @@
                     </div>
                     <p class="nombre-articulo-tecnologia"></p>
                     <p class="precio-articulo-tecnologia precio"></p>
-                    <h2 class="financiacion-articulo-tecnologia"></h2>
                 </a>
+                <div class="contenedor-financiacion-fav">
+                    <h2 class="financiacion-articulo-tecnologia"></h2>
+                    <ion-icon name="heart-outline"></ion-icon>
+                </div>
             </div>
             <div class="articulo fondo-cards">
                 <a class="button-articulo-tecnologia">
@@ -298,8 +312,11 @@
                     </div>
                     <p class="nombre-articulo-tecnologia"></p>
                     <p class="precio-articulo-tecnologia precio"></p>
-                    <h2 class="financiacion-articulo-tecnologia"></h2>
                 </a>
+                <div class="contenedor-financiacion-fav">
+                    <h2 class="financiacion-articulo-tecnologia"></h2>
+                    <ion-icon name="heart-outline"></ion-icon>
+                </div>
             </div>
             <div class="articulo fondo-cards">
                 <a class="button-articulo-tecnologia">
@@ -308,8 +325,11 @@
                     </div>
                     <p class="nombre-articulo-tecnologia"></p>
                     <p class="precio-articulo-tecnologia precio"></p>
-                    <h2 class="financiacion-articulo-tecnologia"></h2>
                 </a>
+                <div class="contenedor-financiacion-fav">
+                    <h2 class="financiacion-articulo-tecnologia"></h2>
+                    <ion-icon name="heart-outline"></ion-icon>
+                </div>
             </div>
             <div class="articulo fondo-cards">
                 <a class="button-articulo-tecnologia">
@@ -318,8 +338,11 @@
                     </div>
                     <p class="nombre-articulo-tecnologia"></p>
                     <p class="precio-articulo-tecnologia precio"></p>
-                    <h2 class="financiacion-articulo-tecnologia"></h2>
                 </a>
+                <div class="contenedor-financiacion-fav">
+                    <h2 class="financiacion-articulo-tecnologia"></h2>
+                    <ion-icon name="heart-outline"></ion-icon>
+                </div>
             </div>
             <div class="articulo fondo-cards">
                 <a class="button-articulo-tecnologia">
@@ -328,8 +351,11 @@
                     </div>
                     <p class="nombre-articulo-tecnologia"></p>
                     <p class="precio-articulo-tecnologia precio"></p>
-                    <h2 class="financiacion-articulo-tecnologia"></h2>
                 </a>
+                <div class="contenedor-financiacion-fav">
+                    <h2 class="financiacion-articulo-tecnologia"></h2>
+                    <ion-icon name="heart-outline"></ion-icon>
+                </div>
             </div>
         </div>
     </section>
@@ -347,8 +373,11 @@
                     </div>
                     <p class="nombre-articulo-electrodomesticos"></p>
                     <p class="precio-articulo-electrodomesticos precio"></p>
-                    <h2 class="financiacion-articulo-electrodomesticos"></h2>
                 </a>
+                <div class="contenedor-financiacion-fav">
+                    <h2 class="financiacion-articulo-electrodomesticos"></h2>
+                    <ion-icon name="heart-outline"></ion-icon>
+                </div>
             </div>
             <div class="articulo fondo-cards">
                 <a class="button-articulo-electrodomesticos">
@@ -357,8 +386,11 @@
                     </div>
                     <p class="nombre-articulo-electrodomesticos"></p>
                     <p class="precio-articulo-electrodomesticos precio"></p>
-                    <h2 class="financiacion-articulo-electrodomesticos"></h2>
                 </a>
+                <div class="contenedor-financiacion-fav">
+                    <h2 class="financiacion-articulo-electrodomesticos"></h2>
+                    <ion-icon name="heart-outline"></ion-icon>
+                </div>
             </div>
             <div class="articulo fondo-cards">
                 <a class="button-articulo-electrodomesticos">
@@ -367,8 +399,11 @@
                     </div>
                     <p class="nombre-articulo-electrodomesticos"></p>
                     <p class="precio-articulo-electrodomesticos precio"></p>
-                    <h2 class="financiacion-articulo-electrodomesticos"></h2>
                 </a>
+                <div class="contenedor-financiacion-fav">
+                    <h2 class="financiacion-articulo-electrodomesticos"></h2>
+                    <ion-icon name="heart-outline"></ion-icon>
+                </div>
             </div>
             <div class="articulo fondo-cards">
                 <a class="button-articulo-electrodomesticos">
@@ -377,8 +412,11 @@
                     </div>
                     <p class="nombre-articulo-electrodomesticos"></p>
                     <p class="precio-articulo-electrodomesticos precio"></p>
-                    <h2 class="financiacion-articulo-electrodomesticos"></h2>
                 </a>
+                <div class="contenedor-financiacion-fav">
+                    <h2 class="financiacion-articulo-electrodomesticos"></h2>
+                    <ion-icon name="heart-outline"></ion-icon>
+                </div>
             </div>
             <div class="articulo fondo-cards">
                 <a class="button-articulo-electrodomesticos">
@@ -387,8 +425,11 @@
                     </div>
                     <p class="nombre-articulo-electrodomesticos"></p>
                     <p class="precio-articulo-electrodomesticos precio"></p>
-                    <h2 class="financiacion-articulo-electrodomesticos"></h2>
                 </a>
+                <div class="contenedor-financiacion-fav">
+                    <h2 class="financiacion-articulo-electrodomesticos"></h2>
+                    <ion-icon name="heart-outline"></ion-icon>
+                </div>
             </div>
         </div>
     </section>
@@ -399,6 +440,10 @@
             <div class="container-footer-superior">
                 <div class="suscribir">
                     <input type="text" placeholder="Tu e-mail" class="input-email">
+                    <div class="icons">
+                        <i class='bx bxs-check-circle check' ></i>
+                        <i class='bx bxs-x-circle x' ></i>
+                      </div>
                     <a id="btn-suscribir" class="btn-suscribir letra-clara fondo-oscuro">Suscribite</a>
                 </div>
                 <div class="venta-telefonica">
@@ -458,6 +503,7 @@
     <script src="../js/cargar_producto.js"></script>
     <script src="../js/efecto_lupa.js"></script>
     <script src="../js/venta_telefonica.js"></script>
+    <script src="../js/buscarInterno.js"></script>
 </body>
 
 </html>

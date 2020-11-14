@@ -40,11 +40,9 @@ async function cargarDatos(categoria) {
             tbody_detalle_tabla.innerHTML = '';
             mensaje.innerHTML = "No hay registros cargados para esa categoría."
         }
-
     } catch (response) {
         console.log("Error en la conexión", response);
     }
-
 }
 
 function cargarArregloConArticulos(articulos, categoria) {
@@ -55,7 +53,7 @@ function cargarArregloConArticulos(articulos, categoria) {
     cargarHTML(categoria);
 }
 
-//Cargo la tabla con los articulos
+//Cargo la tabla con los articulos.
 function cargarHTML(categoria) {
     let html = "";
     for (let i = 0; i < listaArticulos.length; i++) {
@@ -78,15 +76,6 @@ function cargarHTML(categoria) {
     comportamientoBtn(".btn-delete-articulo", btnBorrarClick);
     comportamientoBtn(".btn-update-articulo", cargarPopUp);
 }
-
-// function pasarArrayImgCadena(arrImg) {
-//     <td><input type="text" value="${pasarArrayImgCadena(listaArticulos[i].imagenes)}" id="imagenes${i}"></td>
-//     let cadenaUrl = "";
-//     for (let i = 0; i < arrImg.length; i++) {
-//         cadenaUrl += arrImg[i] + "|";
-//     }
-//     return cadenaUrl;
-// }
 
 function arregloImg() {
     let arrImagenes = [];
