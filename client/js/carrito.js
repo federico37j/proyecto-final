@@ -1,12 +1,12 @@
 /* console.log(articulo.nombre + "nombreArticulo"); */
 async function mostrarCarrito() {
-    console.log("HIOLAS")
+
     try {
         let response = await fetch("/carrito");
         if (response.ok) {
-            console.log(response)
+
             let productos = await response.json();
-            console.log(productos);
+
             mostrarProductos(productos);
         }
         else
@@ -29,7 +29,6 @@ html = `
 `
     }else{
     for (let i = 0; i < prod.length; i++) {
-        console.log(prod[i])
         r = prod[i];
         suma = suma + parseInt(r.precio);
         html += `
@@ -38,7 +37,7 @@ html = `
     <div class="col-md-5"><b>${r.nombre}</b></div>
     <div class= "conteiner">
     <div class="col-md-2">${formatter.format(r.precio)}</div>
-    <div class="col-md-2"> <button class= "btnTachito" pos"${i}"></button> </div>
+    <div class="col-md-2"> <button class= "btnTachito" pos="${i}"></button> </div>
     </div>
 
     </div>
@@ -67,7 +66,7 @@ html = `
     });
 }
 
-console.log(localStorage.getItem("suma"));
+
 
 let objetivo = document.getElementById('suma');
 objetivo.innerHTML = suma;
@@ -113,7 +112,7 @@ async function btnBorrarClick() {
 }
 
 async function vaciarCarrito() {
-    console.log("entro vaciar carrito")
+
     let response = await fetch(`/carrito`, {
         method: "DELETE",
         headers: {
@@ -124,7 +123,6 @@ async function vaciarCarrito() {
 /* option(0); */
 
 let botonVaciarCarrito = document.getElementById('vaciarCarrito');
-console.log("boton " + botonVaciarCarrito);
 botonVaciarCarrito.addEventListener("click", vaciarCarrito);
 
 
