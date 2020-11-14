@@ -18,8 +18,8 @@ import { LoginService } from './login/login.service';
     'client'),
     }),],
 
-  controllers: [AppController, NegocioController, StockController, LoginController],
-  providers: [AppService, NegocioService, StockService, LoginService],
+  controllers: [AppController, NegocioController, StockController, LoginController, CarritoController],
+  providers: [AppService, NegocioService, StockService, LoginService, CarritoService],
 
 })
 export class AppModule {}
