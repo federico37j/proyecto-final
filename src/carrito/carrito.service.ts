@@ -10,8 +10,6 @@ export class CarritoService {
     public getCarrito(): any {
         try{
         let texto: string = fs.readFileSync('resources/carrito.csv', 'utf8');
-        console.log("string")
-        console.log(texto)
 
         let palabras: string[] = texto.split('\n');
         let textoFinal = [];
@@ -31,14 +29,14 @@ export class CarritoService {
         }
     }
     catch(error){
-        console.log("no hay archivo;")
+        console.log("no hay archivo");
     }
         return this.articulosCarrito;
     }
     public create(producto: any) {
-        console.log("entro a create")
+
         const url: string = `resources/carrito.csv`;
-        console.log(producto)
+
         let articulo = { "nombre": producto["nombre"], "precio": producto["precio"], "imagenes": producto["imagenes"] }
         fs.appendFileSync(url, `${articulo.nombre},${articulo.precio},${articulo.imagenes}\n`);
         return "ok"
@@ -66,7 +64,12 @@ export class CarritoService {
 
     private actualizarCarrito(){
         const url: string = `resources/carrito.csv`;
-        fs.writeFileSync(url, this.articulosCarrito.toString());
+        fs.writeFileSync(url,'');
+        for(let i=0; i<this.articulosCarrito.length; i++){
+            this.create(this.articulosCarrito[i]);
+        }
+      //  fs.writeFileSync(url, this.articulosCarrito);
     } 
+
 
 }   
