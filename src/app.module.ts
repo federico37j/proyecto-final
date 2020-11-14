@@ -9,6 +9,8 @@ import { CarritoController } from './carrito/carrito.controller';
 import { CarritoService } from './carrito/carrito.service';
 import { StockController } from './stock/stock.controller';
 import { StockService } from './stock/stock.service';
+import { LoginController } from './login/login.controller';
+import { LoginService } from './login/login.service';
 
 @Module({
   imports: [ServeStaticModule.forRoot({
@@ -16,7 +18,8 @@ import { StockService } from './stock/stock.service';
     'client'),
     }),],
 
-  controllers: [AppController, NegocioController, CarritoController, StockController],
-  providers: [AppService, NegocioService, CarritoService, StockService],
+  controllers: [AppController, NegocioController, StockController, LoginController],
+  providers: [AppService, NegocioService, StockService, LoginService],
+
 })
 export class AppModule {}

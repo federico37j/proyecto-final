@@ -1,18 +1,17 @@
-const { response } = require("express");
+// const { response } = require("express");
 
-let btnRegister = document.querySelector(".btn-primary");
+let btnRegister = document.querySelector(".btnRegUsr");
 btnRegister.addEventListener("click", registrarUsuario);
 
-let u_mail = document.querySelector("#inputEmail").value;
-let u_pass = document.querySelector("#inputPassword").value;
 
 let usuarios = [];
 
 async function registrarUsuario() {
     console.log("funcion registrar usuario");
-    if (u_mail != "" && u_pass != "") {
         let u_dire = document.querySelector("#inputAddress").value;
         let u_city = document.querySelector("#inputCity").value;
+        let u_mail = document.querySelector("#inputEmail").value;
+        let u_pass = document.querySelector("#inputPassword").value;
 
         let datosUsuario = {
             "mail": u_mail,
@@ -20,24 +19,24 @@ async function registrarUsuario() {
             "direccion": u_dire,
             "ciudad": u_city,
         }
+        
         console.log(datosUsuario);
         usuarios.push(datosUsuario);
-        try{
-            let response = await fetch("http://localhost:3000/articulo",{
+        let response = await fetch("http://localhost:3000/articulo/addCliente",{
                 method: 'POST',
                 headers: {
                 'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(datosUsuario)
             })
-            let contenido = await response.json();
-            console.log(contenido);
+            // let contenido = await response.json();
+            // console.log(contenido);
+            debugger;
+        if (response.ok){
+            usuarios.push(datosUsuario);
         }
-        catch{
-            console.log(response);
+        else{
+            alert("no se pudo enviar el json");
         }
-    }
-    else{
-        throw new Error("Campos obligatorios incompletos");
-    }
+   
 }

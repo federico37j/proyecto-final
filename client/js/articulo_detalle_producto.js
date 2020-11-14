@@ -90,14 +90,20 @@ load();
 let btnCompra = document.querySelector(".btn-comprar");
 btnCompra.addEventListener("click",redireccionar);
 
+//>>>>>>> para comprar controlo que ya este logueado
 function redireccionar(){
-    window.location="http://localhost:3000/html/registerUsr.html";
-  }
+    if (!window.sessionStorage.getItem("userLogged")) {
+        window.location="http://localhost:3000/html/loginUser.html";
+    } 
+    else{
+        agregarProductoCarrito();
+    }
+}
 
 
   function agregarProducto () {
     console.log ("HolaAgregarProducto" + articulo.nombre)
-}
+  }
 let btnAgregar = document.getElementById("btnCarrito");
 btnAgregar.addEventListener("click", agregarProductoCarrito);
 
@@ -107,7 +113,7 @@ async function agregarProductoCarrito() {
         "producto_nombre": producto,
         "precio": precio
     } */
-
+//---> aca aparece un error cuando el usuario ya esta logueado
     let respuesta = await fetch("http://localhost:3000/carrito", {
 
         method: 'POST',
