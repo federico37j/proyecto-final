@@ -7,12 +7,13 @@ import { Vendedor } from './vendedor';
 export class NegocioController {
     constructor(private negocioService: NegocioService) { }
 
-    @Post()
+    @Post('addCliente')
     create(@Body() user: Usuario): string {
+        console.log(user)
         return this.negocioService.create(user);
     }
 
-    @Post()
+    @Post('addVend')
     addVendor(@Body() vddr: Vendedor): string {
         return this.negocioService.addVendedor(vddr);
     }
