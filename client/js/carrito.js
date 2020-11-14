@@ -17,12 +17,17 @@ async function mostrarCarrito() {
     };
 }
 
-let suma=0;
+let suma = 0;
 
 function mostrarProductos(prod) {
     let html = "";
     let htmlRes = "";
-    /* let suma = 0; */
+    suma = 0;
+    if (prod.length==0){
+html = `
+<div class= "carrito-vacio row border rounded border-info m-1 p-3 justify-content-around">El carrito está vacio</div>
+`
+    }else{
     for (let i = 0; i < prod.length; i++) {
         console.log(prod[i])
         r = prod[i];
@@ -31,28 +36,35 @@ function mostrarProductos(prod) {
     <div class= "row border rounded border-info m-1 p-3 justify-content-around">
     <div class="col-md-2 rounded-circle bg-white img-container"><img class="imgCarrito" src=${r.imagenes}></div>
     <div class="col-md-5"><b>${r.nombre}</b></div>
+    <div class= "conteiner">
     <div class="col-md-2">${formatter.format(r.precio)}</div>
+    <div class="col-md-2"> <button class= "btnTachito" pos"${i}"></button> </div>
+    </div>
 
     </div>
     `;
 
 
-        htmlRes += `
-    <tr>
-    <td>${r.nombre}</td>
-    <td>${r.precio}</td>
-    </tr>
-    `;
+        /*     htmlRes += `
+        <tr>
+        <td>${r.nombre}</td>
+        <td>${r.precio}</td>
+        </tr>
+        `; */
     }
-
+}
     document.querySelector("#productos").innerHTML = html;
 
     /* document.querySelector("#resumen").innerHTML = htmlRes; */
 
     document.querySelector("#suma").innerHTML = "Total " + formatter.format(suma);
 
-    localStorage.setItem("suma",suma);
+    localStorage.setItem("suma", suma);
 
+    let botonesBorrar = document.querySelectorAll(".btnTachito");
+    botonesBorrar.forEach(boton => {
+        boton.addEventListener("click", btnBorrarClick);
+    });
 }
 
 console.log(localStorage.getItem("suma"));
@@ -60,8 +72,11 @@ console.log(localStorage.getItem("suma"));
 let objetivo = document.getElementById('suma');
 objetivo.innerHTML = suma;
 
-let btnMock = document.querySelector("#llamarMock");
-btnMock.addEventListener("click", mostrarCarrito);
+/* let btnMock = document.querySelector("#llamarMock");
+if (btnMock != undefined) {
+    btnMock.addEventListener("click", mostrarCarrito);
+} */
+mostrarCarrito();
 
 let formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -77,8 +92,8 @@ function mostrarDiv(x) {
         document.getElementById('divSuc').style.display = 'none';
         document.getElementById('btnsRetiroSuc').style.display = 'none';
         document.getElementById('divForm').style.display = 'contents';
-        
-        } else {
+
+    } else {
         document.getElementById('divForm').style.display = 'none';
         document.getElementById('btnsRetiroSuc').style.display = 'contents';
         document.getElementById('divSuc').style.display = 'contents';
@@ -86,6 +101,30 @@ function mostrarDiv(x) {
     return;
 }
 
-option(0);
+async function btnBorrarClick() {
+    let pos = this.getAttribute("pos");
+    let response = await fetch(`/carrito/${pos}`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    mostrarCarrito();
+}
+
+async function vaciarCarrito() {
+    console.log("entro vaciar carrito")
+    let response = await fetch(`/carrito`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+}
+/* option(0); */
+
+let botonVaciarCarrito = document.getElementById('vaciarCarrito');
+console.log("boton " + botonVaciarCarrito);
+botonVaciarCarrito.addEventListener("click", vaciarCarrito);
 
 
