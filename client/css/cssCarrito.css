@@ -280,3 +280,13 @@ input[type=number] { -moz-appearance:textfield; }
 .btnsFormularios {
     justify-content: center;
 }
+
+.btnTachito {
+    margin-top:70px;
+    margin-left:50px;
+    height: 25px;
+    width: 25px;
+    background: url(../img/tachito.svg) no-repeat;
+    border: none;;
+}
+
