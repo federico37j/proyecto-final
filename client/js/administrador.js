@@ -146,7 +146,7 @@ btn_agregar_modificar.addEventListener('click', async function btnActualizarClic
     console.log(arregloImg());
     let pos = Number(posicion.value);
     let renglon = {
-        "nombre":  document.querySelector(`.form-group #nombre`).value,
+        "nombre": document.querySelector(`.form-group #nombre`).value,
         "precio": document.querySelector(`.form-group #precio`).value,
         "financiacion": document.querySelector(`.form-group #financiacion`).value,
         "detalle": document.querySelector(`.form-group #detalle`).value,
@@ -244,11 +244,14 @@ document.querySelector('.btn-agregar-articulo').addEventListener('click', async 
             },
             body: JSON.stringify(articulo)
         });
+
         if (respuesta.ok) {
             listaArticulos.push(articulo);
+            window.location.href = 'http://localhost:3000/html/administrador.html'
         } else {
             console.log('Hubo un error');
         }
+
     } else {
         mensajeError.innerHTML = "Todos los campos deben estar completos";
     }
