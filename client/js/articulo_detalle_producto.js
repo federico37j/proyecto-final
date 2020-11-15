@@ -97,6 +97,7 @@ function redireccionar(){
     } 
     else{
         agregarProductoCarrito();
+        window.location="http://localhost:3000/html/carrito.html"
     }
 }
 
@@ -109,7 +110,11 @@ btnAgregar.addEventListener("click", agregarProductoCarrito);
 
 async function agregarProductoCarrito() {
     console.log("Funcion Agregar");
-    /* let producto = {
+    if (!window.sessionStorage.getItem("userLogged")) {
+        window.location="http://localhost:3000/html/loginUser.html";
+    } else {
+
+       /* let producto = {
         "producto_nombre": producto,
         "precio": precio
     } */
@@ -130,5 +135,6 @@ async function agregarProductoCarrito() {
     } else {
         console.log("error");
     }
+}
 
 }

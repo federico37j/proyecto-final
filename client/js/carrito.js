@@ -3,6 +3,7 @@ async function mostrarCarrito() {
 
     try {
         let response = await fetch("/carrito");
+
         if (response.ok) {
 
             let productos = await response.json();
@@ -10,10 +11,10 @@ async function mostrarCarrito() {
             mostrarProductos(productos);
         }
         else
-            container.innerHTML = `<h2>Error al cargar la pagina</h2>`
+        document.getElementsByClassName("container").innerHTML = `<h2>Error al cargar la pagina</h2>`
     }
     catch (response) {
-        container.innerHTML = `<h2>${response}</h2>`;
+        document.getElementsByClassName("container").innerHTML = `<h2>${response}</h2>`;
     };
 }
 
@@ -67,9 +68,10 @@ html = `
 }
 
 
+if( document.getElementById('suma')!=undefined){
 
-let objetivo = document.getElementById('suma');
-objetivo.innerHTML = suma;
+    document.getElementById('suma').innerHTML = suma;
+}
 
 /* let btnMock = document.querySelector("#llamarMock");
 if (btnMock != undefined) {
@@ -119,10 +121,15 @@ async function vaciarCarrito() {
             "Content-Type": "application/json"
         }
     })
+
 }
 /* option(0); */
 
-let botonVaciarCarrito = document.getElementById('vaciarCarrito');
-botonVaciarCarrito.addEventListener("click", vaciarCarrito);
+/* let botonVaciarCarrito = document.getElementById('vaciarCarrito');
+botonVaciarCarrito.addEventListener("click", vaciarCarrito); */
 
+if(document.getElementById("compraExitosa")!=undefined){
+    console.log("entra a funcion compra existosa");
+    vaciarCarrito()
+}
 
