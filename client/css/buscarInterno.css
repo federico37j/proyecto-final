@@ -95,17 +95,20 @@
     margin-left: 10px;
     border-radius: 20px;
 }
+
+.result h4{
+    font-size: 15px;
+}
+
 .con-results .result:hover {
     background: #f4f7f8;
 }
 .con-results .result p {
     font-size: .9rem;
-    color: rgba(var(--color), .6);
 }
 .con-results .result b {
-    background: rgba(var(--color), .1);
+    background: rgba(44, 62, 80, .1);
     text-decoration: underline;
-    color: rgba(var(--color), 1);
     border-radius: 2px;
 }
 .financiacion {
@@ -113,7 +116,6 @@
     right: 0px;
     top: 0px;
     font-size: .8rem;
-    color: rgba(var(--color), .5);
     padding: 20px;
 }
 .hidden {
