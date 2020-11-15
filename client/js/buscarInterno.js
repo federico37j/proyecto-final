@@ -121,7 +121,7 @@ traerArticulos("deportes");
 let inputSuscribir = document.querySelector('.suscribir input');
 inputSuscribir.addEventListener('input', evt => {
   const value = evt.target.value;
-  const emailRegex = /[a-z]+@+[a-z]+.com/;
+  const emailRegex = /[a-z0-9]+@+[a-z]+.com/;
 
   if (emailRegex.test(value.trim())) {
     evt.target.classList.add('valid');

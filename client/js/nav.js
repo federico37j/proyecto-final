@@ -31,6 +31,27 @@ divGrid.addEventListener('mouseleave', function () {
     }
 });
 
+let btn_inicia_sesion = document.querySelector('.btn-iniciar-sesion');
+let perfilMenu = document.querySelector('.dd_menu');
+
+function perfilUsuario () {
+    if (window.sessionStorage.getItem('userLogged')) {
+        btn_inicia_sesion.addEventListener('mouseover', function () {
+            if (false == esPantallaMovil()) {
+                document.querySelector('#email-perfil').innerHTML = window.sessionStorage.getItem('user');
+                perfilMenu.classList.add('activo');
+            }
+        });
+        
+        perfilMenu.addEventListener('mouseleave', function () {
+            if (false == esPantallaMovil()) {
+                perfilMenu.classList.remove('activo');
+            }
+        });
+    }
+}
+
+
 //Recorro la lista de categorias
 listaCategorias.forEach(categoria => {
     // se dispara cuando el ratón pasa por encima
@@ -67,3 +88,5 @@ btnRegresar.addEventListener('click', function (e) {
     e.preventDefault();
     divGrid.classList.remove('activo');
 });
+
+perfilUsuario();
