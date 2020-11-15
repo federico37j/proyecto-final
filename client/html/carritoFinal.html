@@ -8,17 +8,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/cssCarrito.css">
-        <!-- Estilos -->
-        <link rel="stylesheet" href="../css/nav.css">
-        <link rel="stylesheet" href="../css/footer.css">
-        <link rel="stylesheet" href="../css/whatsapp.css">
-        <link rel="stylesheet" href="../css/style.css">
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/whatsapp.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Document</title>
 </head>
 
 <body>
-      <!-- Menú de navegación -->
-      <nav class="menu fondo-negro" id="menu">
+    <!-- Menú de navegación -->
+    <nav class="menu fondo-negro" id="menu">
         <div class="contenedor contenedor-enlaces-nav-arriba" id="menu-parte-arriba">
             <div class="contenedor-imagen">
                 <a href="http://localhost:3000/"><img src="../img/logo.png" id="img-logo" alt="Logo"></a>
@@ -50,7 +50,8 @@
             </div>
             <div class="enlace-menu">
                 <a href="#" class="letra-clara" id="venta-tel">Venta telefónica</a>
-                <a href="http://localhost:3000/html/preguntas_frecuentes.html" class="letra-clara">Preguntas Frecuentes</a>
+                <a href="http://localhost:3000/html/preguntas_frecuentes.html" class="letra-clara">Preguntas
+                    Frecuentes</a>
                 <a href="#footer" class="letra-clara">Quiénes somos</a>
             </div>
         </div>
@@ -116,7 +117,8 @@
                             <button class="btn-regresar">
                                 <ion-icon name="arrow-back-outline"></ion-icon>Regresar
                             </button>
-                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=pequeños-electrodomesticos" class="subtitulo">Pequeños Electrodomesticos</a>
+                            <a href="http://localhost:3000/html/filtro_categoria.html?categoria=pequeños-electrodomesticos"
+                                class="subtitulo">Pequeños Electrodomesticos</a>
                             <p>Salud y Bienestar</p>
                             <p>Cuidado Personal</p>
                             <p>Hogar Limpieza</p>
@@ -170,7 +172,20 @@
             </div>
         </div>
     </nav>
-<div class="container"><h1>COMPRA FINALIZADA</h1> </div>
+    <div class="container">
+        <div class="row justify-content-md-center" style="padding: 100px">
+            <div class="col-md-6">
+            <div style="margin-left:100px">
+                <img class="imgFinCompra" src="../img/tiquet.png" alt="">
+            </div>
+            <div class="">
+                <h1 id="compraExitosa" class="compraFinalizada">¡Gracias por su compra!</h1>
+            </div>
+        </div>
+
+        </div>
+    </div>
+
 
     <footer class="fondo-claro" id="footer">
         <div class="container-footer-all">
@@ -216,32 +231,27 @@
                 <div class="columna-redes">
                     <div class="row">
                         <a href=""><img src="../icon/facebook.png"></a>
-    
+
                         <a href=""><img src="../icon/instagram.png"></a>
-    
+
                         <a href=""><img src="../icon/youtube.png"></a>
-    
+
                         <a href=""><img src="../icon/twitter.png"></a>
-    
+
                         <a href=""><img src="../icon/github.png"></a>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-    </body>
-    
-    <script src="../js/carrusel.js"></script>
-    <script src="../js/nav.js"></script>
-    <script src="../js/articulo.js"></script>
-    <script src="../js/bannerEnvios.js"></script>
-    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
-    <script src="../js/carrito.js"></script>
-    <script>let formatter3 = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-    });
-    document.querySelector("#suma").innerHTML = "Total " + formatter3.format(localStorage.getItem("suma"));
-    </script>
-    
-    </html>
+</body>
+
+<script src="../js/carrusel.js"></script>
+<script src="../js/nav.js"></script>
+<script src="../js/articulo.js"></script>
+<script src="../js/bannerEnvios.js"></script>
+<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+<script src="../js/carrito.js"></script>
+
+
+</html>

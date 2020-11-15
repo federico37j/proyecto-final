@@ -290,3 +290,8 @@ input[type=number] { -moz-appearance:textfield; }
     border: none;;
 }
 
+
+.imgFinCompra{
+    width: 200px!important;
+    height: 193px!important;
+}
