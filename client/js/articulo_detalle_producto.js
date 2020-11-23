@@ -82,10 +82,6 @@ listadoImagenes.forEach(img => {
     });
 });
 
-cargarArticulos("tecnologia");
-cargarArticulos("electrodomesticos");
-load();
-
 // agrego el login si el usuario decide comprar un articulo
 let btnCompra = document.querySelector(".btn-comprar");
 btnCompra.addEventListener("click",redireccionar);
@@ -138,3 +134,7 @@ async function agregarProductoCarrito() {
 }
 
 }
+
+cargarArticulos("deportes");
+cargarArticulos("electrodomesticos");
+load();

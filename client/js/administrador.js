@@ -66,8 +66,8 @@ function cargarHTML(categoria) {
         <td><input type="text" value="${listaArticulos[i].detalle}" id="detalle${i}"></input></td>
         <td><input type="text" value="${listaArticulos[i].tipo}" id="tipo${i}"></td>
         <td class="img${i}" style="display: flex;align-items: center;"><img src="${listaArticulos[i].imagenes[0]}" alt=""><img src="${listaArticulos[i].imagenes[1]}" alt=""><img src="${listaArticulos[i].imagenes[2]}" alt=""><img src="${listaArticulos[i].imagenes[3]}" alt=""></td>
-        <td><button class="btn-delete-articulo" pos="${i}" data-categoria="${categoria}"><ion-icon name="close-circle-outline"></ion-icon></button></td>
-        <td><button class="btn-update-articulo" pos="${i}" data-categoria="${categoria}"><ion-icon name="sync-circle-outline"></ion-icon></button></td>
+        <td><button class="btn-delete-articulo" pos="${i}" id=${listaArticulos[i].id_articulo} data-categoria="${categoria}"><ion-icon name="close-circle-outline"></ion-icon></button></td>
+        <td><button class="btn-update-articulo" pos="${i}" id=${listaArticulos[i].id_articulo} data-categoria="${categoria}"><ion-icon name="sync-circle-outline"></ion-icon></button></td>
         </tr>
         `
     }
@@ -108,16 +108,14 @@ function comportamientoBtn(btnClass, fn) {
 
 async function btnBorrarClick() {
     console.log("borrar")
-    let data_categoria = this.dataset.categoria;
-    let pos = this.getAttribute("pos");
-    let response = await fetch(`/stock/${data_categoria}/${pos}`, {
+    let response = await fetch(`/stock/${this.id}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json"
         }
     });
     if (response.ok) {
-        cargarDatos(data_categoria);
+        cargarDatos(this.dataset.categoria);
     } else {
         console.log("No se pudo borrar");
     }
@@ -140,6 +138,7 @@ function cargarPopUp() {
     btn_dropdown.textContent = this.dataset.categoria;
     document.querySelector('.contenedor-cargar-articulo').classList.toggle('activo');
     btn_agregar_modificar.classList.toggle('disabled');
+    btn_agregar_modificar.id = this.id;
     btn_agregar_articulo.classList.add('disabled');
 
     document.querySelector(`.form-group #nombre`).value = document.getElementById(`nombre${pos}`).value;
@@ -151,7 +150,7 @@ function cargarPopUp() {
 }
 
 btn_agregar_modificar.addEventListener('click', async function btnActualizarClick() {
-    let pos = Number(posicion.value);
+    let id = btn_agregar_modificar.id;
     let renglon = {
         "nombre": document.querySelector(`.form-group #nombre`).value,
         "precio": document.querySelector(`.form-group #precio`).value,
@@ -161,7 +160,7 @@ btn_agregar_modificar.addEventListener('click', async function btnActualizarClic
         "stock": document.querySelector(`.form-group #stock`).value,
         "imagenes": arregloImg()
     }
-    let response = await fetch(`/stock/${btn_dropdown.textContent}/${pos}`, {
+    let response = await fetch(`/stock/${btn_dropdown.textContent}/${id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
@@ -171,7 +170,7 @@ btn_agregar_modificar.addEventListener('click', async function btnActualizarClic
 
     if (response.ok) {
         console.log("Actualizado");
-        window.location.href = 'http://localhost:3000/html/administrador.html'
+        window.location.href = 'http://localhost:3000/html/administrador.html';
     } else {
         console.log("Error");
     }

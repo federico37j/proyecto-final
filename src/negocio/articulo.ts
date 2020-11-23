@@ -1,4 +1,6 @@
 export class Articulo {
+    private id_articulo: number;
+    private fk_categoria: number;
     private nombre: string;
     private precio: number;
     private financiacion: string;
@@ -7,7 +9,10 @@ export class Articulo {
     private stock: number;
     private imagenes: string[];
 
-    public constructor(nombre: string, precio: number, financiacion: string, detalle: string, tipo: string, stock: number, imagenes: string[]) {
+    public constructor(id: number, fk_categoria: number, nombre: string, precio: number, financiacion: string, 
+        detalle: string, tipo: string, stock: number, imagenes: string[]) {
+        this.id_articulo = id;
+        this.fk_categoria = fk_categoria;
         this.nombre = nombre;
         this.precio = precio;
         this.financiacion = financiacion;
@@ -15,6 +20,14 @@ export class Articulo {
         this.tipo = tipo;
         this.stock = stock;
         this.imagenes = imagenes;
+    }
+
+    public getId(): number {
+        return this.id_articulo;
+    }
+
+    public getFkCategoria(): number {
+        return this.fk_categoria;
     }
 
     public getNombre(): string {

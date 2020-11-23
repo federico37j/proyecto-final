@@ -22,9 +22,9 @@ export class StockController {
         return this.stockService.updateArticulo(art, categoria, Number(index));
     }
 
-    @Delete(':categoria/:index')
-    public deleteProducto(@Param('categoria') categoria, @Param('index') index): boolean {
-        return this.stockService.deleteArticulo(categoria, Number(index));
+    @Delete(':index')
+    public deleteProducto(@Param('index') index): boolean {
+        return this.stockService.deleteArticulo(Number(index));
     }
 
     @Post(':categoria')
