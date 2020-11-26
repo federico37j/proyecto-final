@@ -151,12 +151,12 @@
     font-style: normal;
   }
 
-  .titH4, .inp, .bts-a{
+  /* .titH4, .inp, .bts-a{
     margin-left: 10px;
     margin-top: 8px;
     margin-bottom: 8px;
     padding: 3px;
-  }
+  } */
 
   .right a {
     position: relative;
@@ -169,10 +169,10 @@
     float: right;
     margin-top: 5px;
   }
-  .headit {
+  /* .headit {
     position: relative;
     margin-top: 30px;
-  }
+  } */
   .headit h4 {
     color: #474646;
   }
@@ -210,6 +210,28 @@
     font-size: 0.9em;
   }
 
+  .img-fondo {
+    background-image: url(../img/fondo_login.jpg);
+      background-size: cover;
+      background-position: center;
+  }
+
+  .form-row .btn {
+    background-color: forestgreen;
+    /* margin: 5px 10px 5px 30px; */
+    padding: 0.5em;
+    border-radius: 5px;
+}
+
+/* .fondo-claro .containLogo {
+  background-color: 
+} */
+
+.form-control {
+  min-height: 3.125rem;
+  line-height: initial;
+}
+  
   /*Media Query */
   @media screen and (min-width: 1400px) {
     .signform {
@@ -306,7 +328,8 @@
       top: 0em;
     }
   }
-  @media screen and (max-width: 1500px) and (min-width: 650px) {
+
+@media screen and (max-width: 1500px) and (min-width: 650px) {
     /* form#login-form::before {
       content: "or";
       color: #79b42b;

@@ -16,7 +16,7 @@ body {
 
 a {
     /* le saco el subrayado */
-    text-decoration: none;
+    text-decoration: none !important;
     color: #333;
 }
 
