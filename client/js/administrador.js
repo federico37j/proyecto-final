@@ -30,7 +30,7 @@ document.querySelectorAll('.form-carga-articulo .categotias-cargar-articulo .dro
 // Traigo los articulos del Back End y los inserto en arreglo global.
 async function cargarDatos(categoria) {
     let mensaje = document.querySelector('#mensaje');
-    const URL = `/stock/${categoria}`;
+    const URL = `/articulo/${categoria}`;
     try {
         let response = await fetch(URL);
         if (response.ok) {
@@ -65,7 +65,7 @@ function cargarHTML(categoria) {
         <td><input class="text-center" type="text" value="${listaArticulos[i].financiacion}" id="financiacion${i}"></td>
         <td><input type="text" value="${listaArticulos[i].detalle}" id="detalle${i}"></input></td>
         <td><input type="text" value="${listaArticulos[i].tipo}" id="tipo${i}"></td>
-        <td class="img${i}" style="display: flex;align-items: center;"><img src="${listaArticulos[i].imagenes[0]}" alt=""><img src="${listaArticulos[i].imagenes[1]}" alt=""><img src="${listaArticulos[i].imagenes[2]}" alt=""><img src="${listaArticulos[i].imagenes[3]}" alt=""></td>
+        <td class="img${i}" style="display: flex;align-items: center; justify-content: center;"><img src="${listaArticulos[i].imagen_articulo[0].imagen}" alt=""></td>
         <td><button class="btn-delete-articulo" pos="${i}" id=${listaArticulos[i].id_articulo} data-categoria="${categoria}"><ion-icon name="close-circle-outline"></ion-icon></button></td>
         <td><button class="btn-update-articulo" pos="${i}" id=${listaArticulos[i].id_articulo} data-categoria="${categoria}"><ion-icon name="sync-circle-outline"></ion-icon></button></td>
         </tr>
