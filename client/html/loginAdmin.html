@@ -30,23 +30,17 @@
             <br>
         </div>    
         <div class="form-row fondo-claro">
-            <form action="" method="post" name="FormEntrar">
+            <form action="" method="POST" name="FormEntrar">
                 <div class="input-group input-group-lg">
-                    <h4>Usuario:</h4>
+                    <h4>Mail:</h4>
                     <!-- <span class="input-group-addon" id="sizing-addon1"><i   class="glyphicon glyphicon-envelope"></i></span> -->
-                    <input type="text" class="form-control" name="usuario" placeholder="soyUsuario1" id="User"
-                        aria-describedby="sizing-addon1" required>
-                </div>
-                <div class="input-group input-group-lg">
-                    <h4>CUIT:</h4>
-                    <!-- <span class="input-group-addon" id="sizing-addon1"><i   class="glyphicon glyphicon-envelope"></i></span> -->
-                    <input type="cuit" class="form-control" name="cuit" placeholder="ej: 20123456789" id="Cuit"
+                    <input type="email" class="form-control" name="e-mail" placeholder="nombre@mail.com" id="mail"
                         aria-describedby="sizing-addon1" required>
                 </div>
                 <div class="input-group input-group-lg">
                     <h4>Contraseña:</h4>
                     <!--<span class="input-group-addon" id="sizing-addon1"><i class="glyphicon glyphicon-lock"></i></span> -->
-                    <input type="password" name="contra" class="form-control" placeholder="******" id="Pwd"
+                    <input type="password" name="contra" class="form-control" placeholder="******" id="pwd"
                         aria-describedby="sizing-addon1" required>
                 </div>
                 <div class="opcioncontra"><a href="./recover.html">Olvidaste tu contraseña?</a></div>
@@ -122,4 +116,5 @@
     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous">
 </script>
+<script src="../js/loginAdmin.js"></script>
 </html>

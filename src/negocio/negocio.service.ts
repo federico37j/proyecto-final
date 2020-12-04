@@ -9,17 +9,19 @@ export class NegocioService {
 
     //creo el usuario que se registra en el sistema
     create(user: Usuario): string {
-        const priUser = new Usuario(user['mail'], user['contrasena'], user['direccion'], user['ciudad']);
-        console.log(priUser);
+        const priUser = new Usuario(user['id_user'],user['mail'], user['contrasena'], user['direccion'], user['ciudad'],user['esAdmin']);
+        console.log("user (Bk):",priUser);
         if (priUser.getMail() && priUser.getContraseña()) {
             this.listaUsuarios.push(priUser);
             console.log(priUser);
             fs.appendFileSync('resources/usuarios.csv',
                 "\n" +
-                priUser.getMail() + ","
+                priUser.getID() + "," 
+                + priUser.getMail() + ","
                 + priUser.getContraseña() + ","
                 + priUser.getDireccion() + ","
-                + priUser.getCiudad());
+                + priUser.getCiudad() + ","
+                + priUser.isItAdmin());
             return "ok";
         }
         else

@@ -10,4 +10,8 @@ export class LoginController {
         return this.loginService.login(userInfo);
     }
 
+    @Post('admin')
+    public loginAdmin(@Body() userInfo: any):boolean{
+        return this.loginService.login(userInfo);
+    }
 }
