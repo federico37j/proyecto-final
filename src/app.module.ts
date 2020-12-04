@@ -11,12 +11,13 @@ import { StockController } from './stock/stock.controller';
 import { StockService } from './stock/stock.service';
 import { LoginController } from './login/login.controller';
 import { LoginService } from './login/login.service';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
   imports: [ServeStaticModule.forRoot({
     rootPath: join(__dirname, '..',
     'client'),
-    }),],
+    }),TypeOrmModule.forRoot()],
 
   controllers: [AppController, NegocioController, StockController, LoginController, CarritoController],
   providers: [AppService, NegocioService, StockService, LoginService, CarritoService],

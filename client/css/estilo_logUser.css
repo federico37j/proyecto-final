@@ -231,6 +231,10 @@
   min-height: 3.125rem;
   line-height: initial;
 }
+
+.formulario_bienvenido {
+  height: 100vh;
+}
   
   /*Media Query */
   @media screen and (min-width: 1400px) {

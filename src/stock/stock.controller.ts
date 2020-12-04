@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { StockService } from './stock.service';
 import { Delete, Put } from '@nestjs/common/decorators/http/request-mapping.decorator';
-import { Articulo } from 'src/negocio/articulo';
+import { Articulo } from 'src/stock/articulo';
 
 @Controller('stock')
 export class StockController {
