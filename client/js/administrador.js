@@ -66,29 +66,30 @@ function cargarHTML(categoria) {
         <td><input type="text" value="${listaArticulos[i].detalle}" id="detalle${i}"></input></td>
         <td><input type="text" value="${listaArticulos[i].tipo}" id="tipo${i}"></td>
         <td class="img${i}" style="display: flex;align-items: center; justify-content: center;"><img src="${listaArticulos[i].imagen_articulo[0].imagen}" alt=""></td>
-        <td><button class="btn-delete-articulo" pos="${i}" id=${listaArticulos[i].id_articulo} data-categoria="${categoria}"><ion-icon name="close-circle-outline"></ion-icon></button></td>
-        <td><button class="btn-update-articulo" pos="${i}" id=${listaArticulos[i].id_articulo} data-categoria="${categoria}"><ion-icon name="sync-circle-outline"></ion-icon></button></td>
+        <td><button class="btn-delete-articulo" pos="${i}" id=${listaArticulos[i].idArticulo} data-categoria="${categoria}"><ion-icon name="close-circle-outline"></ion-icon></button></td>
+        <td><button class="btn-update-articulo" pos="${i}" id=${listaArticulos[i].idArticulo} data-categoria="${categoria}"><ion-icon name="sync-circle-outline"></ion-icon></button></td>
         </tr>
         `
     }
     mensaje.innerHTML = '';
     tbody_detalle_tabla.innerHTML = html;
     comportamientoBtn(".btn-delete-articulo", btnBorrarClick);
-    comportamientoBtn(".btn-update-articulo", cargarPopUp);
+    comportamientoBtn(".btn-update-articulo", traerArticuloPorId);
 }
 
 function arregloImg() {
     let arrImagenes = [];
     let listaNodosImg = document.querySelectorAll('.preview img');
     for (let i = 0; i < listaNodosImg.length; i++) {
-        if (listaNodosImg[i].src != null) {
-            if (listaNodosImg[i].src != '') {
-                if (/blob/.test(listaNodosImg[i].src)) {
-                    arrImagenes.push(secureUrlImg);
-                } else {
-                    arrImagenes.push(listaNodosImg[i].src);
-                }
-            }
+        if (listaNodosImg[i].src != "") {
+            // if (listaNodosImg[i].src != '') {
+            //     if (/blob/.test(listaNodosImg[i].src)) {
+            //         arrImagenes.push(secureUrlImg);
+            //     } else {
+            //         arrImagenes.push(listaNodosImg[i].src);
+            //     }
+            // }
+            arrImagenes.push(listaNodosImg[i].src);
         }
     }
 
@@ -107,8 +108,7 @@ function comportamientoBtn(btnClass, fn) {
 }
 
 async function btnBorrarClick() {
-    console.log("borrar")
-    let response = await fetch(`/stock/${this.id}`, {
+    let response = await fetch(`/articulo/${this.id}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json"
@@ -119,55 +119,67 @@ async function btnBorrarClick() {
     } else {
         console.log("No se pudo borrar");
     }
-}
+ }
 
-function pasarImgPopUp(pos) {
-    let arrImagenes = document.querySelectorAll(`.img${pos} img`);
+function pasarImgPopUp(arrImagenes) {
     let listaNodosImg = document.querySelectorAll('.preview img');
-    for (let i = 0; i < listaNodosImg.length; i++) {
-        if (arrImagenes[i].src != "http://localhost:3000/html/null") {
-            listaNodosImg[i].src = arrImagenes[i].src;
+    for (let i = 0; i < arrImagenes.length; i++) {
+        if (arrImagenes[i].imagen != "http://localhost:3000/html/null") {
+            listaNodosImg[i].src = arrImagenes[i].imagen;
         }
     }
 }
 
-function cargarPopUp() {
-    posicion.value = this.getAttribute("pos");
-    let pos = Number(posicion.value);
-    pasarImgPopUp(pos);
-    btn_dropdown.textContent = this.dataset.categoria;
+async function traerArticuloPorId() {
+    let categoria = this.dataset.categoria;
+    let idArticulo = Number(this.id);
+    try {
+        let response = await fetch(`/articulo/${categoria}/${idArticulo}`);
+        if (response.ok) {
+            let articulo = await response.json();
+            cargarPopUp(articulo, categoria, idArticulo);
+        }
+    } catch (response) {
+        console.log("Error en la conexión", response);
+    }
+}
+
+function cargarPopUp(articulo, categoria, idArticulo) {
+    //posicion.value = this.getAttribute("pos");
+    //let pos = Number(posicion.value);
+    btn_dropdown.textContent = categoria;
+    btn_agregar_modificar.id = idArticulo;
     document.querySelector('.contenedor-cargar-articulo').classList.toggle('activo');
     btn_agregar_modificar.classList.toggle('disabled');
-    btn_agregar_modificar.id = this.id;
     btn_agregar_articulo.classList.add('disabled');
-
-    document.querySelector(`.form-group #nombre`).value = document.getElementById(`nombre${pos}`).value;
-    document.querySelector(`.form-group #precio`).value = document.getElementById(`precio${pos}`).value;
-    document.querySelector(`.form-group #financiacion`).value = document.getElementById(`financiacion${pos}`).value;
-    document.querySelector(`.form-group #detalle`).value = document.getElementById(`detalle${pos}`).value;
-    document.querySelector(`.form-group #tipo`).value = document.getElementById(`tipo${pos}`).value;
-    document.querySelector(`.form-group #stock`).value = document.getElementById(`stock${pos}`).value;
+    
+    document.querySelector(`.form-group #nombre`).value = articulo.nombre;
+    document.querySelector(`.form-group #precio`).value = articulo.precio;
+    document.querySelector(`.form-group #financiacion`).value = articulo.financiacion;
+    document.querySelector(`.form-group #detalle`).value = articulo.detalle;
+    document.querySelector(`.form-group #tipo`).value = articulo.tipo;
+    document.querySelector(`.form-group #stock`).value = articulo.stock;
+    pasarImgPopUp(articulo.imagen_articulo);
 }
 
 btn_agregar_modificar.addEventListener('click', async function btnActualizarClick() {
     let id = btn_agregar_modificar.id;
     let renglon = {
         "nombre": document.querySelector(`.form-group #nombre`).value,
-        "precio": document.querySelector(`.form-group #precio`).value,
+        "precio": Number(document.querySelector(`.form-group #precio`).value),
         "financiacion": document.querySelector(`.form-group #financiacion`).value,
         "detalle": document.querySelector(`.form-group #detalle`).value,
         "tipo": document.querySelector(`.form-group #tipo`).value,
-        "stock": document.querySelector(`.form-group #stock`).value,
+        "stock": Number(document.querySelector(`.form-group #stock`).value),
         "imagenes": arregloImg()
     }
-    let response = await fetch(`/stock/${btn_dropdown.textContent}/${id}`, {
+    let response = await fetch(`/articulo/${btn_dropdown.textContent}/${id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(renglon)
     });
-
     if (response.ok) {
         console.log("Actualizado");
         window.location.href = 'http://localhost:3000/html/administrador.html';
@@ -215,7 +227,7 @@ async function showPreview(event) {
                 }
             });
         var preview = document.getElementById(`${event.target.id}-preview`);
-        preview.src = src;
+        preview.src = res.data.secure_url;
         preview.style.display = "block";
         secureUrlImg.push(res.data.secure_url);
     }
@@ -242,10 +254,10 @@ document.querySelector('.btn-agregar-articulo').addEventListener('click', async 
             "detalle": detalle,
             "tipo": tipo,
             "stock": stock,
-            "imagenes": secureUrlImg
+            "imagen_articulo": secureUrlImg
         }
 
-        let respuesta = await fetch(`http://localhost:3000/stock/${categoria}`, {
+        let respuesta = await fetch(`http://localhost:3000/articulo/${categoria}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
