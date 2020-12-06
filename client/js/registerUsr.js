@@ -23,7 +23,7 @@ async function registrarUsuario() {
         
         console.log("user (js): ",datosUsuario);
         usuarios.push(datosUsuario);
-        let response = await fetch("http://localhost:3000/articulo/addCliente",{
+        let response = await fetch("http://localhost:3000/cliente/addCliente",{
                 method: 'POST',
                 headers: {
                 'Content-Type': 'application/json'
