@@ -15,14 +15,13 @@ let articulo
 async function load() {
     try {
         let params = processParams();
-        const URL = `/stock/${params["categoria"]}/${params["index"]}`;
+        const URL = `/articulo/${params["categoria"]}/${params["index"]}`;
         let response = await fetch(URL);
         if (response.ok) {
             articulo = await response.json();
-            imagenPrincipal.src = articulo.imagenes[0];
-
-            for (let i = 0; i < articulo.imagenes.length; i++) {
-                cargarImagenes(i, articulo.imagenes[i]);
+            imagenPrincipal.src = articulo.imagen_articulo[0].imagen;
+            for (let i = 0; i < articulo.imagen_articulo.length; i++) {
+                cargarImagenes(i, articulo.imagen_articulo[i].imagen);
             }
             document.querySelector("#nombre-articulo").textContent = articulo.nombre;
             document.querySelector("#precio-articulo").textContent = `$${articulo.precio}`;
@@ -54,7 +53,7 @@ function cargarImagenes(i, imagen) {
  **/
 // Traigo los artículos según la categoría.
 async function cargarArticulos(categoria) {
-    const URL = `/stock/${categoria}`;
+    const URL = `/articulo/${categoria}`;
     try {
         let response = await fetch(URL);
         if (response.ok) {
