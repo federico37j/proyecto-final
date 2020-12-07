@@ -9,8 +9,7 @@ async function ingresar() {
         "mail": correo,
         "contrasena":password
     }
-    // console.log(user);
-
+ 
     // let container = document.querySelector(".form");
     // voy a buscar los valores cargados en los inputs
     //observo los valores con los q intenta ingresar
@@ -24,13 +23,6 @@ async function ingresar() {
         // else{
         //     alert();
         // }
-    
-
-    // if(correo === "" && password === ""){
-    //     correo = "micorreo@yo.com";
-    //     password = "mipassword";
-    // }
-    
     
     let respuesta = await fetch('http://localhost:3000/login/validate', {
         method: 'POST',
@@ -72,3 +64,7 @@ async function ingresar() {
 }
 
 ingresar();
+
+function cerrarSesion(){
+    window.sessionStorage.clear();
+}
