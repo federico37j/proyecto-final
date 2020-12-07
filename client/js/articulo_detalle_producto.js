@@ -15,14 +15,13 @@ let articulo
 async function load() {
     try {
         let params = processParams();
-        const URL = `/stock/${params["categoria"]}/${params["index"]}`;
+        const URL = `/articulo/${params["categoria"]}/${params["index"]}`;
         let response = await fetch(URL);
         if (response.ok) {
             articulo = await response.json();
-            imagenPrincipal.src = articulo.imagenes[0];
-
-            for (let i = 0; i < articulo.imagenes.length; i++) {
-                cargarImagenes(i, articulo.imagenes[i]);
+            imagenPrincipal.src = articulo.imagen_articulo[0].imagen;
+            for (let i = 0; i < articulo.imagen_articulo.length; i++) {
+                cargarImagenes(i, articulo.imagen_articulo[i].imagen);
             }
             document.querySelector("#nombre-articulo").textContent = articulo.nombre;
             document.querySelector("#precio-articulo").textContent = `$${articulo.precio}`;
@@ -54,7 +53,7 @@ function cargarImagenes(i, imagen) {
  **/
 // Traigo los artículos según la categoría.
 async function cargarArticulos(categoria) {
-    const URL = `/stock/${categoria}`;
+    const URL = `/articulo/${categoria}`;
     try {
         let response = await fetch(URL);
         if (response.ok) {
@@ -84,54 +83,55 @@ listadoImagenes.forEach(img => {
 
 // agrego el login si el usuario decide comprar un articulo
 let btnCompra = document.querySelector(".btn-comprar");
-btnCompra.addEventListener("click",redireccionar);
+btnCompra.addEventListener("click", redireccionar);
 
 //>>>>>>> para comprar controlo que ya este logueado
-function redireccionar(){
+function redireccionar() {
     if (!window.sessionStorage.getItem("userLogged")) {
-        window.location="http://localhost:3000/html/loginUser.html";
-    } 
-    else{
+        window.location = "http://localhost:3000/html/loginUser.html";
+    }
+    else {
         agregarProductoCarrito();
-        window.location="http://localhost:3000/html/carrito.html"
+        window.location = "http://localhost:3000/html/carrito.html"
     }
 }
 
 
-  function agregarProducto () {
-    console.log ("HolaAgregarProducto" + articulo.nombre)
-  }
+function agregarProducto() {
+    console.log("HolaAgregarProducto" + articulo.nombre)
+}
 let btnAgregar = document.getElementById("btnCarrito");
 btnAgregar.addEventListener("click", agregarProductoCarrito);
 
 async function agregarProductoCarrito() {
     console.log("Funcion Agregar");
     if (!window.sessionStorage.getItem("userLogged")) {
-        window.location="http://localhost:3000/html/loginUser.html";
+        window.location = "http://localhost:3000/html/loginUser.html";
     } else {
 
-       /* let producto = {
-        "producto_nombre": producto,
-        "precio": precio
-    } */
-//---> aca aparece un error cuando el usuario ya esta logueado
-    let respuesta = await fetch("http://localhost:3000/carrito", {
+        /* let producto = {
+         "producto_nombre": producto,
+         "precio": precio
+     } */
+        //---> aca aparece un error cuando el usuario ya esta logueado
+        let respuesta = await fetch("http://localhost:3000/carrito", {
 
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(articulo)
-    });
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(articulo)
 
-    if (respuesta.ok) {
-        /* compras.push(renglon);
-        mostrarTablaCompras(); */
+        });
 
-    } else {
-        console.log("error");
+        if (respuesta.ok) {
+            /* compras.push(renglon);
+            mostrarTablaCompras(); */
+
+        } else {
+            console.log("error");
+        }
     }
-}
 
 }
 

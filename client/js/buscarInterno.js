@@ -4,14 +4,14 @@ const conSearch = document.querySelector('.con-search');
 
 let arrArticulos = [];
 
-//Traigo los datos del csv con un get por categoría.
-async function traerArticulos(categoria) {
-  const URL = `/stock/${categoria}`;
+//Traigo todos los articulos
+async function traerArticulos() {
+  const URL = `/articulo/get-all`;
   try {
     let response = await fetch(URL);
     if (response.ok) {
       let listadoArticulos = await response.json();
-      cargarArrayGlobal(listadoArticulos, categoria);
+      cargarArrayGlobal(listadoArticulos);
     }
 
   } catch (response) {
@@ -20,21 +20,48 @@ async function traerArticulos(categoria) {
 }
 
 //Creo el JSON y lo guardo en arreglo global.
-function cargarArrayGlobal(listadoArticulos, categoria) {
+function cargarArrayGlobal(listadoArticulos) {
   for (let i = 0; i < listadoArticulos.length; i++) {
     let articulo = {
-      "href": `http://localhost:3000/html/detalle_producto.html?categoria=${categoria}&index=${i}`,
+      "href": `http://localhost:3000/html/detalle_producto.html?categoria=${categoriaIdAString(listadoArticulos[i].idCategoria)}&index=${listadoArticulos[i].idArticulo}`,
       "nombre": cortarNombre(listadoArticulos[i].nombre),
       "precio": listadoArticulos[i].precio,
       "financiacion": listadoArticulos[i].financiacion,
       "detalle": listadoArticulos[i].detalle,
       "tipo": listadoArticulos[i].tipo,
       "stock": listadoArticulos[i].stock,
-      "imagenes": listadoArticulos[i].imagenes
+      "imagenes": listadoArticulos[i].imagen_articulo
     }
     arrArticulos.push(articulo);
   }
 
+}
+
+// Devuelvo un id según la categoría que viene por parámetro.
+function categoriaIdAString(categoria) {
+  let categoriaString = '';
+  switch (categoria) {
+    case 1:
+      categoriaString = 'tecnologia';
+      break;
+
+    case 2:
+      categoriaString = 'electrodomesticos';
+      break;
+
+    case 3:
+      categoriaString = 'pequeños-electrodomesticos';
+      break;
+
+    case 4:
+      categoriaString = 'hogar-y-jardin';
+      break;
+
+    case 5:
+      categoriaString = 'deportes';
+      break;
+  }
+  return categoriaString;
 }
 
 // Dejo nombres con un máximo de 35 caracteres.
@@ -100,7 +127,7 @@ function renderResults(results, value) {
     precio.className = 'financiacion';
     nombre.innerHTML = result.nombre.toLowerCase().replace(value, `<b>${value}</b>`);
     financiacion.innerHTML = result.financiacion.toLowerCase().replace(value, `<b>${value}</b>`);
-    precio.innerHTML = `$${result.precio.toLowerCase().replace(value, `<b>${value}</b>`)}`;
+    precio.innerHTML = `$${String(result.precio).toLowerCase().replace(value, `<b>${value}</b>`)}`;
     btn_result.appendChild(resultElement);
     resultElement.appendChild(nombre);
     resultElement.appendChild(financiacion);
@@ -112,10 +139,6 @@ function renderResults(results, value) {
     }, 20);
   })
 }
-
-traerArticulos("tecnologia");
-traerArticulos("electrodomesticos");
-traerArticulos("deportes");
 
 //Al escribir el usuario valido que en el campo haya un email valido.
 let inputSuscribir = document.querySelector('.suscribir input');
@@ -147,3 +170,6 @@ btnSuscribir.addEventListener('click', function (e) {
     inputSuscribir.value = '   El email es invalido!';
   }
 });
+
+
+traerArticulos("tecnologia");

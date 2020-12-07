@@ -99,6 +99,18 @@
             </div>
             <progress id="file-ip-3-bar" value="0" max="100" style="width: 100%"></progress>
           </div>
+          <div class="col-md-3 add-photo-container">
+            <div class="add-new-photo">
+              <label for="file-ip-4">
+                <ion-icon name="camera-outline"></ion-icon>
+              </label>
+            </div>
+            <input type="file" class="new-photo" id="file-ip-4" accept="image/*" onchange="showPreview(event)">
+            <div class="preview">
+              <img id="file-ip-4-preview">
+            </div>
+            <progress id="file-ip-4-bar" value="0" max="100" style="width: 100%"></progress>
+          </div>
         </div>
         <div class="form-carga-articulo col-md-12 mt-5">
           <div class="row">
@@ -176,7 +188,7 @@
             <th>FINANCIACIÓN</th>
             <th>DETALLE</th>
             <th>TIPO</th>
-            <th>IMAGENES</th>
+            <th>IMAGEN PRINCIPAL</th>
             <th>ELIMINAR</th>
             <th>ACTUALIZAR</th>
           </tr>

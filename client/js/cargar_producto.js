@@ -9,12 +9,13 @@ function pasarArreglo(listadoArticulos) {
 
 // Le paso los valores a la función "mostrarDatosHtml" para que los inserte en los elementos html.
 function cargarCategoria(jsonConArticulos, categoria) {
-    for (let i = 0; i < jsonConArticulos.length; i++) {
+    const LIMIT_ARTICULOS = 5;
+    for (let i = 0; i < LIMIT_ARTICULOS; i++) {
         mostrarDatosHtml(i, jsonConArticulos[i].nombre, "nombre", categoria);
-        mostrarDatosHtml(i, jsonConArticulos[i].imagenes[0], "img", categoria, true);
+        mostrarDatosHtml(i, jsonConArticulos[i].imagen_articulo[0].imagen, "img", categoria, true);
         mostrarDatosHtml(i, `$${jsonConArticulos[i].precio}`, "precio", categoria);
         mostrarDatosHtml(i, jsonConArticulos[i].financiacion, "financiacion", categoria);
-        cargarHref(categoria,i);
+        cargarHref(categoria, i, jsonConArticulos[i].idArticulo);
     }
 }
 
@@ -31,8 +32,8 @@ function mostrarDatosHtml(indice, valor, tipo, categoria, esImagen = undefined) 
 }
 
 // Le agrego el href a cada botón
-function cargarHref(categoria, index) {
+function cargarHref(categoria, index, idArticulo) {
     let btn = document.querySelectorAll(`.articulo .button-articulo-${categoria}`);
-    btn[index].href = `http://localhost:3000/html/detalle_producto.html?categoria=${categoria}&index=${index}`;
+    btn[index].href = `http://localhost:3000/html/detalle_producto.html?categoria=${categoria}&index=${idArticulo}`;
 }
 

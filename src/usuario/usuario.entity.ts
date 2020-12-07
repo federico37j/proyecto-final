@@ -21,8 +21,7 @@ export class Usuario{
     @Column()
     private esAdmin: boolean;
 
-    public constructor(id_user,mail,contrasena,direccion,ciudad, esAdmin){
-        this.id_user = id_user;
+    public constructor(mail?:string,contrasena?:string,direccion?:string,ciudad?:string, esAdmin?:boolean){
         this.mail = mail;
         this.contrasena = contrasena;
         this.direccion = direccion;
@@ -34,7 +33,7 @@ export class Usuario{
         return this.id_user;
     }
 
-    public setID(idUser){
+    public setID(idUser:number){
         this.id_user = idUser;
     }
 
