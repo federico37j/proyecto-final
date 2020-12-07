@@ -12,6 +12,7 @@ import { StockService } from './stock/stock.service';
 import { LoginController } from './login/login.controller';
 import { LoginService } from './login/login.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { UsuarioModule } from './usuario/usuario.module';
 import { ArticuloModule } from './articulo/articulo.module';
 import { ImagenArticuloModule } from './imagen-articulo/imagen-articulo.module';
 
@@ -19,7 +20,7 @@ import { ImagenArticuloModule } from './imagen-articulo/imagen-articulo.module';
   imports: [ServeStaticModule.forRoot({
     rootPath: join(__dirname, '..',
     'client'),
-    }),TypeOrmModule.forRoot(), ArticuloModule, ImagenArticuloModule],
+    }),TypeOrmModule.forRoot(), UsuarioModule, ArticuloModule, ImagenArticuloModule],
 
   controllers: [AppController, NegocioController, StockController, LoginController, CarritoController],
   providers: [AppService, NegocioService, StockService, LoginService, CarritoService],
