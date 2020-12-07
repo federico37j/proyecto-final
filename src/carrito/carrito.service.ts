@@ -35,12 +35,18 @@ export class CarritoService {
     }
     public create(producto: any) {
         const url: string = `resources/carrito.csv`;
-
-        let articulo = { "id_articulo": producto["id_articulo"], "nombre": producto["nombre"], "precio": producto["precio"], "imagenes": producto["imagenes"] }
+        let articulo = { "id_articulo": producto["id_articulo"], "nombre": producto["nombre"], "precio": producto["precio"], "imagenes": this.getImagenes(producto.imagen_articulo) }
         fs.appendFileSync(url, `${articulo.nombre},${articulo.precio},${articulo.imagenes},${articulo.id_articulo}\n`);
         return "ok"
     }
 
+    public getImagenes(jsonImagenes) {
+        let listaImagenes: string[] = [];
+        for (let i = 0; i < jsonImagenes.length; i++) {
+            listaImagenes.push(jsonImagenes[i].imagen);
+        }
+        return listaImagenes;
+    }
 
     public vaciarCarrito(): boolean {
         const url: string = `resources/carrito.csv`;
