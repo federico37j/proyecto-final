@@ -20,7 +20,7 @@
 
 //Traigo los datos del csv y los cargo en los elementos del html.
 async function cargarArticulos(categoria) {
-    const URL = `/stock/${categoria}`;
+    const URL = `/articulo/${categoria}`;
     try {
         let response = await fetch(URL);
         if (response.ok) {
