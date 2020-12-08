@@ -21,7 +21,7 @@ export class CarritoService {
 
             for (let i = 0; i < textoFinal.length; i++) {
                 let articulo = {
-                    'id_articulo': textoFinal[i][0],
+                    'idArticulo': textoFinal[i][0],
                     'nombre': textoFinal[i][1],
                     'precio': textoFinal[i][2],
                     'cantidad': textoFinal[i][3],
@@ -38,22 +38,21 @@ export class CarritoService {
     }
     public create(producto: any) {
         const url: string = `resources/carrito.csv`;
-
         let cantidad = this.getCantidad(producto);
         if(cantidad>1){
             this.actualizarCarrito();
         }
         else{
-            let articulo = { "id_articulo": producto["id_articulo"], "nombre": producto["nombre"], "precio": producto["precio"],"cantidad":cantidad, "imagenes": this.getImagenes(producto.imagen_articulo) }
+            let articulo = { "idArticulo": producto["idArticulo"], "nombre": producto["nombre"], "precio": producto["precio"],"cantidad":cantidad, "imagenes": this.getImagenes(producto.imagen_articulo) }
             this.articulosCarrito.push(articulo);
-            fs.appendFileSync(url, `${articulo.id_articulo},${articulo.nombre},${articulo.precio},${articulo.cantidad},${articulo.imagenes}\n`);
+            fs.appendFileSync(url, `${articulo.idArticulo},${articulo.nombre},${articulo.precio},${articulo.cantidad},${articulo.imagenes}\n`);
         }
         return "ok"
     }
     public rewrite(producto: any) {
         const url: string = `resources/carrito.csv`;
-        let articulo = { "id_articulo": producto["id_articulo"], "nombre": producto["nombre"], "precio": producto["precio"],"cantidad":producto["cantidad"], "imagenes": producto["imagenes"] }
-        fs.appendFileSync(url, `${articulo.id_articulo},${articulo.nombre},${articulo.precio},${articulo.cantidad},${articulo.imagenes}\n`);
+        let articulo = { "idArticulo": producto["idArticulo"], "nombre": producto["nombre"], "precio": producto["precio"],"cantidad":producto["cantidad"], "imagenes": producto["imagenes"] }
+        fs.appendFileSync(url, `${articulo.idArticulo},${articulo.nombre},${articulo.precio},${articulo.cantidad},${articulo.imagenes}\n`);
         return "ok"
     }
 
@@ -62,7 +61,7 @@ export class CarritoService {
         let cantidad: number =1;
         try {   
                 for (let i = 0; i < this.articulosCarrito.length; i++) {
-                    if (this.articulosCarrito[i].id_articulo == articulo.id_articulo) {
+                    if (this.articulosCarrito[i].idArticulo == articulo.idArticulo) {
                         this.articulosCarrito[i].cantidad=parseInt(this.articulosCarrito[i].cantidad) + 1;
 
                         return this.articulosCarrito[i].cantidad;
