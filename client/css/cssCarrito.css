@@ -317,6 +317,7 @@ input[type=number] { -moz-appearance:textfield; }
     min-height: 800px;
     display: flex;
     justify-content: center;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
 }
 
 .contenedor-btn-factura .btn_factura ion-icon {
@@ -327,20 +328,29 @@ input[type=number] { -moz-appearance:textfield; }
     display: none;
 }
 
-.datos_local .tel_local, .datos_local .codigo_area_local {
+.contenedor_datos .tel_local, .contenedor_datos .codigo_area_local {
     display: inline-block;
 }
 
-.datos_local p {
+.contenedor_datos p {
     margin-bottom: 0;
 }
 
-.datos_local .fecha_factura {
+.contenedor_datos .datos_usuario {
     display: flex;
     justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
 }
 
-.datos_local .fecha_factura p {
+.contenedor_datos .fecha_factura {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.contenedor_datos .fecha_factura p {
     font-weight: bold;
     margin-top: 4px;
 }
@@ -375,4 +385,14 @@ input[type=number] { -moz-appearance:textfield; }
     align-items: center;
     padding: 10px;
     margin-left: 225px;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+.contenedor-descripcion-final {
+    background-color: #f3f3f3;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-left: 225px;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
 }
