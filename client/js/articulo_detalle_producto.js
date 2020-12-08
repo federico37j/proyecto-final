@@ -133,6 +133,7 @@ async function agregarProductoCarrito() {
     }
 }
 
+                                                                                                                                                                                                                                          
 }
 
 cargarArticulos("deportes");

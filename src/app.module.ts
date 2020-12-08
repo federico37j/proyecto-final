@@ -11,6 +11,8 @@ import { StockController } from './stock/stock.controller';
 import { StockService } from './stock/stock.service';
 import { LoginController } from './login/login.controller';
 import { LoginService } from './login/login.service';
+import { FacturaController } from './factura/factura.controller';
+import { FacturaService } from './factura/factura.service';
 
 @Module({
   imports: [ServeStaticModule.forRoot({
@@ -18,8 +20,8 @@ import { LoginService } from './login/login.service';
     'client'),
     }),],
 
-  controllers: [AppController, NegocioController, StockController, LoginController, CarritoController],
-  providers: [AppService, NegocioService, StockService, LoginService, CarritoService],
+  controllers: [AppController, NegocioController, StockController, LoginController, CarritoController, FacturaController],
+  providers: [AppService, NegocioService, StockService, LoginService, CarritoService, FacturaService],
 
 })
 export class AppModule {}
