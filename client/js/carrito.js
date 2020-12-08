@@ -198,3 +198,8 @@ async function obtenerCarrito() {
         document.getElementsByClassName("container").innerHTML = `<h2>${response}</h2>`;
     };
 }
+
+document.querySelector('#btn_factura').addEventListener('click', function() {
+    document.querySelector('.contenedor-resultado-compra').classList.toggle('ocultar');
+    document.querySelector('.factura').classList.toggle('ocultar');
+})
