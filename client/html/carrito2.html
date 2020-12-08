@@ -4,21 +4,22 @@
 <head>
 
     <head>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-            integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="../css/cssCarrito.css">
         <title>Carrito2</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Fuente     -->
         <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap"
             rel="stylesheet">
         <!-- Estilos -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+            integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../css/cssCarrito.css">
         <link rel="stylesheet" href="../css/nav.css">
         <link rel="stylesheet" href="../css/footer.css">
         <link rel="stylesheet" href="../css/whatsapp.css">
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/buscarInterno.css">
+        <link rel="stylesheet" href="../css/normalizador.css">
         <!-- Iconos -->
         <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
@@ -47,7 +48,7 @@
                     </div>
                 </div>
                 <div class="nav_right">
-                    <ul>
+                    <ul class="ul_botones">
                         <li class="nr_li dd_main">
                             <a href="http://localhost:3000/html/loginUser.html"
                                 class="btn_user btn-iniciar-sesion letra-clara">
@@ -72,7 +73,7 @@
                                     <ul>
                                         <li id="email-perfil">Usuario</li>
                                         <li>Configuración</li>
-                                        <li>Cerrar sesión</li>
+                                        <li id="btn_cerrar_sesion">Cerrar sesión</li>
                                     </ul>
                                 </div>
                             </div>
@@ -294,11 +295,10 @@
                     <a id="btn-suscribir" class="btn-suscribir letra-clara fondo-oscuro">Suscribite</a>
                 </div>
                 <div class="venta-telefonica">
-                    <h2>VENTA TELEFÓNICA
-                        0810-444-6342</h2>
+                    <p>VENTA TELEFÓNICA
+                        0810-444-6342</p>
                 </div>
             </div>
-            <hr>
             <div class="container-footer-inferior">
                 <div class="columna-nosotros">
                     <h2>Sobre nosotros</h2>
@@ -324,7 +324,6 @@
                     </div>
                 </div>
             </div>
-            <hr>
             <div class="container-copyright">
                 <p>© 2020 Todos los derechos reservados | Trabajo final</p>
                 <div class="columna-redes">

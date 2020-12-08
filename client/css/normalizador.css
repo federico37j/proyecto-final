@@ -1,0 +1,27 @@
+
+
+.nav_right .ul_botones {
+    margin-bottom: -2px;
+}
+
+.contenedor-enlaces-nav .enlace-menu a{
+    color: #ffff;
+}
+
+.grid p {
+    margin-bottom: 0;
+} 
+
+.container-footer-superior .input-email {
+    font-size: 12px;
+}
+
+.container-footer-all .container-footer-superior , .container-footer-inferior {
+    border-bottom: 1px solid rgba(0,0,0,0.4);
+}
+
+.venta-telefonica p{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0;
+}

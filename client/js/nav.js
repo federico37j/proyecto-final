@@ -34,15 +34,15 @@ divGrid.addEventListener('mouseleave', function () {
 let btn_inicia_sesion = document.querySelector('.btn-iniciar-sesion');
 let perfilMenu = document.querySelector('.dd_menu');
 
-function perfilUsuario () {
-    if (window.sessionStorage.getItem('userLogged')) {
+function perfilUsuario() {
+    if (window.sessionStorage.getItem('userLogged') === "true") {
         btn_inicia_sesion.addEventListener('mouseover', function () {
             if (false == esPantallaMovil()) {
                 document.querySelector('#email-perfil').innerHTML = window.sessionStorage.getItem('user');
                 perfilMenu.classList.add('activo');
             }
         });
-        
+
         perfilMenu.addEventListener('mouseleave', function () {
             if (false == esPantallaMovil()) {
                 perfilMenu.classList.remove('activo');
@@ -51,12 +51,19 @@ function perfilUsuario () {
     }
 }
 
+let btn_cerrar_sesion = document.querySelector('#btn_cerrar_sesion');
+btn_cerrar_sesion.addEventListener('click', cerrarSesion);
+function cerrarSesion() {
+    window.sessionStorage.setItem("userLogged", false);
+    window.sessionStorage.setItem("user", null);
+    window.location = "http://localhost:3000";
+}
 
 //Recorro la lista de categorias
 listaCategorias.forEach(categoria => {
     // se dispara cuando el ratón pasa por encima
     categoria.addEventListener('mouseenter', function (e) {
-       if (!esPantallaMovil()) {
+        if (!esPantallaMovil()) {
             // Recorro la lista de las Subcategorias
             listaSubcategorias.forEach(subcategoria => {
                 subcategoria.classList.remove('activo');
@@ -65,14 +72,14 @@ listaCategorias.forEach(categoria => {
                     subcategoria.classList.add('activo');
                 }
             });
-       }
+        }
     });
 });
 
 btnMenu.addEventListener('click', function () {
     menu.classList.toggle('activo');
     // //Si esta activo saco el scroll del body
-    if (menu.classList.contains('activo')){
+    if (menu.classList.contains('activo')) {
         body.style.overflow = 'hidden';
     } else {
         body.style.overflow = 'visible';

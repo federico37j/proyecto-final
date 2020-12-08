@@ -38,12 +38,13 @@ export class CarritoService {
     }
     public create(producto: any) {
         const url: string = `resources/carrito.csv`;
+
         let cantidad = this.getCantidad(producto);
         if(cantidad>1){
             this.actualizarCarrito();
         }
         else{
-            let articulo = { "id_articulo": producto["id_articulo"], "nombre": producto["nombre"], "precio": producto["precio"],"cantidad":cantidad, "imagenes": producto["imagenes"] }
+            let articulo = { "id_articulo": producto["id_articulo"], "nombre": producto["nombre"], "precio": producto["precio"],"cantidad":cantidad, "imagenes": this.getImagenes(producto.imagen_articulo) }
             this.articulosCarrito.push(articulo);
             fs.appendFileSync(url, `${articulo.id_articulo},${articulo.nombre},${articulo.precio},${articulo.cantidad},${articulo.imagenes}\n`);
         }
@@ -73,13 +74,16 @@ export class CarritoService {
         }
         return cantidad;
     }
-    public deleteProducto2(position: number): boolean {
-      // let removed = this.articulosCarrito.splice(position, 1);
-       // console.log(removed)
-    //   this.actualizarCarrito();
-      //  return removed.length == 1;
-      return true;
+
+    public getImagenes(jsonImagenes) {
+        let listaImagenes: string[] = [];
+        for (let i = 0; i < jsonImagenes.length; i++) {
+            listaImagenes.push(jsonImagenes[i].imagen);
+        }
+        return listaImagenes;
     }
+
+
 
 
     public vaciarCarrito(): boolean {

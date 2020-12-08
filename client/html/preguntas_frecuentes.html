@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/venta_telefonica.css">
     <link rel="stylesheet" href="../css/preguntas_frecuentes.css">
+    <link rel="stylesheet" href="../css/buscarInterno.css">
+    <!-- Iconos -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
     <title>Articulos del hogar</title>
 </head>
 
@@ -25,16 +28,56 @@
                 <a href="http://localhost:3000/"><img src="../img/logo.png" id="img-logo" alt="Logo"></a>
             </div>
             <div class="enlaces">
-                <input type="text" class="inputBuscar" placeholder="Buscar productos">
-                <a id="btn-buscar" class="fondo-oscuro btn-buscar letra-clara">
-                    <ion-icon name="search-outline"></ion-icon>
-                </a>
-                <a href="" class="btn-iniciar-sesion letra-clara">
-                    <ion-icon name="people-outline">
-                </a>
-                <a href="http://localhost:3000/html/carrito.html" class="letra-clara">
-                    <ion-icon name="cart-outline">
-                </a>
+                <div class="con-search notValue">
+                    <div class="con-input">
+                        <input onblur="handleBlur()" onfocus="handleFocus(event)" placeholder="Buscar productos"
+                            oninput="handleSearch(event)" type="text">
+                        <i class='bx bx-search'></i>
+                        <i class='bx bx-x'></i>
+                    </div>
+                    <div class="content-results">
+                        <div class="con-results"></div>
+                        <div class="not-results">No hay resultados que coincidan con tu búsqueda.</div>
+                    </div>
+                </div>
+                <div class="nav_right">
+                    <ul>
+                        <li class="nr_li dd_main">
+                            <a href="http://localhost:3000/html/loginUser.html"
+                                class="btn_user btn-iniciar-sesion letra-clara">
+                                <ion-icon name="people-outline">
+                            </a>
+
+                            <div class="dd_menu">
+                                <div class="dd_left">
+                                    <ul>
+                                        <li>
+                                            <ion-icon name="mail-outline"></ion-icon>
+                                        </li>
+                                        <li>
+                                            <ion-icon name="settings-outline"></ion-icon>
+                                        </li>
+                                        <li>
+                                            <ion-icon name="log-out-outline"></ion-icon>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="dd_right">
+                                    <ul>
+                                        <li id="email-perfil">Usuario</li>
+                                        <li>Configuración</li>
+                                        <li id="btn_cerrar_sesion">Cerrar sesión</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nr_li">
+                            <a href="http://localhost:3000/html/carrito.html" class="btn_user letra-clara">
+                                <ion-icon name="cart-outline">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
         <!-- Contiene botón menu -->
@@ -64,18 +107,23 @@
                         <ion-icon name="arrow-back-outline"></ion-icon>Regresar
                     </button>
                     <h3 class="subtitulo">Categorias</h3>
-                    <a href="#" id="tecnologia" class="tecnologia">Tecnología<ion-icon name="chevron-forward-outline">
+                    <a href="http://localhost:3000/html/filtro_categoria.html?categoria=tecnologia" id="tecnologia"
+                        class="tecnologia">Tecnología<ion-icon name="chevron-forward-outline">
                         </ion-icon></a>
-                    <a href="#" id="electrodomesticos" class="electrodomesticos">Electrodomesticos<ion-icon
+                    <a href="http://localhost:3000/html/filtro_categoria.html?categoria=electrodomesticos"
+                        id="electrodomesticos" class="electrodomesticos">Electrodomesticos<ion-icon
                             name="chevron-forward-outline">
                         </ion-icon></a>
-                    <a href="#" id="pequeños-electrodomesticos" class="pequeños-electrodomesticos">Pequeños
+                    <a href="http://localhost:3000/html/filtro_categoria.html?categoria=pequeños-electrodomesticos"
+                        id="pequeños-electrodomesticos" class="pequeños-electrodomesticos">Pequeños
                         Electrodomesticos<ion-icon name="chevron-forward-outline">
                         </ion-icon></a>
-                    <a href="#" id="hogar-y-jardin" class="hogar-y-jardin">Hogar y Jardín<ion-icon
+                    <a href="http://localhost:3000/html/filtro_categoria.html?categoria=hogar-y-jardin"
+                        id="hogar-y-jardin" class="hogar-y-jardin">Hogar y Jardín<ion-icon
                             name="chevron-forward-outline">
                         </ion-icon></a>
-                    <a href="#" id="deportes" class="deportes">Deportes<ion-icon name="chevron-forward-outline">
+                    <a href="http://localhost:3000/html/filtro_categoria.html?categoria=deportes" id="deportes"
+                        class="deportes">Deportes<ion-icon name="chevron-forward-outline">
                         </ion-icon>
                     </a>
                 </div>
@@ -174,6 +222,13 @@
         </div>
     </nav>
 
+    <!-- Banner preguntas frecuentes -->
+    <section class="publicidad contenedor">
+        <div class="banner">
+            <img src="../img/img-preguntas-frecuentes.png" alt="preguntas frecuentes">
+        </div>
+    </section>
+
     <div class="contenido-venta">
         <div class="contenedor-venta-telefonica">
             <div class="contenido-principal">
@@ -233,7 +288,7 @@
                     cuando
                     te registraste en el sitio. (Tus datos personales se toman solo con los fines de cumplir con el giro
                     comercial de la empresa, validar las órdenes de compra, mejorar la labor de información y
-                    comercialización de los productos y servicios prestados por tienda somosrex.com, realizar acciones
+                    comercialización de los productos y servicios prestados por tienda http://localhost:3000/, realizar acciones
                     de
                     marketing y publicidad. El usuario tiene el derecho gratuito de ejercer el acceso, rectificar y
                     suprimir
@@ -260,7 +315,7 @@
             <div class="respuesta">
                 <p>Al adquirir un producto, la factura electrónica a emitirse será la de consumidor final (comprobantes
                     tipo
-                    “B”), siendo esta única modalidad de facturación para la compra on line. La misma será enviada al
+                    “B”), siendo esta única modalidad de facturación para la compra online. La misma será enviada al
                     e-mail
                     informado por el Usuario en el pedido, sin excepción. En caso de necesitar una Factura tipo A, el
                     cliente una vez que tenga el producto, deberá enviarnos los datos para modificar la misma,
@@ -275,7 +330,7 @@
                     seguridad de
                     transacciones comerciales a través de Internet. Tus datos se mantendrán bajo estricta
                     confidencialidad.
-                    somosrex.com usa un sistema de seguridad llamado SSL (Secure Socket Layer), que actualmente es el
+                    http://localhost:3000/ usa un sistema de seguridad llamado SSL (Secure Socket Layer), que actualmente es el
                     estándar usado por las compañías más importantes del mundo para realizar transacciones electrónicas
                     seguras, lo que significa que toda tu información personal no podrá ser leída ni capturada por
                     terceros
@@ -290,7 +345,7 @@
                     o devolverlo y sus causas.<br /> 2) Tu cambio o devolución se debe a alguna de las siguientes
                     causas:<br />  a) El producto recibido no es el que ha sido solicitado. <br />  b) Existió un error
                     de
-                    confección de pedido por parte de somosrex.com <br />  c) El producto te llegó dañado. <br />  d) En
+                    confección de pedido <br />  c) El producto te llegó dañado. <br />  d) En
                     todos los casos el producto no podrá haber sido utilizado y deberá contar con su embalaje intacto,
                     exactamente como fue recibido. <br />  e) Deberá presentarse la copia de la factura para su
                     cancelación.
@@ -299,8 +354,7 @@
                     pinturas in situ y en el momento). <br /><br /> Cumplidas las condiciones anteriormente citadas, se
                     realizará el cambio del producto. En el caso que anules una compra a través del Centro de Atención
                     al
-                    cliente, o si al momento de llegar un pedido se rechaza (por una razón ajena a la responsabilidad de
-                    somosrex.com) y el producto ya ha sido despachado, los costos de envío estarán a cargo del usuario.
+                    cliente, o si al momento de llegar un pedido se rechaza y el producto ya ha sido despachado, los costos de envío estarán a cargo del usuario.
                     (*)
                     Ley Nº 26.361, art. 34 (Normas de Protección y Defensa de los Consumidores).</p>
             </div>
@@ -312,6 +366,10 @@
             <div class="container-footer-superior">
                 <div class="suscribir">
                     <input type="text" placeholder="Tu e-mail" class="input-email">
+                    <div class="icons">
+                        <i class='bx bxs-check-circle check'></i>
+                        <i class='bx bxs-x-circle x'></i>
+                    </div>
                     <a id="btn-suscribir" class="btn-suscribir letra-clara fondo-oscuro">Suscribite</a>
                 </div>
                 <div class="venta-telefonica">
@@ -367,7 +425,9 @@
 
     <script src="../js/nav.js"></script>
     <script src="../js/venta_telefonica.js"></script>
-    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    <script src="../js/buscarInterno.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

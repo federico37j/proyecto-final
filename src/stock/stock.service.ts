@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Articulo } from 'src/negocio/articulo';
+import { Articulo } from 'src/stock/articulo';
 import * as fs from 'fs';
 
 @Injectable()
