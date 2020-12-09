@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Local } from './local.entity';
@@ -11,13 +11,17 @@ export class LocalService {
     ) { }
 
     public async getAll(): Promise<Local[]> {
-        console.log("getAll de locals")
-        const result = await this.localRepository.find();
-        console.log("resultado: " + result);
-        let locales: Local[] = [];
-        result.forEach(element => {
-            locales.push(this.localRepository.create({...element}))
-        });
-        return locales;
+        console.log("getAll de locales")
+        try {
+            const result = await this.localRepository.find({
+                relations: ["articulo"]
+            });
+            return result;
+        } catch (error) {
+            throw new HttpException({
+                status: HttpStatus.NOT_FOUND,
+                error: "there is an error in the request, " + error,
+            }, HttpStatus.NOT_FOUND);
+        }
     }
 }

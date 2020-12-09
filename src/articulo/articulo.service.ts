@@ -1,5 +1,6 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import { Categoria } from 'src/categoria/categoria.entity';
 import { Imagen_articulo } from 'src/imagen-articulo/imagen-articulo.entity';
 import { Equal, Repository } from 'typeorm';
 import { Articulo } from './articulo.entity';
@@ -12,7 +13,9 @@ export class ArticuloService {
         @InjectRepository(Articulo)
         private readonly articuloRepository: Repository<Articulo>,
         @InjectRepository(Imagen_articulo)
-        private readonly imagenArticuloRepository: Repository<Imagen_articulo>
+        private readonly imagenArticuloRepository: Repository<Imagen_articulo>,
+        @InjectRepository(Categoria)
+        private readonly categoriaArticuloRepository: Repository<Imagen_articulo>
     ) {
         // this.listadoArticulos = this.getArticulos();
     }
