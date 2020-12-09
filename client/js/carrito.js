@@ -1,17 +1,18 @@
 /* console.log(articulo.nombre + "nombreArticulo"); */
+let productos;
 async function mostrarCarrito() {
 
     try {
         let response = await fetch("/carrito");
-
+        productos = [];
         if (response.ok) {
 
             let productos = await response.json();
-
+            console.log(productos);
             mostrarProductos(productos);
-        }
+           }
         else
-        document.getElementsByClassName("container").innerHTML = `<h2>Error al cargar la pagina</h2>`
+            document.getElementsByClassName("container").innerHTML = `<h2>Error al cargar la pagina</h2>`
     }
     catch (response) {
         document.getElementsByClassName("container").innerHTML = `<h2>${response}</h2>`;
@@ -25,22 +26,23 @@ function mostrarProductos(prod) {
     let htmlRes = "";
     suma = 0;
     let botonEnviar = document.getElementById('btn-siguiente');
-    if (prod.length==0){
+    if (prod.length == 0) {
         botonEnviar.disabled = true
-html = `
+        html = `
 <div class= "carrito-vacio row border rounded border-info m-1 p-3 justify-content-around">El carrito está vacio</div>
 `
-    }else{
+    } else {
         botonEnviar.disabled = false
-    for (let i = 0; i < prod.length; i++) {
-        r = prod[i];
-        suma = suma + parseInt(r.precio);
-        html += `
+        for (let i = 0; i < prod.length; i++) {
+            r = prod[i];
+            suma = suma + parseInt(r.precio*r.cantidad);
+            html += `
     <div class= "row border rounded border-info m-1 p-3 justify-content-around">
     <div class="col-md-2 rounded-circle bg-white img-container"><img class="imgCarrito" src=${r.imagenes}></div>
     <div class="col-md-5"><b>${r.nombre}</b></div>
     <div class= "conteiner">
-    <div class="col-md-2">${formatter.format(r.precio)}</div>
+    <div class="col-md-2">${formatter.format(r.precio*r.cantidad)}</div>
+    <div class="row">${r.cantidad} X ${formatter.format(r.precio)}</div>
     <div class="col-md-2"> <button class= "btnTachito" pos="${i}"></button> </div>
     </div>
 
@@ -48,14 +50,14 @@ html = `
     `;
 
 
-        /*     htmlRes += `
-        <tr>
-        <td>${r.nombre}</td>
-        <td>${r.precio}</td>
-        </tr>
-        `; */
+            /*     htmlRes += `
+            <tr>
+            <td>${r.nombre}</td>
+            <td>${r.precio}</td>
+            </tr>
+            `; */
+        }
     }
-}
     document.querySelector("#productos").innerHTML = html;
 
     /* document.querySelector("#resumen").innerHTML = htmlRes; */
@@ -71,7 +73,7 @@ html = `
 }
 
 
-if( document.getElementById('suma')!=undefined){
+if (document.getElementById('suma') != undefined) {
 
     document.getElementById('suma').innerHTML = suma;
 }
@@ -128,17 +130,76 @@ async function vaciarCarrito() {
 }
 /* option(0); */
 
-function siguientePantalla(){
-    window.location="http://localhost:3000/html/carrito1.html";
+function siguientePantalla() {
+    window.location = "http://localhost:3000/html/carrito1.html";
 }
 
-if(document.getElementById('btn-siguiente')!=undefined){
-let botonSiguiente = document.getElementById('btn-siguiente');
-botonSiguiente.addEventListener("click", siguientePantalla);
+if (document.getElementById('btn-siguiente') != undefined) {
+    let botonSiguiente = document.getElementById('btn-siguiente');
+    botonSiguiente.addEventListener("click", siguientePantalla);
 }
 
-if(document.getElementById("compraExitosa")!=undefined){
-    console.log("entra a funcion compra existosa");
-    vaciarCarrito()
+if (document.getElementById("compraExitosa") != undefined) {
+    obtenerCarrito();
+    vaciarCarrito();
 }
 
+/* let btnCrearFactura = document.getElementById("compra");
+btnCrearFactura.addEventListener("click", crearFactura); */
+
+
+async function crearFactura(productos) {
+    let date = new Date();
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+    date = (day+"/"+month+"/"+year);
+    console.log("Funcion Crear Factura");
+    console.log(date)
+    let factura = {
+        "productos":productos,
+        "suma": localStorage.getItem("suma"),
+        "fecha": date,
+
+    }
+    let respuesta = await fetch("http://localhost:3000/factura", {
+
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(factura)
+    });
+
+    if (respuesta.ok) {
+        /* compras.push(renglon);
+        mostrarTablaCompras(); */
+
+    } else {
+        console.log("error");
+    }
+}
+
+async function obtenerCarrito() {
+
+    try {
+        let response = await fetch("/carrito");
+        productos = [];
+        if (response.ok) {
+
+            let productos = await response.json();
+
+            crearFactura(productos);
+           }
+        else
+            document.getElementsByClassName("container").innerHTML = `<h2>Error al cargar la pagina</h2>`
+    }
+    catch (response) {
+        document.getElementsByClassName("container").innerHTML = `<h2>${response}</h2>`;
+    };
+}
+
+document.querySelector('#btn_factura').addEventListener('click', function() {
+    document.querySelector('.contenedor-resultado-compra').classList.toggle('ocultar');
+    document.querySelector('.factura').classList.toggle('ocultar');
+})

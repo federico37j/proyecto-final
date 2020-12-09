@@ -104,7 +104,7 @@ let btnAgregar = document.getElementById("btnCarrito");
 btnAgregar.addEventListener("click", agregarProductoCarrito);
 
 async function agregarProductoCarrito() {
-    console.log("Funcion Agregar");
+
     if (!window.sessionStorage.getItem("userLogged")) {
         window.location = "http://localhost:3000/html/loginUser.html";
     } else {
@@ -133,6 +133,7 @@ async function agregarProductoCarrito() {
         }
     }
 
+                                                                                                                                                                                                                                          
 }
 
 cargarArticulos("deportes");
