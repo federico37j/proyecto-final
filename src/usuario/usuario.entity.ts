@@ -4,13 +4,13 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
 export class Usuario{
 
     @PrimaryGeneratedColumn()
-    private id_user: number;
+    private idUsuario: number;
 
     @Column()
-    private mail: string;
+    private email: string;
 
     @Column()
-    private contrasena: string;
+    private password: string;
 
     @Column()
     private direccion: string;
@@ -22,27 +22,27 @@ export class Usuario{
     private esAdmin: boolean;
 
     public constructor(mail?:string,contrasena?:string,direccion?:string,ciudad?:string, esAdmin?:boolean){
-        this.mail = mail;
-        this.contrasena = contrasena;
+        this.email = mail;
+        this.password = contrasena;
         this.direccion = direccion;
         this.ciudad = ciudad;
         this.esAdmin = esAdmin;
     }
 
     public getID(){
-        return this.id_user;
+        return this.idUsuario;
     }
 
     public setID(idUser:number){
-        this.id_user = idUser;
+        this.idUsuario = idUser;
     }
 
     public getMail():string{
-        return this.mail;
+        return this.email;
     }
 
     public getContraseña():string{
-        return this.contrasena;
+        return this.password;
     }
 
     public getDireccion():string{

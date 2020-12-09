@@ -23,7 +23,8 @@ async function registrarUsuario() {
         
         console.log("user (js): ",datosUsuario);
         usuarios.push(datosUsuario);
-        let response = await fetch("http://localhost:3000/cliente/addCliente",{
+        let response = //await fetch("http://localhost:3000/cliente/addCliente",{
+            await fetch("http://localhost:3000/usuario/nuevo_usuario",{ // cambio por el endpoint a la BD
                 method: 'POST',
                 headers: {
                 'Content-Type': 'application/json'
