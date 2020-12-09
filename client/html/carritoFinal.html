@@ -220,7 +220,7 @@
     </nav>
 
     <div class="container">
-        <div class="row justify-content-md-center" style="padding: 50px">
+        <div class="row " style="display: flex;align-items: center;justify-content: center;">
             <div class="col-md-6 contenedor-resultado-compra">
                 <div>
                     <img class="imgFinCompra" src="../img/tiquet.png" alt="">
@@ -233,21 +233,33 @@
                         <ion-icon name="document-attach-outline"></ion-icon></button>
                 </div>
             </div>
+            <div class="ocultar contenedor-btn-imprimir mr-2 col-md-8">
+                <div class="col-md-8 mt-3 mb-1">
+                    <button type="button" id="btn_imprimir" class="btn_imprimir btn btn-outline-secondary btn-lg">Imprimir
+                        <ion-icon name="print-outline"></ion-icon></button>
+                </div>
+            </div>
             <div class="ocultar factura">
                 <div class="container contenedor_datos">
                     <div class="row mr-2">
-                        <div class="col-md-8 offset-md-4 fecha_factura">
-                            <p class=" mr-1">Fecha de Emisión: <strong id="fecha_actual">01/02/2020</strong></p>
+                        <div class="col-md-8 offset-md-4 estructura mt-2">
+                            <p class=" mr-1">Fecha de Emisión: <strong id="fecha_emision">01/02/2020</strong></p>
                         </div>
                     </div>
-                    <div class="row margen100px mr-2">
+                    <div class="row mr-2 ">
+                        <div class="col-md-8 contenedor-qr offset-md-4 mt-4">
+                            <img src="" alt="qr code" id="img_qr">
+                        </div>
+                    </div>
+                    <div class="row mr-2">
                         <div class="col-md-4 offset-md-4">
                             <h4 class="nombre_local" id="nombre_local">For Home</h4>
-                            <p class="codigo_area_local" id="codigo_area_local">249</p>-<p class="tel_local" id="tel_local">4449482</p>
+                            <p class="codigo_area_local" id="codigo_area_local">249</p>-<p class="tel_local"
+                                id="tel_local">4449482</p>
                             <p class="direccion_local" id="direccion_local">Garibaldi 1583</p>
                             <p class="cuit_local" id="cuit_local">33-70966111-9</p>
                         </div>
-                        <div class="col-md-4 datos_usuario">
+                        <div class="col-md-4 estructura">
                             <p class="mr-1" id="email_usuario">jorge@grupo4.com</p>
                             <p class="mr-1" id="direccion_usuario">Evergreen 666</p>
                             <p class="mr-1" id="ciudad_usuario">Tandil - Buenos Aires</p>
@@ -283,27 +295,27 @@
                                         <td>10999</td>
                                         <td>32.997</td>
                                     </tr>
-            
+
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                    <div class="row col-md-12 mt-3 mr-2">
+                    <div class="row col-md-12 mt-3">
                         <div class="col-md-8 offset-md-4 contenedor-total-final">
                             <p>TOTAL: $</p>
                             <p id="total_final">500000</p>
                         </div>
                     </div>
-                    <div class="row col-md-12 mt-3 mr-2">
-                        <div class="col-md-8 offset-md-4 contenedor-descripcion-final">
-                            <p>¡GRACIAS POR SU COMPRA!<br> El pedido podrá ser retirado por el titular de la tarjeta, presentando<br> su DNI.</p>
+                    <div class="row col-md-12 mt-3">
+                        <div class="col-md-8 offset-md-4 contenedor-total-final contenedor-descripcion-final">
+                            <p>¡GRACIAS POR SU COMPRA!<br> El pedido podrá ser retirado por el titular de la tarjeta,
+                                presentando<br> su DNI.</p>
                         </div>
                     </div>
                 </div>
 
             </div>
         </div>
-
     </div>
     <audio src="../img/BELL1.mp3" autoplay></audio>
 
@@ -373,6 +385,7 @@
 <script src="../js/nav.js"></script>
 <script src="../js/carrito.js"></script>
 <script src="../js/buscarInterno.js"></script>
+<script src="../js/qr_code.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
 
