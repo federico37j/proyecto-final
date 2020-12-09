@@ -313,14 +313,14 @@ input[type=number] { -moz-appearance:textfield; }
 .factura{
     background-image: url(../img/fondo_factura.png);
     background-size: cover;
-    min-width: 700px;
+    min-width: 705px;
     min-height: 800px;
     display: flex;
     justify-content: center;
     box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
 }
 
-.contenedor-btn-factura .btn_factura ion-icon {
+.contenedor-btn-factura .btn_factura ion-icon, .btn_imprimir ion-icon {
     margin-left: 5px;
 }
 
@@ -336,24 +336,17 @@ input[type=number] { -moz-appearance:textfield; }
     margin-bottom: 0;
 }
 
-.contenedor_datos .datos_usuario {
+.contenedor_datos .estructura {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     flex-direction: column;
 }
 
-.contenedor_datos .fecha_factura {
+#btn_imprimir {
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    flex-direction: column;
-}
-
-.contenedor_datos .fecha_factura p {
-    font-weight: bold;
-    margin-top: 4px;
-}
+    align-items: center;
+} 
 
 .table thead th {
     background-color: rgb(237, 239, 236);
@@ -389,10 +382,15 @@ input[type=number] { -moz-appearance:textfield; }
 }
 
 .contenedor-descripcion-final {
-    background-color: #f3f3f3;
+    justify-content: center;
+}
+
+.contenedor-qr {
     display: flex;
     align-items: center;
-    padding: 10px;
-    margin-left: 225px;
-    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
+    justify-content: flex-end;
 }
+
+/* .contenedor-qr img{
+    max-width: 80px;
+} */
