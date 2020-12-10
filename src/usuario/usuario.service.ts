@@ -55,4 +55,24 @@ export class UsuarioService {
         }
         return usuario_creation_response;
     }
+
+    public async loginUser(userInfo: UsuarioDTO): Promise<Usuario> {
+        console.log("login....");
+        console.log("mail info: ", userInfo.email);
+        try {
+            let introUsuario = this.getUsuarioByEmail(userInfo.email);
+            let introPassword = (await introUsuario).getContraseña()
+            if (introUsuario) {
+                if (userInfo.password == introPassword) {
+                    return introUsuario;
+                }
+            }
+            return null;
+        } catch (error) {
+            throw new HttpException({
+                status: HttpStatus.NOT_FOUND,
+                error: "there is an error in the request, " + error,
+            }, HttpStatus.NOT_FOUND);
+        }
+    }
 }
