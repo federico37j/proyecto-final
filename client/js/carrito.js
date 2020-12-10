@@ -160,6 +160,8 @@ async function crearFactura(productos) {
         "productos":productos,
         "suma": localStorage.getItem("suma"),
         "fecha": date,
+        "idUsuario":1,
+        "idLocal":1
 
     }
     let respuesta = await fetch("http://localhost:3000/factura", {
@@ -186,9 +188,9 @@ async function obtenerCarrito() {
         let response = await fetch("/carrito");
         productos = [];
         if (response.ok) {
-
+           
             let productos = await response.json();
-
+            console.log("todos los productos json " + productos);
             crearFactura(productos);
            }
         else
