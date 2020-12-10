@@ -295,3 +295,102 @@ input[type=number] { -moz-appearance:textfield; }
     width: 200px!important;
     height: 193px!important;
 }
+
+
+.contenedor-resultado-compra {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.btn_factura {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.factura{
+    background-image: url(../img/fondo_factura.png);
+    background-size: cover;
+    min-width: 705px;
+    min-height: 800px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+.contenedor-btn-factura .btn_factura ion-icon, .btn_imprimir ion-icon {
+    margin-left: 5px;
+}
+
+.ocultar {
+    display: none;
+}
+
+.contenedor_datos .tel_local, .contenedor_datos .codigo_area_local {
+    display: inline-block;
+}
+
+.contenedor_datos p {
+    margin-bottom: 0;
+}
+
+.contenedor_datos .estructura {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+#btn_imprimir {
+    display: flex;
+    align-items: center;
+} 
+
+.table thead th {
+    background-color: rgb(237, 239, 236);
+}
+
+.margen100px {
+    margin-top: 100px;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+    font-size: 12px;
+}
+  
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.content-table tbody tr input{
+    outline: none;
+    border: 1px solid transparent;
+    background-color: transparent;
+}
+
+.contenedor-total-final {
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+    margin-left: 225px;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+.contenedor-descripcion-final {
+    justify-content: center;
+}
+
+.contenedor-qr {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* .contenedor-qr img{
+    max-width: 80px;
+} */

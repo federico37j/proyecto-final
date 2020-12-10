@@ -17,9 +17,7 @@
     <link rel="stylesheet" href="../css/buscarInterno.css">
     <link rel="stylesheet" href="../css/normalizador.css">
     <!-- Iconos -->
-    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-    <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
     <title>Articulos del hogar</title>
 </head>
 
@@ -222,19 +220,105 @@
     </nav>
 
     <div class="container">
-        <div class="row justify-content-md-center" style="padding: 100px">
-            <div class="col-md-6">
-                <div style="margin-left:100px">
+        <div class="row " style="display: flex;align-items: center;justify-content: center;">
+            <div class="col-md-6 contenedor-resultado-compra">
+                <div>
                     <img class="imgFinCompra" src="../img/tiquet.png" alt="">
                 </div>
                 <div class="">
                     <h1 id="compraExitosa" class="compraFinalizada">¡Gracias por su compra!</h1>
                 </div>
+                <div class="contenedor-btn-factura mt-4">
+                    <button type="button" id="btn_factura" class="btn_factura btn btn-outline-secondary btn-lg">Factura
+                        <ion-icon name="document-attach-outline"></ion-icon></button>
+                </div>
             </div>
+            <div class="ocultar contenedor-btn-imprimir mr-2 col-md-8">
+                <div class="col-md-8 mt-3 mb-1">
+                    <button type="button" id="btn_imprimir" class="btn_imprimir btn btn-outline-secondary btn-lg">Imprimir
+                        <ion-icon name="print-outline"></ion-icon></button>
+                </div>
+            </div>
+            <div class="ocultar factura">
+                <div class="container contenedor_datos">
+                    <div class="row mr-2">
+                        <div class="col-md-8 offset-md-4 estructura mt-2">
+                            <p class=" mr-1">Fecha de Emisión: <strong id="fecha_emision">01/02/2020</strong></p>
+                        </div>
+                    </div>
+                    <div class="row mr-2 ">
+                        <div class="col-md-8 contenedor-qr offset-md-4 mt-4">
+                            <img src="" alt="qr code" id="img_qr">
+                        </div>
+                    </div>
+                    <div class="row mr-2">
+                        <div class="col-md-4 offset-md-4">
+                            <h4 class="nombre_local" id="nombre_local">For Home</h4>
+                            <p class="codigo_area_local" id="codigo_area_local">249</p>-<p class="tel_local"
+                                id="tel_local">4449482</p>
+                            <p class="direccion_local" id="direccion_local">Garibaldi 1583</p>
+                            <p class="cuit_local" id="cuit_local">33-70966111-9</p>
+                        </div>
+                        <div class="col-md-4 estructura">
+                            <p class="mr-1" id="email_usuario">jorge@grupo4.com</p>
+                            <p class="mr-1" id="direccion_usuario">Evergreen 666</p>
+                            <p class="mr-1" id="ciudad_usuario">Tandil - Buenos Aires</p>
+                        </div>
+                    </div>
+                    <div class="row mt-3 mr-2">
+                        <div class="col-md-8 offset-md-4 mr-1">
+                            <table class="table content-table">
+                                <thead>
+                                    <tr class="text-center">
+                                        <th>CANTIDAD</th>
+                                        <th>NOMBRE PRODUCTO</th>
+                                        <th>PRECIO</th>
+                                        <th>TOTAL</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="detalle-tabla" class="text-center">
+                                    <tr>
+                                        <th>5</th>
+                                        <td>Smart Tv 32 HD L32S6500 Con Android TCL</td>
+                                        <td>23999</td>
+                                        <td>119.995</td>
+                                    </tr>
+                                    <tr>
+                                        <th>5</th>
+                                        <td>Celular Libre S20+ 6 7 128 GB Gris SAMSUNG</td>
+                                        <td>114999</td>
+                                        <td>574.995</td>
+                                    </tr>
+                                    <tr>
+                                        <th>3</th>
+                                        <td>IMPRESORA XP-2101 INALAMBRICA EPSON</td>
+                                        <td>10999</td>
+                                        <td>32.997</td>
+                                    </tr>
 
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row col-md-12 mt-3">
+                        <div class="col-md-8 offset-md-4 contenedor-total-final">
+                            <p>TOTAL: $</p>
+                            <p id="total_final">500000</p>
+                        </div>
+                    </div>
+                    <div class="row col-md-12 mt-3">
+                        <div class="col-md-8 offset-md-4 contenedor-total-final contenedor-descripcion-final">
+                            <p>¡GRACIAS POR SU COMPRA!<br> El pedido podrá ser retirado por el titular de la tarjeta,
+                                presentando<br> su DNI.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
     <audio src="../img/BELL1.mp3" autoplay></audio>
+
 
     <!-- Footer -->
     <footer class="fondo-claro" id="footer">
@@ -301,6 +385,9 @@
 <script src="../js/nav.js"></script>
 <script src="../js/carrito.js"></script>
 <script src="../js/buscarInterno.js"></script>
+<script src="../js/qr_code.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
 
 
 </html>

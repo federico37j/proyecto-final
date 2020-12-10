@@ -1,5 +1,6 @@
+import { Categoria } from 'src/categoria/categoria.entity';
 import { Imagen_articulo } from 'src/imagen-articulo/imagen-articulo.entity';
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('ARTICULO')
 export class Articulo {
@@ -27,6 +28,10 @@ export class Articulo {
 
     @Column()
     private idCategoria: number;
+
+    @ManyToOne(()=>Categoria, categoria => categoria.articulos)
+    @JoinColumn({name: 'idCategoria'})
+    public categoria: Categoria;
 
     @OneToMany((type) => Imagen_articulo, imagen_articulo => imagen_articulo.articulo)
     public imagen_articulo: Imagen_articulo[];
