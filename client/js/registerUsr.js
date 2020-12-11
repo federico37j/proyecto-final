@@ -13,16 +13,15 @@ async function registrarUsuario() {
         let u_mail = document.querySelector("#inputEmail").value;
         let u_pass = document.querySelector("#inputPassword").value;
         let datosUsuario = {
-            "id_user": nro_user,
-            "mail": u_mail,
-            "contrasena": u_pass,
+            "email": u_mail,
+            "password": u_pass,
             "direccion": u_dire,
             "ciudad": u_city,
             "esAdmin": false,
         }
         
         console.log("user (js): ",datosUsuario);
-        usuarios.push(datosUsuario);
+        // usuarios.push(datosUsuario);
         let response = //await fetch("http://localhost:3000/cliente/addCliente",{
             await fetch("http://localhost:3000/usuario/nuevo_usuario",{ // cambio por el endpoint a la BD
                 method: 'POST',
@@ -35,8 +34,10 @@ async function registrarUsuario() {
             // console.log(contenido);
             debugger;
         if (response.ok){
-            usuarios.push(datosUsuario);
-            nro_user++;
+            // usuarios.push(datosUsuario);
+            // nro_user++;
+            console.log("los datos fueron cargados correctamente");
+            window.location="http://localhost:3000/html/loginUser";
         }
         else{
             alert("no se pudo enviar el json");
