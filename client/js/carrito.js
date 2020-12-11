@@ -10,7 +10,7 @@ async function mostrarCarrito() {
             let productos = await response.json();
             console.log(productos);
             mostrarProductos(productos);
-           }
+        }
         else
             document.getElementsByClassName("container").innerHTML = `<h2>Error al cargar la pagina</h2>`
     }
@@ -35,13 +35,13 @@ function mostrarProductos(prod) {
         botonEnviar.disabled = false
         for (let i = 0; i < prod.length; i++) {
             r = prod[i];
-            suma = suma + parseInt(r.precio*r.cantidad);
+            suma = suma + parseInt(r.precio * r.cantidad);
             html += `
     <div class= "row border rounded border-info m-1 p-3 justify-content-around">
     <div class="col-md-2 rounded-circle bg-white img-container"><img class="imgCarrito" src=${r.imagenes}></div>
     <div class="col-md-5"><b>${r.nombre}</b></div>
     <div class= "conteiner">
-    <div class="col-md-2">${formatter.format(r.precio*r.cantidad)}</div>
+    <div class="col-md-2">${formatter.format(r.precio * r.cantidad)}</div>
     <div class="row">${r.cantidad} X ${formatter.format(r.precio)}</div>
     <div class="col-md-2"> <button class= "btnTachito" pos="${i}"></button> </div>
     </div>
@@ -153,13 +153,15 @@ async function crearFactura(productos) {
     let day = date.getDate();
     let month = date.getMonth() + 1;
     let year = date.getFullYear();
-    date = (day+"/"+month+"/"+year);
+    date = (day + "/" + month + "/" + year);
     console.log("Funcion Crear Factura");
     console.log(date)
     let factura = {
-        "productos":productos,
+        "productos": productos,
         "suma": localStorage.getItem("suma"),
         "fecha": date,
+        "idUsuario":1,
+        "idLocal":1
 
     }
     let respuesta = await fetch("http://localhost:3000/factura", {
@@ -186,11 +188,11 @@ async function obtenerCarrito() {
         let response = await fetch("/carrito");
         productos = [];
         if (response.ok) {
-
+           
             let productos = await response.json();
-
+            console.log("todos los productos json " + productos);
             crearFactura(productos);
-           }
+        }
         else
             document.getElementsByClassName("container").innerHTML = `<h2>Error al cargar la pagina</h2>`
     }
@@ -199,7 +201,12 @@ async function obtenerCarrito() {
     };
 }
 
-document.querySelector('#btn_factura').addEventListener('click', function() {
+document.querySelector('#btn_factura').addEventListener('click', function () {
     document.querySelector('.contenedor-resultado-compra').classList.toggle('ocultar');
     document.querySelector('.factura').classList.toggle('ocultar');
+    document.querySelector('.contenedor-btn-imprimir').classList.toggle('ocultar');
+})
+
+document.querySelector('#btn_imprimir').addEventListener('click', function () {
+    window.print();
 })

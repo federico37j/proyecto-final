@@ -17,18 +17,25 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsuarioModule } from './usuario/usuario.module';
 import { ArticuloModule } from './articulo/articulo.module';
 import { ImagenArticuloModule } from './imagen-articulo/imagen-articulo.module';
+
+import { FacturaModule } from './factura/factura.module';
+import { DetalleFacturaModule } from './detalle-factura/detalle-factura.module';
+
 import { LocalModule } from './local/local.module';
 import { CategoriaModule } from './categoria/categoria.module';
+
 
 
 @Module({
   imports: [ServeStaticModule.forRoot({
     rootPath: join(__dirname, '..',
     'client'),
-    }),TypeOrmModule.forRoot(), UsuarioModule, ArticuloModule, ImagenArticuloModule, LocalModule, CategoriaModule],
 
-  controllers: [AppController, NegocioController, StockController, LoginController, CarritoController, FacturaController],
-  providers: [AppService, NegocioService, StockService, LoginService, CarritoService, FacturaService],
+    }),TypeOrmModule.forRoot(), UsuarioModule, ArticuloModule, ImagenArticuloModule, LocalModule, CategoriaModule, FacturaModule, DetalleFacturaModule],
+
+
+  controllers: [AppController, NegocioController, StockController, LoginController, CarritoController],
+  providers: [AppService, NegocioService, StockService, LoginService, CarritoService],
 
 })
 export class AppModule {}
