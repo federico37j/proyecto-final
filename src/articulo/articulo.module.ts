@@ -5,13 +5,15 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Articulo } from './articulo.entity';
 import { Imagen_articulo } from 'src/imagen-articulo/imagen-articulo.entity';
 import { Categoria } from 'src/categoria/categoria.entity';
+import { Detalle_factura } from 'src/detalle-factura/detalle-factura.entity';
 
 @Module({
   imports: [
     TypeOrmModule.forFeature([
       Articulo,
       Imagen_articulo,
-      Categoria
+      Categoria,
+      Detalle_factura
     ])
   ],
   controllers: [ArticuloController],

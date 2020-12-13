@@ -1,6 +1,9 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import { Articulo } from 'src/articulo/articulo.entity';
 import { Detalle_factura } from 'src/detalle-factura/detalle-factura.entity';
+import { Local } from 'src/local/local.entity';
+import { Usuario } from 'src/usuario/usuario.entity';
 import { Repository } from 'typeorm';
 import { Factura } from './factura.entity';
 
@@ -11,7 +14,10 @@ export class FacturaService {
         private readonly facturaRepository: Repository<Factura>,
 
         @InjectRepository(Detalle_factura)
-        private readonly detalleFacturaRepository: Repository<Detalle_factura>
+        private readonly detalleFacturaRepository: Repository<Detalle_factura>,
+
+        @InjectRepository(Usuario)
+        private readonly usuarioFacturaRepository: Repository<Usuario>
     ) { }
 
     public async createFactura(datos: any): Promise<string> {
@@ -85,6 +91,43 @@ return "ok"
         }, HttpStatus.NOT_FOUND);
     }
 }
+       // const result: Factura = await this.facturaRepository.findOne({
+        //     relations: ["local","usuario","detalle_factura"],
+        //     where: [{
+        //         "idFactura": Equal(facturaId)
+        //     }]
+        // });
 
+public async getByFactura(facturaId){
+    console.log("Get All Factura")
+        try {
+        const result = await this.facturaRepository
+        .createQueryBuilder('factura')
+        .addSelect('u.email')
+        .addSelect('u.direccion')
+        .addSelect('u.ciudad')
+        .addSelect('l.cuit')
+        .addSelect('l.nombre')
+        .addSelect('l.direccion')
+        .addSelect('l.codigo_area')
+        .addSelect('l.nro_telefono')
+        .addSelect('df.cantidad')
+        .addSelect('a.nombre')
+        .addSelect('a.precio')
+        .innerJoin(Usuario,'u','u.idUsuario = factura.idUsuario')
+        .innerJoin(Local,'l','l.idLocal = factura.idLocal')
+        .innerJoin(Detalle_factura,'df','df.idFactura = factura.idFactura')
+        .innerJoin(Articulo,'a','df.idDetalle = a.idArticulo')
+        .where(`factura.idFactura = ${facturaId}`)
+        .getRawMany();
+        return result
+
+    } catch(error) {
+        throw new HttpException({
+            status: HttpStatus.NOT_FOUND,
+            error: "there is an error in the request, " + error,
+        }, HttpStatus.NOT_FOUND);
+    }
+}
     
 }
