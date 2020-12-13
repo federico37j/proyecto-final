@@ -1,5 +1,5 @@
 import { Controller } from '@nestjs/common';
-import { Get } from '@nestjs/common/decorators/http/request-mapping.decorator';
+import { Get, Put } from '@nestjs/common/decorators/http/request-mapping.decorator';
 import { Delete } from '@nestjs/common/decorators/http/request-mapping.decorator';
 import { Post } from '@nestjs/common/decorators/http/request-mapping.decorator';
 import { Param } from '@nestjs/common/decorators/http/route-params.decorator';
@@ -31,6 +31,11 @@ export class CarritoController {
         
         return this.carritoService.deleteProducto(parseInt(index));
 
+    }
+
+    @Put(':index')
+    public updateProducto(@Body() operacion: any, @Param('index') index): boolean {
+        return this.carritoService.updateCantidad(operacion,parseInt(index));
     }
 
 }

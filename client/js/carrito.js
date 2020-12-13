@@ -1,3 +1,5 @@
+/* const { json } = require("express");
+ */
 /* console.log(articulo.nombre + "nombreArticulo"); */
 let productos;
 async function mostrarCarrito() {
@@ -8,7 +10,6 @@ async function mostrarCarrito() {
         if (response.ok) {
 
             let productos = await response.json();
-            console.log(productos);
             mostrarProductos(productos);
         }
         else
@@ -40,22 +41,16 @@ function mostrarProductos(prod) {
     <div class= "row border rounded border-info m-1 p-3 justify-content-around">
     <div class="col-md-2 rounded-circle bg-white img-container"><img class="imgCarrito" src=${r.imagenes}></div>
     <div class="col-md-5"><b>${r.nombre}</b></div>
-    <div class= "conteiner">
-    <div class="col-md-2">${formatter.format(r.precio * r.cantidad)}</div>
-    <div class="row">${r.cantidad} X ${formatter.format(r.precio)}</div>
-    <div class="col-md-2"> <button class= "btnTachito" pos="${i}"></button> </div>
+
+    <div class= "col-md-3">
+    <div class="row"><h4><b>${formatter.format(r.precio * r.cantidad)}</b></h4></div>
+    <div class="row"><b>${r.cantidad}</b>     X ${formatter.format(r.precio)}</div>
+    <div class="row"><button class="subirCantidad" id="aumentar" pos="${i}"></button><button class="bajarCantidad" id="disminuir" pos="${i}" cantidad="${r.cantidad}"></button><button class= "btnTachito" pos="${i}"></div>
+    </div>
     </div>
 
     </div>
     `;
-
-
-            /*     htmlRes += `
-            <tr>
-            <td>${r.nombre}</td>
-            <td>${r.precio}</td>
-            </tr>
-            `; */
         }
     }
     document.querySelector("#productos").innerHTML = html;
@@ -66,6 +61,20 @@ function mostrarProductos(prod) {
 
     localStorage.setItem("suma", suma);
 
+
+    
+
+    let botonesDisminuir = document.querySelectorAll(".bajarCantidad");
+    botonesDisminuir.forEach(boton => {
+        boton.addEventListener("click", disminuirCantidad);
+    });
+
+
+
+    let botonesAumentar = document.querySelectorAll(".subirCantidad");
+    botonesAumentar.forEach(boton => {
+        boton.addEventListener("click", sumarCantidad);
+    });
     let botonesBorrar = document.querySelectorAll(".btnTachito");
     botonesBorrar.forEach(boton => {
         boton.addEventListener("click", btnBorrarClick);
@@ -78,19 +87,12 @@ if (document.getElementById('suma') != undefined) {
     document.getElementById('suma').innerHTML = suma;
 }
 
-/* let btnMock = document.querySelector("#llamarMock");
-if (btnMock != undefined) {
-    btnMock.addEventListener("click", mostrarCarrito);
-} */
 mostrarCarrito();
 
 let formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
 
-    // These options are needed to round to whole numbers if that's what you want.
-    //minimumFractionDigits: 0,
-    //maximumFractionDigits: 0,
 });
 
 function mostrarDiv(x) {
@@ -128,7 +130,7 @@ async function vaciarCarrito() {
     })
 
 }
-/* option(0); */
+
 
 function siguientePantalla() {
     window.location = "http://localhost:3000/html/carrito1.html";
@@ -144,24 +146,51 @@ if (document.getElementById("compraExitosa") != undefined) {
     vaciarCarrito();
 }
 
-/* let btnCrearFactura = document.getElementById("compra");
-btnCrearFactura.addEventListener("click", crearFactura); */
 
+function disminuirCantidad() {
+    let pos = this.getAttribute("pos");
+    let cantidad = this.getAttribute("cantidad");
+    if(cantidad > 1){
+        let valor = "restar";
+        actualizarCantidad(valor, pos);
+    }
+}
+
+function sumarCantidad() {
+    let pos = this.getAttribute("pos");
+    console.log("ingresa actualizar cantidad")
+    let valor = "sumar";
+    actualizarCantidad(valor, pos);
+}
+
+async function actualizarCantidad(operacion, pos) {
+
+    console.log("ingresa actualizar cantidad");
+    let valor = {
+        "operacion": operacion
+    };
+    
+    let response = await fetch(`/carrito/${pos}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(valor)
+    })
+    if (response) {
+        mostrarCarrito();
+    }
+    //   mostrarCarrito();
+}
 
 async function crearFactura(productos) {
     let date = new Date();
-    let day = date.getDate();
-    let month = date.getMonth() + 1;
-    let year = date.getFullYear();
-    date = (day + "/" + month + "/" + year);
-    console.log("Funcion Crear Factura");
-    console.log(date)
     let factura = {
         "productos": productos,
         "suma": localStorage.getItem("suma"),
         "fecha": date,
-        "idUsuario":1,
-        "idLocal":1
+        "idUsuario": window.sessionStorage.getItem("idUser"),
+        "idLocal": 1
 
     }
     let respuesta = await fetch("http://localhost:3000/factura", {
@@ -188,7 +217,7 @@ async function obtenerCarrito() {
         let response = await fetch("/carrito");
         productos = [];
         if (response.ok) {
-           
+
             let productos = await response.json();
             console.log("todos los productos json " + productos);
             crearFactura(productos);
@@ -200,13 +229,16 @@ async function obtenerCarrito() {
         document.getElementsByClassName("container").innerHTML = `<h2>${response}</h2>`;
     };
 }
+if (document.querySelector('#btn_factura') != undefined) {
+    document.querySelector('#btn_factura').addEventListener('click', function () {
+        document.querySelector('.contenedor-resultado-compra').classList.toggle('ocultar');
+        document.querySelector('.factura').classList.toggle('ocultar');
+        document.querySelector('.contenedor-btn-imprimir').classList.toggle('ocultar');
+    })
+}
 
-document.querySelector('#btn_factura').addEventListener('click', function () {
-    document.querySelector('.contenedor-resultado-compra').classList.toggle('ocultar');
-    document.querySelector('.factura').classList.toggle('ocultar');
-    document.querySelector('.contenedor-btn-imprimir').classList.toggle('ocultar');
-})
-
-document.querySelector('#btn_imprimir').addEventListener('click', function () {
-    window.print();
-})
+if (document.querySelector('#btn_imprimir') != undefined) {
+    document.querySelector('#btn_imprimir').addEventListener('click', function () {
+        window.print();
+    })
+}
