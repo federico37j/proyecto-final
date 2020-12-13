@@ -5,6 +5,7 @@ import * as fs from 'fs';
 
 @Injectable()
 export class CarritoService {
+    
     private articulosCarrito = [];
 
     public getCarrito(): any {
@@ -57,7 +58,6 @@ export class CarritoService {
     }
 
     private getCantidad(articulo):number{
-        console.log("entro a getCantidad");
         let cantidad: number =1;
         try {   
                 for (let i = 0; i < this.articulosCarrito.length; i++) {
@@ -82,15 +82,8 @@ export class CarritoService {
         return listaImagenes;
     }
 
-
-
-
     public vaciarCarrito(): boolean {
         const url: string = `resources/carrito.csv`;
-        /* for (let i=0; i <= this.articulosCarrito.length; i++){
-            this.articulosCarrito.pop();
-            
-        } */
         this.articulosCarrito = [];
         fs.unlinkSync(url);
 
@@ -115,5 +108,14 @@ export class CarritoService {
         //  fs.writeFileSync(url, this.articulosCarrito);
     }
 
-
+    public updateCantidad(valor:any,position: number): boolean {
+        if (valor.operacion == "sumar"){
+        this.articulosCarrito[position].cantidad=parseInt(this.articulosCarrito[position].cantidad) + 1;
+        }else{
+            this.articulosCarrito[position].cantidad=parseInt(this.articulosCarrito[position].cantidad) - 1;
+        }
+        
+        this.actualizarCarrito();
+        return true;
+    }
 }   
