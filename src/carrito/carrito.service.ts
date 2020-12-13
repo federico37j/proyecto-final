@@ -46,6 +46,7 @@ export class CarritoService {
         else{
             let articulo = { "idArticulo": producto["idArticulo"], "nombre": producto["nombre"], "precio": producto["precio"],"cantidad":cantidad, "imagenes": this.getImagenes(producto.imagen_articulo) }
             this.articulosCarrito.push(articulo);
+            console.log("quiero ver stock "+  producto["stock"]);
             fs.appendFileSync(url, `${articulo.idArticulo},${articulo.nombre},${articulo.precio},${articulo.cantidad},${articulo.imagenes}\n`);
         }
         return "ok"

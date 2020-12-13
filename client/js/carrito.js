@@ -185,17 +185,11 @@ async function actualizarCantidad(operacion, pos) {
 
 async function crearFactura(productos) {
     let date = new Date();
-    let day = date.getDate();
-    let month = date.getMonth() + 1;
-    let year = date.getFullYear();
-    date = (day + "/" + month + "/" + year);
-    console.log("Funcion Crear Factura");
-    console.log(date)
     let factura = {
         "productos": productos,
         "suma": localStorage.getItem("suma"),
         "fecha": date,
-        "idUsuario": 1,
+        "idUsuario": window.sessionStorage.getItem("idUser"),
         "idLocal": 1
 
     }
