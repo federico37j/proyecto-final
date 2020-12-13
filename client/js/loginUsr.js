@@ -6,8 +6,8 @@ async function ingresar() {
     let correo = document.querySelector('.mail').value;
     let password = document.querySelector('.pwd').value;
     let user = {
-        "mail": correo,
-        "contrasena":password
+        "email": correo,
+        "password":password
     }
  
     // let container = document.querySelector(".form");
@@ -21,22 +21,30 @@ async function ingresar() {
         //     container.innerHTML = `<h2>Bienvenido ${correo}</h2>`
         // }
         // else{
-        //     alert();
-        // }
+        // alert();}
+        // fetch con csv de login 'http://localhost:3000/login/validate'
     
-    let respuesta = await fetch('http://localhost:3000/login/validate', {
+    let respuesta = await fetch('http://localhost:3000/usuario/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(user)
     });
-
-    if (await respuesta.json()) {
-        console.log("Bienvenido/a ",user.mail);
+    if (respuesta.ok) {
+        const logueado = await respuesta.json();
+         console.log(logueado);
+        // user = respuesta.json(); 
+        console.log("Bienvenido/a ",logueado.email);
         window.sessionStorage.setItem("userLogged", true);
-        window.sessionStorage.setItem("user", user.mail);
-        window.location="http://localhost:3000";
+        window.sessionStorage.setItem("user", logueado.email);
+        window.sessionStorage.setItem("idUser", logueado.idUsuario);
+        window.sessionStorage.setItem("esAdmin", logueado.esAdmin);
+        if (logueado.esAdmin){
+            window.location="http://localhost:3000/administrador.html"
+        }
+        else
+            window.location="http://localhost:3000";
     }
 
     ///////////////////////////// codigo mock //////////////////////////////
@@ -63,7 +71,7 @@ async function ingresar() {
     // };
 }
 
-ingresar();
+// ingresar();
 
 function cerrarSesion(){
     window.sessionStorage.clear();

@@ -17,4 +17,9 @@ export class UsuarioController {
         return this.usuarioService.getUsuarioByEmail(email);
     }
 
+    @Post('login')
+    public loginCliente(@Body() newUsuario: UsuarioDTO): Promise<Usuario> {
+        return this.usuarioService.loginUser(newUsuario);
+    }
+
 }
