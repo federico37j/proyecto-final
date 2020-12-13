@@ -13,6 +13,7 @@ export class UsuarioService {
     ) { }
 
     public async addCliente(newUsuario: UsuarioDTO): Promise<Usuario> {
+        console.log("post de registrar usuario")
         try {
             const usuarioCreado: Usuario = await this.usuarioRepository.save(new Usuario(
                 newUsuario.email,
@@ -22,8 +23,10 @@ export class UsuarioService {
                 newUsuario.esAdmin
             )
             );
-            if (usuarioCreado.getID())
+            if (usuarioCreado.getID()){
+                console.log("se ha creado correctamente ",usuarioCreado.getMail());
                 return usuarioCreado;
+            }
             else {
                 throw new HttpException('No se pudo crear el usuario ', HttpStatus.NOT_FOUND);
             }
@@ -54,5 +57,30 @@ export class UsuarioService {
             }, HttpStatus.NOT_FOUND);
         }
         return usuario_creation_response;
+    }
+
+    public async loginUser(userInfo: UsuarioDTO): Promise<Usuario> {
+        console.log("login....");
+        console.log("mail info: ", userInfo.email);
+        try {
+            let introUsuario = this.getUsuarioByEmail(userInfo.email);
+            let introPassword = (await introUsuario).getContraseña()
+            if (introUsuario) {
+                if (userInfo.password == introPassword) {
+                    return introUsuario;
+                }
+                else{
+                    throw new HttpException('Acceso denegado ', HttpStatus.UNAUTHORIZED);
+                }
+            }
+            else{
+                throw new HttpException('Ya existe un usuario con ese mail ', HttpStatus.FORBIDDEN);
+            }
+        } catch (error) {
+            throw new HttpException({
+                status: HttpStatus.NOT_FOUND,
+                error: "there is an error in the request, " + error,
+            }, HttpStatus.NOT_FOUND);
+        }
     }
 }
