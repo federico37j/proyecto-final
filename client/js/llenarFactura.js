@@ -1,12 +1,13 @@
 "use strict";
 
 async function loadFactura(idFactura) {
+    console.log("@Idfactura",idFactura);
     const URL = `/factura/${idFactura}`;
     try {
         let response = await fetch(URL);
         if (response.ok) {
             let factura = await response.json();
-            console.log("Factura", factura);
+            console.log("@Factura", factura);
             document.querySelector("#fecha_emision").textContent = (factura[0].factura_fecha).slice(0, 10);
             document.querySelector("#nombre_local").textContent = factura[0].l_nombre;
             document.querySelector("#codigo_area_local").textContent = factura[0].l_codigo_area;
@@ -19,6 +20,7 @@ async function loadFactura(idFactura) {
             document.querySelector("#total_final").textContent = factura[0].factura_total;
 
             cargarDetalleFactura(factura);
+            crearQr();
         } else {
             console.log("Error - Failed URL!");
         }
