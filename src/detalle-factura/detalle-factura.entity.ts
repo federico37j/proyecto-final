@@ -1,3 +1,4 @@
+import { Articulo } from 'src/articulo/articulo.entity';
 import { Factura } from 'src/factura/factura.entity';
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
@@ -19,6 +20,10 @@ export class Detalle_factura {
     @ManyToOne ((type) => Factura, factura => factura.detalle_factura)
     @JoinColumn({name: 'idFactura'})
     public factura: Factura;
+
+    @ManyToOne ((type) => Articulo, articulo => articulo.detalle_factura)
+    @JoinColumn({name: 'idArticulo'})
+    public articulo: Articulo;
 
 
     public constructor(cantidad?: number, idArticulo?: number, idFactura?: number) {

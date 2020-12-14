@@ -1,5 +1,7 @@
 import { Detalle_factura } from 'src/detalle-factura/detalle-factura.entity';
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Local } from 'src/local/local.entity';
+import { Usuario } from 'src/usuario/usuario.entity';
+import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('FACTURA')
 export class Factura {
@@ -22,6 +24,13 @@ export class Factura {
     @OneToMany((type) => Detalle_factura, detalle_factura => detalle_factura.factura)
     public detalle_factura: Detalle_factura[];
 
+    @ManyToOne((type) => Usuario, usuario => usuario.factura)
+    @JoinColumn({name: 'idUsuario'})
+    public usuario: Usuario;
+
+    @ManyToOne((type) => Local, local => local.factura)
+    @JoinColumn({name: 'idLocal'})
+    public local: Local; 
     
     /*
         @OneToMany((type) => Imagen_articulo, imagen_articulo => imagen_articulo.articulo)

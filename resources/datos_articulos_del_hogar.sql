@@ -107,12 +107,12 @@ INSERT INTO `IMAGEN_ARTICULO` (`imagen`, `principal`, `idArticulo`) VALUES
 ('https://res.cloudinary.com/dpqkhmplb/image/upload/v1606845313/secundarias/mochila/mochila-secundaria1_ctsr7i.jpg',false,15);
 
 -- SELECT * FROM IMAGEN_ARTICULO;
-
+ 
 -- -----------------------------------------------------
 -- Table `LOCAL`
 -- -----------------------------------------------------
 
-INSERT INTO `LOCAL`(`cuit`, `nombre`, `direccion`, `codigo_area`, `nro_telefono`) VALUES ('33-70966111-9', 'Four Home', 'Garibaldi 1583', 0249, 4449482);
+INSERT INTO `LOCAL`(`cuit`, `nombre`, `direccion`, `codigo_area`, `nro_telefono`) VALUES ('33-70966111-9', 'For Home', 'Garibaldi 1583', 0249, 4449482);
 
 -- SELECT * FROM LOCAL;
 
@@ -121,8 +121,8 @@ INSERT INTO `LOCAL`(`cuit`, `nombre`, `direccion`, `codigo_area`, `nro_telefono`
 -- -----------------------------------------------------
 
 INSERT INTO `USUARIO`(`email`, `password`, `direccion`, `ciudad`, `esAdmin`) VALUES 
-('jorge@grupo4.com',123456,'Evergreen 666','Tangamandapio',false),
+('jorge@grupo4.com',123456,'Evergreen 666','Tandil',false),
 ('nico@grupo4.com',123456,'Butterfly st.','God City',false),
 ('federico@grupo4.com',123456,'Gral paz 51','Tandil',true);
-
+  
 -- SELECT * FROM USUARIO;

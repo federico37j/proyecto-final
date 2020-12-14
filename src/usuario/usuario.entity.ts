@@ -1,6 +1,7 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
+import { Factura } from 'src/factura/factura.entity';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm'
 
-@Entity('usuario')
+@Entity('USUARIO')
 export class Usuario{
 
     @PrimaryGeneratedColumn()
@@ -20,6 +21,11 @@ export class Usuario{
 
     @Column()
     private esAdmin: boolean;
+
+    
+    @OneToMany((type) => Factura, factura => factura.usuario)
+    public factura: Factura[]; 
+
 
     public constructor(mail?:string,contrasena?:string,direccion?:string,ciudad?:string, esAdmin?:boolean){
         this.email = mail;

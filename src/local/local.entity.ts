@@ -1,6 +1,7 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
+import { Factura } from 'src/factura/factura.entity';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm'
 
-@Entity('local')
+@Entity('LOCAL')
 export class Local{
 
     @PrimaryGeneratedColumn()
@@ -20,6 +21,9 @@ export class Local{
 
     @Column()
     private nro_telefono: number;
+
+    @OneToMany((type) => Factura, factura => factura.local)
+    public factura: Factura[]; 
 
     public constructor(cuit?:string,nombre?:string,direccion?:string,codigo_area?:number, nro_telefono?:number){
         this.cuit = cuit;

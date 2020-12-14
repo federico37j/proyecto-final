@@ -41,7 +41,7 @@ async function ingresar() {
         window.sessionStorage.setItem("idUser", logueado.idUsuario);
         window.sessionStorage.setItem("esAdmin", logueado.esAdmin);
         if (logueado.esAdmin){
-            window.location="http://localhost:3000/administrador.html"
+            window.location="http://localhost:3000/html/administrador.html"
         }
         else
             window.location="http://localhost:3000";
