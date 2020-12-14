@@ -1,4 +1,5 @@
 import { Categoria } from 'src/categoria/categoria.entity';
+import { Detalle_factura } from 'src/detalle-factura/detalle-factura.entity';
 import { Imagen_articulo } from 'src/imagen-articulo/imagen-articulo.entity';
 import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
@@ -35,6 +36,9 @@ export class Articulo {
 
     @OneToMany((type) => Imagen_articulo, imagen_articulo => imagen_articulo.articulo)
     public imagen_articulo: Imagen_articulo[];
+
+    @OneToMany((type) => Detalle_factura, detalle_factura => detalle_factura.articulo)
+    public detalle_factura: Detalle_factura[];
 
     public constructor(nombre?: string, precio?: number, financiacion?: string, detalle?: string, tipo?: string, stock?: number,
         idCategoria?: number) {

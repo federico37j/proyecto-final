@@ -201,10 +201,9 @@ async function crearFactura(productos) {
         },
         body: JSON.stringify(factura)
     });
-
     if (respuesta.ok) {
-        /* compras.push(renglon);
-        mostrarTablaCompras(); */
+        let factura = await respuesta.json();
+        loadFactura(Number(factura.idFactura));
 
     } else {
         console.log("error");
