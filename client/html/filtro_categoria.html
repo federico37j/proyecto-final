@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Fuente     -->
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Whatsapp -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Estilos -->
     <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/filtro_categoria.css">
@@ -14,6 +16,7 @@
     <link rel="stylesheet" href="../css/detalle_producto.css">
     <link rel="stylesheet" href="../css/venta_telefonica.css">
     <link rel="stylesheet" href="../css/buscarInterno.css">
+    <link rel="stylesheet" href="../css/whatsapp.css">
     <!-- Iconos -->
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
     <title>Articulos del hogar</title>
@@ -50,9 +53,15 @@
                             <div class="dd_menu">
                                 <div class="dd_left">
                                     <ul>
-                                        <li><ion-icon name="mail-outline"></ion-icon></li>
-                                        <li><ion-icon name="settings-outline"></ion-icon></li>
-                                        <li><ion-icon name="log-out-outline"></ion-icon></li>
+                                        <li>
+                                            <ion-icon name="mail-outline"></ion-icon>
+                                        </li>
+                                        <li>
+                                            <ion-icon name="settings-outline"></ion-icon>
+                                        </li>
+                                        <li>
+                                            <ion-icon name="log-out-outline"></ion-icon>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="dd_right">
@@ -343,9 +352,9 @@
                 <div class="suscribir">
                     <input type="text" placeholder="Tu e-mail" class="input-email">
                     <div class="icons">
-                        <i class='bx bxs-check-circle check' ></i>
-                        <i class='bx bxs-x-circle x' ></i>
-                      </div>
+                        <i class='bx bxs-check-circle check'></i>
+                        <i class='bx bxs-x-circle x'></i>
+                    </div>
                     <a id="btn-suscribir" class="btn-suscribir letra-clara fondo-oscuro">Suscribite</a>
                 </div>
                 <div class="venta-telefonica">
@@ -398,6 +407,11 @@
             </div>
         </div>
     </footer>
+
+    <!-- Botón flotante WhatsApp -->
+    <a href="https://api.whatsapp.com/send?phone=542983555167" class="float" target="_blank">
+        <i class="fa fa-whatsapp my-float"></i>
+    </a>
 
     <script src="https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js"></script>
     <script src="https://unpkg.com/muuri@0.8.0/dist/muuri.min.js"></script>
