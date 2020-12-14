@@ -19,6 +19,7 @@ async function loadFactura(idFactura) {
             document.querySelector("#total_final").textContent = factura[0].factura_total;
 
             cargarDetalleFactura(factura);
+            crearQr();
         } else {
             console.log("Error - Failed URL!");
         }
