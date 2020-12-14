@@ -10,7 +10,7 @@ export class FacturaController {
     constructor(private facturaService: FacturaService) { }
 
     @Post()
-    createFactura(@Body() suma: any): Promise<string> {
+    createFactura(@Body() suma: any): Promise<Factura> {
         console.log("llega al controller");
         return this.facturaService.createFactura(suma)
     

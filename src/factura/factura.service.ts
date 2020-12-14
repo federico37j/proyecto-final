@@ -20,7 +20,7 @@ export class FacturaService {
         private readonly usuarioFacturaRepository: Repository<Usuario>
     ) { }
 
-    public async createFactura(datos: any): Promise<string> {
+    public async createFactura(datos: any): Promise<Factura> {
         try {
             const facturaCreada: Factura = await this.facturaRepository.save(new Factura(
                 datos.fecha,
@@ -30,10 +30,10 @@ export class FacturaService {
 
             )
             );
-            if (facturaCreada) {
+            if (facturaCreada.getNroFactura()) {
                 console.log("entra a detalle factura");
                 this.addDetalleFactura(datos.productos, facturaCreada.getNroFactura())
-                return "ok";
+                return facturaCreada;
             } else {
 
                 throw new HttpException('No se pudo crear la factura', HttpStatus.NOT_FOUND);
@@ -112,12 +112,13 @@ public async getByFactura(facturaId){
         .addSelect('l.codigo_area')
         .addSelect('l.nro_telefono')
         .addSelect('df.cantidad')
+        .addSelect('df.idArticulo')
         .addSelect('a.nombre')
         .addSelect('a.precio')
         .innerJoin(Usuario,'u','u.idUsuario = factura.idUsuario')
         .innerJoin(Local,'l','l.idLocal = factura.idLocal')
         .innerJoin(Detalle_factura,'df','df.idFactura = factura.idFactura')
-        .innerJoin(Articulo,'a','df.idDetalle = a.idArticulo')
+        .innerJoin(Articulo,'a','df.idArticulo = a.idArticulo')
         .where(`factura.idFactura = ${facturaId}`)
         .getRawMany();
         return result
