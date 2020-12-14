@@ -26,7 +26,8 @@ export class CarritoService {
                     'nombre': textoFinal[i][1],
                     'precio': textoFinal[i][2],
                     'cantidad': textoFinal[i][3],
-                    'imagenes': textoFinal[i][4]
+                    'stock': textoFinal[i][4],
+                    'imagenes': textoFinal[i][5]
                     
                 };
                 this.articulosCarrito.push(articulo);
@@ -34,6 +35,7 @@ export class CarritoService {
         }
         catch (error) {
             console.log("no hay archivo");
+            return "";
         }
         return this.articulosCarrito;
     }
@@ -41,20 +43,21 @@ export class CarritoService {
         const url: string = `resources/carrito.csv`;
         let cantidad = this.getCantidad(producto);
         if(cantidad>1){
+            if(cantidad <= producto["stock"]){
             this.actualizarCarrito();
+            }
         }
         else{
-            let articulo = { "idArticulo": producto["idArticulo"], "nombre": producto["nombre"], "precio": producto["precio"],"cantidad":cantidad, "imagenes": this.getImagenes(producto.imagen_articulo) }
+            let articulo = { "idArticulo": producto["idArticulo"], "nombre": producto["nombre"], "precio": producto["precio"],"cantidad":cantidad,"stock":producto["stock"], "imagenes": this.getImagenes(producto.imagen_articulo) }
             this.articulosCarrito.push(articulo);
-            console.log("quiero ver stock "+  producto["stock"]);
-            fs.appendFileSync(url, `${articulo.idArticulo},${articulo.nombre},${articulo.precio},${articulo.cantidad},${articulo.imagenes}\n`);
+            fs.appendFileSync(url, `${articulo.idArticulo},${articulo.nombre},${articulo.precio},${articulo.cantidad},${articulo.stock}, ${articulo.imagenes}\n`);
         }
         return "ok"
     }
     public rewrite(producto: any) {
         const url: string = `resources/carrito.csv`;
-        let articulo = { "idArticulo": producto["idArticulo"], "nombre": producto["nombre"], "precio": producto["precio"],"cantidad":producto["cantidad"], "imagenes": producto["imagenes"] }
-        fs.appendFileSync(url, `${articulo.idArticulo},${articulo.nombre},${articulo.precio},${articulo.cantidad},${articulo.imagenes}\n`);
+        let articulo = { "idArticulo": producto["idArticulo"], "nombre": producto["nombre"], "precio": producto["precio"],"cantidad":producto["cantidad"], "stock":producto["stock"], "imagenes": producto["imagenes"] }
+        fs.appendFileSync(url, `${articulo.idArticulo},${articulo.nombre},${articulo.precio},${articulo.cantidad},${articulo.stock},${articulo.imagenes}\n`);
         return "ok"
     }
 
@@ -111,7 +114,10 @@ export class CarritoService {
 
     public updateCantidad(valor:any,position: number): boolean {
         if (valor.operacion == "sumar"){
+            console.log("stock "+this.articulosCarrito[position].stock)
+            if(parseInt(this.articulosCarrito[position].cantidad) < this.articulosCarrito[position].stock){
         this.articulosCarrito[position].cantidad=parseInt(this.articulosCarrito[position].cantidad) + 1;
+            }
         }else{
             this.articulosCarrito[position].cantidad=parseInt(this.articulosCarrito[position].cantidad) - 1;
         }

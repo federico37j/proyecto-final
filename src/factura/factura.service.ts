@@ -22,18 +22,22 @@ export class FacturaService {
 
     public async createFactura(datos: any): Promise<Factura> {
         try {
+            console.log("datos " + datos.suma);
+            if(datos!={}){
             const facturaCreada: Factura = await this.facturaRepository.save(new Factura(
                 datos.fecha,
                 Number(datos.suma),
                 Number(datos.idLocal),
                 Number(datos.idUsuario),
-
+            
             )
             );
+            
             if (facturaCreada.getNroFactura()) {
                 console.log("entra a detalle factura");
                 this.addDetalleFactura(datos.productos, facturaCreada.getNroFactura())
                 return facturaCreada;
+            }
             } else {
 
                 throw new HttpException('No se pudo crear la factura', HttpStatus.NOT_FOUND);
