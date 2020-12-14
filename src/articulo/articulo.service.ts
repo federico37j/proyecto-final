@@ -268,4 +268,23 @@ export class ArticuloService {
         }
 
     }
+
+    public async updateStock(cantidadComprada: any, id: number): Promise<Articulo> {
+        let articulo: Articulo = await this.getArticuloById(id);
+        try {
+            if (articulo) {
+                let stockReal = articulo.getStock() - cantidadComprada.cantidad;
+                articulo.setStock(stockReal);
+                const articuloUpdated: Articulo = await this.articuloRepository.save(articulo);
+                return articulo;
+            } else {
+                throw new HttpException('No se pudo crear el artículo', HttpStatus.NOT_FOUND);
+            }
+        } catch (error) {
+            throw new HttpException({
+                status: HttpStatus.NOT_FOUND,
+                error: "there is an error in the request, " + error,
+            }, HttpStatus.NOT_FOUND);
+        }
+    }
 }

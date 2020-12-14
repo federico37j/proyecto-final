@@ -35,6 +35,7 @@ export class CarritoService {
         }
         catch (error) {
             console.log("no hay archivo");
+            return "";
         }
         return this.articulosCarrito;
     }
