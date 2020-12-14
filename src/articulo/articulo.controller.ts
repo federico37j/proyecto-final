@@ -43,6 +43,11 @@ export class ArticuloController {
         return this.articuloService.updateArticulo(art, categoria, Number(index));
     }
 
+    @Put(':id')
+    public updateStock(@Body() art: any, @Param('id') index): Promise<Articulo> {
+        return this.articuloService.updateStock(art, Number(index));
+    }
+
     // @Put(':id')
     // public updateImagen(@Body() art: any, @Param('id') index) {
     //     return this.articuloService.updateImagen(art, Number(index));

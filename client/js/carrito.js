@@ -143,7 +143,7 @@ if (document.getElementById('btn-siguiente') != undefined) {
 
 if (document.getElementById("compraExitosa") != undefined) {
     obtenerCarrito();
-    vaciarCarrito();
+    
 }
 
 
@@ -210,16 +210,42 @@ async function crearFactura(productos) {
     }
 }
 
+async function actualizarStock(productos) {
+    let url="";
+    let artVendidos=0;
+    for(let i=0; i<productos.length;i++){
+        url=`http://localhost:3000/articulo/${productos[i].idArticulo}`;
+        artVendidos={
+            cantidad:productos[i].cantidad}
+        let respuesta = await fetch(url, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(artVendidos)
+    });
+    if (!respuesta.ok) {
+        console.log("error");
+
+    } 
+    }
+    
+}
+
 async function obtenerCarrito() {
 
     try {
         let response = await fetch("/carrito");
         productos = [];
-        if (response.ok) {
+        if (response != "") {
 
             let productos = await response.json();
             console.log("todos los productos json " + productos);
+            
             crearFactura(productos);
+            actualizarStock(productos);
+            vaciarCarrito();
+            
         }
         else
             document.getElementsByClassName("container").innerHTML = `<h2>Error al cargar la pagina</h2>`
