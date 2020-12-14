@@ -41,7 +41,3 @@ function cargarDetalleFactura(factura) {
     }
     document.querySelector("#detalle-tabla").innerHTML = html;
 }
-
-
-
-loadFactura(2)
