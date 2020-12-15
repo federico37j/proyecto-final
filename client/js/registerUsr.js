@@ -37,7 +37,7 @@ async function registrarUsuario() {
             // usuarios.push(datosUsuario);
             // nro_user++;
             console.log("los datos fueron cargados correctamente");
-            window.location="http://localhost:3000/html/loginUser";
+            window.location="http://localhost:3000/html/loginUser.html";
         }
         else{
             alert("no se pudo enviar el json");
