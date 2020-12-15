@@ -203,7 +203,8 @@ async function crearFactura(productos) {
     });
     if (respuesta.ok) {
         let factura = await respuesta.json();
-        loadFactura(Number(factura.idFactura));
+        document.querySelector("#btn_factura").dataset.factura = Number(factura.idFactura);
+        // loadFactura(Number(factura.idFactura));
 
     } else {
         console.log("error");
