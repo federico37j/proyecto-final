@@ -1,5 +1,12 @@
 "use strict";
 
+let btn_factura = document.querySelector("#btn_factura");
+
+btn_factura.addEventListener('click', function () {
+    let idFactura = Number(btn_factura.dataset.factura);
+    loadFactura(idFactura);
+});
+
 async function loadFactura(idFactura) {
     console.log("@Idfactura",idFactura);
     const URL = `/factura/${idFactura}`;
