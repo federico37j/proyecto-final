@@ -3,8 +3,8 @@
 let btnRegister = document.querySelector(".btnRegUsr");
 btnRegister.addEventListener("click", registrarUsuario);
 
-let nro_user = 4;
-let usuarios = [];
+// let nro_user = 4;
+// let usuarios = [];
 
 async function registrarUsuario() {
     console.log("funcion registrar usuario");
@@ -32,12 +32,11 @@ async function registrarUsuario() {
             })
             // let contenido = await response.json();
             // console.log(contenido);
-            debugger;
         if (response.ok){
-            // usuarios.push(datosUsuario);
+            const contenido = await response.json();
             // nro_user++;
-            console.log("los datos fueron cargados correctamente");
-            window.location="http://localhost:3000/html/loginUser.html";
+            console.log("los datos de ", contenido.email," fueron cargados correctamente");
+            window.location ="http://localhost:3000/html/loginUser.html";
         }
         else{
             alert("no se pudo enviar el json");
