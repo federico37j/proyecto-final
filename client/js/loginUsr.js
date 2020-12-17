@@ -46,7 +46,9 @@ async function ingresar() {
         else
             window.location="http://localhost:3000";
     }
-
+    else{
+        alert("DATOS INGRESADOS NO VALIDOS!!");
+    }
     ///////////////////////////// codigo mock //////////////////////////////
     // try {
     //     let response = await fetch("http://localhost:3000/mock/mockUsr.json");
