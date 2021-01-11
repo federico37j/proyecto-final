@@ -1,7 +1,7 @@
 "use strict";
 
-const SEV_LOCAL = "localhost:3000";
-const PRODUCCION = "tp-forhome.herokuapp.com";
+let hostLocal = "localhost:3000";
+let hostProd = "tp-forhome.herokuapp.com";
 
 // NodeList con imágenes secundarias.
 let listadoImagenes = document.querySelectorAll(".img-detalle-articulo .img-secundarias .img");
@@ -91,11 +91,11 @@ btnCompra.addEventListener("click", redireccionar);
 //>>>>>>> para comprar controlo que ya este logueado
 function redireccionar() {
     if (!window.sessionStorage.getItem("userLogged")) {
-        window.location = `http://${PRODUCCION}/html/loginUser.html`;
+        window.location = `http://${hostProd}/html/loginUser.html`;
     }
     else {
         agregarProductoCarrito();
-        window.location = `http://${PRODUCCION}/html/carrito.html`;
+        window.location = `http://${hostProd}/html/carrito.html`;
     }
 }
 
@@ -109,7 +109,7 @@ btnAgregar.addEventListener("click", agregarProductoCarrito);
 async function agregarProductoCarrito() {
 
     if (!window.sessionStorage.getItem("userLogged")) {
-        window.location = `http://${PRODUCCION}/html/loginUser.html`;
+        window.location = `http://${hostProd}/html/loginUser.html`;
     } else {
 
         /* let producto = {

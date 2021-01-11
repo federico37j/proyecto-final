@@ -1,5 +1,7 @@
-const SEV_LOCAL = "localhost:3000";
-const PRODUCCION = "tp-forhome.herokuapp.com";
+'use strict';
+
+let hostLocal = "localhost:3000";
+let hostProd = "tp-forhome.herokuapp.com";
 
 let btnRegister = document.querySelector(".btnRegUsr");
 btnRegister.addEventListener("click", registrarUsuario);
@@ -37,7 +39,7 @@ async function registrarUsuario() {
             const contenido = await response.json();
             // nro_user++;
             console.log("los datos de ", contenido.email," fueron cargados correctamente");
-            window.location =`http://${PRODUCCION}/html/loginUser.html`;
+            window.location =`http://${hostProd}/html/loginUser.html`;
         }
         else{
             alert("no se pudo enviar el json");

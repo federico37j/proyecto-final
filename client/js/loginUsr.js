@@ -1,8 +1,8 @@
 let btnLogin = document.querySelector(".subbt");
 btnLogin.addEventListener("click", ingresar);
 
-const SEV_LOCAL = "localhost:3000";
-const PRODUCCION = "tp-forhome.herokuapp.com";
+let hostLocal = "localhost:3000";
+let hostProd = "tp-forhome.herokuapp.com";
 
 async function ingresar() {
     console.log("Funcion ingresar");
@@ -44,10 +44,10 @@ async function ingresar() {
         window.sessionStorage.setItem("idUser", logueado.idUsuario);
         window.sessionStorage.setItem("esAdmin", logueado.esAdmin);
         if (logueado.esAdmin) {
-            window.location = `http://${PRODUCCION}/html/administrador.html`;
+            window.location = `http://${hostProd}/html/administrador.html`;
         }
         else
-            window.location = PRODUCCION;
+            window.location = hostProd;
     }
     else {
         alert("DATOS INGRESADOS NO VALIDOS!!");

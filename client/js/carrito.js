@@ -1,8 +1,7 @@
-/* const { json } = require("express");
- */
-/* console.log(articulo.nombre + "nombreArticulo"); */
-const SEV_LOCAL = "localhost:3000";
-const PRODUCCION = "tp-forhome.herokuapp.com";
+"use strict";
+
+let hostLocal = "localhost:3000";
+let hostProd = "tp-forhome.herokuapp.com";
 
 let productos;
 async function mostrarCarrito() {
@@ -136,7 +135,7 @@ async function vaciarCarrito() {
 
 
 function siguientePantalla() {
-    window.location = `http://${PRODUCCION}/html/carrito1.html`;
+    window.location = `http://${hostProd}/html/carrito1.html`;
 }
 
 if (document.getElementById('btn-siguiente') != undefined) {
