@@ -1,6 +1,9 @@
 /* const { json } = require("express");
  */
 /* console.log(articulo.nombre + "nombreArticulo"); */
+const LOCAL = "localhost:3000";
+const PRODUCCION = "tp-forhome.herokuapp.com";
+
 let productos;
 async function mostrarCarrito() {
 
@@ -62,7 +65,7 @@ function mostrarProductos(prod) {
     localStorage.setItem("suma", suma);
 
 
-    
+
 
     let botonesDisminuir = document.querySelectorAll(".bajarCantidad");
     botonesDisminuir.forEach(boton => {
@@ -133,7 +136,7 @@ async function vaciarCarrito() {
 
 
 function siguientePantalla() {
-    window.location = "http://localhost:3000/html/carrito1.html";
+    window.location = `http://${PRODUCCION}/html/carrito1.html`;
 }
 
 if (document.getElementById('btn-siguiente') != undefined) {
@@ -143,14 +146,14 @@ if (document.getElementById('btn-siguiente') != undefined) {
 
 if (document.getElementById("compraExitosa") != undefined) {
     obtenerCarrito();
-    
+
 }
 
 
 function disminuirCantidad() {
     let pos = this.getAttribute("pos");
     let cantidad = this.getAttribute("cantidad");
-    if(cantidad > 1){
+    if (cantidad > 1) {
         let valor = "restar";
         actualizarCantidad(valor, pos);
     }
@@ -169,7 +172,7 @@ async function actualizarCantidad(operacion, pos) {
     let valor = {
         "operacion": operacion
     };
-    
+
     let response = await fetch(`/carrito/${pos}`, {
         method: "PUT",
         headers: {
@@ -193,7 +196,7 @@ async function crearFactura(productos) {
         "idLocal": 1
 
     }
-    let respuesta = await fetch("http://localhost:3000/factura", {
+    let respuesta = await fetch("/factura", {
 
         method: 'POST',
         headers: {
@@ -212,25 +215,26 @@ async function crearFactura(productos) {
 }
 
 async function actualizarStock(productos) {
-    let url="";
-    let artVendidos=0;
-    for(let i=0; i<productos.length;i++){
-        url=`http://localhost:3000/articulo/${productos[i].idArticulo}`;
-        artVendidos={
-            cantidad:productos[i].cantidad}
+    let url = "";
+    let artVendidos = 0;
+    for (let i = 0; i < productos.length; i++) {
+        url = `/articulo/${productos[i].idArticulo}`;
+        artVendidos = {
+            cantidad: productos[i].cantidad
+        }
         let respuesta = await fetch(url, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(artVendidos)
-    });
-    if (!respuesta.ok) {
-        console.log("error");
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(artVendidos)
+        });
+        if (!respuesta.ok) {
+            console.log("error");
 
-    } 
+        }
     }
-    
+
 }
 
 async function obtenerCarrito() {
@@ -242,11 +246,11 @@ async function obtenerCarrito() {
 
             let productos = await response.json();
             console.log("todos los productos json " + productos);
-            
+
             crearFactura(productos);
             actualizarStock(productos);
             vaciarCarrito();
-            
+
         }
         else
             document.getElementsByClassName("container").innerHTML = `<h2>Error al cargar la pagina</h2>`

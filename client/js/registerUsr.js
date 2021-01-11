@@ -1,4 +1,5 @@
-// const { response } = require("express");
+const LOCAL = "localhost:3000";
+const PRODUCCION = "tp-forhome.herokuapp.com";
 
 let btnRegister = document.querySelector(".btnRegUsr");
 btnRegister.addEventListener("click", registrarUsuario);
@@ -23,7 +24,7 @@ async function registrarUsuario() {
         console.log("user (js): ",datosUsuario);
         // usuarios.push(datosUsuario);
         let response = //await fetch("http://localhost:3000/cliente/addCliente",{
-            await fetch("http://localhost:3000/usuario/nuevo_usuario",{ // cambio por el endpoint a la BD
+            await fetch("/usuario/nuevo_usuario",{ // cambio por el endpoint a la BD
                 method: 'POST',
                 headers: {
                 'Content-Type': 'application/json'
@@ -36,7 +37,7 @@ async function registrarUsuario() {
             const contenido = await response.json();
             // nro_user++;
             console.log("los datos de ", contenido.email," fueron cargados correctamente");
-            window.location ="http://localhost:3000/html/loginUser.html";
+            window.location =`http://${PRODUCCION}/html/loginUser.html`;
         }
         else{
             alert("no se pudo enviar el json");

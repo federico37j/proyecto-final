@@ -1,5 +1,8 @@
 "use strict";
 
+const LOCAL = "localhost:3000";
+const PRODUCCION = "tp-forhome.herokuapp.com";
+
 let btnCategorias = document.querySelector('#btn-categorias');
 let divGrid = document.querySelector('#grid');
 
@@ -56,7 +59,7 @@ btn_cerrar_sesion.addEventListener('click', cerrarSesion);
 function cerrarSesion() {
     window.sessionStorage.setItem("userLogged", false);
     window.sessionStorage.setItem("user", null);
-    window.location = "http://localhost:3000";
+    window.location = PRODUCCION;
 }
 
 //Recorro la lista de categorias

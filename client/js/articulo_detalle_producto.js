@@ -1,5 +1,8 @@
 "use strict";
 
+const LOCAL = "localhost:3000";
+const PRODUCCION = "tp-forhome.herokuapp.com";
+
 // NodeList con imágenes secundarias.
 let listadoImagenes = document.querySelectorAll(".img-detalle-articulo .img-secundarias .img");
 // Imagen principal de detalle producto
@@ -88,11 +91,11 @@ btnCompra.addEventListener("click", redireccionar);
 //>>>>>>> para comprar controlo que ya este logueado
 function redireccionar() {
     if (!window.sessionStorage.getItem("userLogged")) {
-        window.location = "http://localhost:3000/html/loginUser.html";
+        window.location = `http://${PRODUCCION}/html/loginUser.html`;
     }
     else {
         agregarProductoCarrito();
-        window.location = "http://localhost:3000/html/carrito.html"
+        window.location = `http://${PRODUCCION}/html/carrito.html`;
     }
 }
 
@@ -106,7 +109,7 @@ btnAgregar.addEventListener("click", agregarProductoCarrito);
 async function agregarProductoCarrito() {
 
     if (!window.sessionStorage.getItem("userLogged")) {
-        window.location = "http://localhost:3000/html/loginUser.html";
+        window.location = `http://${PRODUCCION}/html/loginUser.html`;
     } else {
 
         /* let producto = {
@@ -114,7 +117,7 @@ async function agregarProductoCarrito() {
          "precio": precio
      } */
         //---> aca aparece un error cuando el usuario ya esta logueado
-        let respuesta = await fetch("http://localhost:3000/carrito", {
+        let respuesta = await fetch("/carrito", {
 
             method: 'POST',
             headers: {

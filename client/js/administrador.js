@@ -1,4 +1,6 @@
 'use strict';
+const LOCAL = "localhost:3000";
+const PRODUCCION = "tp-forhome.herokuapp.com";
 
 let tbody_detalle_tabla = document.querySelector("#detalle-tabla");
 let btn_dropdown = document.querySelector("#dropdownMenuButton");
@@ -182,7 +184,7 @@ btn_agregar_modificar.addEventListener('click', async function btnActualizarClic
     });
     if (response.ok) {
         console.log("Actualizado");
-        window.location.href = 'http://localhost:3000/html/administrador.html';
+        window.location.href = `http://${PRODUCCION}/html/administrador.html`;
     } else {
         console.log("Error");
     }
@@ -193,7 +195,7 @@ let btn_agregar_articulo = document.querySelector('#btn-agregar-articulo');
 document.querySelector('#btn-salir').addEventListener('click', function () {
     document.querySelector('.contenedor-cargar-articulo').classList.toggle('activo');
     btn_agregar_articulo.classList.toggle('disabled');
-    window.location.href = 'http://localhost:3000/html/administrador.html'
+    window.location.href = `http://${PRODUCCION}/html/administrador.html`
 });
 
 document.querySelector('#btn_cargar_articulo').addEventListener('click', function () {
@@ -257,7 +259,7 @@ document.querySelector('.btn-agregar-articulo').addEventListener('click', async 
             "imagen_articulo": secureUrlImg
         }
 
-        let respuesta = await fetch(`http://localhost:3000/articulo/${categoria}`, {
+        let respuesta = await fetch(`/articulo/${categoria}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -267,7 +269,8 @@ document.querySelector('.btn-agregar-articulo').addEventListener('click', async 
 
         if (respuesta.ok) {
             listaArticulos.push(articulo);
-            window.location.href = 'http://localhost:3000/html/administrador.html'
+            window.location.href = `http://${PRODUCCION}/html/administrador.html`
+            
             secureUrlImg = [];
         } else {
             console.log('Hubo un error');
