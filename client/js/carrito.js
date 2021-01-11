@@ -1,6 +1,6 @@
 "use strict";
 
-let hostProd = "tp-forhome.herokuapp.com";
+let produc = "tp-forhome.herokuapp.com";
 
 let productos;
 async function mostrarCarrito() {
@@ -134,7 +134,7 @@ async function vaciarCarrito() {
 
 
 function siguientePantalla() {
-    window.location = `http://${hostProd}/html/carrito1.html`;
+    window.location = `http://${produc}/html/carrito1.html`;
 }
 
 if (document.getElementById('btn-siguiente') != undefined) {

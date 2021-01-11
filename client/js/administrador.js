@@ -1,6 +1,6 @@
 'use strict';
 
-let hostProd = "tp-forhome.herokuapp.com";
+let produc = "tp-forhome.herokuapp.com";
 
 let tbody_detalle_tabla = document.querySelector("#detalle-tabla");
 let btn_dropdown = document.querySelector("#dropdownMenuButton");
@@ -184,7 +184,7 @@ btn_agregar_modificar.addEventListener('click', async function btnActualizarClic
     });
     if (response.ok) {
         console.log("Actualizado");
-        window.location.href = `http://${hostProd}/html/administrador.html`;
+        window.location.href = `http://${produc}/html/administrador.html`;
     } else {
         console.log("Error");
     }
@@ -195,7 +195,7 @@ let btn_agregar_articulo = document.querySelector('#btn-agregar-articulo');
 document.querySelector('#btn-salir').addEventListener('click', function () {
     document.querySelector('.contenedor-cargar-articulo').classList.toggle('activo');
     btn_agregar_articulo.classList.toggle('disabled');
-    window.location.href = `http://${hostProd}/html/administrador.html`
+    window.location.href = `http://${produc}/html/administrador.html`
 });
 
 document.querySelector('#btn_cargar_articulo').addEventListener('click', function () {
@@ -269,7 +269,7 @@ document.querySelector('.btn-agregar-articulo').addEventListener('click', async 
 
         if (respuesta.ok) {
             listaArticulos.push(articulo);
-            window.location.href = `http://${hostProd}/html/administrador.html`
+            window.location.href = `http://${produc}/html/administrador.html`
             
             secureUrlImg = [];
         } else {

@@ -4,7 +4,7 @@
 let btnSuscribir = document.querySelector('#btn-suscribir');
 const conSearch = document.querySelector('.con-search');
 
-let hostProd = "tp-forhome.herokuapp.com";
+let produc = "tp-forhome.herokuapp.com";
 
 let arrArticulos = [];
 
@@ -27,7 +27,7 @@ async function traerArticulos() {
 function cargarArrayGlobal(listadoArticulos) {
   for (let i = 0; i < listadoArticulos.length; i++) {
     let articulo = {
-      "href": `http://${hostProd}/html/detalle_producto.html?categoria=${categoriaIdAString(listadoArticulos[i].idCategoria)}&index=${listadoArticulos[i].idArticulo}`,
+      "href": `http://${produc}/html/detalle_producto.html?categoria=${categoriaIdAString(listadoArticulos[i].idCategoria)}&index=${listadoArticulos[i].idArticulo}`,
       "nombre": cortarNombre(listadoArticulos[i].nombre),
       "precio": listadoArticulos[i].precio,
       "financiacion": listadoArticulos[i].financiacion,

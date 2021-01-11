@@ -1,6 +1,6 @@
 "use strict";
 
-let hostProd = "tp-forhome.herokuapp.com";
+let produc = "tp-forhome.herokuapp.com";
 
 //Paso el listado de artículos dependiendo de cada categoría.
 function pasarArreglo(listadoArticulos) {
@@ -36,6 +36,6 @@ function mostrarDatosHtml(indice, valor, tipo, categoria, esImagen = undefined) 
 // Le agrego el href a cada botón
 function cargarHref(categoria, index, idArticulo) {
     let btn = document.querySelectorAll(`.articulo .button-articulo-${categoria}`);
-    btn[index].href = `http://${hostProd}/html/detalle_producto.html?categoria=${categoria}&index=${idArticulo}`;
+    btn[index].href = `http://${produc}/html/detalle_producto.html?categoria=${categoria}&index=${idArticulo}`;
 }
 

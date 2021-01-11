@@ -1,6 +1,6 @@
 "use strict";
 
-let hostProd = "tp-forhome.herokuapp.com";
+let produc = "tp-forhome.herokuapp.com";
 
 // NodeList con imágenes secundarias.
 let listadoImagenes = document.querySelectorAll(".img-detalle-articulo .img-secundarias .img");
@@ -90,11 +90,11 @@ btnCompra.addEventListener("click", redireccionar);
 //>>>>>>> para comprar controlo que ya este logueado
 function redireccionar() {
     if (!window.sessionStorage.getItem("userLogged")) {
-        window.location = `http://${hostProd}/html/loginUser.html`;
+        window.location = `http://${produc}/html/loginUser.html`;
     }
     else {
         agregarProductoCarrito();
-        window.location = `http://${hostProd}/html/carrito.html`;
+        window.location = `http://${produc}/html/carrito.html`;
     }
 }
 
@@ -108,7 +108,7 @@ btnAgregar.addEventListener("click", agregarProductoCarrito);
 async function agregarProductoCarrito() {
 
     if (!window.sessionStorage.getItem("userLogged")) {
-        window.location = `http://${hostProd}/html/loginUser.html`;
+        window.location = `http://${produc}/html/loginUser.html`;
     } else {
 
         /* let producto = {
@@ -135,7 +135,7 @@ async function agregarProductoCarrito() {
         }
     }
 
-                                                                                                                                                                                                                                          
+
 }
 
 cargarArticulos("deportes");

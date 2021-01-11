@@ -1,6 +1,6 @@
 "use strict";
 
-let hostProd = "tp-forhome.herokuapp.com";
+let produc = "tp-forhome.herokuapp.com";
 
 let btnCategorias = document.querySelector('#btn-categorias');
 let divGrid = document.querySelector('#grid');
@@ -58,7 +58,7 @@ btn_cerrar_sesion.addEventListener('click', cerrarSesion);
 function cerrarSesion() {
     window.sessionStorage.setItem("userLogged", false);
     window.sessionStorage.setItem("user", null);
-    window.location = hostProd;
+    window.location = produc;
 }
 
 //Recorro la lista de categorias
