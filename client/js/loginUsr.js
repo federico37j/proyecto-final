@@ -1,8 +1,6 @@
 let btnLogin = document.querySelector(".subbt");
 btnLogin.addEventListener("click", ingresar);
 
-let produc = "tp-forhome.herokuapp.com";
-
 async function ingresar() {
     console.log("Funcion ingresar");
     let correo = document.querySelector('.mail').value;
@@ -43,10 +41,10 @@ async function ingresar() {
         window.sessionStorage.setItem("idUser", logueado.idUsuario);
         window.sessionStorage.setItem("esAdmin", logueado.esAdmin);
         if (logueado.esAdmin) {
-            window.location = `http://${produc}/html/administrador.html`;
+            window.location = `http://tp-forhome.herokuapp.com/html/administrador.html`;
         }
         else
-            window.location = produc;
+            window.location = "http://tp-forhome.herokuapp.com";
     }
     else {
         alert("DATOS INGRESADOS NO VALIDOS!!");

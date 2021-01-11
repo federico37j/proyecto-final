@@ -1,7 +1,5 @@
 'use strict';
 
-let produc = "tp-forhome.herokuapp.com";
-
 let btnRegister = document.querySelector(".btnRegUsr");
 btnRegister.addEventListener("click", registrarUsuario);
 
@@ -38,7 +36,7 @@ async function registrarUsuario() {
             const contenido = await response.json();
             // nro_user++;
             console.log("los datos de ", contenido.email," fueron cargados correctamente");
-            window.location =`http://${produc}/html/loginUser.html`;
+            window.location =`http://tp-forhome.herokuapp.com/html/loginUser.html`;
         }
         else{
             alert("no se pudo enviar el json");
