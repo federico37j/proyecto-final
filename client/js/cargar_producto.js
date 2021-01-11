@@ -1,6 +1,5 @@
 "use strict";
 
-const SEV_LOCAL = "localhost:3000";
 const PRODUCCION = "tp-forhome.herokuapp.com";
 
 //Paso el listado de artículos dependiendo de cada categoría.

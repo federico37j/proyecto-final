@@ -2,7 +2,6 @@
 let btnSuscribir = document.querySelector('#btn-suscribir');
 const conSearch = document.querySelector('.con-search');
 
-const SEV_LOCAL = "localhost:3000";
 const PRODUCCION = "tp-forhome.herokuapp.com";
 
 let arrArticulos = [];
