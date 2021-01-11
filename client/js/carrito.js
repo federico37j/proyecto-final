@@ -1,7 +1,7 @@
 /* const { json } = require("express");
  */
 /* console.log(articulo.nombre + "nombreArticulo"); */
-const LOCAL = "localhost:3000";
+const SEV_LOCAL = "localhost:3000";
 const PRODUCCION = "tp-forhome.herokuapp.com";
 
 let productos;

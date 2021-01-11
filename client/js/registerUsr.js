@@ -1,4 +1,4 @@
-const LOCAL = "localhost:3000";
+const SEV_LOCAL = "localhost:3000";
 const PRODUCCION = "tp-forhome.herokuapp.com";
 
 let btnRegister = document.querySelector(".btnRegUsr");

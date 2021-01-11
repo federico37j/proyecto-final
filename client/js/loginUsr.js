@@ -1,7 +1,7 @@
 let btnLogin = document.querySelector(".subbt");
 btnLogin.addEventListener("click", ingresar);
 
-const LOCAL = "localhost:3000";
+const SEV_LOCAL = "localhost:3000";
 const PRODUCCION = "tp-forhome.herokuapp.com";
 
 async function ingresar() {

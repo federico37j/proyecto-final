@@ -1,5 +1,5 @@
 'use strict';
-const LOCAL = "localhost:3000";
+const SEV_LOCAL = "localhost:3000";
 const PRODUCCION = "tp-forhome.herokuapp.com";
 
 let tbody_detalle_tabla = document.querySelector("#detalle-tabla");
