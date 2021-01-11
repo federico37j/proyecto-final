@@ -1,6 +1,5 @@
 "use strict";
 
-let hostLocal = "localhost:3000";
 let hostProd = "tp-forhome.herokuapp.com";
 
 // NodeList con imágenes secundarias.

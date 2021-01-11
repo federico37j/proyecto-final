@@ -1,7 +1,6 @@
 let btnLogin = document.querySelector(".subbt");
 btnLogin.addEventListener("click", ingresar);
 
-let hostLocal = "localhost:3000";
 let hostProd = "tp-forhome.herokuapp.com";
 
 async function ingresar() {
