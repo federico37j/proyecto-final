@@ -208,7 +208,7 @@ document.querySelector('#btn_cargar_articulo').addEventListener('click', functio
 //////////////*/
 
 const CLOUDINARY_URL = `https://api.cloudinary.com/v1_1/dpqkhmplb/image/upload`;
-const CLOUDINARY_UPLOAD_PRESET = `eg5p23er`;
+const CLOUDINARY_UPLOAD_PRESET = `FedAram37785`;
 
 async function showPreview(event) {
     if (event.target.files.length > 0) {
