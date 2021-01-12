@@ -217,15 +217,26 @@
   }
 
   .form-row .btn {
-    background-color: forestgreen;
+    background-color:rgb(51,51,51);
     /* margin: 5px 10px 5px 30px; */
     padding: 0.5em;
     border-radius: 5px;
 }
 
-/* .fondo-claro .containLogo {
-  background-color: 
-} */
+.btn_inicio_redes {
+  width: 45%;
+  height: 40px;
+  font: inherit;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn_inicio_redes:hover {
+  color: #7a7878;
+  opacity: 0.8;
+}
 
 .form-control {
   min-height: 3.125rem;
