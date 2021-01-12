@@ -354,5 +354,16 @@ section .contenedor-cards-articulos{
         font-size: 15px;
     }
 
+    .grid-contenedor-pricipal {
+        flex-direction: column;
+    }
+
+    .grid-contenedor-pricipal .categorias-filtrado {
+        width: 100%;
+    }
+
+    .grid-contenedor-pricipal .contenedor-cards {
+        width: 96%;
+    }
 }
 
