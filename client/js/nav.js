@@ -35,7 +35,7 @@ let btn_inicia_sesion = document.querySelector('.btn-iniciar-sesion');
 let perfilMenu = document.querySelector('.dd_menu');
 
 function perfilUsuario() {
-    if (window.sessionStorage.getItem('userLogged') === "true") {
+    if (window.sessionStorage.getItem('userLogged')) {
         btn_inicia_sesion.addEventListener('mouseover', function () {
             if (false == esPantallaMovil()) {
                 document.querySelector('#email-perfil').innerHTML = window.sessionStorage.getItem('user');
@@ -57,6 +57,8 @@ function cerrarSesion() {
     window.sessionStorage.setItem("userLogged", false);
     window.sessionStorage.setItem("user", null);
     window.location = "http://localhost:3000";
+    window.sessionStorage.clear();
+    perfilMenu.classList.remove('activo');
 }
 
 //Recorro la lista de categorias

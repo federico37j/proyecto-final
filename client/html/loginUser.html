@@ -20,8 +20,8 @@
         nonce="p0GW9dmB"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
         integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-
-    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+    <!-- Iconos -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -34,7 +34,7 @@
                         <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
                     </ol>
                     <div class="carousel-inner">
-                        <div class="carousel-item img-fondo min-vh-100 active">
+                        <div class="item img-fondo min-vh-100 active">
                             <div class="carousel-caption d-none d-md-block">
                                 <a href="http://localhost:3000">
                                     <h5 class="text-white font-weight-bold">Visita nuestra tienda</h5>
@@ -83,22 +83,19 @@
 
                     <br>
                     <p class="optRedes">O inicia sesión con...</p>
-                    <div class="bts">
-
-                        <!-- Display login status -->
-                        <div id="status"></div>
-
-                        <!-- variante de boton <div class="fb-login-button fblogin social" data-size="small" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false" data-width="" scope="public_profile,email"></div> -->
-
-                        <fb:login-button class="fblogin social" scope="public_profile,email"
-                            onlogin="checkLoginState();">
-                            Inicia sesión</fb:login-button>
-
-                        <!-- <a href="#" class="twlogin social"><i class="fa fa-twitter"></i><span>Ingresa desde Twitter</span></a> -->
-                        <div class="g-signin2 gplogin social" data-onsuccess="onSignIn"></div>
+                    <div class="d-flex justify-content-around">
+                        <button type="button" class="btn_inicio_redes flex-grow-1 mr-2">
+                            <ion-icon name="logo-google" role="img" class="md hydrated mr-2" aria-label="logo google">
+                            </ion-icon>
+                            Google
+                        </button>
+                        <button type="button" class="btn_inicio_redes flex-grow-1 ml-2">
+                            <ion-icon name="logo-facebook" role="img" class="md hydrated mr-2" aria-label="logo facebook">
+                            </ion-icon> Facebook
+                        </button>
                     </div>
                     <div class="text-center px-lg-5 pt-lg-3 pb-lg-4 p-4 mt-auto w-100">
-                        <a href="./registerUsr.html"  class="bts-a">¿No tenés cuenta? Registrate
+                        <a href="./registerUsr.html" class="bts-a">¿No tenés cuenta? Registrate
                             ahora!</a>
                     </div>
                 </div>
@@ -167,12 +164,14 @@
 <!-- script de mi pagina -->
 <script src="../js/loginUsr.js"></script>
 <!-- script de facebook -->
-<script src="../js/scriptFb.js"></script>
+<!-- <script src="../js/scriptFb.js"></script> -->
 <!-- vinculando a libreria Jquery-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Libreria java scritp de bootstrap -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
     </script>
+<script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
 
 </html>
