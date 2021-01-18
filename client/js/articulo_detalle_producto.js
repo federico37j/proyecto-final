@@ -96,7 +96,6 @@ function redireccionar() {
     }
 }
 
-
 function agregarProducto() {
     console.log("HolaAgregarProducto" + articulo.nombre)
 }
@@ -104,7 +103,8 @@ let btnAgregar = document.getElementById("btnCarrito");
 btnAgregar.addEventListener("click", agregarProductoCarrito);
 
 async function agregarProductoCarrito() {
-
+    let idUsuario = Number(window.sessionStorage.getItem("idUser"));
+    let idArticulo = Number(articulo.idArticulo);
     if (!window.sessionStorage.getItem("userLogged")) {
         window.location = "http://localhost:3000/html/loginUser.html";
     } else {
@@ -114,26 +114,19 @@ async function agregarProductoCarrito() {
          "precio": precio
      } */
         //---> aca aparece un error cuando el usuario ya esta logueado
-        let respuesta = await fetch("http://localhost:3000/carrito", {
+        let respuesta = await fetch(`http://localhost:3000/carrito/${idUsuario}/${idArticulo}`, {
 
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(articulo)
-
+            }
         });
-
         if (respuesta.ok) {
-            /* compras.push(renglon);
-            mostrarTablaCompras(); */
-
+            // console.log("Resultado OK");
         } else {
             console.log("error");
         }
     }
-
-                                                                                                                                                                                                                                          
 }
 
 cargarArticulos("deportes");

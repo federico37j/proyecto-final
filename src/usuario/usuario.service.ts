@@ -13,7 +13,6 @@ export class UsuarioService {
     ) { }
 
     public async addCliente(newUsuario: UsuarioDTO): Promise<Usuario> {
-        console.log("post de registrar usuario")
         try {
             const usuarioCreado: Usuario = await this.usuarioRepository.save(new Usuario(
                 newUsuario.email,
@@ -23,8 +22,8 @@ export class UsuarioService {
                 newUsuario.esAdmin
             )
             );
-            if (usuarioCreado.getID()){
-                console.log("se ha creado correctamente ",usuarioCreado.getMail());
+            if (usuarioCreado.getID()) {
+                // console.log("se ha creado correctamente ",usuarioCreado.getMail());
                 return usuarioCreado;
             }
             else {
@@ -39,13 +38,14 @@ export class UsuarioService {
     }
 
     public async getUsuarioByEmail(mail: string): Promise<Usuario> {
-        console.log("Getting Usuario por email: " + mail);
+        // console.log("Getting Usuario por email: " + mail);
         let usuario: Usuario;
         let usuario_creation_response: Usuario;
         try {
             usuario = await this.usuarioRepository.findOne(
-                { where:
-                    {email: mail} 
+                {
+                    where:
+                        { email: mail }
                 }
             );
             usuario_creation_response = this.usuarioRepository.create({ ...usuario });
@@ -60,8 +60,6 @@ export class UsuarioService {
     }
 
     public async loginUser(userInfo: UsuarioDTO): Promise<Usuario> {
-        console.log("login....");
-        console.log("mail info: ", userInfo.email);
         try {
             let introUsuario = this.getUsuarioByEmail(userInfo.email);
             let introPassword = (await introUsuario).getContraseña()
@@ -69,11 +67,11 @@ export class UsuarioService {
                 if (userInfo.password == introPassword) {
                     return introUsuario;
                 }
-                else{
+                else {
                     throw new HttpException('Acceso denegado ', HttpStatus.UNAUTHORIZED);
                 }
             }
-            else{
+            else {
                 throw new HttpException('Ya existe un usuario con ese mail ', HttpStatus.FORBIDDEN);
             }
         } catch (error) {

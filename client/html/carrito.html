@@ -18,9 +18,7 @@
     <link rel="stylesheet" href="../css/buscarInterno.css">
     <link rel="stylesheet" href="../css/normalizador.css">
     <!-- Iconos -->
-    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-    <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
     <title>Articulos del hogar</title>
 
 <body>
@@ -91,6 +89,21 @@
         </div>
         <!-- Contiene enlaces -->
         <div class="contenedor contenedor-enlaces-nav fondo-oscuro">
+            <div class="nav_right btn_usuario">
+                <ul>
+                    <li class="nr_li dd_main">
+                        <a href="http://localhost:3000/html/loginUser.html"
+                            class="btn_user btn-iniciar-sesion letra-clara">
+                            <ion-icon name="people-outline">
+                        </a>
+                    </li>
+                    <li class="nr_li">
+                        <a href="http://localhost:3000/html/carrito.html" class="btn_user letra-clara carrito">
+                            <ion-icon name="cart-outline">
+                        </a>
+                    </li>
+                </ul>
+            </div>
             <div class="btn-categorias letra-clara" id="btn-categorias">
                 <p class="mb-0">Todas las <span>Categorias</span></p>
                 <ion-icon name="caret-down-outline"></ion-icon>
@@ -278,8 +291,10 @@
                 <div class="columna-nosotros">
                     <h2>Sobre nosotros</h2>
                     <p>
-                        Es una web en la cual se muestran diversos artículos del hogar, cada usuario tiene la posibilidad de loguearse e 
-                        ir agregando estos productos a un carrito para poder comprarlos si así lo desea, además desde un usuario 
+                        Es una web en la cual se muestran diversos artículos del hogar, cada usuario tiene la
+                        posibilidad de loguearse e
+                        ir agregando estos productos a un carrito para poder comprarlos si así lo desea, además desde un
+                        usuario
                         administrador se puede realizar el control del stock.
                     </p>
                 </div>
@@ -322,5 +337,7 @@
 <script src="../js/nav.js"></script>
 <script src="../js/carrito.js"></script>
 <script src="../js/buscarInterno.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
 
 </html>

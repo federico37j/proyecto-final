@@ -1,3 +1,4 @@
+import { Carrito } from 'src/carrito/carrito.entity';
 import { Factura } from 'src/factura/factura.entity';
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm'
 
@@ -22,6 +23,8 @@ export class Usuario{
     @Column()
     private esAdmin: boolean;
 
+    @OneToMany((type) => Carrito, carrito => carrito.articulo)
+    public carrito: Carrito[];
     
     @OneToMany((type) => Factura, factura => factura.usuario)
     public factura: Factura[]; 

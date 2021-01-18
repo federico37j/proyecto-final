@@ -202,6 +202,10 @@ section .contenedor-cards-articulos{
 }
 
 @media screen and (max-width: 800px) {
+    .menu .contenedor-enlaces-nav .btn_usuario {
+        display: flex;
+    }
+
     #menu-parte-arriba{
          display: none;
     }
