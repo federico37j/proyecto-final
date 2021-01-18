@@ -156,23 +156,37 @@ export class ArticuloService {
 
     // Devuelvo un artículo según el id.
     public async getArticuloById(id: number): Promise<Articulo> {
-        let response: Articulo = await this.articuloRepository.findOne({
-            relations: ["imagen_articulo"],
-            where: [{
-                "idArticulo": Equal(id)
-            }]
-        })
-        return response;
+        try {
+            let response: Articulo = await this.articuloRepository.findOne({
+                relations: ["imagen_articulo"],
+                where: [{
+                    "idArticulo": Equal(id)
+                }]
+            })
+            return response;
+        } catch (error) {
+            throw new HttpException({
+                status: HttpStatus.NOT_FOUND,
+                error: "there is an error in the request, " + error,
+            }, HttpStatus.NOT_FOUND);
+        }
     }
 
     // Devuelvo las imagenes pertenecientes a ese id_articulo
     public async getImagenesByIdArticulo(id: number): Promise<Imagen_articulo[]> {
-        let response: Imagen_articulo[] = await this.imagenArticuloRepository.find({
-            where: [{
-                "idArticulo": Equal(id)
-            }]
-        })
-        return response;
+        try {
+            let response: Imagen_articulo[] = await this.imagenArticuloRepository.find({
+                where: [{
+                    "idArticulo": Equal(id)
+                }]
+            })
+            return response;
+        } catch (error) {
+            throw new HttpException({
+                status: HttpStatus.NOT_FOUND,
+                error: "there is an error in the request, " + error,
+            }, HttpStatus.NOT_FOUND);
+        }
     }
 
     //Me traigo desde la bd el artículo con ese id, si existe con los sets lo modifico.

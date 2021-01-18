@@ -1,3 +1,4 @@
+import { Carrito } from 'src/carrito/carrito.entity';
 import { Categoria } from 'src/categoria/categoria.entity';
 import { Detalle_factura } from 'src/detalle-factura/detalle-factura.entity';
 import { Imagen_articulo } from 'src/imagen-articulo/imagen-articulo.entity';
@@ -39,6 +40,9 @@ export class Articulo {
 
     @OneToMany((type) => Detalle_factura, detalle_factura => detalle_factura.articulo)
     public detalle_factura: Detalle_factura[];
+    
+    @OneToMany((type) => Carrito, carrito => carrito.articulo)
+    public carrito: Carrito[];
 
     public constructor(nombre?: string, precio?: number, financiacion?: string, detalle?: string, tipo?: string, stock?: number,
         idCategoria?: number) {

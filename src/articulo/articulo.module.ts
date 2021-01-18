@@ -6,6 +6,7 @@ import { Articulo } from './articulo.entity';
 import { Imagen_articulo } from 'src/imagen-articulo/imagen-articulo.entity';
 import { Categoria } from 'src/categoria/categoria.entity';
 import { Detalle_factura } from 'src/detalle-factura/detalle-factura.entity';
+import { Carrito } from 'src/carrito/carrito.entity';
 
 @Module({
   imports: [
@@ -13,7 +14,8 @@ import { Detalle_factura } from 'src/detalle-factura/detalle-factura.entity';
       Articulo,
       Imagen_articulo,
       Categoria,
-      Detalle_factura
+      Detalle_factura,
+      Carrito
     ])
   ],
   controllers: [ArticuloController],

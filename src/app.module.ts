@@ -23,6 +23,7 @@ import { DetalleFacturaModule } from './detalle-factura/detalle-factura.module';
 
 import { LocalModule } from './local/local.module';
 import { CategoriaModule } from './categoria/categoria.module';
+import { CarritoModule } from './carrito/carrito.module';
 
 
 
@@ -31,11 +32,13 @@ import { CategoriaModule } from './categoria/categoria.module';
     rootPath: join(__dirname, '..',
     'client'),
 
-    }),TypeOrmModule.forRoot(), UsuarioModule, ArticuloModule, ImagenArticuloModule, LocalModule, CategoriaModule, FacturaModule, DetalleFacturaModule],
+    }),TypeOrmModule.forRoot(), UsuarioModule, ArticuloModule, ImagenArticuloModule, LocalModule, CategoriaModule, FacturaModule, DetalleFacturaModule, CarritoModule],
 
 
-  controllers: [AppController, NegocioController, StockController, LoginController, CarritoController],
-  providers: [AppService, NegocioService, StockService, LoginService, CarritoService],
+  controllers: [AppController],
+  providers: [AppService],
+  // controllers: [AppController, NegocioController, StockController, LoginController, CarritoController],
+  // providers: [AppService, NegocioService, StockService, LoginService, CarritoService],
 
 })
 export class AppModule {}

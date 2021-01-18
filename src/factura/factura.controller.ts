@@ -10,21 +10,18 @@ export class FacturaController {
     constructor(private facturaService: FacturaService) { }
 
     @Post()
-    createFactura(@Body() suma: any): Promise<Factura> {
-        console.log("llega al controller");
-        return this.facturaService.createFactura(suma)
-    
+    createFactura(@Body() factura: any): Promise<Factura> {
+        return this.facturaService.createFactura(factura)
     }
 
     @Get("get-all")
-    public getAllProductos(): Promise<Factura[]>{
+    public getAllProductos(): Promise<Factura[]> {
         return this.facturaService.getAll();
     }
 
     @Get(":id")
-    public getByFactura(@Param("id") id: number){
+    public getByFactura(@Param("id") id: number): Promise<Factura[]> {
         return this.facturaService.getByFactura(id);
     }
-
 
 }

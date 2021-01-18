@@ -90,6 +90,21 @@
         </div>
         <!-- Contiene enlaces -->
         <div class="contenedor contenedor-enlaces-nav fondo-oscuro">
+            <div class="nav_right btn_usuario">
+                <ul>
+                    <li class="nr_li dd_main">
+                        <a href="http://localhost:3000/html/loginUser.html"
+                            class="btn_user btn-iniciar-sesion letra-clara">
+                            <ion-icon name="people-outline">
+                        </a>
+                    </li>
+                    <li class="nr_li">
+                        <a href="http://localhost:3000/html/carrito.html" class="btn_user letra-clara carrito">
+                            <ion-icon name="cart-outline">
+                        </a>
+                    </li>
+                </ul>
+            </div>
             <div class="btn-categorias letra-clara" id="btn-categorias">
                 <p class="mb-0">Todas las <span>Categorias</span></p>
                 <ion-icon name="caret-down-outline"></ion-icon>
@@ -221,7 +236,7 @@
 
     <div class="container">
         <div class="row " style="display: flex;align-items: center;justify-content: center;">
-            <div class="col-md-6 contenedor-resultado-compra">
+            <div class="col-md-6 contenedor-resultado-compra text-center">
                 <div>
                     <img class="imgFinCompra" src="../img/tiquet.png" alt="">
                 </div>
@@ -229,14 +244,18 @@
                     <h1 id="compraExitosa" class="compraFinalizada">¡Gracias por su compra!</h1>
                 </div>
                 <div class="contenedor-btn-factura mt-4">
-                    <button type="button" id="btn_factura" data-factura="" class="btn_factura btn btn-outline-secondary btn-lg">Factura
-                        <ion-icon name="document-attach-outline"></ion-icon></button>
+                    <button type="button" id="btn_factura" data-factura=""
+                        class="btn_factura btn btn-outline-secondary btn-lg">Factura
+                        <ion-icon name="document-attach-outline"></ion-icon>
+                    </button>
                 </div>
             </div>
             <div class="ocultar contenedor-btn-imprimir mr-2 col-md-8">
                 <div class="col-md-8 mt-3 mb-1">
-                    <button type="button" id="btn_imprimir" class="btn_imprimir btn btn-outline-secondary btn-lg">Imprimir
-                        <ion-icon name="print-outline"></ion-icon></button>
+                    <button type="button" id="btn_imprimir"
+                        class="btn_imprimir btn btn-outline-secondary btn-lg">Imprimir
+                        <ion-icon name="print-outline"></ion-icon>
+                    </button>
                 </div>
             </div>
             <div class="ocultar factura">
@@ -258,7 +277,7 @@
                             <p class="direccion_local" id="direccion_local"></p>
                             <p class="codigo_area_local" id="codigo_area_local"></p>-<p class="tel_local"
                                 id="tel_local"></p>
-                           
+
                         </div>
                         <div class="col-md-4 estructura">
                             <p class="mr-1" id="email_usuario"></p>
@@ -301,7 +320,6 @@
     </div>
     <audio src="../img/BELL1.mp3" autoplay></audio>
 
-
     <!-- Footer -->
     <footer class="fondo-claro" id="footer">
         <div class="container-footer-all">
@@ -323,8 +341,10 @@
                 <div class="columna-nosotros">
                     <h2>Sobre nosotros</h2>
                     <p>
-                        Es una web en la cual se muestran diversos artículos del hogar, cada usuario tiene la posibilidad de loguearse e 
-                        ir agregando estos productos a un carrito para poder comprarlos si así lo desea, además desde un usuario 
+                        Es una web en la cual se muestran diversos artículos del hogar, cada usuario tiene la
+                        posibilidad de loguearse e
+                        ir agregando estos productos a un carrito para poder comprarlos si así lo desea, además desde un
+                        usuario
                         administrador se puede realizar el control del stock.
                     </p>
                 </div>
@@ -371,6 +391,5 @@
 <script src="../js/llenarFactura.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
-
 
 </html>
