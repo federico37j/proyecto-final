@@ -210,7 +210,7 @@ async function actualizarStock(productos) {
     let url = "";
     let artVendidos = 0;
     for (let i = 0; i < productos.length; i++) {
-        url = `http://localhost:3000/articulo/${productos[i].CARRITO_idArticulo}`;
+        url = `/articulo/${productos[i].CARRITO_idArticulo}`;
         artVendidos = {
             cantidad: productos[i].CARRITO_cantidad
         }

@@ -116,7 +116,7 @@ async function agregarProductoCarrito() {
          "precio": precio
      } */
         //---> aca aparece un error cuando el usuario ya esta logueado
-        let respuesta = await fetch(`http://localhost:3000/carrito/${idUsuario}/${idArticulo}`, {
+        let respuesta = await fetch(`/carrito/${idUsuario}/${idArticulo}`, {
 
             method: 'POST',
             headers: {
