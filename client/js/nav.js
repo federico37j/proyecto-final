@@ -57,7 +57,7 @@ btn_cerrar_sesion.addEventListener('click', cerrarSesion);
 function cerrarSesion() {
     window.sessionStorage.setItem("userLogged", false);
     window.sessionStorage.setItem("user", null);
-    window.location = "tp-forhome.herokuapp.com";
+    window.location = "http://tp-forhome.herokuapp.com/";
     window.sessionStorage.clear();
     perfilMenu.classList.remove('activo');
 }
