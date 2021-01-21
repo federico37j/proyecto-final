@@ -77,7 +77,10 @@ async function cargarArticulos(categoria) {
 listadoImagenes.forEach(img => {
     img.addEventListener('click', function (e) {
         e.preventDefault();
-        if (img.src != window.location.href) {
+        // if (img.src != window.location.href) {
+        //     imagenPrincipal.src = img.src
+        // }
+        if (img.src != "") {
             imagenPrincipal.src = img.src
         }
     });
